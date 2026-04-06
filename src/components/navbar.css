@@ -1,0 +1,27 @@
+.dayPicker_container{
+  height: 70px;
+  width: 100%;
+  background-color: white;
+  border-radius: 0 0 20px 20px;
+  border-style: solid;
+  border-color: #3434341e;
+  border-width: 0 0 2px 0;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-left: 2%;
+  
+}
+.dayPicker_container button{
+  height: fit-content;
+  padding-inline: 8px;
+  padding-block: 4px;
+  font-weight: 600;
+  border-radius: 15px;
+  border: 2px solid transparent;
+
+}
+.dayPicker_container button:hover{
+  border: 2px solid var(--yellow);
+}
