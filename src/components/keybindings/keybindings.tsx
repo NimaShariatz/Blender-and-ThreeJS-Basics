@@ -96,7 +96,7 @@ function Keybindings() {
           <div>
             <p className="keybind">Center on</p>
             <p className="keybind_-">-</p>
-            <p className="keybind_desc">Numpad . (or View → Frame Selected)</p>
+            <p className="keybind_desc">Numpad . (View → Frame Selected)</p>
           </div>
           <div>
             <p className="keybind">Focus on</p>
