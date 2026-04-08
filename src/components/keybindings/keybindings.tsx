@@ -104,7 +104,7 @@ function Keybindings() {
             <p className="keybind_desc">/</p>
           </div>
           <div>
-            <p className="keybind">Change Render</p>
+            <p className="keybind">Change Render View</p>
             <p className="keybind_-">-</p>
             <p className="keybind_desc">Z</p>
           </div>

@@ -1,54 +1,63 @@
 .tooltip_container{
-    position: relative;
-    cursor: pointer;
-    padding-inline: 5px;
-    border-radius: 3px;
+  position: relative;
+  cursor: pointer;
+  padding-inline: 5px;
+  border-radius: 3px;
 }
-
-.tooltip_container img{
-    max-width: 180px;
-    margin: 0 auto;
-
-}
-
-
 
 .tooltip_text{
-    visibility: visible;
-    background-color: rgb(20, 20, 20);
-    color: white;
-    text-align: center;
-    border-radius: 5px;
-    padding-block: 5px;
-    padding-inline: 8px;
+  visibility: visible;
+  background-color: rgb(20, 20, 20);
+  color: white;
+  text-align: center;
+  border-radius: 8px;
 
+  display: flex;
+  flex-direction: column;
+  pointer-events: none;
 
-    min-width: 120px;
+  padding-top: 5px;
+  padding-inline: 8px;
 
-
-
-    pointer-events: none;
-
-    position: absolute;
-    bottom: 110%;
-    left: 50%;
-    transform: translateX(-50%);
-    opacity: 0;
-    transition: opacity 0.4s ease;
-    font-size: 14px;
+  position: absolute;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  font-size: 14px;
 }
 
 .tooltip_text::after{
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -0.5vw;
-    border-width: 0.5vw;
-    border-style: solid;
-    border-color: rgb(20, 20, 20) transparent transparent transparent;
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -10px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: rgb(20, 20, 20) transparent transparent transparent;
 }
 .tooltip_container:hover .tooltip_text{
-    opacity: 1;
-    transition: opacity 0.15s ease;
+  opacity: 1;
+  transition: opacity 0.12s ease;
+}
+
+
+
+
+.tooltip_container span:nth-child(2){
+  padding-block: 5px;
+}
+.tooltip_text img{
+  width: 100%;
+  max-height: 600px;
+  object-fit: contain;
+  min-width: 330px;
+
+}
+.tooltip_text video{
+  width: 100%;
+  max-height: 600px;
+  min-width: 400px; /*a little bit more width for videos than imgs*/
 }
