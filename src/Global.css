@@ -86,7 +86,16 @@ small{
 
 
 
+@media (max-width: 810px) {
+  body{
+    font-size: 12px;
+  }
+  small{
+    font-size: 8px;
+  }
+  
 
+}
 
 
 

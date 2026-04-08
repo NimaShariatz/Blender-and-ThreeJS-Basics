@@ -54,3 +54,23 @@
 }
 
 
+@media (max-width: 1010px) {
+  .titleSection_container{
+    width: 95%;
+  }
+  .content_container{
+    width: 95%;
+  }
+
+}
+
+@media (max-width: 810px) {
+  .titleSection_container h1{
+    padding-block: 5px;
+    padding-inline: 12px;
+  }
+  .content_container{
+    padding-block: 10px;
+    padding-inline: 20px;
+  }
+}

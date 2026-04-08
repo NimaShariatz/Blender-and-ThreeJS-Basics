@@ -2,7 +2,7 @@
 import "./keybindings.css"
 import {zyx_axis} from "../../../static/constants"
 import PopupText from "../popupText/popupText"
-import {tempVid} from "../../../static/constants"
+import {tempVid, Grab, GrabAxis} from "../../../static/constants"
 
 
 function Keybindings() {
@@ -60,14 +60,14 @@ function Keybindings() {
       <div className="keybindings_container">
         <div className="keybindings_section">
           <div>
-            <p className="keybind"><PopupText keybindingText={<span>G <small>(Warning: "Edit Mode" does not move origin point)</small></span>} keybindingImgVideo={<video src={tempVid} loop muted playsInline/>} meshOrMenu={true} placerText={"Grab"}/></p>
+            <p className="keybind"><PopupText keybindingText={<span>G <small>(Warning: "Edit Mode" does not move origin point)</small></span>} keybindingImgVideo={<video src={Grab} loop muted playsInline/>} meshOrMenu={true} placerText={"Grab"}/></p>
             <p className="keybind_-">-</p>
             <p className="keybind_desc">G <small>(Warning: "Edit Mode" does not move origin point)</small></p>
           </div>
           <div>
-            <p className="keybind"><PopupText keybindingText={<span>G + (X,Y,Z)</span>} keybindingImgVideo={<video src={tempVid} loop muted playsInline/>} meshOrMenu={true} placerText={"Move in Specific Axis"}/></p>
+            <p className="keybind"><PopupText keybindingText={<span>G followed by (X,Y,Z)</span>} keybindingImgVideo={<video src={GrabAxis} loop muted playsInline/>} meshOrMenu={true} placerText={"Move in Specific Axis"}/></p>
             <p className="keybind_-">-</p>
-            <p className="keybind_desc">G + (X,Y,Z)</p>
+            <p className="keybind_desc">G followed by (X,Y,Z)</p>
           </div>
           <div>
             <p className="keybind"><PopupText keybindingText={<span>S <small>(Note: Should be done in "Edit Mode")</small></span>} keybindingImgVideo={<video src={tempVid} loop muted playsInline/>} meshOrMenu={true} placerText={"Scale"}/></p>
@@ -75,9 +75,9 @@ function Keybindings() {
             <p className="keybind_desc">S <small>(Note: Should be done in "Edit Mode")</small></p>
           </div>
           <div>
-            <p className="keybind"><PopupText keybindingText={<span>S + (X,Y,Z)</span>} keybindingImgVideo={<video src={tempVid} loop muted playsInline/>} meshOrMenu={true} placerText={"Scale in Specific Axis"}/></p>
+            <p className="keybind"><PopupText keybindingText={<span>S followed by (X,Y,Z)</span>} keybindingImgVideo={<video src={tempVid} loop muted playsInline/>} meshOrMenu={true} placerText={"Scale in Specific Axis"}/></p>
             <p className="keybind_-">-</p>
-            <p className="keybind_desc">S + (X,Y,Z)</p>
+            <p className="keybind_desc">S followed by (X,Y,Z)</p>
           </div>
 
         </div>

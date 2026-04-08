@@ -61,3 +61,19 @@
   max-height: 600px;
   min-width: 400px; /*a little bit more width for videos than imgs*/
 }
+
+
+
+
+@media (max-width: 810px) {
+  .tooltip_text img{
+    max-height: 300px;
+    min-width: 250px;
+  }
+  .tooltip_text video{
+    max-height: 300px;
+    min-width: 210px; /*a little bit more width for videos than imgs*/
+  }
+
+
+}
