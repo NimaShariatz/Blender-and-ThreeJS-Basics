@@ -2,7 +2,7 @@
 import "./keybindings.css"
 import {zyx_axis} from "../../../static/constants"
 import PopupText from "../popupText/popupText"
-import {tempVid, Grab, GrabAxis} from "../../../static/constants"
+import {Grab, GrabAxis, Scale, ScaleAxis, Duplicate, LinkedDuplicate, CenterOn, FocusOn, ChangeRenderView, SelectAll, SelectClicked} from "../../../static/constants"
 
 
 function Keybindings() {
@@ -70,12 +70,12 @@ function Keybindings() {
             <p className="keybind_desc">G followed by (X,Y,Z)</p>
           </div>
           <div>
-            <p className="keybind"><PopupText keybindingText={<span>S <small>(Note: Should be done in "Edit Mode")</small></span>} keybindingImgVideo={<video src={tempVid} loop muted playsInline/>} meshOrMenu={true} placerText={"Scale"}/></p>
+            <p className="keybind"><PopupText keybindingText={<span>S <small>(Note: Should be done in "Edit Mode")</small></span>} keybindingImgVideo={<video src={Scale} loop muted playsInline/>} meshOrMenu={true} placerText={"Scale"}/></p>
             <p className="keybind_-">-</p>
             <p className="keybind_desc">S <small>(Note: Should be done in "Edit Mode")</small></p>
           </div>
           <div>
-            <p className="keybind"><PopupText keybindingText={<span>S followed by (X,Y,Z)</span>} keybindingImgVideo={<video src={tempVid} loop muted playsInline/>} meshOrMenu={true} placerText={"Scale in Specific Axis"}/></p>
+            <p className="keybind"><PopupText keybindingText={<span>S followed by (X,Y,Z)</span>} keybindingImgVideo={<video src={ScaleAxis} loop muted playsInline/>} meshOrMenu={true} placerText={"Scale in Specific Axis"}/></p>
             <p className="keybind_-">-</p>
             <p className="keybind_desc">S followed by (X,Y,Z)</p>
           </div>
@@ -84,29 +84,39 @@ function Keybindings() {
 
         <div className="keybindings_section">
           <div>
-            <p className="keybind"><PopupText keybindingText={<span>Shift + D</span>} keybindingImgVideo={<video src={tempVid} loop muted playsInline/>} meshOrMenu={true} placerText={"Duplicate"}/></p>
+            <p className="keybind"><PopupText keybindingText={<span>Shift + D</span>} keybindingImgVideo={<video src={Duplicate} loop muted playsInline/>} meshOrMenu={true} placerText={"Duplicate"}/></p>
             <p className="keybind_-">-</p>
             <p className="keybind_desc">Shift + D</p>
           </div>
           <div>
-            <p className="keybind"><PopupText keybindingText={<span>Alt + D <small>(should be done in "Object Mode")</small></span>} keybindingImgVideo={<video src={tempVid} loop muted playsInline/>} meshOrMenu={true} placerText={"Linked Duplicate"}/></p>
+            <p className="keybind"><PopupText keybindingText={<span>Alt + D <small>(should be done in "Object Mode")</small></span>} keybindingImgVideo={<video src={LinkedDuplicate} loop muted playsInline/>} meshOrMenu={true} placerText={"Linked Duplicate"}/></p>
             <p className="keybind_-">-</p>
             <p className="keybind_desc">Alt + D <small>(should be done in "Object Mode")</small></p>
           </div>
           <div>
-            <p className="keybind"><PopupText keybindingText={<span>Numpad . (View → Frame Selected)</span>} keybindingImgVideo={<video src={tempVid} loop muted playsInline/>} meshOrMenu={true} placerText={"Center on"}/></p>
+            <p className="keybind"><PopupText keybindingText={<span>Numpad . (View → Frame Selected)</span>} keybindingImgVideo={<video src={CenterOn} loop muted playsInline/>} meshOrMenu={true} placerText={"Center on"}/></p>
             <p className="keybind_-">-</p>
             <p className="keybind_desc">Numpad . (View → Frame Selected)</p>
           </div>
           <div>
-            <p className="keybind"><PopupText keybindingText={<span>/</span>} keybindingImgVideo={<video src={tempVid} loop muted playsInline/>} meshOrMenu={true} placerText={"Focus on"}/></p>
+            <p className="keybind"><PopupText keybindingText={<span>/</span>} keybindingImgVideo={<video src={FocusOn} loop muted playsInline/>} meshOrMenu={true} placerText={"Focus on"}/></p>
             <p className="keybind_-">-</p>
             <p className="keybind_desc">/</p>
           </div>
           <div>
-            <p className="keybind"><PopupText keybindingText={<span>Z</span>} keybindingImgVideo={<video src={tempVid} loop muted playsInline/>} meshOrMenu={true} placerText={"Change Render View"}/></p>
+            <p className="keybind"><PopupText keybindingText={<span>Z</span>} keybindingImgVideo={<video src={ChangeRenderView} loop muted playsInline/>} meshOrMenu={true} placerText={"Change Render View"}/></p>
             <p className="keybind_-">-</p>
             <p className="keybind_desc">Z</p>
+          </div>
+          <div>
+            <p className="keybind"><PopupText keybindingText={<span>A</span>} keybindingImgVideo={<video src={SelectAll} loop muted playsInline/>} meshOrMenu={true} placerText={"Select All"}/></p>
+            <p className="keybind_-">-</p>
+            <p className="keybind_desc">A</p>
+          </div>
+          <div>
+            <p className="keybind"><PopupText keybindingText={<span>Ctrl + LMB</span>} keybindingImgVideo={<video src={SelectClicked} loop muted playsInline/>} meshOrMenu={true} placerText={"Select Clicked"}/></p>
+            <p className="keybind_-">-</p>
+            <p className="keybind_desc">Ctrl + LMB</p>
           </div>
         </div>
       </div>
