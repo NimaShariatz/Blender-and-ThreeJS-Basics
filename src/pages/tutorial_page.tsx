@@ -36,7 +36,9 @@ function TutorialPage() {
       <Keybindings/>
 
 
-      <Day1/>
+      {daySelect === 1 &&
+        <Day1/>
+      }
 
 
     </div>

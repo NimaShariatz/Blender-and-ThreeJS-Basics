@@ -52,6 +52,15 @@
 .content_container p{
   margin-top: 10px;
 }
+.content_container_video{
+  width: 100%;
+  border-radius: 12px;
+  margin-block: 20px;
+}
+
+
+
+
 
 
 @media (max-width: 1010px) {
