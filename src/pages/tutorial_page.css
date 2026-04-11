@@ -52,10 +52,15 @@
 .content_container p{
   margin-top: 10px;
 }
-.content_container_video{
-  width: 100%;
+
+.media_item_container{
+  padding-block: 25px;
+  display: flex;
+  justify-content: center;
+}
+.media_item_container video, .media_item_container img{
+  width: 80%;
   border-radius: 12px;
-  margin-block: 20px;
 }
 
 

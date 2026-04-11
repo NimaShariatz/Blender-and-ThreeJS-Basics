@@ -1,13 +1,11 @@
 import "./tutorial_page.css"
 import { useState } from "react";
 
-//import {tempooo, tempVid} from "../../static/constants"
 
 
 import Navbar from "../components/navbar/navbar";
 import Keybindings from "../components/keybindings/keybindings";
 import Day1 from "./day_1/day1";
-//import PopupText from "../components/popupText/popupText";
 
 
 

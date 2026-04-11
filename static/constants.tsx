@@ -1,10 +1,11 @@
 
-//temp crap
-export const tempooo = '/src/assets/temp/tempo.png';
 
 
 //move
 export const zyx_axis = '/src/assets/movement/xyz_axis.png';
+
+//menuSelect
+export const InteractionMode = '/src/assets/menuSelections/InteractionMode.mp4';
 
 //keybinds
 export const Grab = '/src/assets/keybinds/Grab.mp4';
@@ -18,4 +19,8 @@ export const FocusOn = '/src/assets/keybinds/FocusOn.mp4';
 export const ChangeRenderView = '/src/assets/keybinds/ChangeRender.mp4';
 export const SelectAll = '/src/assets/keybinds/SelectAll.mp4';
 export const SelectClicked = '/src/assets/keybinds/SelectClicked.mp4';
+export const Delete = '/src/assets/keybinds/Delete.mp4';
 
+
+//day 1
+export const Day1_final = 'src/assets/Days/1/final_image.png'

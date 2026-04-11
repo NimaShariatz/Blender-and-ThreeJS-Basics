@@ -2,7 +2,9 @@
 import "./keybindings.css"
 import {zyx_axis} from "../../../static/constants"
 import PopupText from "../popupText/popupText"
-import {Grab, GrabAxis, Scale, ScaleAxis, Duplicate, LinkedDuplicate, CenterOn, FocusOn, ChangeRenderView, SelectAll, SelectClicked} from "../../../static/constants"
+import {Grab, GrabAxis, Scale, ScaleAxis, Duplicate, LinkedDuplicate, CenterOn, FocusOn, ChangeRenderView, SelectAll, SelectClicked
+  , Delete, InteractionMode
+} from "../../../static/constants"
 
 
 function Keybindings() {
@@ -60,7 +62,7 @@ function Keybindings() {
       <div className="keybindings_container">
         <div className="keybindings_section">
           <div>
-            <p className="keybind"><PopupText keybindingText={<span>G <small>(Warning: "Edit Mode" does not move origin point)</small></span>} keybindingImgVideo={<video src={Grab} loop muted playsInline/>} meshOrMenu={true} placerText={"Grab"}/></p>
+            <p className="keybind"><PopupText keybindingText={<span>G<br/><small>(Warning: "Edit Mode" does not move origin point)</small></span>} keybindingImgVideo={<video src={Grab} loop muted playsInline/>} meshOrMenu={true} placerText={"Grab"}/></p>
             <p className="keybind_-">-</p>
             <p className="keybind_desc">G <small>(Warning: "Edit Mode" does not move origin point)</small></p>
           </div>
@@ -70,7 +72,7 @@ function Keybindings() {
             <p className="keybind_desc">G followed by (X,Y,Z)</p>
           </div>
           <div>
-            <p className="keybind"><PopupText keybindingText={<span>S <small>(Note: Should be done in "Edit Mode")</small></span>} keybindingImgVideo={<video src={Scale} loop muted playsInline/>} meshOrMenu={true} placerText={"Scale"}/></p>
+            <p className="keybind"><PopupText keybindingText={<span>S<br/><small>(Note: Should be done in "Edit Mode")</small></span>} keybindingImgVideo={<video src={Scale} loop muted playsInline/>} meshOrMenu={true} placerText={"Scale"}/></p>
             <p className="keybind_-">-</p>
             <p className="keybind_desc">S <small>(Note: Should be done in "Edit Mode")</small></p>
           </div>
@@ -89,7 +91,7 @@ function Keybindings() {
             <p className="keybind_desc">Shift + D</p>
           </div>
           <div>
-            <p className="keybind"><PopupText keybindingText={<span>Alt + D <small>(should be done in "Object Mode")</small></span>} keybindingImgVideo={<video src={LinkedDuplicate} loop muted playsInline/>} meshOrMenu={true} placerText={"Linked Duplicate"}/></p>
+            <p className="keybind"><PopupText keybindingText={<span>Alt + D<br/><small>(should be done in "Object Mode")</small></span>} keybindingImgVideo={<video src={LinkedDuplicate} loop muted playsInline/>} meshOrMenu={true} placerText={"Linked Duplicate"}/></p>
             <p className="keybind_-">-</p>
             <p className="keybind_desc">Alt + D <small>(should be done in "Object Mode")</small></p>
           </div>
@@ -118,6 +120,15 @@ function Keybindings() {
             <p className="keybind_-">-</p>
             <p className="keybind_desc">Ctrl + LMB</p>
           </div>
+
+
+          <div>
+            <p className="keybind"><PopupText keybindingText={<span>X</span>} keybindingImgVideo={<video src={Delete} loop muted playsInline/>} meshOrMenu={true} placerText={"Delete"}/></p>
+            <p className="keybind_-">-</p>
+            <p className="keybind_desc">X</p>
+          </div>
+
+
         </div>
       </div>
     </div>
@@ -127,10 +138,20 @@ function Keybindings() {
       <div className="content_container">      {/* menu-related content */}
         <h2>Menu-Related Selections</h2>
         <small>Same as mesh-related, just by menu click instead</small>
-
         <div className="keybindings_container">
+          <div className="keybindings_section">
+            <div>
+              <p className="keybind"><PopupText keybindingText={<span>Interaction Mode</span>} keybindingImgVideo={<video src={InteractionMode} loop muted playsInline/>} meshOrMenu={false} placerText={"Interaction Mode"}/></p>
+              <p className="keybind_-">-</p>
+              <p className="keybind_desc">Change Editing Mode</p>
+            </div>
+          </div>
 
+          <div className="keybindings_section">
+
+          </div>
         </div>
+
       </div>
 
   </>

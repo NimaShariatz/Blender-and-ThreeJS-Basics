@@ -3,6 +3,7 @@
   cursor: pointer;
   padding-inline: 5px;
   border-radius: 3px;
+  text-wrap: nowrap;
 }
 
 .tooltip_text{
