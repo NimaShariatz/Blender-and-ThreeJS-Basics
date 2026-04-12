@@ -6,6 +6,7 @@ export const zyx_axis = '/src/assets/movement/xyz_axis.png';
 
 //menuSelect
 export const InteractionMode = '/src/assets/menuSelections/InteractionMode.mp4';
+export const NewObject = '/src/assets/menuSelections/NewObject.png';
 
 //keybinds
 export const Grab = '/src/assets/keybinds/Grab.mp4';
@@ -24,4 +25,5 @@ export const Delete = '/src/assets/keybinds/Delete.mp4';
 
 //day 1
 export const Day1_final = 'src/assets/Days/1/final_image.png'
+export const new_window = 'src/assets/Days/1/new_window.mp4'
 export const Day1_001 = 'src/assets/Days/1/Day1_001.blend'

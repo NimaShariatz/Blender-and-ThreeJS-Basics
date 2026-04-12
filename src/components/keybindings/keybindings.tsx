@@ -3,7 +3,7 @@ import "./keybindings.css"
 import {zyx_axis} from "../../../static/constants"
 import PopupText from "../popupText/popupText"
 import {Grab, GrabAxis, Scale, ScaleAxis, Duplicate, LinkedDuplicate, CenterOn, FocusOn, ChangeRenderView, SelectAll, SelectClicked
-  , Delete, InteractionMode
+  , Delete, InteractionMode, NewObject
 } from "../../../static/constants"
 
 
@@ -57,7 +57,7 @@ function Keybindings() {
 
     <div className="content_container">      {/* mesh-related Keybindings */}
       <h2>Mesh-Related Keybinds</h2>
-      <small>Manipulating our Objects</small>
+      <small>Manipulating our objects</small>
 
       <div className="keybindings_container">
         <div className="keybindings_section">
@@ -74,7 +74,7 @@ function Keybindings() {
           <div>
             <p className="keybind"><PopupText keybindingText={<span>S<br/><small>(Note: Should be done in "Edit Mode")</small></span>} keybindingImgVideo={<video src={Scale} loop muted playsInline/>} meshOrMenu={true} placerText={"Scale"}/></p>
             <p className="keybind_-">-</p>
-            <p className="keybind_desc">S <small>(Note: Should be done in "Edit Mode")</small></p>
+            <p className="keybind_desc">S <small>(note: should be done in "Edit Mode")</small></p>
           </div>
           <div>
             <p className="keybind"><PopupText keybindingText={<span>S followed by (X,Y,Z)</span>} keybindingImgVideo={<video src={ScaleAxis} loop muted playsInline/>} meshOrMenu={true} placerText={"Scale in Specific Axis"}/></p>
@@ -143,12 +143,16 @@ function Keybindings() {
             <div>
               <p className="keybind"><PopupText keybindingText={<span>Interaction Mode</span>} keybindingImgVideo={<video src={InteractionMode} loop muted playsInline/>} meshOrMenu={false} placerText={"Interaction Mode"}/></p>
               <p className="keybind_-">-</p>
-              <p className="keybind_desc">Change Editing Mode</p>
+              <p className="keybind_desc">change editing node</p>
             </div>
           </div>
 
           <div className="keybindings_section">
-
+            <div>
+              <p className="keybind"><PopupText keybindingText={<span>New Object</span>} keybindingImgVideo={<img src={NewObject}/>} meshOrMenu={false} placerText={"New Object"}/></p>
+              <p className="keybind_-">-</p>
+              <p className="keybind_desc">create new object</p>
+            </div>
           </div>
         </div>
 

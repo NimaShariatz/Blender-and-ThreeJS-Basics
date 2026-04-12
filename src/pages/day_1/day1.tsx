@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react"
 
 import "../tutorial_page.css"
-import {CenterOn, Grab, Scale, Day1_final, zyx_axis, InteractionMode, Day1_001 } from "../../../static/constants"
+import {CenterOn, Grab, Scale, Day1_final, zyx_axis, InteractionMode, Day1_001, new_window, Delete } from "../../../static/constants"
 import PopupText from "../../components/popupText/popupText";
 
 
@@ -102,19 +102,22 @@ function Day1() {
           You can duplicate an existing object, or create a linked duplicate which has any sizing or physical changes applied to all other instances. Do note 
           that being in <PopupText keybindingText={<span>Interaction Mode</span>} keybindingImgVideo={<video src={InteractionMode} loop muted playsInline/>} meshOrMenu={false} placerText={`"Edit Mode" or "Object Mode"`}/> can effect your manipulation of all of the above or not have them work at all.
         </p>
+
+        <p>
+          We can make things more convient for ourselves by creating more than one view of the scene we are looking at. This is optional.
+        </p>
+        <div className="media_item_container">
+          <LazyVideo src={new_window} loop muted playsInline/>
+        </div>
       </div>
       
 
       <div className="content_container">
         <h2>001 - Scene Setup</h2>
-        <small>
-          <a href={Day1_001} download="Day1_001.blend">Starter file: 001</a></small>
+        <small><a href={Day1_001} download="Day1_001.blend">Starter file: 001</a></small>
         <p>
-          First lets make things more convient for ourselves by creating more than one view of the scene we are looking at. Whether you want more than one window is up to you.
+          First we <PopupText keybindingText={<span>X</span>} keybindingImgVideo={<video src={Delete} loop muted playsInline/>} meshOrMenu={true} placerText={"Delete"}/> the existing light, camera, cube.
         </p>
-        <div className="media_item_container">
-          <LazyVideo src={Grab} loop muted playsInline/>
-        </div>
       </div>
 
 
