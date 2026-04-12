@@ -3,7 +3,7 @@ import "./keybindings.css"
 import {zyx_axis} from "../../../static/constants"
 import PopupText from "../popupText/popupText"
 import {Grab, GrabAxis, Scale, ScaleAxis, Duplicate, LinkedDuplicate, CenterOn, FocusOn, ChangeRenderView, SelectAll, SelectClicked
-  , Delete, InteractionMode, NewObject
+  , Delete, InteractionMode, NewObject, ResetScale
 } from "../../../static/constants"
 
 
@@ -62,9 +62,9 @@ function Keybindings() {
       <div className="keybindings_container">
         <div className="keybindings_section">
           <div>
-            <p className="keybind"><PopupText keybindingText={<span>G<br/><small>(Warning: "Edit Mode" does not move origin point)</small></span>} keybindingImgVideo={<video src={Grab} loop muted playsInline/>} meshOrMenu={true} placerText={"Grab"}/></p>
+            <p className="keybind"><PopupText keybindingText={<span>G<br/><small>(note: "Edit Mode" does not move origin point)</small></span>} keybindingImgVideo={<video src={Grab} loop muted playsInline/>} meshOrMenu={true} placerText={"Grab"}/></p>
             <p className="keybind_-">-</p>
-            <p className="keybind_desc">G <small>(Warning: "Edit Mode" does not move origin point)</small></p>
+            <p className="keybind_desc">G <small>(note: "Edit Mode" does not move origin point)</small></p>
           </div>
           <div>
             <p className="keybind"><PopupText keybindingText={<span>G followed by (X,Y,Z)</span>} keybindingImgVideo={<video src={GrabAxis} loop muted playsInline/>} meshOrMenu={true} placerText={"Move in Specific Axis"}/></p>
@@ -72,7 +72,7 @@ function Keybindings() {
             <p className="keybind_desc">G followed by (X,Y,Z)</p>
           </div>
           <div>
-            <p className="keybind"><PopupText keybindingText={<span>S<br/><small>(Note: Should be done in "Edit Mode")</small></span>} keybindingImgVideo={<video src={Scale} loop muted playsInline/>} meshOrMenu={true} placerText={"Scale"}/></p>
+            <p className="keybind"><PopupText keybindingText={<span>S<br/><small>(note: should be done in "Edit Mode")</small></span>} keybindingImgVideo={<video src={Scale} loop muted playsInline/>} meshOrMenu={true} placerText={"Scale"}/></p>
             <p className="keybind_-">-</p>
             <p className="keybind_desc">S <small>(note: should be done in "Edit Mode")</small></p>
           </div>
@@ -88,7 +88,7 @@ function Keybindings() {
           <div>
             <p className="keybind"><PopupText keybindingText={<span>Shift + D</span>} keybindingImgVideo={<video src={Duplicate} loop muted playsInline/>} meshOrMenu={true} placerText={"Duplicate"}/></p>
             <p className="keybind_-">-</p>
-            <p className="keybind_desc">Shift + D</p>
+            <p className="keybind_desc">Shift + D <small>(note: "Edit mode" and "Object mode" copy differently. Difference is noticable in the top right containers)</small></p>
           </div>
           <div>
             <p className="keybind"><PopupText keybindingText={<span>Alt + D<br/><small>(should be done in "Object Mode")</small></span>} keybindingImgVideo={<video src={LinkedDuplicate} loop muted playsInline/>} meshOrMenu={true} placerText={"Linked Duplicate"}/></p>
@@ -152,6 +152,11 @@ function Keybindings() {
               <p className="keybind"><PopupText keybindingText={<span>New Object</span>} keybindingImgVideo={<img src={NewObject}/>} meshOrMenu={false} placerText={"New Object"}/></p>
               <p className="keybind_-">-</p>
               <p className="keybind_desc">create new object</p>
+            </div>
+            <div>
+              <p className="keybind"><PopupText keybindingText={<span>Reset Scale</span>} keybindingImgVideo={<img src={ResetScale}/>} meshOrMenu={false} placerText={"Reset Scale"}/></p>
+              <p className="keybind_-">-</p>
+              <p className="keybind_desc">If you applied <PopupText keybindingText={<span>S<br/><small>(Note: Should be done in "Edit Mode")</small></span>} keybindingImgVideo={<video src={Scale} loop muted playsInline/>} meshOrMenu={true} placerText={"Scale"}/> while in "Object Mode", this will transfer it to "Edit Mode". Select your desired object(s) for the fix.</p>
             </div>
           </div>
         </div>

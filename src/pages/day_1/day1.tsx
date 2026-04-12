@@ -1,7 +1,9 @@
 import { useEffect, useRef } from "react"
 
 import "../tutorial_page.css"
-import {CenterOn, Grab, Scale, Day1_final, zyx_axis, InteractionMode, Day1_001, new_window, Delete } from "../../../static/constants"
+import {CenterOn, Grab, Scale, Day1_final, zyx_axis, InteractionMode, Day1_001, new_window, Delete, NewObject,
+  ResetScale, plane, Day1_002, ScaleAxis
+ } from "../../../static/constants"
 import PopupText from "../../components/popupText/popupText";
 
 
@@ -43,7 +45,13 @@ function LazyVideo(props: React.VideoHTMLAttributes<HTMLVideoElement>) { //takes
   return <video ref={videoRef} {...props} />;
 }
 
+{/* 
+  NOTE TO SELF: end of lesson we should...
+  add a point light add -> light -> point
 
+  Set the plane to "generate UVs" [day 2??]
+  
+  */}
 
 
 
@@ -96,8 +104,8 @@ function Day1() {
           You will use your middle-mouse-button for much of your movement. Both rotation and zoom. Notably you will also be using the <PopupText keybindingText={<span>Axis Change-View</span>} keybindingImgVideo={<img src={zyx_axis}/>} meshOrMenu={true} placerText={"axis view-changer"}/> when convient.
         </p>
         <p>
-          There's also a set of common actions far more convient by keybind than by menu hopping. <PopupText keybindingText={<span>G<br/><small>(Warning: "Edit Mode" does not move origin point)</small></span>} keybindingImgVideo={<video src={Grab} loop muted playsInline/>} meshOrMenu={true} placerText={"Grab"}/> for movement 
-          and <PopupText keybindingText={<span>S<br/><small>(Note: Should be done in "Edit Mode")</small></span>} keybindingImgVideo={<video src={Scale} loop muted playsInline/>} meshOrMenu={true} placerText={"Scale"}/> for sizing, with both 
+          There's also a set of common actions far more convient by keybind than by menu hopping. <PopupText keybindingText={<span>G<br/><small>(note: "Edit Mode" does not move origin point)</small></span>} keybindingImgVideo={<video src={Grab} loop muted playsInline/>} meshOrMenu={true} placerText={"Grab"}/> for movement 
+          and <PopupText keybindingText={<span>S<br/><small>(note: should be done in "Edit Mode")</small></span>} keybindingImgVideo={<video src={Scale} loop muted playsInline/>} meshOrMenu={true} placerText={"Scale"}/> for sizing, with both 
           being able to be moved/resized by a specific axis. Items can be <PopupText keybindingText={<span>Numpad . (View → Frame Selected)</span>} keybindingImgVideo={<video src={CenterOn} loop muted playsInline/>} meshOrMenu={true} placerText={"centered on"}/> with either the numpad period key, or View → Frame Selected.
           You can duplicate an existing object, or create a linked duplicate which has any sizing or physical changes applied to all other instances. Do note 
           that being in <PopupText keybindingText={<span>Interaction Mode</span>} keybindingImgVideo={<video src={InteractionMode} loop muted playsInline/>} meshOrMenu={false} placerText={`"Edit Mode" or "Object Mode"`}/> can effect your manipulation of all of the above or not have them work at all.
@@ -116,10 +124,23 @@ function Day1() {
         <h2>001 - Scene Setup</h2>
         <small><a href={Day1_001} download="Day1_001.blend">Starter file: 001</a></small>
         <p>
-          First we <PopupText keybindingText={<span>X</span>} keybindingImgVideo={<video src={Delete} loop muted playsInline/>} meshOrMenu={true} placerText={"Delete"}/> the existing light, camera, cube.
+          First we <PopupText keybindingText={<span>X</span>} keybindingImgVideo={<video src={Delete} loop muted playsInline/>} meshOrMenu={true} placerText={"Delete"}/> the existing light, camera, cube. 
+          Then <PopupText keybindingText={<span>New Object</span>} keybindingImgVideo={<img src={NewObject}/>} meshOrMenu={false} placerText={"add"}/> the floor that the scene has. A plane will do. You can 
+          make it as large as you like. Blender units have no fixed meaning. If you scaled it in "Object Mode", you can fix it by <PopupText keybindingText={<span>Reset Scale</span>} keybindingImgVideo={<img src={ResetScale}/>} meshOrMenu={false} placerText={`transfering the changes to "Edit Mode"`}/>.
         </p>
+        <div className="media_item_container">
+          <img src={plane}/>
+        </div>
       </div>
 
+      <div className="content_container">
+        <h2>002 - Fences</h2>
+        <small><a href={Day1_002} download="Day1_002.blend">Starter file: 002</a></small>
+        <p>
+          To make the fences we add a cube and scale it with use of <PopupText keybindingText={<span>S followed by (X,Y,Z)</span>} keybindingImgVideo={<video src={ScaleAxis} loop muted playsInline/>} meshOrMenu={true} placerText={"X, Y, Z selectors"}/>.
+          
+        </p>
+      </div>
 
     </>
 
