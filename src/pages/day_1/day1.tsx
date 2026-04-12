@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react"
 
 import "../tutorial_page.css"
-import {CenterOn, Grab, Scale, Day1_final, zyx_axis, InteractionMode } from "../../../static/constants"
+import {CenterOn, Grab, Scale, Day1_final, zyx_axis, InteractionMode, Day1_001 } from "../../../static/constants"
 import PopupText from "../../components/popupText/popupText";
 
 
@@ -106,10 +106,11 @@ function Day1() {
       
 
       <div className="content_container">
-        <h2>Scene Setup</h2>
-        <small>Starter File: 001</small>
+        <h2>001 - Scene Setup</h2>
+        <small>
+          <a href={Day1_001} download="Day1_001.blend">Starter file: 001</a></small>
         <p>
-          First lets make things more convient for ourselves by creating more than one view of the scene we are looking at.
+          First lets make things more convient for ourselves by creating more than one view of the scene we are looking at. Whether you want more than one window is up to you.
         </p>
         <div className="media_item_container">
           <LazyVideo src={Grab} loop muted playsInline/>

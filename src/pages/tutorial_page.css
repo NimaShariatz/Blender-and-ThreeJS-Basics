@@ -52,6 +52,9 @@
 .content_container p{
   margin-top: 10px;
 }
+.content_container small a{
+  color: var(--blue_1);
+}
 
 .media_item_container{
   padding-block: 25px;

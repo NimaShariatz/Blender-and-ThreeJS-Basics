@@ -24,3 +24,4 @@ export const Delete = '/src/assets/keybinds/Delete.mp4';
 
 //day 1
 export const Day1_final = 'src/assets/Days/1/final_image.png'
+export const Day1_001 = 'src/assets/Days/1/Day1_001.blend'
