@@ -55,6 +55,19 @@
 .content_container small a{
   color: var(--blue_1);
 }
+.content_container_divide{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.content_container_divide p{
+  width: 60%;
+}
+.content_container_divide img{
+  width: 40%;
+  border-radius: 12px;
+}
 
 .media_item_container{
   padding-block: 25px;
@@ -89,5 +102,14 @@
   .content_container{
     padding-block: 10px;
     padding-inline: 20px;
+  }
+  .content_container_divide{
+    flex-direction: column;
+  }
+  .content_container_divide img{
+    width: 85%;
+  }
+  .content_container_divide p{
+    width: 100%;
   }
 }

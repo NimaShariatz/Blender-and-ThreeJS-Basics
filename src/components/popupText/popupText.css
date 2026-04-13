@@ -62,7 +62,10 @@
   max-height: 600px;
   min-width: 400px; /*a little bit more width for videos than imgs*/
 }
-
+.tooltip_text span small{
+  max-width: 130px;
+  text-wrap: wrap;
+}
 
 
 

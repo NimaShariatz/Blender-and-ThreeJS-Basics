@@ -22,7 +22,7 @@ export const ChangeRenderView = '/src/assets/keybinds/ChangeRender.mp4';
 export const SelectAll = '/src/assets/keybinds/SelectAll.mp4';
 export const SelectClicked = '/src/assets/keybinds/SelectClicked.mp4';
 export const Delete = '/src/assets/keybinds/Delete.mp4';
-
+export const RotateXYZ = '/src/assets/keybinds/RotateXYZ.mp4'
 
 //day 1
 export const Day1_final = 'src/assets/Days/1/final_image.png'
@@ -30,4 +30,10 @@ export const new_window = 'src/assets/Days/1/new_window.mp4'
 export const Day1_001 = 'src/assets/Days/1/Day1_001.blend'
 export const plane = 'src/assets/Days/1/plane.png'
 
+//day 2
 export const Day1_002 = 'src/assets/Days/1/Day1_002.blend'
+export const containers = 'src/assets/Days/1/containers.png'
+export const Day1_fences = 'src/assets/Days/1/day1_fences.mkv'
+
+//day 3
+export const Day1_003 = 'src/assets/Days/1/Day1_003.blend'
