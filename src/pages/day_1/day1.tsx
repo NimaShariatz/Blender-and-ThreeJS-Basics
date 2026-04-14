@@ -3,7 +3,7 @@ import { useEffect, useRef } from "react"
 import "../tutorial_page.css"
 import {CenterOn, Day1_final, zyx_axis, InteractionMode, Day1_001, new_window, Delete, NewObject,
   ResetScale, plane, Day1_002, ScaleAxis, Duplicate, containers, RotateXYZ, SelectAll, Day1_fences, Day1_003,
-  GrabAxis, ChangeRenderView, NewLight, NewCamera, RendererMode, Day1_lightAndcamera
+  GrabAxis, ChangeRenderView, NewLight, NewCamera, RendererMode, Day1_lightAndcamera, Day1_004
  } from "../../../static/constants"
 import PopupText from "../../components/popupText/popupText";
 
@@ -48,8 +48,6 @@ function LazyVideo(props: React.VideoHTMLAttributes<HTMLVideoElement>) { //takes
 
 {/* 
   NOTE TO SELF: end of lesson we should...
-  add a point light add -> light -> point
-
   Set the plane to "generate UVs" [day 2??]
   
   */}
@@ -185,6 +183,11 @@ function Day1() {
           <LazyVideo src={Day1_lightAndcamera} loop muted playsInline controls/>
         </div>
 
+      </div>
+
+      <div className="content_container">
+        <h2>004 - Tree Trunks</h2>
+        <small><a href={Day1_004} download="Day1_004.blend">Starter file: 004</a></small>
       </div>
 
     </>

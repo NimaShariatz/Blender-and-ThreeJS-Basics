@@ -42,3 +42,6 @@ export const Day1_fences = 'src/assets/Days/1/day1_fences.mkv'
 //day 1 003
 export const Day1_003 = 'src/assets/Days/1/Day1_003.blend'
 export const Day1_lightAndcamera = 'src/assets/Days/1/day1_light&camera.mkv'
+
+//day 1 004
+export const Day1_004 = 'src/assets/Days/1/Day1_004.blend'
