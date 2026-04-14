@@ -1,13 +1,19 @@
-For keybindings, have the actual name, and on click the keybindings + video is revealed in a popup.
-on hover it should be the same but in small tooltip format! brilliant!
-popup is left if anywhere is clicked. obviously video controls should be removed.
 
-when scrolled past keybindings, three "slips" should appear to the right that popup keybinding sections on click. Even more brilliant!
-
-
-
-
-
+Deployment:
+yarn add gh-pages
+then added `"homepage":"https://nimashariatz.github.io/Blender-and-ThreeJS-Basics/",` to package.json
+as well as 
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+Then changes vite.config to be this:
+export default defineConfig({
+  plugins: [react()],
+  base: '/',
+  build: {
+    outDir: 'dist'
+  }
+})
+then did yarn run deploy
 
 
 
