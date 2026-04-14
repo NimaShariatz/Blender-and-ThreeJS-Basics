@@ -3,7 +3,7 @@ import { useEffect, useRef } from "react"
 import "../tutorial_page.css"
 import {CenterOn, Day1_final, zyx_axis, InteractionMode, Day1_001, new_window, Delete, NewObject,
   ResetScale, plane, Day1_002, ScaleAxis, Duplicate, containers, RotateXYZ, SelectAll, Day1_fences, Day1_003,
-  GrabAxis, ChangeRenderView, NewLight, NewCamera
+  GrabAxis, ChangeRenderView, NewLight, NewCamera, RendererMode, Day1_lightAndcamera
  } from "../../../static/constants"
 import PopupText from "../../components/popupText/popupText";
 
@@ -169,12 +169,22 @@ function Day1() {
           The scene as we see it is not what will the final product will look like. For that 
           we will <PopupText keybindingText={<span>Z</span>} keybindingImgVideo={<video src={ChangeRenderView} loop muted playsInline/>} meshOrMenu={true} placerText={`change to "Rendered"`}/>. But note that our scene is completely dark. This is 
           because we <PopupText keybindingText={<span>New Light Source</span>} keybindingImgVideo={<video src={NewLight} loop muted playsInline/>} meshOrMenu={false} placerText={"need a light source"}/>. Place it wherever 
-          adequate. The "Power" variable should be raised to something adequate. A light source does have other variables you can play with. You can render
-          your scene as is by <PopupText keybindingText={<span>New Camera</span>} keybindingImgVideo={<video src={NewCamera} loop muted playsInline/>} meshOrMenu={false} placerText={"adding a camera"}/>. Place your camera wherever adequate.
+          adequate. The "Power" variable should be raised to something adequate. A light source does have other variables you can play with.
         </p>
         <p>
-          Next we want to render
+          "Renderer mode" gives us a feel of how it'll look, but rendering an instance of the scene is the accurate version. For this we need to <PopupText keybindingText={<span>New Camera</span>} keybindingImgVideo={<video src={NewCamera} loop muted playsInline/>} meshOrMenu={false} placerText={"add a camera"}/> to 
+          the scene. Place it wherever adequate. Notice below your <b>Axis Change-View</b> is a camera icon. You can view through the camera by this button. We also 
+          change the <PopupText keybindingText={<span>Rendering Mode</span>} keybindingImgVideo={<img src={RendererMode}/>} meshOrMenu={false} placerText={"rendering mode"}/> to "Cycles" for better quality 
+          and set Viewport → Max Samples & Render → Max Samples to '128'. Higher quality is unnecassary.
         </p>
+        <p>
+          Finally, on the top right go select Render → Render Image to see your model properly rendered. How long it takes to complete depends on 
+          the values you put in the Max Samples, and your personal computer.
+        </p>
+        <div className="media_item_container">
+          <LazyVideo src={Day1_lightAndcamera} loop muted playsInline controls/>
+        </div>
+
       </div>
 
     </>
