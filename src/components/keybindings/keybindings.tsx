@@ -1,10 +1,10 @@
 
 import "./keybindings.css"
-import {zyx_axis} from "../../../static/constants"
+import {zyx_axis} from "../../constants"
 import PopupText from "../popupText/popupText"
 import { GrabAxis, ScaleAxis, Duplicate, LinkedDuplicate, CenterOn, FocusOn, ChangeRenderView, SelectAll, SelectClicked
   , Delete, InteractionMode, NewObject, ResetScale, RotateXYZ, NewLight, NewCamera, RendererMode
-} from "../../../static/constants"
+} from "../../constants"
 
 
 function Keybindings() {
