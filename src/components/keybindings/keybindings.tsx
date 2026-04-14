@@ -3,7 +3,7 @@ import "./keybindings.css"
 import {zyx_axis} from "../../../static/constants"
 import PopupText from "../popupText/popupText"
 import { GrabAxis, ScaleAxis, Duplicate, LinkedDuplicate, CenterOn, FocusOn, ChangeRenderView, SelectAll, SelectClicked
-  , Delete, InteractionMode, NewObject, ResetScale, RotateXYZ
+  , Delete, InteractionMode, NewObject, ResetScale, RotateXYZ, NewLight, NewCamera
 } from "../../../static/constants"
 
 
@@ -135,22 +135,32 @@ function Keybindings() {
         <div className="keybindings_container">
           <div className="keybindings_section">
             <div>
-              <p className="keybind"><PopupText keybindingText={<span>Interaction Mode</span>} keybindingImgVideo={<video src={InteractionMode} loop muted playsInline/>} meshOrMenu={false} placerText={"Interaction Mode"}/></p>
-              <p className="keybind_-">-</p>
-              <p className="keybind_desc">change editing node</p>
-            </div>
-          </div>
-
-          <div className="keybindings_section">
-            <div>
               <p className="keybind"><PopupText keybindingText={<span>New Object</span>} keybindingImgVideo={<img src={NewObject}/>} meshOrMenu={false} placerText={"New Object"}/></p>
               <p className="keybind_-">-</p>
               <p className="keybind_desc">create new object</p>
             </div>
             <div>
+              <p className="keybind"><PopupText keybindingText={<span>New Light Source</span>} keybindingImgVideo={<video src={NewLight} loop muted playsInline/>} meshOrMenu={false} placerText={"New Light Source"}/></p>
+              <p className="keybind_-">-</p>
+              <p className="keybind_desc">add a new source of light</p>
+            </div>
+            <div>
+              <p className="keybind"><PopupText keybindingText={<span>New Camera</span>} keybindingImgVideo={<video src={NewCamera} loop muted playsInline/>} meshOrMenu={false} placerText={"New Camera"}/></p>
+              <p className="keybind_-">-</p>
+              <p className="keybind_desc">add a camera to the scene. Then hit "Render" on the top left followed by "Render Image" to render a frame.</p>
+            </div>
+          </div>
+
+          <div className="keybindings_section">
+            <div>
+              <p className="keybind"><PopupText keybindingText={<span>Interaction Mode</span>} keybindingImgVideo={<video src={InteractionMode} loop muted playsInline/>} meshOrMenu={false} placerText={"Interaction Mode"}/></p>
+              <p className="keybind_-">-</p>
+              <p className="keybind_desc">change editing node</p>
+            </div>
+            <div>
               <p className="keybind"><PopupText keybindingText={<span>Reset Scale</span>} keybindingImgVideo={<img src={ResetScale}/>} meshOrMenu={false} placerText={"Reset Scale"}/></p>
               <p className="keybind_-">-</p>
-              <p className="keybind_desc">If you applied <PopupText keybindingText={<span>S<br/><small>(Note: Should be done in "Edit Mode")</small></span>} keybindingImgVideo={<video src={ScaleAxis} loop muted playsInline/>} meshOrMenu={true} placerText={"scale"}/> or <PopupText keybindingText={<span>R followed by (X,Y,Z)<br/><small>(should be done in "Edit Mode")</small></span>} keybindingImgVideo={<video src={RotateXYZ} loop muted playsInline/>} meshOrMenu={true} placerText={"rotate"}/> while in "Object Mode", this will transfer it to "Edit Mode". Select your desired object(s) for the fix.</p>
+              <p className="keybind_desc">If you applied <PopupText keybindingText={<span>S with optional (X,Y,Z)<br/><small>(note: should be done in "Edit Mode")</small></span>} keybindingImgVideo={<video src={ScaleAxis} loop muted playsInline/>} meshOrMenu={true} placerText={"scale"}/> or <PopupText keybindingText={<span>R with optional (X,Y,Z)<br/><small>(should be done in "Edit Mode")</small></span>} keybindingImgVideo={<video src={RotateXYZ} loop muted playsInline/>} meshOrMenu={true} placerText={"rotate"}/> while in "Object Mode", this will transfer it to "Edit Mode". Select your desired object(s) for the fix.</p>
             </div>
           </div>
         </div>

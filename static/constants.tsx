@@ -8,6 +8,8 @@ export const zyx_axis = '/src/assets/movement/xyz_axis.png';
 export const InteractionMode = '/src/assets/menuSelections/InteractionMode.mp4';
 export const NewObject = '/src/assets/menuSelections/NewObject.png';
 export const ResetScale = '/src/assets/menuSelections/ResetScale.png';
+export const NewLight = '/src/assets/keybinds/LightSource.mp4'
+export const NewCamera = '/src/assets/keybinds/AddCamera.mp4'
 
 //keybinds
 export const Grab = '/src/assets/keybinds/Grab.mp4';
@@ -23,6 +25,7 @@ export const SelectAll = '/src/assets/keybinds/SelectAll.mp4';
 export const SelectClicked = '/src/assets/keybinds/SelectClicked.mp4';
 export const Delete = '/src/assets/keybinds/Delete.mp4';
 export const RotateXYZ = '/src/assets/keybinds/RotateXYZ.mp4'
+
 
 //day 1
 export const Day1_final = 'src/assets/Days/1/final_image.png'

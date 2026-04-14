@@ -3,7 +3,7 @@ import { useEffect, useRef } from "react"
 import "../tutorial_page.css"
 import {CenterOn, Day1_final, zyx_axis, InteractionMode, Day1_001, new_window, Delete, NewObject,
   ResetScale, plane, Day1_002, ScaleAxis, Duplicate, containers, RotateXYZ, SelectAll, Day1_fences, Day1_003,
-  GrabAxis
+  GrabAxis, ChangeRenderView, NewLight, NewCamera
  } from "../../../static/constants"
 import PopupText from "../../components/popupText/popupText";
 
@@ -136,8 +136,8 @@ function Day1() {
             To make the fences we add a cube and scale it with 
             use of <PopupText keybindingText={<span>S with optional (X,Y,Z)<br/><small>(note: should be done in "Edit Mode")</small></span>} keybindingImgVideo={<video src={ScaleAxis} loop muted playsInline/>} meshOrMenu={true} placerText={"X, Y, Z selectors"}/>. We add add multiple 
             boards <PopupText keybindingText={<span>Shift + D<br/><small>(note: "Edit mode" and "Object Mode" copy differently. Difference is noticable in the top right containers section)</small></span>} keybindingImgVideo={<video src={Duplicate} loop muted playsInline/>} meshOrMenu={true} placerText={"by creating several copies"}/>. These copies are done 
-            while <PopupText keybindingText={<span>Interaction Mode</span>} keybindingImgVideo={<video src={InteractionMode} loop muted playsInline/>} meshOrMenu={false} placerText={`done in "Edit Mode"`}/> so that they are still considered part of the original object. Otherwise duplicating in "Object Mode" defines it 
-            as it's own unique object which we'd prefer to not have right now.
+            while <PopupText keybindingText={<span>Interaction Mode</span>} keybindingImgVideo={<video src={InteractionMode} loop muted playsInline/>} meshOrMenu={false} placerText={`done in "Edit Mode"`}/> so that they are still considered part of the original mesh object. Otherwise duplicating in "Object Mode" defines it 
+            as it's own unique object which we'd prefer to not have in this case (otherwise each plank is its own object which is messy).
           </p>
           <img src={containers}/>
         </div>
@@ -165,8 +165,16 @@ function Day1() {
       <div className="content_container">
         <h2>003 - Rendering and Light</h2>
         <small><a href={Day1_003} download="Day1_003.blend">Starter file: 003</a></small>
-
-        
+        <p>
+          The scene as we see it is not what will the final product will look like. For that 
+          we will <PopupText keybindingText={<span>Z</span>} keybindingImgVideo={<video src={ChangeRenderView} loop muted playsInline/>} meshOrMenu={true} placerText={`change to "Rendered"`}/>. But note that our scene is completely dark. This is 
+          because we <PopupText keybindingText={<span>New Light Source</span>} keybindingImgVideo={<video src={NewLight} loop muted playsInline/>} meshOrMenu={false} placerText={"need a light source"}/>. Place it wherever 
+          adequate. The "Power" variable should be raised to something adequate. A light source does have other variables you can play with. You can render
+          your scene as is by <PopupText keybindingText={<span>New Camera</span>} keybindingImgVideo={<video src={NewCamera} loop muted playsInline/>} meshOrMenu={false} placerText={"adding a camera"}/>. Place your camera wherever adequate.
+        </p>
+        <p>
+          Next we want to render
+        </p>
       </div>
 
     </>
