@@ -5,14 +5,14 @@ export const zyx_axis = zyxAxisImg;
 // menuSelect
 import interactionModeVid from './assets/keybinds/InteractionMode.mp4';
 import newObjectImg from './assets/keybinds/NewObject.png';
-import resetScaleImg from './assets/keybinds/ResetScale.png';
+import tranfserScaleImg from './assets/keybinds/ResetScale.png';
 import newLightVid from './assets/keybinds/LightSource.mp4';
 import newCameraVid from './assets/keybinds/AddCamera.mp4';
 import rendererModeImg from './assets/keybinds/RendererMode.png';
 
 export const InteractionMode = interactionModeVid;
 export const NewObject = newObjectImg;
-export const ResetScale = resetScaleImg;
+export const TransferScale = tranfserScaleImg;
 export const NewLight = newLightVid;
 export const NewCamera = newCameraVid;
 export const RendererMode = rendererModeImg;
@@ -52,11 +52,11 @@ import day1FinalImg from './assets/Days/1/final_image.png';
 import newWindowVid from './assets/Days/1/new_window.mp4';
 import day1001Blend from './assets/Days/1/Day1_001.blend';
 import planeImg from './assets/Days/1/plane.png';
-
 export const Day1_final = day1FinalImg;
 export const new_window = newWindowVid;
 export const Day1_001 = day1001Blend;
 export const plane = planeImg;
+
 
 // day 1 002
 import day1002Blend from './assets/Days/1/Day1_002.blend';
@@ -76,5 +76,16 @@ export const Day1_lightAndcamera = day1LightAndCameraVid;
 
 // day 1 004
 import day1004Blend from './assets/Days/1/Day1_004.blend';
+import trunkImg from './assets/Days/1/trunk.png'
+import addtrunkvid from './assets/Days/1/add_trunk.mkv';
+import trunksImg from './assets/Days/1/trunks.png'
 
 export const Day1_004 = day1004Blend;
+export const trunk  = trunkImg;
+export const add_trunk = addtrunkvid;
+export const trunks = trunksImg
+
+// day 1 005
+import day1005Blend from './assets/Days/1/Day1_005.blend';
+
+export const Day1_005 = day1005Blend;

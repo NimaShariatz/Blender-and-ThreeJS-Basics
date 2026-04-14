@@ -20,6 +20,8 @@ export default defineConfig(({ command }) => ({
 
 then did yarn run deploy
 
+Note: moved constants within src/ folder and had to re-do constants so that the assets would show on gh-pages version.
+Could have just moved assets to public folder if need be, like Henning currently is.
 
 
 

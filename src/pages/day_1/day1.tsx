@@ -2,8 +2,8 @@ import { useEffect, useRef } from "react"
 
 import "../tutorial_page.css"
 import {CenterOn, Day1_final, zyx_axis, InteractionMode, Day1_001, new_window, Delete, NewObject,
-  ResetScale, plane, Day1_002, ScaleAxis, Duplicate, containers, RotateXYZ, SelectAll, Day1_fences, Day1_003,
-  GrabAxis, ChangeRenderView, NewLight, NewCamera, RendererMode, Day1_lightAndcamera, Day1_004
+  TransferScale, plane, Day1_002, ScaleAxis, Duplicate, containers, RotateXYZ, SelectAll, Day1_fences, Day1_003,
+  GrabAxis, ChangeRenderView, NewLight, NewCamera, RendererMode, Day1_lightAndcamera, Day1_004, trunk, add_trunk, trunks, Day1_005
  } from "../../constants"
 import PopupText from "../../components/popupText/popupText";
 
@@ -119,7 +119,7 @@ function Day1() {
         <p>
           First we <PopupText keybindingText={<span>X</span>} keybindingImgVideo={<video src={Delete} loop muted playsInline/>} meshOrMenu={true} placerText={"delete"}/> the existing light, camera, cube. 
           Then <PopupText keybindingText={<span>New Object</span>} keybindingImgVideo={<img src={NewObject}/>} meshOrMenu={false} placerText={"add"}/> the floor that the scene has. A plane will do. You can 
-          make it as large as you like. Blender units have no fixed meaning. If you scaled it in "Object Mode", you can fix it by <PopupText keybindingText={<span>Reset Scale</span>} keybindingImgVideo={<img src={ResetScale}/>} meshOrMenu={false} placerText={`transfering the changes to "Edit Mode"`}/>.
+          make it as large as you like. Blender units have no fixed meaning. If you scaled it in "Object Mode", you can fix it by <PopupText keybindingText={<span>Transfer Scale</span>} keybindingImgVideo={<img src={TransferScale}/>} meshOrMenu={false} placerText={`transfering the changes to "Edit Mode"`}/>.
         </p>
         <div className="media_item_container">
           <img src={plane}/>
@@ -148,7 +148,7 @@ function Day1() {
           first fence is done, 
           we duplicate the fence in "Object Mode". A 180deg rotation is used for the 
           other side of the fences, and individual fences for some randomness. Remember if you scale or rotate by accident while in "Object Mode", 
-          there is <PopupText keybindingText={<span>Reset Scale</span>} keybindingImgVideo={<img src={ResetScale}/>} meshOrMenu={false} placerText={"an easy fix to it"}/>.
+          there is <PopupText keybindingText={<span>Transfer Scale</span>} keybindingImgVideo={<img src={TransferScale}/>} meshOrMenu={false} placerText={"an easy fix to it"}/>.
         </p>
         <div className="media_item_container">
           <LazyVideo src={Day1_fences} loop muted playsInline controls/>
@@ -188,6 +188,33 @@ function Day1() {
       <div className="content_container">
         <h2>004 - Tree Trunks</h2>
         <small><a href={Day1_004} download="Day1_004.blend">Starter file: 004</a></small>
+
+        <div className="content_container_divide">
+          <p>
+            Next we add the trunks. Start by <PopupText keybindingText={<span>New Object</span>} keybindingImgVideo={<img src={NewObject}/>} meshOrMenu={false} placerText={"creating one cylinder"}/> and 
+            set the number of sides to 10 in the popup menu. <PopupText keybindingText={<span>G with optional (X,Y,Z)<br/><small>(note: "Edit Mode" does not move origin point)</small></span>} keybindingImgVideo={<video src={GrabAxis} loop muted playsInline/>} meshOrMenu={true} placerText={"Move the cylinder to somewhere adequate"}/>. Once 
+            in position move the log down in "Edit Mode" and move it back up to it's original position 
+            in "Object Mode". Note that now the orange circle is at floor level. So now if we choose to <PopupText keybindingText={<span>S with optional (X,Y,Z)<br/><small>(note: should be done in "Edit Mode")</small></span>} keybindingImgVideo={<video src={ScaleAxis} loop muted playsInline/>} meshOrMenu={true} placerText={"Scale"}/> it in "Object Mode", the bottom doesn't scale downwards. This is 
+            strictly optional, but convient. Though any scale changes should be <PopupText keybindingText={<span>Transfer Scale</span>} keybindingImgVideo={<img src={TransferScale}/>} meshOrMenu={false} placerText={`transferred to "Edit Mode"`}/> aftewards.
+          </p>
+          <img src={trunk}/>
+        </div>
+
+        <div className="media_item_container">
+          <LazyVideo src={add_trunk} loop muted playsInline controls/>
+        </div>
+        <p>
+          We then <PopupText keybindingText={<span>Shift + D<br/><small>(note: "Edit mode" and "Object Mode" copy differently. Difference is noticable in the top right containers section)</small></span>} keybindingImgVideo={<video src={Duplicate} loop muted playsInline/>} meshOrMenu={true} placerText={"duplicate"}/> the object in "Object Mode" (creating unqiue instances, not part of the original cylinder). Add 3 more of them, place them wherever adequate and scale their 
+          height for variety.
+        </p>
+        <div className="media_item_container">
+          <img src={trunks}/>
+        </div>
+      </div>
+
+      <div className="content_container">
+        <h2>005 - Logs</h2>
+        <small><a href={Day1_005} download="Day1_005.blend">Starter file: 005</a></small>
       </div>
 
     </>
