@@ -3,7 +3,7 @@ import "./keybindings.css"
 import {zyx_axis} from "../../constants"
 import PopupText from "../popupText/popupText"
 import { GrabAxis, ScaleAxis, Duplicate, LinkedDuplicate, CenterOn, FocusOn, ChangeRenderView, SelectAll, SelectClicked
-  , Delete, InteractionMode, NewObject, TransferScale, RotateXYZ, NewLight, NewCamera, RendererMode
+  , Delete, InteractionMode, NewObject, TransferScale, RotateXYZ, NewLight, NewCamera, RendererMode, Fill
 } from "../../constants"
 
 
@@ -62,14 +62,14 @@ function Keybindings() {
       <div className="keybindings_container">
         <div className="keybindings_section">
           <div>
-            <p className="keybind"><PopupText keybindingText={<span>G with optional (X,Y,Z)<br/><small>(note: "Edit Mode" does not move origin point)</small></span>} keybindingImgVideo={<video src={GrabAxis} loop muted playsInline/>} meshOrMenu={true} placerText={"Move in Specific Axis"}/></p>
+            <p className="keybind"><PopupText keybindingText={<span>G with optional (X,Y,Z)<br/><small>("Edit Mode" does not move origin point)</small></span>} keybindingImgVideo={<video src={GrabAxis} loop muted playsInline/>} meshOrMenu={true} placerText={"Move in Specific Axis"}/></p>
             <p className="keybind_-">-</p>
-            <p className="keybind_desc">G with optional (X,Y,Z)<small>(note: "Edit Mode" does not move origin point)</small></p>
+            <p className="keybind_desc">G with optional (X,Y,Z)<small>("Edit Mode" does not move origin point)</small></p>
           </div>
           <div>
-            <p className="keybind"><PopupText keybindingText={<span>S with optional (X,Y,Z)<br/><small>(note: should be done in "Edit Mode")</small></span>} keybindingImgVideo={<video src={ScaleAxis} loop muted playsInline/>} meshOrMenu={true} placerText={"Scale in Specific Axis"}/></p>
+            <p className="keybind"><PopupText keybindingText={<span>S with optional (X,Y,Z)<br/><small>(should be done in "Edit Mode")</small></span>} keybindingImgVideo={<video src={ScaleAxis} loop muted playsInline/>} meshOrMenu={true} placerText={"Scale in Specific Axis"}/></p>
             <p className="keybind_-">-</p>
-            <p className="keybind_desc">S with optional (X,Y,Z) <small>(note: should be done in "Edit Mode")</small></p>
+            <p className="keybind_desc">S with optional (X,Y,Z) <small>(should be done in "Edit Mode")</small></p>
           </div>
           <div>
             <p className="keybind"><PopupText keybindingText={<span>R with optional (X,Y,Z)<br/><small>(should be done in "Edit Mode")</small></span>} keybindingImgVideo={<video src={RotateXYZ} loop muted playsInline/>} meshOrMenu={true} placerText={"Rotate in Specific Axis"}/></p>
@@ -80,9 +80,9 @@ function Keybindings() {
 
         <div className="keybindings_section">
           <div>
-            <p className="keybind"><PopupText keybindingText={<span>Shift + D<br/><small>(note: "Edit mode" and "Object Mode" copy differently. Difference is noticable in the top right containers section)</small></span>} keybindingImgVideo={<video src={Duplicate} loop muted playsInline/>} meshOrMenu={true} placerText={"Duplicate"}/></p>
+            <p className="keybind"><PopupText keybindingText={<span>Shift + D<br/><small>("Edit mode" and "Object Mode" copy differently. Difference is noticable in the top right containers section)</small></span>} keybindingImgVideo={<video src={Duplicate} loop muted playsInline/>} meshOrMenu={true} placerText={"Duplicate"}/></p>
             <p className="keybind_-">-</p>
-            <p className="keybind_desc">Shift + D <small>(note: "Edit mode" and "Object mode" copy differently. Difference is noticable in the top right containers section)</small></p>
+            <p className="keybind_desc">Shift + D <small>("Edit mode" and "Object mode" copy differently. Difference is noticable in the top right containers section)</small></p>
           </div>
           <div>
             <p className="keybind"><PopupText keybindingText={<span>Alt + D<br/></span>} keybindingImgVideo={<video src={LinkedDuplicate} loop muted playsInline/>} meshOrMenu={true} placerText={"Linked Duplicate"}/></p>
@@ -120,6 +120,12 @@ function Keybindings() {
             <p className="keybind"><PopupText keybindingText={<span>X</span>} keybindingImgVideo={<video src={Delete} loop muted playsInline/>} meshOrMenu={true} placerText={"Delete"}/></p>
             <p className="keybind_-">-</p>
             <p className="keybind_desc">X</p>
+          </div>
+
+          <div>
+            <p className="keybind"><PopupText keybindingText={<span>F</span>} keybindingImgVideo={<video src={Fill} loop muted playsInline/>} meshOrMenu={true} placerText={"Fill"}/></p>
+            <p className="keybind_-">-</p>
+            <p className="keybind_desc">F</p>
           </div>
 
 
@@ -160,7 +166,7 @@ function Keybindings() {
             <div>
               <p className="keybind"><PopupText keybindingText={<span>Transfer Scale</span>} keybindingImgVideo={<img src={TransferScale}/>} meshOrMenu={false} placerText={"Transfer Scale"}/></p>
               <p className="keybind_-">-</p>
-              <p className="keybind_desc">if you applied <PopupText keybindingText={<span>S with optional (X,Y,Z)<br/><small>(note: should be done in "Edit Mode")</small></span>} keybindingImgVideo={<video src={ScaleAxis} loop muted playsInline/>} meshOrMenu={true} placerText={"scale"}/> or <PopupText keybindingText={<span>R with optional (X,Y,Z)<br/><small>(should be done in "Edit Mode")</small></span>} keybindingImgVideo={<video src={RotateXYZ} loop muted playsInline/>} meshOrMenu={true} placerText={"rotate"}/> while in "Object Mode", this will transfer it to "Edit Mode". Select your desired object(s) for the fix.</p>
+              <p className="keybind_desc">if you applied <PopupText keybindingText={<span>S with optional (X,Y,Z)<br/><small>(should be done in "Edit Mode")</small></span>} keybindingImgVideo={<video src={ScaleAxis} loop muted playsInline/>} meshOrMenu={true} placerText={"scale"}/> or <PopupText keybindingText={<span>R with optional (X,Y,Z)<br/><small>(should be done in "Edit Mode")</small></span>} keybindingImgVideo={<video src={RotateXYZ} loop muted playsInline/>} meshOrMenu={true} placerText={"rotate"}/> while in "Object Mode", this will transfer it to "Edit Mode". Select your desired object(s) for the fix.</p>
             </div>
             <div>
               <p className="keybind"><PopupText keybindingText={<span>Rendering Mode</span>} keybindingImgVideo={<img src={RendererMode}/>} meshOrMenu={false} placerText={"Rendering Mode"}/></p>

@@ -31,6 +31,7 @@ import selectAllVid from './assets/keybinds/SelectAll.mp4';
 import selectClickedVid from './assets/keybinds/SelectClicked.mp4';
 import deleteVid from './assets/keybinds/Delete.mp4';
 import rotateXyzVid from './assets/keybinds/RotateXYZ.mp4';
+import fill from './assets/keybinds/Fill.mp4';
 
 export const Grab = grabVid;
 export const GrabAxis = grabAxisVid;
@@ -45,7 +46,7 @@ export const SelectAll = selectAllVid;
 export const SelectClicked = selectClickedVid;
 export const Delete = deleteVid;
 export const RotateXYZ = rotateXyzVid;
-
+export const Fill = fill;
 
 // day 1 start and 001
 import day1FinalImg from './assets/Days/1/final_image.png';
@@ -87,5 +88,16 @@ export const trunks = trunksImg
 
 // day 1 005
 import day1005Blend from './assets/Days/1/Day1_005.blend';
+import capfillmode from './assets/Days/1/capfillmode.png';
+import createlog from './assets/Days/1/create_log.mkv'
+import finallogs from './assets/Days/1/logs_final.png'
 
 export const Day1_005 = day1005Blend;
+export const cap_fill_mode = capfillmode;
+export const create_log = createlog;
+export const final_logs = finallogs;
+
+// day 1 006
+import day1006Blend from './assets/Days/1/Day1_006.blend'
+
+export const Day1_006 = day1006Blend;
