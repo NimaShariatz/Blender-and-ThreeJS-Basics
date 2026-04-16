@@ -67,6 +67,8 @@
 .content_container_divide img{
   width: 40%;
   border-radius: 12px;
+  max-height: 500px;
+  object-fit:contain;
 }
 
 .media_item_container{

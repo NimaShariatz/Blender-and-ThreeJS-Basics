@@ -103,5 +103,15 @@ export const final_logs = finallogs;
 
 // day 1 006
 import day1006Blend from './assets/Days/1/Day1_006.blend'
+import day1containers from './assets/Days/1/containers_renamed.png'
+import renameitems from './assets/Days/1/renaming_items.mkv'
 
 export const Day1_006 = day1006Blend;
+export const containers_renamed = day1containers
+export const renaming_items = renameitems
+
+// day 1 007
+import day1007Blend from './assets/Days/1/Day1_007.blend'
+
+export const Day1_007 = day1007Blend;
+

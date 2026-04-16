@@ -4,7 +4,7 @@ import "../tutorial_page.css"
 import {CenterOn, Day1_final, zyx_axis, InteractionMode, Day1_001, new_window, Delete, NewObject,
   TransferScale, plane, Day1_002, ScaleAxis, Duplicate, containers, RotateXYZ, SelectAll, Day1_fences, Day1_003,
   GrabAxis, ChangeRenderView, NewLight, NewCamera, RendererMode, Day1_lightAndcamera, Day1_004, trunk, add_trunk, trunks, Day1_005, create_log, cap_fill_mode,
-  Fill, final_logs, Day1_006, ResetGeometry
+  Fill, final_logs, Day1_006, ResetGeometry, Move, containers_renamed, renaming_items, Day1_007
  } from "../../constants"
 import PopupText from "../../components/popupText/popupText";
 
@@ -255,11 +255,30 @@ function Day1() {
         <h2>006 - Collection Organization</h2>
         <small><a href={Day1_006} download="Day1_006.blend">Starter file: 006</a></small>
 
-        <p>
-          The top right is your scene organization. You can interpret it as the same as your local file explorer. Collections 
-          are folders. Create them, and place your objects inside. The name of individual objects should be updated as well. Each name must be unique
-        </p>
+        <div className="content_container_divide">
+          <p>
+            The top right is your scene organization. You can interpret it as the same as your local file explorer. Collections 
+            are folders. Create them, and <PopupText keybindingText={<span>M</span>} keybindingImgVideo={<video src={Move} loop muted playsInline/>} meshOrMenu={true} placerText={"place your objects inside"}/>. The 
+            name of individual objects should be updated as well. Each name must be unique.
+          </p>
+          <img src={containers_renamed}/>
+        </div>
 
+        <div className="media_item_container">
+          <LazyVideo src={renaming_items} loop muted playsInline controls/>
+        </div>
+
+
+      </div>
+
+
+
+
+
+      <div className="content_container">
+        <h2>007 - Axe</h2>
+        <small><a href={Day1_007} download="Day1_007.blend">Starter file: 007</a></small>
+      
       </div>
 
 
