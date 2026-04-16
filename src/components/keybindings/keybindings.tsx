@@ -3,7 +3,7 @@ import "./keybindings.css"
 import {zyx_axis} from "../../constants"
 import PopupText from "../popupText/popupText"
 import { GrabAxis, ScaleAxis, Duplicate, LinkedDuplicate, CenterOn, FocusOn, ChangeRenderView, SelectAll, SelectClicked
-  , Delete, InteractionMode, NewObject, TransferScale, RotateXYZ, NewLight, NewCamera, RendererMode, Fill
+  , Delete, InteractionMode, NewObject, TransferScale, RotateXYZ, NewLight, NewCamera, RendererMode, Fill, ResetGeometry, Move
 } from "../../constants"
 
 
@@ -127,7 +127,11 @@ function Keybindings() {
             <p className="keybind_-">-</p>
             <p className="keybind_desc">F</p>
           </div>
-
+          <div>
+            <p className="keybind"><PopupText keybindingText={<span>M</span>} keybindingImgVideo={<video src={Move} loop muted playsInline/>} meshOrMenu={true} placerText={"Move"}/></p>
+            <p className="keybind_-">-</p>
+            <p className="keybind_desc">move object to collection. You can do so via the top right collections display as well similar to file explorer</p>
+          </div>
 
         </div>
       </div>
@@ -166,12 +170,17 @@ function Keybindings() {
             <div>
               <p className="keybind"><PopupText keybindingText={<span>Transfer Scale</span>} keybindingImgVideo={<img src={TransferScale}/>} meshOrMenu={false} placerText={"Transfer Scale"}/></p>
               <p className="keybind_-">-</p>
-              <p className="keybind_desc">if you applied <PopupText keybindingText={<span>S with optional (X,Y,Z)<br/><small>(should be done in "Edit Mode")</small></span>} keybindingImgVideo={<video src={ScaleAxis} loop muted playsInline/>} meshOrMenu={true} placerText={"scale"}/> or <PopupText keybindingText={<span>R with optional (X,Y,Z)<br/><small>(should be done in "Edit Mode")</small></span>} keybindingImgVideo={<video src={RotateXYZ} loop muted playsInline/>} meshOrMenu={true} placerText={"rotate"}/> while in "Object Mode", this will transfer it to "Edit Mode". Select your desired object(s) for the fix.</p>
+              <p className="keybind_desc">if you applied <PopupText keybindingText={<span>S with optional (X,Y,Z)<br/><small>(should be done in "Edit Mode")</small></span>} keybindingImgVideo={<video src={ScaleAxis} loop muted playsInline/>} meshOrMenu={true} placerText={"scale"}/> or <PopupText keybindingText={<span>R with optional (X,Y,Z)<br/><small>(should be done in "Edit Mode")</small></span>} keybindingImgVideo={<video src={RotateXYZ} loop muted playsInline/>} meshOrMenu={true} placerText={"rotate"}/> while in "Object Mode", this will transfer it to "Edit Mode". Select your desired object(s) for the fix</p>
+            </div>
+            <div>
+              <p className="keybind"><PopupText keybindingText={<span>Reset Origin Point</span>} keybindingImgVideo={<img src={ResetGeometry}/>} meshOrMenu={false} placerText={"Reset Origin Point"}/></p>
+              <p className="keybind_-">-</p>
+              <p className="keybind_desc">if you <PopupText keybindingText={<span>G with optional (X,Y,Z)<br/><small>("Edit Mode" does not move origin point)</small></span>} keybindingImgVideo={<video src={GrabAxis} loop muted playsInline/>} meshOrMenu={true} placerText={"moved an object"}/> in "Edit Mode" (which doesn't move it's origin point) unintentionally, you can reset the origin point like so. Either origin to geometry or geometry to origin</p>
             </div>
             <div>
               <p className="keybind"><PopupText keybindingText={<span>Rendering Mode</span>} keybindingImgVideo={<img src={RendererMode}/>} meshOrMenu={false} placerText={"Rendering Mode"}/></p>
               <p className="keybind_-">-</p>
-              <p className="keybind_desc">change to "Cycles" for better quality and set Viewport → Max Samples & Render → Max Samples to '128'. Greater values may be overkill.</p>
+              <p className="keybind_desc">change to "Cycles" for better quality and set Viewport → Max Samples & Render → Max Samples to '128'. Greater values may be overkill</p>
             </div>
           </div>
         </div>

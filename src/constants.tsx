@@ -9,6 +9,7 @@ import tranfserScaleImg from './assets/keybinds/ResetScale.png';
 import newLightVid from './assets/keybinds/LightSource.mp4';
 import newCameraVid from './assets/keybinds/AddCamera.mp4';
 import rendererModeImg from './assets/keybinds/RendererMode.png';
+import resetGeo from './assets/keybinds/ResetGeo.png'
 
 export const InteractionMode = interactionModeVid;
 export const NewObject = newObjectImg;
@@ -16,6 +17,7 @@ export const TransferScale = tranfserScaleImg;
 export const NewLight = newLightVid;
 export const NewCamera = newCameraVid;
 export const RendererMode = rendererModeImg;
+export const ResetGeometry = resetGeo
 
 // keybinds
 import grabVid from './assets/keybinds/Grab.mp4';
@@ -32,6 +34,7 @@ import selectClickedVid from './assets/keybinds/SelectClicked.mp4';
 import deleteVid from './assets/keybinds/Delete.mp4';
 import rotateXyzVid from './assets/keybinds/RotateXYZ.mp4';
 import fill from './assets/keybinds/Fill.mp4';
+import move from './assets/keybinds/Move.mp4';
 
 export const Grab = grabVid;
 export const GrabAxis = grabAxisVid;
@@ -47,6 +50,7 @@ export const SelectClicked = selectClickedVid;
 export const Delete = deleteVid;
 export const RotateXYZ = rotateXyzVid;
 export const Fill = fill;
+export const Move = move
 
 // day 1 start and 001
 import day1FinalImg from './assets/Days/1/final_image.png';

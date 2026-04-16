@@ -4,7 +4,7 @@ import "../tutorial_page.css"
 import {CenterOn, Day1_final, zyx_axis, InteractionMode, Day1_001, new_window, Delete, NewObject,
   TransferScale, plane, Day1_002, ScaleAxis, Duplicate, containers, RotateXYZ, SelectAll, Day1_fences, Day1_003,
   GrabAxis, ChangeRenderView, NewLight, NewCamera, RendererMode, Day1_lightAndcamera, Day1_004, trunk, add_trunk, trunks, Day1_005, create_log, cap_fill_mode,
-  Fill, final_logs, Day1_006
+  Fill, final_logs, Day1_006, ResetGeometry
  } from "../../constants"
 import PopupText from "../../components/popupText/popupText";
 
@@ -49,7 +49,8 @@ function LazyVideo(props: React.VideoHTMLAttributes<HTMLVideoElement>) { //takes
 
 {/* 
   NOTE TO SELF: end of lesson we should...
-  Set the plane to "generate UVs" [day 2??]
+  
+  throw things like lights and camera into a collection and have it unselected so its not exported.
   
   */}
 
@@ -242,6 +243,10 @@ function Day1() {
         <div className="media_item_container">
           <img src={final_logs}/>
         </div>
+        <p>
+          If you move an object in "Edit Mode" by accident, the origin point of that object will not folllow. You 
+          can <PopupText keybindingText={<span>Reset Origin Point</span>} keybindingImgVideo={<img src={ResetGeometry}/>} meshOrMenu={false} placerText={"reset the point"}/> if necassary.
+        </p>
       </div>
 
 
@@ -251,7 +256,8 @@ function Day1() {
         <small><a href={Day1_006} download="Day1_006.blend">Starter file: 006</a></small>
 
         <p>
-          The top right is your scene organization.
+          The top right is your scene organization. You can interpret it as the same as your local file explorer. Collections 
+          are folders. Create them, and place your objects inside. The name of individual objects should be updated as well. Each name must be unique
         </p>
 
       </div>
