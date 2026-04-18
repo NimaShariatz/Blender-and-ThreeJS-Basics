@@ -23,8 +23,21 @@ then did yarn run deploy
 Note: moved constants within src/ folder and had to re-do constants so that the assets would show on gh-pages version.
 Could have just moved assets to public folder if need be, like Henning currently is.
 
+------------------------------------------------------------------------------------------------------
+
+Lighting:
+meshBasic has its place: https://unseen-music.com/yume/ https://www.pola.co.jp/special/o/wecaremore/mothersday/ https://chartogne-taillet.com/en tree bit
+we can do meshbasic + baking: [localhost with baked scene]
+we can do lighting based materials, meshstandard with light and shadows: https://bilal.show/ 
+we can do lighting based materials, meshstandard, but without shadows. just for gradience: https://tympanus.net/Tutorials/TheAviator/ [does have shadows on planet, but the rest is fair game]
+
+Our Usage:
+meshbbasic [best performance, low complexity] -> https://unseen-music.com/yume/ https://www.pola.co.jp/special/o/wecaremore/mothersday/ https://chartogne-taillet.com/en tree bit
+meshstandard almost none/without shadows [meh performance, meh complexity] -> https://tympanus.net/Tutorials/TheAviator/ https://paperplanes.world/ 
+worst case can do meshstandard with shadows for moving objects and baking for all the background objects... [meshstandard + meshbasic baking. performance varies, but extreme complexity] -> https://bruno-simon.com/ 
 
 
+------------------------------------------------------------------------------------------------------
 
 
 For home page idea: have a character. a girl named suzie. *waves at the viewer*. She went to the doctor and had trouble x,y,z.
@@ -33,3 +46,8 @@ then comes our solution to the problem
 then suzie happy. seeing the outdoors? hiking?
 
 idea is that we have a story, a character reflective of why our project exists.
+
+
+
+
+

@@ -278,7 +278,45 @@ function Day1() {
       <div className="content_container">
         <h2>007 - Axe</h2>
         <small><a href={Day1_007} download="Day1_007.blend">Starter file: 007</a></small>
-      
+
+        <p>
+          This is a simple low poly scene. For an axe you can just use two rectangles to represent an axe. 
+          Start by creating a cube and scaling it which represents the axe head. If you want something simple this is enough.
+        </p>
+
+        <p>
+          But we'll be adding a bit more detail. This requires using new keybinds. An axe head has a curved edge. Unfortunately as is we can't cut make the curve.
+        </p>
+        {/* video of trying to curve it */}
+
+        <p>
+          So we introduce loop cuts into our shape which allow us to better curve the axe at its end. Then in "Edit Mode" select the vertices at the end like so 
+          and move them up.
+        </p>
+        {/* video of trying to curve it */}
+
+        <p>
+          Then tighten the top of the axe. And use another loop cut like so and select the bottom vertices at the edges and press G twice for moving
+          the points without separating from the mesh. We'll tighten the top a bit too.
+
+        </p>
+
+        {/* video of gg */}
+
+
+        <p>
+          Then comes the handle. We create a cube and place it inside the axe head. We use scale to expand it into a handle. We want a small curve on this though.
+          We do a few loop cuts, use scale, and extrude the handle by selecting the face.
+
+        </p>
+
+        {/* video of axe handle */}
+
+        <p>
+          Place it wherever adequate.
+          {/* screenshot div split */}
+        </p>
+
       </div>
 
 

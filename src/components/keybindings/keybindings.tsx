@@ -128,9 +128,9 @@ function Keybindings() {
             <p className="keybind_desc">F</p>
           </div>
           <div>
-            <p className="keybind"><PopupText keybindingText={<span>M</span>} keybindingImgVideo={<video src={Move} loop muted playsInline/>} meshOrMenu={true} placerText={"Move"}/></p>
+            <p className="keybind"><PopupText keybindingText={<span>M</span>} keybindingImgVideo={<video src={Move} loop muted playsInline/>} meshOrMenu={true} placerText={"Move To Collection"}/></p>
             <p className="keybind_-">-</p>
-            <p className="keybind_desc">move object to collection. You can do so via the top right collections display as well similar to file explorer</p>
+            <p className="keybind_desc">M</p>
           </div>
 
         </div>
@@ -165,7 +165,7 @@ function Keybindings() {
             <div>
               <p className="keybind"><PopupText keybindingText={<span>Interaction Mode</span>} keybindingImgVideo={<video src={InteractionMode} loop muted playsInline/>} meshOrMenu={false} placerText={"Interaction Mode"}/></p>
               <p className="keybind_-">-</p>
-              <p className="keybind_desc">change editing node</p>
+              <p className="keybind_desc">change interaction mode. Can also be done with "Tab" keybind</p>
             </div>
             <div>
               <p className="keybind"><PopupText keybindingText={<span>Transfer Scale</span>} keybindingImgVideo={<img src={TransferScale}/>} meshOrMenu={false} placerText={"Transfer Scale"}/></p>
