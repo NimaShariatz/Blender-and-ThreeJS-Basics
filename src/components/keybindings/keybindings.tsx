@@ -3,7 +3,7 @@ import "./keybindings.css"
 import {zyx_axis} from "../../constants"
 import PopupText from "../popupText/popupText"
 import { GrabAxis, ScaleAxis, Duplicate, LinkedDuplicate, CenterOn, FocusOn, ChangeRenderView, SelectAll, SelectClicked
-  , Delete, InteractionMode, NewObject, TransferScale, RotateXYZ, NewLight, NewCamera, RendererMode, Fill, ResetGeometry, Move
+  , Delete, InteractionMode, NewObject, TransferScale, RotateXYZ, NewLight, NewCamera, RendererMode, Fill, ResetGeometry, Move, Cut, GG
 } from "../../constants"
 
 
@@ -121,11 +121,20 @@ function Keybindings() {
             <p className="keybind_-">-</p>
             <p className="keybind_desc">X</p>
           </div>
-
           <div>
             <p className="keybind"><PopupText keybindingText={<span>F</span>} keybindingImgVideo={<video src={Fill} loop muted playsInline/>} meshOrMenu={true} placerText={"Fill"}/></p>
             <p className="keybind_-">-</p>
             <p className="keybind_desc">F</p>
+          </div>
+          <div>
+            <p className="keybind"><PopupText keybindingText={<span>Ctrl + R</span>} keybindingImgVideo={<video src={Cut} loop muted playsInline/>} meshOrMenu={true} placerText={"Add Loop Cut"}/></p>
+            <p className="keybind_-">-</p>
+            <p className="keybind_desc">Ctrl + R</p>
+          </div>
+          <div>
+            <p className="keybind"><PopupText keybindingText={<span>G &#215; 2</span>} keybindingImgVideo={<video src={GG} loop muted playsInline/>} meshOrMenu={true} placerText={"Vertex Slider"}/></p>
+            <p className="keybind_-">-</p>
+            <p className="keybind_desc">G &#215; 2</p>
           </div>
           <div>
             <p className="keybind"><PopupText keybindingText={<span>M</span>} keybindingImgVideo={<video src={Move} loop muted playsInline/>} meshOrMenu={true} placerText={"Move To Collection"}/></p>

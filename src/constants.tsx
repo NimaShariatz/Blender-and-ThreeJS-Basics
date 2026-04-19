@@ -35,6 +35,8 @@ import deleteVid from './assets/keybinds/Delete.mp4';
 import rotateXyzVid from './assets/keybinds/RotateXYZ.mp4';
 import fill from './assets/keybinds/Fill.mp4';
 import move from './assets/keybinds/Move.mp4';
+import cut from './assets/keybinds/cutting.mp4';
+import gg from './assets/keybinds/GG.mp4'
 
 export const Grab = grabVid;
 export const GrabAxis = grabAxisVid;
@@ -51,6 +53,8 @@ export const Delete = deleteVid;
 export const RotateXYZ = rotateXyzVid;
 export const Fill = fill;
 export const Move = move
+export const Cut = cut;
+export const GG = gg;
 
 // day 1 start and 001
 import day1FinalImg from './assets/Days/1/final_image.png';
@@ -112,6 +116,13 @@ export const renaming_items = renameitems
 
 // day 1 007
 import day1007Blend from './assets/Days/1/Day1_007.blend'
+import axehead from './assets/Days/1/axe_head.png'
+import cutaction from './assets/Days/1/cutting.mkv'
+import cutandgg from './assets/Days/1/narrow_axe.mkv'
 
 export const Day1_007 = day1007Blend;
+export const axe_head = axehead;
+export const cut_action = cutaction;
+export const cut_and_gg = cutandgg;
+
 

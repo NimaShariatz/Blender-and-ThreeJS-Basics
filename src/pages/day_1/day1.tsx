@@ -4,7 +4,8 @@ import "../tutorial_page.css"
 import {CenterOn, Day1_final, zyx_axis, InteractionMode, Day1_001, new_window, Delete, NewObject,
   TransferScale, plane, Day1_002, ScaleAxis, Duplicate, containers, RotateXYZ, SelectAll, Day1_fences, Day1_003,
   GrabAxis, ChangeRenderView, NewLight, NewCamera, RendererMode, Day1_lightAndcamera, Day1_004, trunk, add_trunk, trunks, Day1_005, create_log, cap_fill_mode,
-  Fill, final_logs, Day1_006, ResetGeometry, Move, containers_renamed, renaming_items, Day1_007
+  Fill, final_logs, Day1_006, ResetGeometry, Move, containers_renamed, renaming_items, Day1_007, axe_head, Cut, GG, cut_and_gg,
+  cut_action
  } from "../../constants"
 import PopupText from "../../components/popupText/popupText";
 
@@ -279,41 +280,48 @@ function Day1() {
         <h2>007 - Axe</h2>
         <small><a href={Day1_007} download="Day1_007.blend">Starter file: 007</a></small>
 
+        <div className="content_container_divide">
+          <p>
+            This is a simple low poly scene. For an axe you can just use two rectangles to represent an axe. One for an axe head and another for the handle. 
+            Start by creating a cube and scaling it which represents the axe head. If you want something simple this is enough.
+          </p>
+          <img src={axe_head}/>
+        </div>
+
+
+
         <p>
-          This is a simple low poly scene. For an axe you can just use two rectangles to represent an axe. 
-          Start by creating a cube and scaling it which represents the axe head. If you want something simple this is enough.
+          But we'll be adding a bit more detail. This requires using new keybinds. An axe head has a curved edge. Unfortunately as is we can't cut make the curve. we 
+          need more vertices. So we introduce <PopupText keybindingText={<span>Ctrl + R</span>} keybindingImgVideo={<video src={Cut} loop muted playsInline/>} meshOrMenu={true} placerText={"loop cuts"}/> in <PopupText keybindingText={<span>Interaction Mode</span>} keybindingImgVideo={<video src={InteractionMode} loop muted playsInline/>} meshOrMenu={false} placerText={`"Edit Mode"`}/> into our 
+          shape which allow us to better curve the 
+          axe at its end. Three cuts placed at the center. While still in "Edit Mode" select the vertices at the end and <PopupText keybindingText={<span>G with optional (X,Y,Z)<br/><small>("Edit Mode" does not move origin point)</small></span>} keybindingImgVideo={<video src={GrabAxis} loop muted playsInline/>} meshOrMenu={true} placerText={"move them up"}/>. Then 
+          <PopupText keybindingText={<span>S with optional (X,Y,Z)<br/><small>(should be done in "Edit Mode")</small></span>} keybindingImgVideo={<video src={ScaleAxis} loop muted playsInline/>} meshOrMenu={true} placerText={"tighten"}/> the top of the axe.
+        </p>
+        
+        <div className="media_item_container">
+          <LazyVideo src={cut_action} loop muted playsInline controls/>
+        </div>
+
+        <p>
+          Add <PopupText keybindingText={<span>Ctrl + R</span>} keybindingImgVideo={<video src={Cut} loop muted playsInline/>} meshOrMenu={true} placerText={"another loop cut"}/> perpendicularly and now use the <PopupText keybindingText={<span>G &#215; 2</span>} keybindingImgVideo={<video src={GG} loop muted playsInline/>} meshOrMenu={true} placerText={"vertex slider"}/> for a
+          finer adjustment of points into a sharp edge.
         </p>
 
-        <p>
-          But we'll be adding a bit more detail. This requires using new keybinds. An axe head has a curved edge. Unfortunately as is we can't cut make the curve.
-        </p>
-        {/* video of trying to curve it */}
-
-        <p>
-          So we introduce loop cuts into our shape which allow us to better curve the axe at its end. Then in "Edit Mode" select the vertices at the end like so 
-          and move them up.
-        </p>
-        {/* video of trying to curve it */}
-
-        <p>
-          Then tighten the top of the axe. And use another loop cut like so and select the bottom vertices at the edges and press G twice for moving
-          the points without separating from the mesh. We'll tighten the top a bit too.
-
-        </p>
-
-        {/* video of gg */}
+        <div className="media_item_container">
+          <LazyVideo src={cut_and_gg} loop muted playsInline controls/>
+        </div>
 
 
         <p>
-          Then comes the handle. We create a cube and place it inside the axe head. We use scale to expand it into a handle. We want a small curve on this though.
-          We do a few loop cuts, use scale, and extrude the handle by selecting the face.
-
+          Then comes the handle. We create a cube and place it inside the axe head while in <PopupText keybindingText={<span>Z</span>} keybindingImgVideo={<video src={ChangeRenderView} loop muted playsInline/>} meshOrMenu={true} placerText={`"Wireframe" view.`}/>. We use <PopupText keybindingText={<span>S with optional (X,Y,Z)<br/><small>(should be done in "Edit Mode")</small></span>} keybindingImgVideo={<video src={ScaleAxis} loop muted playsInline/>} meshOrMenu={true} placerText={"scale"}/> to expand it into a handle. We want a small curve on this though.
+          We do <PopupText keybindingText={<span>Ctrl + R</span>} keybindingImgVideo={<video src={Cut} loop muted playsInline/>} meshOrMenu={true} placerText={"a loop cuts"}/>, use a bit more of scale, and select a face which we
+           then extrude.
         </p>
 
         {/* video of axe handle */}
 
         <p>
-          Place it wherever adequate.
+          Place your complete axe wherever adequate.
           {/* screenshot div split */}
         </p>
 
