@@ -1,6 +1,6 @@
 
 import "./keybindings.css"
-import {zyx_axis} from "../../constants"
+import {Join, zyx_axis} from "../../constants"
 import PopupText from "../popupText/popupText"
 import { GrabAxis, ScaleAxis, Duplicate, LinkedDuplicate, CenterOn, FocusOn, ChangeRenderView, SelectAll, SelectClicked
   , Delete, InteractionMode, NewObject, TransferScale, RotateXYZ, NewLight, NewCamera, RendererMode, Fill, ResetGeometry, Move, Cut, GG, Extrude
@@ -192,9 +192,14 @@ function Keybindings() {
               <p className="keybind_desc">if you <PopupText keybindingText={<span>G with optional (X,Y,Z)<br/><small>("Edit Mode" does not move origin point)</small></span>} keybindingImgVideo={<video src={GrabAxis} loop muted playsInline/>} meshOrMenu={true} placerText={"moved an object"}/> in "Edit Mode" (which doesn't move it's origin point) unintentionally, you can reset the origin point like so. Either origin to geometry or geometry to origin</p>
             </div>
             <div>
+              <p className="keybind"><PopupText keybindingText={<span>Join Objects</span>} keybindingImgVideo={<video src={Join} loop muted playsInline/>} meshOrMenu={false} placerText={"Join Objects"}/></p>
+              <p className="keybind_-">-</p>
+              <p className="keybind_desc">Combines selected objects into one. Same as creating objects "Edit Mode". The object selected first will have it's origin point used</p>
+            </div>
+            <div>
               <p className="keybind"><PopupText keybindingText={<span>Rendering Mode</span>} keybindingImgVideo={<img src={RendererMode}/>} meshOrMenu={false} placerText={"Rendering Mode"}/></p>
               <p className="keybind_-">-</p>
-              <p className="keybind_desc">change to "Cycles" for better quality and set Viewport → Max Samples & Render → Max Samples to '128'. Greater values may be overkill</p>
+              <p className="keybind_desc">change to "Cycles" for better quality and set Viewport → Max Samples & Render → Max Samples to '128'. Greater values may be overkill for our purposes</p>
             </div>
           </div>
         </div>

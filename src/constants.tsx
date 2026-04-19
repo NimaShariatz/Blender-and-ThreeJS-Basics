@@ -38,6 +38,7 @@ import move from './assets/keybinds/Move.mp4';
 import cut from './assets/keybinds/cutting.mp4';
 import gg from './assets/keybinds/GG.mp4';
 import extr from './assets/keybinds/extrude.mp4';
+import join from './assets/keybinds/Join.mp4';
 
 export const Grab = grabVid;
 export const GrabAxis = grabAxisVid;
@@ -57,6 +58,7 @@ export const Move = move
 export const Cut = cut;
 export const GG = gg;
 export const Extrude = extr;
+export const Join = join;
 
 // day 1 start and 001
 import day1FinalImg from './assets/Days/1/final_image.png';
@@ -134,6 +136,15 @@ export const axe_handle = axehandle
 
 // day 1 008
 import day1008Blend from './assets/Days/1/Day1_008.blend'
+import polecreate from './assets/Days/1/light_pole_create.mkv'
+import polefinish from './assets/Days/1/poles_complete.mkv'
 
 export const Day1_008 = day1008Blend;
+export const pole_create = polecreate;
+export const pole_finish = polefinish
+
+// day 1 009
+import day1009Blend from './assets/Days/1/Day1_009.blend'
+
+export const Day1_009 = day1009Blend;
 

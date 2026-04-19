@@ -5,7 +5,10 @@ import {CenterOn, Day1_final, zyx_axis, InteractionMode, Day1_001, new_window, D
   TransferScale, plane, Day1_002, ScaleAxis, Duplicate, containers, RotateXYZ, SelectAll, Day1_fences, Day1_003,
   GrabAxis, ChangeRenderView, NewLight, NewCamera, RendererMode, Day1_lightAndcamera, Day1_004, trunk, add_trunk, trunks, Day1_005, create_log, cap_fill_mode,
   Fill, final_logs, Day1_006, ResetGeometry, Move, containers_renamed, renaming_items, Day1_007, axe_head, Cut, GG, cut_and_gg,
-  cut_action, axe_handle, axe_complete, Extrude, Day1_008
+  cut_action, axe_handle, axe_complete, Extrude, Day1_008, pole_create, Join,
+  LinkedDuplicate,
+  pole_finish,
+  Day1_009
  } from "../../constants"
 import PopupText from "../../components/popupText/popupText";
 
@@ -341,8 +344,36 @@ function Day1() {
         <h2>008 - Light Poles</h2>
         <small><a href={Day1_008} download="Day1_008.blend">Starter file: 008</a></small>
 
+        <p>
+          Creating the post relies on the same techniques used so far. We 
+          use a <PopupText keybindingText={<span>New Object</span>} keybindingImgVideo={<img src={NewObject}/>} meshOrMenu={false} placerText={"series of cubes"}/> and make 
+          use of <PopupText keybindingText={<span>S with optional (X,Y,Z)<br/><small>(should be done in "Edit Mode")</small></span>} keybindingImgVideo={<video src={ScaleAxis} loop muted playsInline/>} meshOrMenu={true} placerText={"scale"}/>, <PopupText keybindingText={<span>G with optional (X,Y,Z)<br/><small>("Edit Mode" does not move origin point)</small></span>} keybindingImgVideo={<video src={GrabAxis} loop muted playsInline/>} meshOrMenu={true} placerText={"grab"}/>, and <PopupText keybindingText={<span>R with optional (X,Y,Z)<br/><small>(should be done in "Edit Mode")</small></span>} keybindingImgVideo={<video src={RotateXYZ} loop muted playsInline/>} meshOrMenu={true} placerText={"rotate"}/>. Note 
+          that I made the objects <PopupText keybindingText={<span>Interaction Mode</span>} keybindingImgVideo={<video src={InteractionMode} loop muted playsInline/>} meshOrMenu={false} placerText={`in "Edit Mode"`}/> which has them all be considered part of the first cube created. If you made your shapes in "Object Mode" 
+          you can <PopupText keybindingText={<span>Join Objects</span>} keybindingImgVideo={<video src={Join} loop muted playsInline/>} meshOrMenu={false} placerText={"join them together"}/> later as well.
+        </p>
+        <div className="media_item_container">
+          <LazyVideo src={pole_create} loop muted playsInline controls/>
+        </div>
+
+        <p>
+          Next move it <PopupText keybindingText={<span>M</span>} keybindingImgVideo={<video src={Move} loop muted playsInline/>} meshOrMenu={true} placerText={"to its own collection"}/>. We then 
+          use a <PopupText keybindingText={<span>Alt + D<br/></span>} keybindingImgVideo={<video src={LinkedDuplicate} loop muted playsInline/>} meshOrMenu={true} placerText={"linked duplicate"}/> (not a <PopupText keybindingText={<span>Shift + D<br/><small>("Edit mode" and "Object Mode" copy differently. Difference is noticable in the top right containers section)</small></span>} keybindingImgVideo={<video src={Duplicate} loop muted playsInline/>} meshOrMenu={true} placerText={"duplicate"}/>) to make another one for the other side. Place both items wherever 
+          convient.
+        </p>
+        <div className="media_item_container">
+          <LazyVideo src={pole_finish} loop muted playsInline controls/>
+        </div>
+
       </div>
 
+
+
+
+      <div className="content_container">
+        <h2>009 - Rocks</h2>
+        <small><a href={Day1_009} download="Day1_009.blend">Starter file: 009</a></small>
+      
+      </div>
 
 
     </>
