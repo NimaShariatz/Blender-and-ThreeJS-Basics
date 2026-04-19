@@ -3,7 +3,7 @@ import "./keybindings.css"
 import {zyx_axis} from "../../constants"
 import PopupText from "../popupText/popupText"
 import { GrabAxis, ScaleAxis, Duplicate, LinkedDuplicate, CenterOn, FocusOn, ChangeRenderView, SelectAll, SelectClicked
-  , Delete, InteractionMode, NewObject, TransferScale, RotateXYZ, NewLight, NewCamera, RendererMode, Fill, ResetGeometry, Move, Cut, GG
+  , Delete, InteractionMode, NewObject, TransferScale, RotateXYZ, NewLight, NewCamera, RendererMode, Fill, ResetGeometry, Move, Cut, GG, Extrude
 } from "../../constants"
 
 
@@ -125,6 +125,11 @@ function Keybindings() {
             <p className="keybind"><PopupText keybindingText={<span>F</span>} keybindingImgVideo={<video src={Fill} loop muted playsInline/>} meshOrMenu={true} placerText={"Fill"}/></p>
             <p className="keybind_-">-</p>
             <p className="keybind_desc">F</p>
+          </div>
+          <div>
+            <p className="keybind"><PopupText keybindingText={<span>E</span>} keybindingImgVideo={<video src={Extrude} loop muted playsInline/>} meshOrMenu={true} placerText={"Extrude Face"}/></p>
+            <p className="keybind_-">-</p>
+            <p className="keybind_desc">E</p>
           </div>
           <div>
             <p className="keybind"><PopupText keybindingText={<span>Ctrl + R</span>} keybindingImgVideo={<video src={Cut} loop muted playsInline/>} meshOrMenu={true} placerText={"Add Loop Cut"}/></p>

@@ -5,7 +5,7 @@ import {CenterOn, Day1_final, zyx_axis, InteractionMode, Day1_001, new_window, D
   TransferScale, plane, Day1_002, ScaleAxis, Duplicate, containers, RotateXYZ, SelectAll, Day1_fences, Day1_003,
   GrabAxis, ChangeRenderView, NewLight, NewCamera, RendererMode, Day1_lightAndcamera, Day1_004, trunk, add_trunk, trunks, Day1_005, create_log, cap_fill_mode,
   Fill, final_logs, Day1_006, ResetGeometry, Move, containers_renamed, renaming_items, Day1_007, axe_head, Cut, GG, cut_and_gg,
-  cut_action
+  cut_action, axe_handle, axe_complete, Extrude, Day1_008
  } from "../../constants"
 import PopupText from "../../components/popupText/popupText";
 
@@ -313,17 +313,33 @@ function Day1() {
 
 
         <p>
-          Then comes the handle. We create a cube and place it inside the axe head while in <PopupText keybindingText={<span>Z</span>} keybindingImgVideo={<video src={ChangeRenderView} loop muted playsInline/>} meshOrMenu={true} placerText={`"Wireframe" view.`}/>. We use <PopupText keybindingText={<span>S with optional (X,Y,Z)<br/><small>(should be done in "Edit Mode")</small></span>} keybindingImgVideo={<video src={ScaleAxis} loop muted playsInline/>} meshOrMenu={true} placerText={"scale"}/> to expand it into a handle. We want a small curve on this though.
-          We do <PopupText keybindingText={<span>Ctrl + R</span>} keybindingImgVideo={<video src={Cut} loop muted playsInline/>} meshOrMenu={true} placerText={"a loop cuts"}/>, use a bit more of scale, and select a face which we
-           then extrude.
+          Then comes the handle. We <PopupText keybindingText={<span>New Object</span>} keybindingImgVideo={<img src={NewObject}/>} meshOrMenu={false} placerText={"create a cube"}/> in "Edit Mode" (so the cube and axe head are considered the part of the same object) and place it inside the axe head while in <PopupText keybindingText={<span>Z</span>} keybindingImgVideo={<video src={ChangeRenderView} loop muted playsInline/>} meshOrMenu={true} placerText={`"Wireframe" view.`}/>. We 
+          use <PopupText keybindingText={<span>S with optional (X,Y,Z)<br/><small>(should be done in "Edit Mode")</small></span>} keybindingImgVideo={<video src={ScaleAxis} loop muted playsInline/>} meshOrMenu={true} placerText={"scale"}/> to expand it into a handle.
+          We use <PopupText keybindingText={<span>Ctrl + R</span>} keybindingImgVideo={<video src={Cut} loop muted playsInline/>} meshOrMenu={true} placerText={" loop cuts"}/>, use a bit more of scale and grab, and for the first time use <PopupText keybindingText={<span>E</span>} keybindingImgVideo={<video src={Extrude} loop muted playsInline/>} meshOrMenu={true} placerText={"extrusion"}/> in the process.
         </p>
 
-        {/* video of axe handle */}
+        <div className="media_item_container">
+          <LazyVideo src={axe_handle} loop muted playsInline controls/>
+        </div>
 
         <p>
-          Place your complete axe wherever adequate.
-          {/* screenshot div split */}
+          Finally, place your axe wherever adequate. Remember to <PopupText keybindingText={<span>Reset Origin Point</span>} keybindingImgVideo={<img src={ResetGeometry}/>} meshOrMenu={false} placerText={"reset the origin to the center"}/> of the object if 
+          you move it in "Edit Mode" and move the axe into it's own <PopupText keybindingText={<span>M</span>} keybindingImgVideo={<video src={Move} loop muted playsInline/>} meshOrMenu={true} placerText={"collection folder"}/>.
         </p>
+
+        <div className="media_item_container">
+          <LazyVideo src={axe_complete} loop muted playsInline controls/>
+        </div>
+
+        
+
+      </div>
+
+
+
+      <div className="content_container">
+        <h2>008 - Light Poles</h2>
+        <small><a href={Day1_008} download="Day1_008.blend">Starter file: 008</a></small>
 
       </div>
 
