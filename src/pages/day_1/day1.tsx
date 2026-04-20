@@ -6,7 +6,7 @@ import {CenterOn, Day1_final, zyx_axis, InteractionMode, Day1_001, new_window, D
   GrabAxis, ChangeRenderView, NewLight, NewCamera, RendererMode, Day1_lightAndcamera, Day1_004, trunk, add_trunk, trunks, Day1_005, create_log, cap_fill_mode,
   Fill, final_logs, Day1_006, ResetGeometry, Move, containers_renamed, renaming_items, Day1_007, axe_head, Cut, GG, cut_and_gg,
   cut_action, axe_handle, axe_complete, Extrude, Day1_008, pole_create, Join, LinkedDuplicate, pole_finish, Day1_009, Bisect, make_rock, finished_rocks, 
-  Day1_010, Day1_011
+  Day1_010, Day1_011, copy_paste
  } from "../../constants"
 import PopupText from "../../components/popupText/popupText";
 
@@ -397,15 +397,20 @@ function Day1() {
 
         <p>
           This is an optional bit you can do for some practice. Its largely everything we've done so far. The steps are 
-          a series of rectangles reduced in scale consescutivly. The stone blocks forming the circle are cubes that have been duplicated to form the circle. The 
-          There is a plane representing the window.
+          a series of rectangles reduced in <PopupText keybindingText={<span>S with optional (X,Y,Z)<br/><small>(should be done in "Edit Mode")</small></span>} keybindingImgVideo={<video src={ScaleAxis} loop muted playsInline/>} meshOrMenu={true} placerText={"scale"}/> consecutively. 
+          The stone blocks forming the circle are cubes that have been <PopupText keybindingText={<span>Alt + D<br/></span>} keybindingImgVideo={<video src={LinkedDuplicate} loop muted playsInline/>} meshOrMenu={true} placerText={"linked duplicate"}/> to form the circle. 
+          There is a <PopupText keybindingText={<span>New Object</span>} keybindingImgVideo={<img src={NewObject}/>} meshOrMenu={false} placerText={"circular plane"}/> representing the window.
         </p>
 
         <p>
           Instead i'll use this opportunity to show you that you can copy and paste (Ctrl + C) objects from one .blend file into another.
-          We go to the starter file for 011, and copy the portal in its entirity. We also delete the point light we have in our existing 
-          scene and copy the the light in 011.
+          We go to the starter file for 011, select all the items in the portal collection, 
+          and copy the portal in its entirity. Then place it into <PopupText keybindingText={<span>M</span>} keybindingImgVideo={<video src={Move} loop muted playsInline/>} meshOrMenu={true} placerText={"its own collection"}/>. 
         </p>
+
+        <div className="media_item_container">
+          <LazyVideo src={copy_paste} loop muted playsInline controls/>
+        </div>
       
       </div>
 

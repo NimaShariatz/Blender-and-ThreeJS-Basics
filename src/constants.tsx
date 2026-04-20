@@ -157,8 +157,10 @@ export const finished_rocks = finishrocks;
 
 // day 1 010
 import day1010Blend from './assets/Days/1/Day1_010.blend';
+import copypasta from './assets/Days/1/copypaste.mkv';
 
 export const Day1_010 = day1010Blend;
+export const copy_paste = copypasta;
 
 // day 1 011
 import day1011Blend from './assets/Days/1/Day1_011.blend';
