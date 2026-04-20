@@ -160,4 +160,10 @@ import day1010Blend from './assets/Days/1/Day1_010.blend';
 
 export const Day1_010 = day1010Blend;
 
+// day 1 011
+import day1011Blend from './assets/Days/1/Day1_011.blend';
+
+
+export const Day1_011 = day1011Blend;
+
 

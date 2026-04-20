@@ -6,7 +6,7 @@ import {CenterOn, Day1_final, zyx_axis, InteractionMode, Day1_001, new_window, D
   GrabAxis, ChangeRenderView, NewLight, NewCamera, RendererMode, Day1_lightAndcamera, Day1_004, trunk, add_trunk, trunks, Day1_005, create_log, cap_fill_mode,
   Fill, final_logs, Day1_006, ResetGeometry, Move, containers_renamed, renaming_items, Day1_007, axe_head, Cut, GG, cut_and_gg,
   cut_action, axe_handle, axe_complete, Extrude, Day1_008, pole_create, Join, LinkedDuplicate, pole_finish, Day1_009, Bisect, make_rock, finished_rocks, 
-  Day1_010
+  Day1_010, Day1_011
  } from "../../constants"
 import PopupText from "../../components/popupText/popupText";
 
@@ -394,9 +394,28 @@ function Day1() {
       <div className="content_container">
         <h2>010 - Portal</h2>
         <small><a href={Day1_010} download="Day1_010.blend">Starter file: 010</a></small>
+
+        <p>
+          This is an optional bit you can do for some practice. Its largely everything we've done so far. The steps are 
+          a series of rectangles reduced in scale consescutivly. The stone blocks forming the circle are cubes that have been duplicated to form the circle. The 
+          There is a plane representing the window.
+        </p>
+
+        <p>
+          Instead i'll use this opportunity to show you that you can copy and paste (Ctrl + C) objects from one .blend file into another.
+          We go to the starter file for 011, and copy the portal in its entirity. We also delete the point light we have in our existing 
+          scene and copy the the light in 011.
+        </p>
       
       </div>
 
+
+
+      <div className="content_container">
+        <h2>011 - Materials</h2>
+        <small><a href={Day1_011} download="Day1_011.blend">Starter file: 011</a></small>
+      
+      </div>
 
 
     </>
