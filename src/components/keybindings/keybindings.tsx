@@ -1,6 +1,6 @@
 
 import "./keybindings.css"
-import {Join, zyx_axis} from "../../constants"
+import {Bisect, Join, zyx_axis} from "../../constants"
 import PopupText from "../popupText/popupText"
 import { GrabAxis, ScaleAxis, Duplicate, LinkedDuplicate, CenterOn, FocusOn, ChangeRenderView, SelectAll, SelectClicked
   , Delete, InteractionMode, NewObject, TransferScale, RotateXYZ, NewLight, NewCamera, RendererMode, Fill, ResetGeometry, Move, Cut, GG, Extrude
@@ -80,9 +80,9 @@ function Keybindings() {
 
         <div className="keybindings_section">
           <div>
-            <p className="keybind"><PopupText keybindingText={<span>Shift + D<br/><small>("Edit mode" and "Object Mode" copy differently. Difference is noticable in the top right containers section)</small></span>} keybindingImgVideo={<video src={Duplicate} loop muted playsInline/>} meshOrMenu={true} placerText={"Duplicate"}/></p>
+            <p className="keybind"><PopupText keybindingText={<span>Shift + D<br/><small>("Edit mode" and "Object Mode" copy differently. Difference is noticable in the top right collections section)</small></span>} keybindingImgVideo={<video src={Duplicate} loop muted playsInline/>} meshOrMenu={true} placerText={"Duplicate"}/></p>
             <p className="keybind_-">-</p>
-            <p className="keybind_desc">Shift + D <small>("Edit mode" and "Object mode" copy differently. Difference is noticable in the top right containers section)</small></p>
+            <p className="keybind_desc">Shift + D <small>("Edit mode" and "Object mode" copy differently. Difference is noticable in the top right collections section)</small></p>
           </div>
           <div>
             <p className="keybind"><PopupText keybindingText={<span>Alt + D<br/></span>} keybindingImgVideo={<video src={LinkedDuplicate} loop muted playsInline/>} meshOrMenu={true} placerText={"Linked Duplicate"}/></p>
@@ -200,6 +200,11 @@ function Keybindings() {
               <p className="keybind"><PopupText keybindingText={<span>Rendering Mode</span>} keybindingImgVideo={<img src={RendererMode}/>} meshOrMenu={false} placerText={"Rendering Mode"}/></p>
               <p className="keybind_-">-</p>
               <p className="keybind_desc">change to "Cycles" for better quality and set Viewport → Max Samples & Render → Max Samples to '128'. Greater values may be overkill for our purposes</p>
+            </div>
+            <div>
+              <p className="keybind"><PopupText keybindingText={<span>Bisect</span>} keybindingImgVideo={<video src={Bisect} loop muted playsInline/>} meshOrMenu={false} placerText={"Bisect"}/></p>
+              <p className="keybind_-">-</p>
+              <p className="keybind_desc">Cuts into our object in "Edit Mode"</p>
             </div>
           </div>
         </div>

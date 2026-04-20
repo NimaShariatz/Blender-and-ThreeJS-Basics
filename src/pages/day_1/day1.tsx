@@ -5,10 +5,8 @@ import {CenterOn, Day1_final, zyx_axis, InteractionMode, Day1_001, new_window, D
   TransferScale, plane, Day1_002, ScaleAxis, Duplicate, containers, RotateXYZ, SelectAll, Day1_fences, Day1_003,
   GrabAxis, ChangeRenderView, NewLight, NewCamera, RendererMode, Day1_lightAndcamera, Day1_004, trunk, add_trunk, trunks, Day1_005, create_log, cap_fill_mode,
   Fill, final_logs, Day1_006, ResetGeometry, Move, containers_renamed, renaming_items, Day1_007, axe_head, Cut, GG, cut_and_gg,
-  cut_action, axe_handle, axe_complete, Extrude, Day1_008, pole_create, Join,
-  LinkedDuplicate,
-  pole_finish,
-  Day1_009
+  cut_action, axe_handle, axe_complete, Extrude, Day1_008, pole_create, Join, LinkedDuplicate, pole_finish, Day1_009, Bisect, make_rock, finished_rocks, 
+  Day1_010
  } from "../../constants"
 import PopupText from "../../components/popupText/popupText";
 
@@ -139,7 +137,7 @@ function Day1() {
           <p>
             To make the fences we add a cube and scale it with 
             use of <PopupText keybindingText={<span>S with optional (X,Y,Z)<br/><small>(should be done in "Edit Mode")</small></span>} keybindingImgVideo={<video src={ScaleAxis} loop muted playsInline/>} meshOrMenu={true} placerText={"X, Y, Z selectors"}/>. We add add multiple 
-            boards <PopupText keybindingText={<span>Shift + D<br/><small>("Edit mode" and "Object Mode" copy differently. Difference is noticable in the top right containers section)</small></span>} keybindingImgVideo={<video src={Duplicate} loop muted playsInline/>} meshOrMenu={true} placerText={"by creating several copies"}/>. These copies are done 
+            boards <PopupText keybindingText={<span>Shift + D<br/><small>("Edit mode" and "Object Mode" copy differently. Difference is noticable in the top right collections section)</small></span>} keybindingImgVideo={<video src={Duplicate} loop muted playsInline/>} meshOrMenu={true} placerText={"by creating several copies"}/>. These copies are done 
             while <PopupText keybindingText={<span>Interaction Mode</span>} keybindingImgVideo={<video src={InteractionMode} loop muted playsInline/>} meshOrMenu={false} placerText={`done in "Edit Mode"`}/> so that they are still considered part of the original mesh object. Otherwise duplicating in "Object Mode" defines it 
             as it's own unique object which we'd prefer to not have in this case (otherwise each plank is its own object which is messy).
           </p>
@@ -210,7 +208,7 @@ function Day1() {
           <LazyVideo src={add_trunk} loop muted playsInline controls/>
         </div>
         <p>
-          We then <PopupText keybindingText={<span>Shift + D<br/><small>("Edit mode" and "Object Mode" copy differently. Difference is noticable in the top right containers section)</small></span>} keybindingImgVideo={<video src={Duplicate} loop muted playsInline/>} meshOrMenu={true} placerText={"duplicate"}/> the object in "Object Mode" (creating unqiue instances, not part of the original cylinder). Add 3 more of them, place them wherever adequate and scale their 
+          We then <PopupText keybindingText={<span>Shift + D<br/><small>("Edit mode" and "Object Mode" copy differently. Difference is noticable in the top right collections section)</small></span>} keybindingImgVideo={<video src={Duplicate} loop muted playsInline/>} meshOrMenu={true} placerText={"duplicate"}/> the object in "Object Mode" (creating unqiue instances, not part of the original cylinder). Add 3 more of them, place them wherever adequate and scale their 
           height for variety.
         </p>
         <div className="media_item_container">
@@ -242,7 +240,7 @@ function Day1() {
 
         <p>
           <PopupText keybindingText={<span>S with optional (X,Y,Z)<br/><small>(should be done in "Edit Mode")</small></span>} keybindingImgVideo={<video src={ScaleAxis} loop muted playsInline/>} meshOrMenu={true} placerText={"Scale"}/>, <PopupText keybindingText={<span>G with optional (X,Y,Z)<br/><small>("Edit Mode" does not move origin point)</small></span>} keybindingImgVideo={<video src={GrabAxis} loop muted playsInline/>} meshOrMenu={true} placerText={"place"}/> and <PopupText keybindingText={<span>R with optional (X,Y,Z)<br/><small>(should be done in "Edit Mode")</small></span>} keybindingImgVideo={<video src={RotateXYZ} loop muted playsInline/>} meshOrMenu={true} placerText={"Rotate"}/> the 
-          log however you see fit. <PopupText keybindingText={<span>Shift + D<br/><small>("Edit mode" and "Object Mode" copy differently. Difference is noticable in the top right containers section)</small></span>} keybindingImgVideo={<video src={Duplicate} loop muted playsInline/>} meshOrMenu={true} placerText={"Duplicate"}/> the log in "Object Mode" and place them wherever adequate
+          log however you see fit. <PopupText keybindingText={<span>Shift + D<br/><small>("Edit mode" and "Object Mode" copy differently. Difference is noticable in the top right collections section)</small></span>} keybindingImgVideo={<video src={Duplicate} loop muted playsInline/>} meshOrMenu={true} placerText={"Duplicate"}/> the log in "Object Mode" and place them wherever adequate
         </p>
         <div className="media_item_container">
           <img src={final_logs}/>
@@ -357,7 +355,7 @@ function Day1() {
 
         <p>
           Next move it <PopupText keybindingText={<span>M</span>} keybindingImgVideo={<video src={Move} loop muted playsInline/>} meshOrMenu={true} placerText={"to its own collection"}/>. We then 
-          use a <PopupText keybindingText={<span>Alt + D<br/></span>} keybindingImgVideo={<video src={LinkedDuplicate} loop muted playsInline/>} meshOrMenu={true} placerText={"linked duplicate"}/> (not a <PopupText keybindingText={<span>Shift + D<br/><small>("Edit mode" and "Object Mode" copy differently. Difference is noticable in the top right containers section)</small></span>} keybindingImgVideo={<video src={Duplicate} loop muted playsInline/>} meshOrMenu={true} placerText={"duplicate"}/>) to make another one for the other side. Place both items wherever 
+          use a <PopupText keybindingText={<span>Alt + D<br/></span>} keybindingImgVideo={<video src={LinkedDuplicate} loop muted playsInline/>} meshOrMenu={true} placerText={"linked duplicate"}/> (not a <PopupText keybindingText={<span>Shift + D<br/><small>("Edit mode" and "Object Mode" copy differently. Difference is noticable in the top right collections section)</small></span>} keybindingImgVideo={<video src={Duplicate} loop muted playsInline/>} meshOrMenu={true} placerText={"duplicate"}/>) to make another one for the other side. Place both items wherever 
           convient.
         </p>
         <div className="media_item_container">
@@ -373,7 +371,32 @@ function Day1() {
         <h2>009 - Rocks</h2>
         <small><a href={Day1_009} download="Day1_009.blend">Starter file: 009</a></small>
       
+        <p>
+          We use the <PopupText keybindingText={<span>Bisect</span>} keybindingImgVideo={<video src={Bisect} loop muted playsInline/>} meshOrMenu={false} placerText={"bisect tool"}/> for the rocks, which cuts the object like a knife would. <PopupText keybindingText={<span>New Object</span>} keybindingImgVideo={<img src={NewObject}/>} meshOrMenu={false} placerText={"Add a cube"}/>, then bisect 
+          the object. In the bottom left popup menu tick 
+          "Clear Outer" and "Fill". You <PopupText keybindingText={<span>A</span>} keybindingImgVideo={<video src={SelectAll} loop muted playsInline/>} meshOrMenu={true} placerText={"select everything"}/> in "Edit Mode" and slash the cube. Keep selecting all 
+          and bisecting repeatidly until satisfied. Place your rock wherever adequate and create a new cube for a new rock. Add as many 
+          rocks as you'd like. Feel 
+          free to 
+          use <PopupText keybindingText={<span>S with optional (X,Y,Z)<br/><small>(should be done in "Edit Mode")</small></span>} keybindingImgVideo={<video src={ScaleAxis} loop muted playsInline/>} meshOrMenu={true} placerText={"scale"}/>, <PopupText keybindingText={<span>R with optional (X,Y,Z)<br/><small>(should be done in "Edit Mode")</small></span>} keybindingImgVideo={<video src={RotateXYZ} loop muted playsInline/>} meshOrMenu={true} placerText={"rotate"}/>, and <PopupText keybindingText={<span>Shift + D<br/><small>("Edit mode" and "Object Mode" copy differently. Difference is noticable in the top right collections section)</small></span>} keybindingImgVideo={<video src={Duplicate} loop muted playsInline/>} meshOrMenu={true} placerText={"duplicate"}/> as you wish.
+        </p>
+        <div className="media_item_container">
+          <LazyVideo src={make_rock} loop muted playsInline controls/>
+        </div>
+
+        <div className="media_item_container">
+          <img src={finished_rocks}/>
+        </div>
+
       </div>
+
+
+      <div className="content_container">
+        <h2>010 - Portal</h2>
+        <small><a href={Day1_010} download="Day1_010.blend">Starter file: 010</a></small>
+      
+      </div>
+
 
 
     </>

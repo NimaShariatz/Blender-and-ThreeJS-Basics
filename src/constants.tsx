@@ -10,6 +10,9 @@ import newLightVid from './assets/keybinds/LightSource.mp4';
 import newCameraVid from './assets/keybinds/AddCamera.mp4';
 import rendererModeImg from './assets/keybinds/RendererMode.png';
 import resetGeo from './assets/keybinds/ResetGeo.png'
+import join from './assets/keybinds/Join.mp4';
+import bisect from './assets/keybinds/bisect.mp4';
+
 
 export const InteractionMode = interactionModeVid;
 export const NewObject = newObjectImg;
@@ -18,6 +21,8 @@ export const NewLight = newLightVid;
 export const NewCamera = newCameraVid;
 export const RendererMode = rendererModeImg;
 export const ResetGeometry = resetGeo
+export const Join = join;
+export const Bisect = bisect;
 
 // keybinds
 import grabVid from './assets/keybinds/Grab.mp4';
@@ -38,7 +43,6 @@ import move from './assets/keybinds/Move.mp4';
 import cut from './assets/keybinds/cutting.mp4';
 import gg from './assets/keybinds/GG.mp4';
 import extr from './assets/keybinds/extrude.mp4';
-import join from './assets/keybinds/Join.mp4';
 
 export const Grab = grabVid;
 export const GrabAxis = grabAxisVid;
@@ -58,7 +62,6 @@ export const Move = move
 export const Cut = cut;
 export const GG = gg;
 export const Extrude = extr;
-export const Join = join;
 
 // day 1 start and 001
 import day1FinalImg from './assets/Days/1/final_image.png';
@@ -110,41 +113,51 @@ export const create_log = createlog;
 export const final_logs = finallogs;
 
 // day 1 006
-import day1006Blend from './assets/Days/1/Day1_006.blend'
-import day1containers from './assets/Days/1/containers_renamed.png'
-import renameitems from './assets/Days/1/renaming_items.mkv'
+import day1006Blend from './assets/Days/1/Day1_006.blend';
+import day1containers from './assets/Days/1/containers_renamed.png';
+import renameitems from './assets/Days/1/renaming_items.mkv';
 
 export const Day1_006 = day1006Blend;
-export const containers_renamed = day1containers
-export const renaming_items = renameitems
+export const containers_renamed = day1containers;
+export const renaming_items = renameitems;
 
 // day 1 007
-import day1007Blend from './assets/Days/1/Day1_007.blend'
-import axehead from './assets/Days/1/axe_head.png'
-import cutaction from './assets/Days/1/cutting.mkv'
-import cutandgg from './assets/Days/1/narrow_axe.mkv'
-import axecomplete from './assets/Days/1/axe_complete.mkv'
-import axehandle from './assets/Days/1/axe_handle.mkv'
+import day1007Blend from './assets/Days/1/Day1_007.blend';
+import axehead from './assets/Days/1/axe_head.png';
+import cutaction from './assets/Days/1/cutting.mkv';
+import cutandgg from './assets/Days/1/narrow_axe.mkv';
+import axecomplete from './assets/Days/1/axe_complete.mkv';
+import axehandle from './assets/Days/1/axe_handle.mkv';
 
 export const Day1_007 = day1007Blend;
 export const axe_head = axehead;
 export const cut_action = cutaction;
 export const cut_and_gg = cutandgg;
-export const axe_complete = axecomplete
-export const axe_handle = axehandle
+export const axe_complete = axecomplete;
+export const axe_handle = axehandle;
 
 
 // day 1 008
-import day1008Blend from './assets/Days/1/Day1_008.blend'
-import polecreate from './assets/Days/1/light_pole_create.mkv'
-import polefinish from './assets/Days/1/poles_complete.mkv'
+import day1008Blend from './assets/Days/1/Day1_008.blend';
+import polecreate from './assets/Days/1/light_pole_create.mkv';
+import polefinish from './assets/Days/1/poles_complete.mkv';
 
 export const Day1_008 = day1008Blend;
 export const pole_create = polecreate;
-export const pole_finish = polefinish
+export const pole_finish = polefinish;
 
 // day 1 009
-import day1009Blend from './assets/Days/1/Day1_009.blend'
+import day1009Blend from './assets/Days/1/Day1_009.blend';
+import makerock from './assets/Days/1/making_rocks.mp4';
+import finishrocks from './assets/Days/1/rocks_finished.png';
 
 export const Day1_009 = day1009Blend;
+export const make_rock = makerock;
+export const finished_rocks = finishrocks;
+
+// day 1 010
+import day1010Blend from './assets/Days/1/Day1_010.blend';
+
+export const Day1_010 = day1010Blend;
+
 
