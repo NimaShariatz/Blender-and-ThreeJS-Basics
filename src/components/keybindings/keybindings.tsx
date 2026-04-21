@@ -1,9 +1,9 @@
 
 import "./keybindings.css"
-import {Bisect, Join, zyx_axis} from "../../constants"
+import {ApplyMat, Bisect, Join, MaterialWindow, zyx_axis} from "../../constants"
 import PopupText from "../popupText/popupText"
 import { GrabAxis, ScaleAxis, Duplicate, LinkedDuplicate, CenterOn, FocusOn, ChangeRenderView, SelectAll, SelectClicked
-  , Delete, InteractionMode, NewObject, TransferScale, RotateXYZ, NewLight, NewCamera, RendererMode, Fill, ResetGeometry, Move, Cut, GG, Extrude
+  , Delete, InteractionMode, NewObject, TransferScale, RotateXYZ, NewLight, NewCamera, RendererMode, Fill, ResetGeometry, Move, Cut, GG, Extrude, SplitObj
 } from "../../constants"
 
 
@@ -110,9 +110,9 @@ function Keybindings() {
             <p className="keybind_desc">A</p>
           </div>
           <div>
-            <p className="keybind"><PopupText keybindingText={<span>Shift + LMB</span>} keybindingImgVideo={<video src={SelectClicked} loop muted playsInline/>} meshOrMenu={true} placerText={"Select Clicked"}/></p>
+            <p className="keybind"><PopupText keybindingText={<span>(hold)Shift + LMB</span>} keybindingImgVideo={<video src={SelectClicked} loop muted playsInline/>} meshOrMenu={true} placerText={"Select Clicked"}/></p>
             <p className="keybind_-">-</p>
-            <p className="keybind_desc">Shift + LMB</p>
+            <p className="keybind_desc">(hold)Shift + LMB</p>
           </div>
 
 
@@ -194,7 +194,7 @@ function Keybindings() {
             <div>
               <p className="keybind"><PopupText keybindingText={<span>Join Objects</span>} keybindingImgVideo={<video src={Join} loop muted playsInline/>} meshOrMenu={false} placerText={"Join Objects"}/></p>
               <p className="keybind_-">-</p>
-              <p className="keybind_desc">Combines selected objects into one. Same as creating objects "Edit Mode". The object selected first will have it's origin point used</p>
+              <p className="keybind_desc">combines selected objects into one. Same as creating objects "Edit Mode". The object selected first will have it's origin point used</p>
             </div>
             <div>
               <p className="keybind"><PopupText keybindingText={<span>Rendering Mode</span>} keybindingImgVideo={<img src={RendererMode}/>} meshOrMenu={false} placerText={"Rendering Mode"}/></p>
@@ -204,7 +204,22 @@ function Keybindings() {
             <div>
               <p className="keybind"><PopupText keybindingText={<span>Bisect</span>} keybindingImgVideo={<video src={Bisect} loop muted playsInline/>} meshOrMenu={false} placerText={"Bisect"}/></p>
               <p className="keybind_-">-</p>
-              <p className="keybind_desc">Cuts into our object in "Edit Mode"</p>
+              <p className="keybind_desc">cuts into our object in "Edit Mode"</p>
+            </div>
+            <div>
+              <p className="keybind"><PopupText keybindingText={<span>Materials Window</span>} keybindingImgVideo={<img src={MaterialWindow}/>} meshOrMenu={false} placerText={"Materials Window"}/></p>
+              <p className="keybind_-">-</p>
+              <p className="keybind_desc">select an object first. Used to change the material of our object. The color and texture</p>
+            </div>
+            <div>
+              <p className="keybind"><PopupText keybindingText={<span>Apply Material to Selected</span>} keybindingImgVideo={<img src={ApplyMat}/>} meshOrMenu={false} placerText={"Apply Material to Selected"}/></p>
+              <p className="keybind_-">-</p>
+              <p className="keybind_desc">applies the material to all <PopupText keybindingText={<span>(hold)Shift + LMB</span>} keybindingImgVideo={<video src={SelectClicked} loop muted playsInline/>} meshOrMenu={true} placerText={"objects selected"}/> to the one selected last (orange outline)</p>
+            </div>
+            <div>
+              <p className="keybind"><PopupText keybindingText={<span>Split Object</span>} keybindingImgVideo={<img src={SplitObj}/>} meshOrMenu={false} placerText={"Split Object"}/></p>
+              <p className="keybind_-">-</p>
+              <p className="keybind_desc">Splits the selected faces in "Edit Mode" into its own unqiue object</p>
             </div>
           </div>
         </div>

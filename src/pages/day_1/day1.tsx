@@ -6,7 +6,17 @@ import {CenterOn, Day1_final, zyx_axis, InteractionMode, Day1_001, new_window, D
   GrabAxis, ChangeRenderView, NewLight, NewCamera, RendererMode, Day1_lightAndcamera, Day1_004, trunk, add_trunk, trunks, Day1_005, create_log, cap_fill_mode,
   Fill, final_logs, Day1_006, ResetGeometry, Move, containers_renamed, renaming_items, Day1_007, axe_head, Cut, GG, cut_and_gg,
   cut_action, axe_handle, axe_complete, Extrude, Day1_008, pole_create, Join, LinkedDuplicate, pole_finish, Day1_009, Bisect, make_rock, finished_rocks, 
-  Day1_010, Day1_011, copy_paste
+  Day1_010, Day1_011, copy_paste, making_grass, do_wood, SelectClicked,
+  MaterialWindow,
+  ApplyMat,
+  finish_mat_rocks,
+  SplitObj,
+  pole_axe_seperation,
+  mat_comp,
+  add_emission,
+  add_areaLight,
+  complete_render,
+  Day1_012
  } from "../../constants"
 import PopupText from "../../components/popupText/popupText";
 
@@ -180,8 +190,8 @@ function Day1() {
           and set Viewport → Max Samples & Render → Max Samples to '128'. Higher quality is unnecassary.
         </p>
         <p>
-          Finally, on the top right go select Render → Render Image to see your model properly rendered. How long it takes to complete depends on 
-          the values you put in the Max Samples, and your personal computer.
+          Finally, on the top left go select Render → Render Image to see your model properly rendered. How long it takes to complete depends on 
+          the values you put in the "Max Samples", and your personal computer.
         </p>
         <div className="media_item_container">
           <LazyVideo src={Day1_lightAndcamera} loop muted playsInline controls/>
@@ -419,9 +429,110 @@ function Day1() {
       <div className="content_container">
         <h2>011 - Materials</h2>
         <small><a href={Day1_011} download="Day1_011.blend">Starter file: 011</a></small>
-      
+        
+        <p>
+          This is where we color the scene. We go into <PopupText keybindingText={<span>Z</span>} keybindingImgVideo={<video src={ChangeRenderView} loop muted playsInline/>} meshOrMenu={true} placerText={`"Material Preview"`}/> to see our colors. At the beginning everything will be white.
+          Changing the color of an object isn't quite as simple as selecting a color. This is because we have much more to play with than just 
+          color selection. But for our purposes there won't be much exploration.
+        </p>
+        <p>
+          We start with the floor plane. First we need to create a material. Select the plane and go to the <PopupText keybindingText={<span>Materials Window</span>} keybindingImgVideo={<img src={MaterialWindow}/>} meshOrMenu={false} placerText={"materials window"}/>. We need a new material so 
+          select the '+ new'. Note the "Surface" should be "Principled BSDF". Name the material to "grass", set "Roughness" to the max value to replicate rougher texture of grass, and set the "Base Color" to your shade of green. 
+        </p>
+
+        <div className="media_item_container">
+          <LazyVideo src={making_grass} loop muted playsInline controls/>
+        </div>
+
+        <p>
+          Next are the wooden objects. We have many of them. It's faster to create the material for one wooden object then apply it to all others.
+          First, we create the material for one wooden object of your choice, say a fence. Select it, 
+          name it wood, set roughness to max, and color to a light brown. Then in order to apply it to all, <PopupText keybindingText={<span>(hold)Shift + LMB</span>} keybindingImgVideo={<video src={SelectClicked} loop muted playsInline/>} meshOrMenu={true} placerText={"individually select all"}/> the 
+          wooden objects and 
+          make sure to select the one fence we have as wooden as the very last. Notice how the outline of your last selected object is orange, while the 
+          rest is red. Then <PopupText keybindingText={<span>Apply Material to Selected</span>} keybindingImgVideo={<img src={ApplyMat}/>} meshOrMenu={false} placerText={"apply the material"}/> of your final selected object (orange outline) to all others (red outline). Note how 
+          we did not select the light poles or the axe.
+        </p>
+
+        <div className="media_item_container">
+          <LazyVideo src={do_wood} loop muted playsInline controls/>
+        </div>
+
+        <p>
+          Next are the rocks. Both the individual items placed on the scene and around the portal. The process is nearly the exact same as the fences: select one rock, 
+          new material called rock, color to a light grey, keep roughness to .5 this time. Then <PopupText keybindingText={<span>(hold)Shift + LMB</span>} keybindingImgVideo={<video src={SelectClicked} loop muted playsInline/>} meshOrMenu={true} placerText={"select all"}/> the rocks on the ground and portal and keep the rock 
+          we changed the material of as the last selection. And <PopupText keybindingText={<span>Apply Material to Selected</span>} keybindingImgVideo={<img src={ApplyMat}/>} meshOrMenu={false} placerText={"apply its material to all selected"}/>.
+        </p>
+
+        <div className="media_item_container">
+          <LazyVideo src={finish_mat_rocks} loop muted playsInline controls/>
+        </div>
+
+        <p>
+          Note how we have not touched on the poles and axe yet. This is because previously we joined them as one object. This is problematic because 
+          we need the pole and axe to be a combinated of various materials. We can solve this in two ways:
+          <br/>
+          1 - apply our material color on a face-by-face basis. We go in "Edit mode", select the relevant faces and apply the material we want to them.
+          <br/>
+          2 - more preferably, <PopupText keybindingText={<span>Split Object</span>} keybindingImgVideo={<img src={SplitObj}/>} meshOrMenu={false} placerText={"seperate"}/> the pole into the segments we want by hand. The opposite of join.
+          We delete one of the poles as if you recall they are linked duplicates. This process can accidentally mess with the other pole. Once we are 
+          done, we can do a duplicate of the pole for the other side. Do the same for the axe.
+        </p>
+
+        <div className="media_item_container">
+          <LazyVideo src={pole_axe_seperation} loop muted playsInline controls/>
+        </div>
+
+        <p>
+          We then need create a new material called metal for the lamp case and axe head. Lower the "Roughness" to .2 and do not 
+          change the "Metallic" number as its more about having things reflecting. Then apply the existing wood and stone to the relevant items. 
+          The only thing left should be the lamps themselves, and the circular portal.
+        </p>
+
+        <div className="media_item_container">
+          <img src={mat_comp}/>
+        </div>
+
+        <p>
+          The final materials to add are the lights. These are also materials but specifically called Emmisive Materials; they emit light.
+          The process is similar except after pressing "+ new", you set "Surface" to "Emmission" and increase the "Strength" to 40 and choose a warmer color, 
+          say orange. Call it "lightEmmisive". Apply it to both lamps. As for the portal, make a new emmisive material, but have the color remain white and a 
+          "Strength" of 5. Call it "emmisivePortal".
+        </p>
+
+        <div className="media_item_container"> {/* replace */}
+          <img src={add_emission}/>
+        </div>
+
+        <p>
+          Finally, the point light in our scene can 
+          be better. We <PopupText keybindingText={<span>X</span>} keybindingImgVideo={<video src={Delete} loop muted playsInline/>} meshOrMenu={true} placerText={"delete"}/> the point light and <PopupText keybindingText={<span>New Light Source</span>} keybindingImgVideo={<video src={NewLight} loop muted playsInline/>} meshOrMenu={false} placerText={`add an "Area Light"`}/>. <PopupText keybindingText={<span>R with optional (X,Y,Z)<br/><small>(should be done in "Edit Mode")</small></span>} keybindingImgVideo={<video src={RotateXYZ} loop muted playsInline/>} meshOrMenu={true} placerText={"Rotate"}/> and <PopupText keybindingText={<span>G with optional (X,Y,Z)<br/><small>("Edit Mode" does not move origin point)</small></span>} keybindingImgVideo={<video src={GrabAxis} loop muted playsInline/>} meshOrMenu={true} placerText={"move"}/> it in a similar position 
+          to the one here. Use <PopupText keybindingText={<span>S with optional (X,Y,Z)<br/><small>(should be done in "Edit Mode")</small></span>} keybindingImgVideo={<video src={ScaleAxis} loop muted playsInline/>} meshOrMenu={true} placerText={"scale"}/> to make the area light larger. Increase the area light "Strength" to 
+          60 and give it an orange color. To clarify, you can 
+          apply your own colors and "Strength" values to your own scene.
+        </p>
+
+        
+        <div className="media_item_container"> {/* replace */}
+          <img src={add_areaLight}/>
+        </div>
+
+        <p>
+          Finally our scene is complete. Lets do a render.
+        </p>
+
+        <div className="media_item_container"> {/* replace */}
+          <img src={complete_render}/>
+        </div>
+
       </div>
 
+
+      <div className="content_container">
+        <h2>012 - Materials</h2>
+        <small><a href={Day1_012} download="Day1_012.blend">Starter file: 012</a></small>
+
+      </div>
 
     </>
 

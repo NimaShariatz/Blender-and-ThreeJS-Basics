@@ -12,6 +12,9 @@ import rendererModeImg from './assets/keybinds/RendererMode.png';
 import resetGeo from './assets/keybinds/ResetGeo.png'
 import join from './assets/keybinds/Join.mp4';
 import bisect from './assets/keybinds/bisect.mp4';
+import matwin from './assets/keybinds/materials_window.png';
+import applymat from './assets/keybinds/apply_material.png';
+import splitobj from './assets/keybinds/SplitObjects.png'
 
 
 export const InteractionMode = interactionModeVid;
@@ -23,6 +26,9 @@ export const RendererMode = rendererModeImg;
 export const ResetGeometry = resetGeo
 export const Join = join;
 export const Bisect = bisect;
+export const MaterialWindow = matwin;
+export const ApplyMat = applymat;
+export const SplitObj = splitobj;
 
 // keybinds
 import grabVid from './assets/keybinds/Grab.mp4';
@@ -164,8 +170,28 @@ export const copy_paste = copypasta;
 
 // day 1 011
 import day1011Blend from './assets/Days/1/Day1_011.blend';
+import makinggrass from './assets/Days/1/making_grass.mkv';
+import dowood from './assets/Days/1/do_wood.mkv'
+import finishmatrocks from './assets/Days/1/finish_rocks.mkv';
+import poleaxeseperation from './assets/Days/1/poleAxeSeparation.mp4'
+import matcomp from './assets/Days/1/materials_complete.png';
+import addemis from './assets/Days/1/add_emmis.png';
+import addareaL from './assets/Days/1/add_areaLight.png';
+import completerender from './assets/Days/1/complete_render.png';
 
 
 export const Day1_011 = day1011Blend;
+export const making_grass = makinggrass;
+export const do_wood = dowood;
+export const finish_mat_rocks = finishmatrocks;
+export const pole_axe_seperation = poleaxeseperation;
+export const mat_comp = matcomp;
+export const add_emission = addemis;
+export const add_areaLight = addareaL;
+export const complete_render = completerender;
 
 
+// day 1 012
+import day1012Blend from './assets/Days/1/Day1_012.blend';
+
+export const Day1_012 = day1012Blend;
