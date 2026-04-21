@@ -190,7 +190,7 @@ function Day1() {
         </p>
         <p>
           "Renderer mode" gives us a feel of how it'll look, but rendering an instance of the scene is the accurate version. For this we need to <PopupText keybindingText={<span>New Camera</span>} keybindingImgVideo={<video src={NewCamera} loop muted playsInline/>} meshOrMenu={false} placerText={"add a camera"}/> to 
-          the scene. Place it wherever adequate. Notice below your <b>Axis Change-View</b> is a camera icon. You can view through the camera by this button. We also 
+          the scene. Place it wherever adequate. Notice below your <b>Axis Change-View</b> is a camera icon. You can view through the camera by this button. Below that we can also change our perspective to Orthographic which means objects do not shrink when farther away. RTS games such as AoE, C&C and CoH use this perspective. We also 
           change the <PopupText keybindingText={<span>Rendering Mode</span>} keybindingImgVideo={<img src={RendererMode}/>} meshOrMenu={false} placerText={"rendering mode"}/> to "Cycles" for better quality 
           and set Viewport → Max Samples & Render → Max Samples to '128'. Higher quality is unnecassary.
         </p>
