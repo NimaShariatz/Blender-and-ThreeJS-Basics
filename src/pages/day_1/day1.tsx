@@ -16,7 +16,11 @@ import {CenterOn, Day1_final, zyx_axis, InteractionMode, Day1_001, new_window, D
   add_emission,
   add_areaLight,
   complete_render,
-  Day1_012
+  Day1_012,
+  deleting_faces,
+  activate_faceorient,
+  faceorient_example,
+  Day1_013
  } from "../../constants"
 import PopupText from "../../components/popupText/popupText";
 
@@ -469,14 +473,14 @@ function Day1() {
         </div>
 
         <p>
-          Note how we have not touched on the poles and axe yet. This is because previously we joined them as one object. This is problematic because 
+          Note how we have not touched on the poles and axe yet. This is because previously we <PopupText keybindingText={<span>Join Objects</span>} keybindingImgVideo={<video src={Join} loop muted playsInline/>} meshOrMenu={false} placerText={"Joined"}/> them as one object. This is problematic because 
           we need the pole and axe to be a combinated of various materials. We can solve this in two ways:
           <br/>
           1 - apply our material color on a face-by-face basis. We go in "Edit mode", select the relevant faces and apply the material we want to them.
           <br/>
-          2 - more preferably, <PopupText keybindingText={<span>Split Object</span>} keybindingImgVideo={<img src={SplitObj}/>} meshOrMenu={false} placerText={"seperate"}/> the pole into the segments we want by hand. The opposite of join.
-          We delete one of the poles as if you recall they are linked duplicates. This process can accidentally mess with the other pole. Once we are 
-          done, we can do a duplicate of the pole for the other side. Do the same for the axe.
+          2 - more preferably, <PopupText keybindingText={<span>Split Object</span>} keybindingImgVideo={<img src={SplitObj}/>} meshOrMenu={false} placerText={"seperate"}/> the pole into the segments we want by hand. The opposite of <PopupText keybindingText={<span>Join Objects</span>} keybindingImgVideo={<video src={Join} loop muted playsInline/>} meshOrMenu={false} placerText={"join"}/>.
+          We <PopupText keybindingText={<span>X</span>} keybindingImgVideo={<video src={Delete} loop muted playsInline/>} meshOrMenu={true} placerText={"delete"}/> one of the poles as if you recall they are <PopupText keybindingText={<span>Alt + D<br/></span>} keybindingImgVideo={<video src={LinkedDuplicate} loop muted playsInline/>} meshOrMenu={true} placerText={"linked duplicates"}/>. This process can accidentally mess with the other pole. Once we are 
+          done, we can do a <PopupText keybindingText={<span>Shift + D<br/><small>("Edit mode" and "Object Mode" copy differently. Difference is noticable in the top right collections section)</small></span>} keybindingImgVideo={<video src={Duplicate} loop muted playsInline/>} meshOrMenu={true} placerText={"duplicate"}/> of the pole for the other side. Do the same for the axe.
         </p>
 
         <div className="media_item_container">
@@ -484,7 +488,7 @@ function Day1() {
         </div>
 
         <p>
-          We then need create a new material called metal for the lamp case and axe head. Lower the "Roughness" to .2 and do not 
+          We then need create <PopupText keybindingText={<span>Materials Window</span>} keybindingImgVideo={<img src={MaterialWindow}/>} meshOrMenu={false} placerText={"a new material"}/> called metal for the lamp case and axe head. Lower the "Roughness" to .2 and do not 
           change the "Metallic" number as its more about having things reflecting. Then apply the existing wood and stone to the relevant items. 
           The only thing left should be the lamps themselves, and the circular portal.
         </p>
@@ -500,7 +504,7 @@ function Day1() {
           "Strength" of 5. Call it "emmisivePortal".
         </p>
 
-        <div className="media_item_container"> {/* replace */}
+        <div className="media_item_container">
           <img src={add_emission}/>
         </div>
 
@@ -513,7 +517,7 @@ function Day1() {
         </p>
 
         
-        <div className="media_item_container"> {/* replace */}
+        <div className="media_item_container">
           <img src={add_areaLight}/>
         </div>
 
@@ -521,7 +525,7 @@ function Day1() {
           Finally our scene is complete. Lets do a render.
         </p>
 
-        <div className="media_item_container"> {/* replace */}
+        <div className="media_item_container">
           <img src={complete_render}/>
         </div>
 
@@ -529,9 +533,60 @@ function Day1() {
 
 
       <div className="content_container">
-        <h2>012 - Materials</h2>
+        <h2>012 - Optimization</h2>
         <small><a href={Day1_012} download="Day1_012.blend">Starter file: 012</a></small>
 
+        <p>
+          There's a few things we can do to help with performance on our ThreeJS render. Remember the final product will be rendered on a web page. Not 
+          on blender. First we can <PopupText keybindingText={<span>X</span>} keybindingImgVideo={<video src={Delete} loop muted playsInline/>} meshOrMenu={true} placerText={"delete"}/> the hidden 
+          faces in <PopupText keybindingText={<span>Interaction Mode</span>} keybindingImgVideo={<video src={InteractionMode} loop muted playsInline/>} meshOrMenu={false} placerText={`"Edit Mode"`}/> that likely will never be seen by the user. In our case that is faces that are facing downwards. 
+          We do this process with the bottom of whatever objects we can think of: trunks, logs, rocks, poles(which are already done), and the stone steps.
+        </p>
+
+        <div className="media_item_container">
+          <LazyVideo src={deleting_faces} loop muted playsInline controls/>
+        </div>
+
+        <p>
+          Next <PopupText keybindingText={<span>A</span>} keybindingImgVideo={<video src={SelectAll} loop muted playsInline/>} meshOrMenu={true} placerText={"select all"}/> in <PopupText keybindingText={<span>Interaction Mode</span>} keybindingImgVideo={<video src={InteractionMode} loop muted playsInline/>} meshOrMenu={false} placerText={`"Object Mode"`}/> and 
+          <PopupText keybindingText={<span>Transfer Scale</span>} keybindingImgVideo={<img src={TransferScale}/>} meshOrMenu={false} placerText={"transfer the scale"}/> so every tranform action is now in "Edit Mode". Just to make sure.
+        </p>
+
+        <div className="content_container_divide">
+          <p>
+            Finally, we fix a potential issue that can occur as we make our model; when faces are flipped. All faces have a font and back. On occation they can 
+            be flipped. In <PopupText keybindingText={<span>Interaction Mode</span>} keybindingImgVideo={<video src={InteractionMode} loop muted playsInline/>} meshOrMenu={false} placerText={`"Edit Mode"`}/> on the top right corner click on the following icon. And tick "Face Orientation". 
+            You will see certain objects be highlighted red. These are the ones with a flipped face. If not, you are good to go!
+          </p>
+          <img src={activate_faceorient}/>
+        </div>
+
+        <p>
+          How does this happen? When you try and extrude it in a specific manner which flips the faces. Observe:
+        </p>
+
+        <div className="media_item_container">
+          <LazyVideo src={faceorient_example} loop muted playsInline controls/>
+        </div>
+
+        <p>
+          This is very unlikely to cause any issues with our model as we are using it now, but the solution is very easy. To fix this, 
+          <PopupText keybindingText={<span>(hold)Shift + LMB</span>} keybindingImgVideo={<video src={SelectClicked} loop muted playsInline/>} meshOrMenu={true} placerText={"select each of"}/> the faces of red the troubled object, then while in <PopupText keybindingText={<span>Interaction Mode</span>} keybindingImgVideo={<video src={InteractionMode} loop muted playsInline/>} meshOrMenu={false} placerText={`"Edit Mode"`}/> go to Mesh → Normals → Flip. The red highlights should go away.
+          Do this until nothing red is left highlighted and you can untick "Face Orientation".
+        </p>
+
+        <p>
+          On that note: our optimization is complete.
+        </p>
+
+      </div>
+
+
+
+      <div className="content_container">
+        <h2>013 - ThreeJS Implimentation and Why We Got What We Got</h2>
+        <small><a href={Day1_013} download="Day1_013.blend">Day 1 Model Complete</a></small>
+      
       </div>
 
     </>

@@ -179,7 +179,6 @@ import addemis from './assets/Days/1/add_emmis.png';
 import addareaL from './assets/Days/1/add_areaLight.png';
 import completerender from './assets/Days/1/complete_render.png';
 
-
 export const Day1_011 = day1011Blend;
 export const making_grass = makinggrass;
 export const do_wood = dowood;
@@ -193,5 +192,18 @@ export const complete_render = completerender;
 
 // day 1 012
 import day1012Blend from './assets/Days/1/Day1_012.blend';
+import deletingfaces from './assets/Days/1/deleting_faces.mp4';
+import faceorient from './assets/Days/1/faceorient.png';
+import faceorientex from './assets/Days/1/faceorien_example.mkv';
+import changingorient from './assets/Days/1/changingOrientation.png';
 
 export const Day1_012 = day1012Blend;
+export const deleting_faces = deletingfaces;
+export const activate_faceorient = faceorient;
+export const faceorient_example = faceorientex;
+export const changing_orient = changingorient;
+
+// day 1 012
+import day1013Blend from './assets/Days/1/Day1_013.blend';
+
+export const Day1_013 = day1013Blend;
