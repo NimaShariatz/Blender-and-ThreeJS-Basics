@@ -70,11 +70,9 @@ export const GG = gg;
 export const Extrude = extr;
 
 // day 1 start and 001
-import day1FinalImg from './assets/Days/1/final_image.png';
 import newWindowVid from './assets/Days/1/new_window.mp4';
 import day1001Blend from './assets/Days/1/Day1_001.blend';
 import planeImg from './assets/Days/1/plane.png';
-export const Day1_final = day1FinalImg;
 export const new_window = newWindowVid;
 export const Day1_001 = day1001Blend;
 export const plane = planeImg;

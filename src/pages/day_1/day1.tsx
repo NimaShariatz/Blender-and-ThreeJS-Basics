@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react"
 
 import "../tutorial_page.css"
-import {CenterOn, Day1_final, zyx_axis, InteractionMode, Day1_001, new_window, Delete, NewObject,
+import {CenterOn, zyx_axis, InteractionMode, Day1_001, new_window, Delete, NewObject,
   TransferScale, plane, Day1_002, ScaleAxis, Duplicate, containers, RotateXYZ, SelectAll, Day1_fences, Day1_003,
   GrabAxis, ChangeRenderView, NewLight, NewCamera, RendererMode, Day1_lightAndcamera, Day1_004, trunk, add_trunk, trunks, Day1_005, create_log, cap_fill_mode,
   Fill, final_logs, Day1_006, ResetGeometry, Move, containers_renamed, renaming_items, Day1_007, axe_head, Cut, GG, cut_and_gg,
@@ -102,7 +102,7 @@ function Day1() {
           This is what we'll be making on Day 1. Day 2 will focus on optimization, and preparing it for use in ThreeJS if we want light and shadows included in the web render.
         </p>
         <div className="media_item_container">
-          <img src={Day1_final}/>
+          <img src={complete_render}/>
         </div>
       </div>
 
