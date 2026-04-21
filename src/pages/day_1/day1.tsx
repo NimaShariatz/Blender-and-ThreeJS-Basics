@@ -20,7 +20,8 @@ import {CenterOn, Day1_final, zyx_axis, InteractionMode, Day1_001, new_window, D
   deleting_faces,
   activate_faceorient,
   faceorient_example,
-  Day1_013
+  Day1_013,
+  changing_orient
  } from "../../constants"
 import PopupText from "../../components/popupText/popupText";
 
@@ -569,11 +570,15 @@ function Day1() {
           <LazyVideo src={faceorient_example} loop muted playsInline controls/>
         </div>
 
-        <p>
-          This is very unlikely to cause any issues with our model as we are using it now, but the solution is very easy. To fix this, 
-          <PopupText keybindingText={<span>(hold)Shift + LMB</span>} keybindingImgVideo={<video src={SelectClicked} loop muted playsInline/>} meshOrMenu={true} placerText={"select each of"}/> the faces of red the troubled object, then while in <PopupText keybindingText={<span>Interaction Mode</span>} keybindingImgVideo={<video src={InteractionMode} loop muted playsInline/>} meshOrMenu={false} placerText={`"Edit Mode"`}/> go to Mesh → Normals → Flip. The red highlights should go away.
-          Do this until nothing red is left highlighted and you can untick "Face Orientation".
-        </p>
+
+
+        <div className="content_container_divide">
+          <p>
+            This is very unlikely to cause any issues with our model as we are using it now, but the solution is very easy. To fix this, <PopupText keybindingText={<span>(hold)Shift + LMB</span>} keybindingImgVideo={<video src={SelectClicked} loop muted playsInline/>} meshOrMenu={true} placerText={"select each of"}/> the faces of red the troubled object, then while in <PopupText keybindingText={<span>Interaction Mode</span>} keybindingImgVideo={<video src={InteractionMode} loop muted playsInline/>} meshOrMenu={false} placerText={`"Edit Mode"`}/> go to Mesh → Normals → Flip. The red highlights should go away.
+            Do this until nothing red is left highlighted and you can untick "Face Orientation".
+          </p>
+          <img src={changing_orient}/>
+        </div>
 
         <p>
           On that note: our optimization is complete.
