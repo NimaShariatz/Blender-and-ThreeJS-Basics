@@ -16,14 +16,12 @@ function Navbar({daySelect, daySelectFunction}: NavbarProps) {
     <div className="dayPicker_container">
 
       <button onClick={ ()=> daySelectFunction(1)} style={{ backgroundColor: (daySelect==1) ? "var(--yellow)" : "transparent", opacity: (daySelect!=1) ? "0.35" : "1" }}>
-        Day 1
+        Blender Model
       </button>
       <button onClick={ ()=> daySelectFunction(2)} style={{ backgroundColor: (daySelect==2) ? "var(--yellow)" : "transparent", opacity: (daySelect!=2) ? "0.35" : "1" }}>
-        Day 2
+        ThreeJS Setup
       </button>
-      <button onClick={ ()=> daySelectFunction(3)} style={{ backgroundColor: (daySelect==3) ? "var(--yellow)" : "transparent", opacity: (daySelect!=3) ? "0.35" : "1" }}>
-        Day 3
-      </button>
+
 
 
     </div>

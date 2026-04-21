@@ -84,11 +84,11 @@ function Day1() {
     <>
 
       <div className="titleSection_container">
-        <h1>Day 1</h1>
+        <h1>Blender model</h1>
       </div>
       <div className="content_container">
         <h2>Goal</h2>
-        <small>For Day 1</small>
+        <small>Blender model basics</small>
         <p>
           The goal is to get a feel for Blender. You won't be an expert but you'll get an idea of what is feasible.
           The best way to do it is to make a few models yourself. The following are derived from existing tutorials. They serve as documentation for their steps.
@@ -99,7 +99,7 @@ function Day1() {
         </p>
 
         <p>
-          This is what we'll be making on Day 1. Day 2 will focus on optimization, and preparing it for use in ThreeJS if we want light and shadows included in the web render.
+          This is what we'll be making for our blender model.
         </p>
         <div className="media_item_container">
           <img src={complete_render}/>
@@ -111,7 +111,7 @@ function Day1() {
 
       <div className="content_container">
         <h2>Basic Controls</h2>
-        <small>Movement and Manipulation</small>
+        <small>Movement and manipulation</small>
         <p>
           You will use your middle-mouse-button for much of your movement. Both rotation and zoom. Notably you will also be using the <PopupText keybindingText={<span>Axis Change-View</span>} keybindingImgVideo={<img src={zyx_axis}/>} meshOrMenu={true} placerText={"axis view-changer"}/> when convient.
         </p>
@@ -590,7 +590,7 @@ function Day1() {
 
       <div className="content_container">
         <h2>013 - ThreeJS Implimentation and Why We Got What We Got</h2>
-        <small><a href={Day1_013} download="Day1_013.blend">Day 1 Model Complete</a></small>
+        <small><a href={Day1_013} download="Day1_013.blend">Blender model complete</a></small>
       
       </div>
 
