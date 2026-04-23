@@ -11,6 +11,12 @@
   --meshRelated:#2f9f7a42;
   --menuRelated: #d2b2e349;
 
+  --material_basic: #ed7b7b;
+  --material_standard: #edc37b;
+  --material_phong: #d0ed7b;
+  --material_toon: #8eed7b;
+  --material_depth: #7bedb6;
+
 }
 
 
@@ -51,7 +57,9 @@ small{
   font-size: 13px;
   color: rgb(102, 102, 102);
 }
-
+a{
+  color: var(--blue_1);
+}
 
 
 

@@ -21,7 +21,14 @@ import {CenterOn, zyx_axis, InteractionMode, Day1_001, new_window, Delete, NewOb
   activate_faceorient,
   faceorient_example,
   Day1_013,
-  changing_orient
+  changing_orient,
+  mesh_basic_model_render,
+  mesh_standard_model_render,
+  yumi_example,
+  jap_example,
+  paper_example,
+  plane_example,
+  example_snapshot
  } from "../../constants"
 import PopupText from "../../components/popupText/popupText";
 
@@ -591,7 +598,167 @@ function Day1() {
       <div className="content_container">
         <h2>013 - ThreeJS Implimentation and Why We Got What We Got</h2>
         <small><a href={Day1_013} download="Day1_013.blend">Blender model complete</a></small>
-      
+
+        <p>
+          The render looks solid on blender. But we are not rendering it on blender, rather it's being done by the browser real-time. The ThreeJS side of things will 
+          be looked into next lesson. But lets skip ahead and see what the render looks like. To download your file for ThreeJS, go to File → Export → glTF 2.0 (.glb/.gltf).
+        </p>
+
+        <div className="media_item_container">
+          <img src={mesh_basic_model_render}/>
+        </div>
+
+        <p>
+          So why does it look like a crayon drawing from a 3 year old? When we export a model into ThreeJS animations, lights, and their subsequent shadows 
+          don't come with us. How can we see the model? This is because in ThreeJS we are rendering the object in <span className="threejs_material_basic">meshBasic</span>. This material 
+          does not require light to be shown. It also does not interact with light in any way. Hence we do not have any of the natural gradiences that come 
+          with a scene that has lighting. Here are some ThreeJS sites that make use of <span className="threejs_material_basic">meshBasic</span>.
+        </p>
+
+
+
+
+        <div className="content_container_divide">
+          <p>
+            1 - <a href="https://www.pola.co.jp/special/o/wecaremore/mothersday/" target="_blank">https://www.pola.co.jp/special/o/wecaremore/mothersday/</a>: This site makes heavy use of ThreeJS for animations, both big and subtle. It likely 
+            does use <span className="threejs_material_basic">meshBasic</span> for its material.
+          </p>
+          <img src={yumi_example}/>
+        </div>
+
+        <div className="content_container_divide">
+          <p>
+            2 - <a href="https://unseen-music.com/yume/" target="_blank">https://unseen-music.com/yume/</a>: this site is rather standard. It does make use of 3D models, but for the most part shown from a 2D perspective. 
+            There is ThreeJS used for animating both objects and the camera itself (its movement).
+          </p>
+          <img src={jap_example}/>
+        </div>
+        
+        <p>
+          There is however a type of rendering material that does require a light source: <span className="threejs_material_standard">meshStandard</span>. Yes, like in our Blender scene we can add light 
+          sources to our scene. This is how it looks with a white light source (point light).
+        </p>
+
+        <div className="media_item_container">
+          <img src={mesh_standard_model_render}/>
+        </div>
+        <p>
+          Better, but not good. There is some gradience in our objects thanks to the light source. One thing to note is that even though we added a light source, 
+          there are no shadows. Unlike Blender, ThreeJS does not automatically render shadows. Adding shadows in ThreeJS is a separate and manual process. So to 
+          summarize: importing a model does not pass on any animation, lighting, or shadows. You can render your object in <span className="threejs_material_basic">meshBasic</span> which does not require any light, or 
+          render it in <span className="threejs_material_standard">meshStandard</span> (or a equivalent material that requires light) which does in order to see it but shadows are a manual process
+        </p>
+
+        <p>
+          Here are some sites that use materials which react/require a light source. 
+        </p>
+
+
+        <div className="content_container_divide">
+          <p>
+            1 - <a href="https://tympanus.net/Tutorials/TheAviator/" target="_blank">https://tympanus.net/Tutorials/TheAviator/</a>: This is a game primarily comprised of cubes. It uses <span className="threejs_material_phong">meshPhong</span> which is similar to <span className="threejs_material_standard">meshStandard</span> except it has more shiny surfaces with specular highlights. 
+            There is a small amount of ThreeJS shadows shown on the planet.
+          </p>
+          <img src={plane_example}/>
+        </div>
+
+        <div className="content_container_divide">
+          <p>
+            2 - <a href="https://paperplanes.world/" target="_blank">https://paperplanes.world/</a>: This page effectively has two models. The paper plane and the world. It makes heavy use of model movement and 
+            camera animation. This is using a mesh that makes use of a light source, which could be <span className="threejs_material_basic">meshBasic</span> or <span className="threejs_material_phong">meshPhong</span>. A bit of shadows is used underneath the continents 
+            themselves. Note how the background color also gently changes gradience.
+          </p>
+          <img src={paper_example}/>
+        </div>
+
+        
+
+        <p>
+          This is some documentation on various ThreeJS materials for comparison, if you are curious.
+        </p>
+        <ul className="unordered_list">
+          <li><a href="https://threejs.org/docs/#MeshBasicMaterial" target="_blank">meshBasic (no light necassary)</a></li>
+          <li><a href="https://threejs.org/docs/#MeshStandardMaterial" target="_blank">meshStandard</a></li>
+          <li><a href="https://threejs.org/docs/#MeshPhongMaterial" target="_blank">meshPhong</a></li>
+          <li><a href="https://threejs.org/docs/#MeshToonMaterial" target="_blank">meshToon</a></li>
+          <li><a href="https://threejs.org/docs/#MeshDepthMaterial" target="_blank">meshDepth</a></li>
+        </ul>
+
+
+
+
+        <div className="content_container_divide">
+         <p>
+            There is a trick to make our object look exactly just like our blender. This is called "baking". Effectively, the trick is to take a texture .png of our existing blender model, so 
+            the colors, shadows, gradients, exactly as it is in blender and then apply it to our ThreeJS model which is rendered in <span className="threejs_material_basic">meshBasic</span>. This gives the illusion of 
+            light and shadows without ever having to add any to our scene! On top of the far high render quality of Blender. However, the process of "baking" is a manual one done in Blender. It is difficult, and 
+            not feasible for us. In addition, this only works on static objects. It does not allow for any movement from the object itself otherwise it becomes obvious. It is a static snapshot afterall. Though 
+            if necassary, it can be further explored. To the right is an example of a texture from a scene similar to ours.
+          </p>
+          <img src={example_snapshot}/>
+        </div>
+
+
+
+        <p>
+          It's at this point that I bring up the 'p' word: performance. Two biggest hits in performance come from lights and shadows. As a result <span className="threejs_material_basic">meshBasic</span> is 
+          the most performant on the basis that it does not make use of either. To be clear, the extent to which it is used is a factor as well. It would be 
+          in our best interest to have whatever we are making be either <span className="threejs_material_basic">meshBasic</span>, or use a material that requires light and have no shadows with limited sources of light. The four example sites above 
+          are good representations of what we'd want. Remember, Blender and ThreeJS are tools for creativity. Their usage is not in of itself a justifcation 
+          for its existence.
+        </p>
+
+
+      </div>
+
+
+
+
+      <div className="content_container">
+        <h2>014 - Blender Final Notes</h2>
+
+        <p>
+          By now, you should feel like you have the basics of Blender on hand but don't feel ready. Here are some web tutorials that should cover more 
+          bases than I have. They are time consuming, but should no longer pose a challenge. They will touch on many things I already have, and some new tidbits 
+          that I have not.
+        </p>
+
+        <div className="media_item_container">
+          <iframe 
+            width="560" 
+            height="315" 
+            src="https://www.youtube.com/embed/K7__BjW4UWE?si=3_NeHKdnRFUkbHBL" 
+            title="YouTube video player" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowFullScreen>
+          </iframe>
+        </div>
+        <div className="media_item_container">
+          <iframe 
+            width="560" 
+            height="315" 
+            src="https://www.youtube.com/embed/8VmXzjgWQEg?si=e9vSliZPbYnbGIOR" 
+            title="YouTube video player" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowFullScreen>
+          </iframe>
+        </div>
+        <div className="media_item_container">
+          <iframe 
+            width="560" 
+            height="315" 
+            src="https://www.youtube.com/embed/fiX0sO2ZYZ0?si=pAd2J3viqhUsBuOH" 
+            title="YouTube video player" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowFullScreen>
+          </iframe>
+        </div>
+
+        <p>
+          Regardless of whether you feel like doing them, by now you have a fair understanding of how blender models are made and the details on making the 
+          transfer to ThreeJS. Cheers.
+        </p>
+
       </div>
 
     </>

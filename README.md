@@ -36,6 +36,9 @@ meshbbasic [best performance, low complexity] -> https://unseen-music.com/yume/ 
 meshstandard almost none/without shadows [meh performance, meh complexity] -> https://tympanus.net/Tutorials/TheAviator/ https://paperplanes.world/ 
 worst case can do meshstandard with shadows for moving objects and baking for all the background objects... [meshstandard + meshbasic baking. performance varies, but extreme complexity] -> https://bruno-simon.com/ 
 
+We should do something simple. the mothersday one is using meshbasic or somethin else. The music one is likely meshbasic.
+as for game: meshbasic or meshPhong like the airplane game!!
+
 
 ------------------------------------------------------------------------------------------------------
 

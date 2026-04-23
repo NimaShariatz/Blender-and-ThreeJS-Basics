@@ -201,7 +201,21 @@ export const activate_faceorient = faceorient;
 export const faceorient_example = faceorientex;
 export const changing_orient = changingorient;
 
-// day 1 012
+// day 1 013
 import day1013Blend from './assets/Days/1/Day1_013.blend';
+import meshbasicrend from './assets/Days/1/meshbbasic_scene.png';
+import meshstandrend from './assets/Days/1/meshstandard_scene.png';
+import yum from './assets/Days/1/yume_example.png';
+import ja from './assets/Days/1/jap_example.png';
+import planeex from './assets/Days/1/plane_example.png';
+import paperex from './assets/Days/1/paper_example.png';
+import examplesnap from './assets/Days/1/example_snapshot.jpg';
 
 export const Day1_013 = day1013Blend;
+export const mesh_basic_model_render = meshbasicrend;
+export const mesh_standard_model_render = meshstandrend;
+export const yumi_example = yum;
+export const jap_example = ja;
+export const plane_example = planeex;
+export const paper_example = paperex;
+export const example_snapshot = examplesnap;

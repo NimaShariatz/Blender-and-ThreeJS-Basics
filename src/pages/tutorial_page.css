@@ -52,14 +52,12 @@
 .content_container p{
   margin-top: 10px;
 }
-.content_container small a{
-  color: var(--blue_1);
-}
 .content_container_divide{
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
+  padding-block: 10px;
 }
 .content_container_divide p{
   width: 60%;
@@ -79,6 +77,42 @@
 .media_item_container video, .media_item_container img{
   width: 80%;
   border-radius: 12px;
+}
+
+.threejs_material_basic, .threejs_material_standard, .threejs_material_phong, .threejs_material_toon, .threejs_material_depth{
+  border-radius: 3px;
+  position: relative;
+}
+.threejs_material_basic::before, .threejs_material_standard::before, .threejs_material_phong::before, .threejs_material_toon::before, .threejs_material_depth::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 4px;
+}
+.threejs_material_basic::before{
+  background-color: var(--material_basic);
+}
+.threejs_material_standard::before{
+  background-color: var(--material_standard);
+}
+.threejs_material_phong::before{
+  background-color: var(--material_phong);
+}
+.threejs_material_toon::before{
+  background-color: var(--material_toon);
+}
+.threejs_material_depth::before{
+  background-color: var(--material_depth);
+}
+
+.unordered_list{
+ list-style-type:disc;
+ padding-left: 50px;
+}
+.unordered_list li::marker{
+  color: var(--blue_2);
 }
 
 
