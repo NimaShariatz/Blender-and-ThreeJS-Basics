@@ -646,7 +646,9 @@ function Day1() {
           Better, but not good. There is some gradience in our objects thanks to the light source. One thing to note is that even though we added a light source, 
           there are no shadows. Unlike Blender, ThreeJS does not automatically render shadows. Adding shadows in ThreeJS is a separate and manual process. So to 
           summarize: importing a model does not pass on any animation, lighting, or shadows. You can render your object in <span className="threejs_material_basic">meshBasic</span> which does not require any light, or 
-          render it in <span className="threejs_material_standard">meshStandard</span> (or a equivalent material that requires light) which does in order to see it but shadows are a manual process
+          render it in <span className="threejs_material_standard">meshStandard</span> (or a equivalent material that requires light) which does in order to see it but shadows are a manual process. Overall, as is the quality will 
+          not match what is in Blender because ThreeJS needs to render it in realtime. Recall early on how we changed the <PopupText keybindingText={<span>Rendering Mode</span>} keybindingImgVideo={<img src={RendererMode}/>} meshOrMenu={false} placerText={"rendering mode"}/> to Cycles instead of EEVEE for superior rendering quality in Blender (003)?. EEVEE is in fact closer to 
+          the way ThreeJS does it.
         </p>
 
         <p>
@@ -689,11 +691,12 @@ function Day1() {
 
         <div className="content_container_divide">
          <p>
-            There is a trick to make our object look exactly just like our blender. This is called "baking". Effectively, the trick is to take a texture .png of our existing blender model, so 
-            the colors, shadows, gradients, exactly as it is in blender and then apply it to our ThreeJS model which is rendered in <span className="threejs_material_basic">meshBasic</span>. This gives the illusion of 
-            light and shadows without ever having to add any to our scene! On top of the far high render quality of Blender. However, the process of "baking" is a manual one done in Blender. It is difficult, and 
-            not feasible for us. In addition, this only works on static objects. It does not allow for any movement from the object itself otherwise it becomes obvious. It is a static snapshot afterall. Though 
-            if necassary, it can be further explored. To the right is an example of a texture from a scene similar to ours.
+            There is a trick to make our object look exactly just like our blender. This is called "baking". Effectively, the trick is to make a texture .png of our existing blender model. So copy all of the
+            the colors, shadows, gradients, exactly as it is in blender, place it into a .png file and then apply it to our ThreeJS model which is rendered in <span className="threejs_material_basic">meshBasic</span>. This gives the illusion of 
+            light and shadows without ever having to add any to our scene! We will get the same result as our Blender model because we are effectivily copying it's output into a .png file. However, the process of "baking" is a manual one done in Blender. It is difficult, and 
+            very time consuming. In addition, this only works on static objects. It does not allow for any movement from the object itself otherwise it becomes obvious. It is a static snapshot of a Blender scene afterall. It is not rendered in real-time. Though 
+            if felt necassary, this option can be further explored. To the right is an example of a texture from a scene similar to ours. If we are "baking" a scene, it would make sense to go for the highest possible 
+            quality in our Blender scene by setting <PopupText keybindingText={<span>Rendering Mode</span>} keybindingImgVideo={<img src={RendererMode}/>} meshOrMenu={false} placerText={"rendering mode"}/> to Cycles.
           </p>
           <img src={example_snapshot}/>
         </div>
@@ -701,10 +704,11 @@ function Day1() {
 
 
         <p>
-          It's at this point that I bring up the 'p' word: performance. Two biggest hits in performance come from lights and shadows. As a result <span className="threejs_material_basic">meshBasic</span> is 
+          It's at this point that I bring up the 'p' word in ThreeJS: performance. Two biggest hits in performance come from lights and shadows. As a result <span className="threejs_material_basic">meshBasic</span> is 
           the most performant on the basis that it does not make use of either. To be clear, the extent to which it is used is a factor as well. It would be 
-          in our best interest to have whatever we are making be either <span className="threejs_material_basic">meshBasic</span>, or use a material that requires light and have no shadows with limited sources of light. The four example sites above 
-          are good representations of what we'd want. Remember, Blender and ThreeJS are tools for creativity. Their usage is not in of itself a justifcation 
+          in our best interest to have whatever we are making be either <span className="threejs_material_basic">meshBasic</span>, or use a material that requires light and have no shadows with limited sources of light. <span className="threejs_material_basic">MeshBasic</span> paired with baking is 
+          also very performant, but as I said, both difficult and time consuming to create a texture map in Blender.
+          The four example sites above are good representations of what we'd want. Remember, Blender and ThreeJS are tools for creativity. Their usage is not in of itself a justifcation 
           for its existence.
         </p>
 
@@ -720,7 +724,7 @@ function Day1() {
         <p>
           By now, you should feel like you have the basics of Blender on hand but don't feel ready. Here are some web tutorials that should cover more 
           bases than I have. They are time consuming, but should no longer pose a challenge. They will touch on many things I already have, and some new tidbits 
-          that I have not.
+          that I have not. All optional.
         </p>
 
         <div className="media_item_container">
