@@ -34,49 +34,50 @@ import PopupText from "../../components/popupText/popupText";
 
 
 
-// We define this outside of Day1 so React doesn't recreate it on every render.
-function LazyVideo(props: React.VideoHTMLAttributes<HTMLVideoElement>) { //takes in <video/> as input
-  
-  const videoRef = useRef<HTMLVideoElement>(null);// This is like document.getElementById
+function LazyVideo({ src, ...props }: React.VideoHTMLAttributes<HTMLVideoElement>) {
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     const videoElement = videoRef.current;
-    
-    if (!videoElement) {// If the video element hasn't loaded yet, do nothing.
-      return; 
-    }
+    if (!videoElement) return;
 
-    // 1. Set up the observer to watch our video element
-    const observer = new IntersectionObserver((entries) => { //window.addEventListener('scroll', ...) replacement. for performance
-      // There is only one element being observed, so it's always the first entry
-      const videoEntry = entries[0]; 
-
-      // 2. Check if the video is currently visible on the screen
+    // ------ 1. Set up the observer to watch our video element
+    const observer = new IntersectionObserver((entries) => {//window.addEventListener('scroll', ...) replacement. for performance
+      const videoEntry = entries[0];
+      
+      // ------ 2. Check if the video is currently visible on the screen
       if (videoEntry.isIntersecting) {
-        videoElement.play();
-        console.log(videoElement)
+        // Only attach the source and play when visible
+        if (!videoElement.src && src) {
+          videoElement.src = src;
+          videoElement.load();
+        }
+        videoElement.play().catch(e => console.log("Playback prevented:", e));
       } else {
+        // Pause and flush the video from memory when off-screen
         videoElement.pause();
+        videoElement.removeAttribute('src');
+        videoElement.load(); // Forces the browser to clear the memory buffer
       }
+    }, {
+      rootMargin: "200px" // Loads the video slightly before it scrolls into view
     });
 
-    // 3. Tell the observer to start watching this specific video
+    // 3. ------ Tell the observer to start watching this specific video
     observer.observe(videoElement);
 
-    // 4. Clean up: stop watching when the user leaves the page or the video is removed
-    return () => {
-      observer.disconnect();
-    };
-  }, []);
-  return <video ref={videoRef} {...props} />;
-}
+    // 4. ------ Clean up: stop watching when the user leaves the page or the video is removed
+    return () => observer.disconnect();
+  }, [src]);
 
-{/* 
-  NOTE TO SELF: end of lesson we should...
-  
-  throw things like lights and camera into a collection and have it unselected so its not exported.
-  
-  */}
+  return (
+    <video 
+      ref={videoRef} 
+      preload="none" // Tells the browser not to preload the video data
+      {...props} 
+    />
+  );
+}
 
 
 
@@ -612,7 +613,8 @@ function Day1() {
           So why does it look like a crayon drawing from a 3 year old? When we export a model into ThreeJS animations, lights, and their subsequent shadows 
           don't come with us. How can we see the model? This is because in ThreeJS we are rendering the object in <span className="threejs_material_basic">meshBasic</span>. This material 
           does not require light to be shown. It also does not interact with light in any way. Hence we do not have any of the natural gradiences that come 
-          with a scene that has lighting. Here are some ThreeJS sites that make use of <span className="threejs_material_basic">meshBasic</span>.
+          with a scene that has lighting. As such, before you export your scene you should remove 
+          any light sources and the camera. Here are some ThreeJS sites that make use of <span className="threejs_material_basic">meshBasic</span>.
         </p>
 
 
