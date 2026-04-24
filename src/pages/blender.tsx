@@ -610,11 +610,12 @@ function Blender() {
         </div>
 
         <p>
-          So why does it look like a crayon drawing from a 3 year old? When we export a model into ThreeJS animations, lights, and their subsequent shadows 
+          So why does it look like a crayon drawing from a 3 year old? When we export a model into ThreeJS lights and their subsequent shadows 
           don't come with us. How can we see the model? This is because in ThreeJS we are rendering the object in <span className="threejs_material_basic">meshBasic</span>. This material 
           does not require light to be shown. It also does not interact with light in any way. Hence we do not have any of the natural gradiences that come 
           with a scene that has lighting. As such, before you export your scene you should remove 
-          any light sources and the camera. Here are some ThreeJS sites that make use of <span className="threejs_material_basic">meshBasic</span>.
+          any light sources and the camera. Blender animations do get passed on to ThreeJS, but learning Blender animations is a 
+          complicated affair. Here are some ThreeJS sites that make use of <span className="threejs_material_basic">meshBasic</span>.
         </p>
 
 
@@ -647,7 +648,7 @@ function Blender() {
         <p>
           Better, but not good. There is some gradience in our objects thanks to the light source. One thing to note is that even though we added a light source, 
           there are no shadows. Unlike Blender, ThreeJS does not automatically render shadows. Adding shadows in ThreeJS is a separate and manual process. So to 
-          summarize: importing a model does not pass on any animation, lighting, or shadows. You can render your object in <span className="threejs_material_basic">meshBasic</span> which does not require any light, or 
+          summarize: importing a model does not pass on any lighting, or shadows. You can render your object in <span className="threejs_material_basic">meshBasic</span> which does not require any light, or 
           render it in <span className="threejs_material_standard">meshStandard</span> (or a equivalent material that requires light) which does in order to see it. But adding shadows shadows is a manual process. Overall, as is the quality will 
           not match what it is in Blender because ThreeJS needs to render it in realtime. Recall early on how we changed the <PopupText keybindingText={<span>Rendering Mode</span>} keybindingImgVideo={<img src={RendererMode}/>} meshOrMenu={false} placerText={"rendering mode"}/> to Cycles instead of EEVEE for superior rendering quality in Blender (003)?. EEVEE is in fact closer to 
           the way ThreeJS does it on the basis that it looks worse. But even then, because ThreeJS must render the scene in real-time, I.E in 60FPS (or whatever your moniter refresh rate is). We can't wait a minute just to have a single frame rendered.
