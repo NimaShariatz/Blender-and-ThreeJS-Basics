@@ -219,7 +219,7 @@ function Keybindings() {
             <div>
               <p className="keybind"><PopupText keybindingText={<span>Split Object</span>} keybindingImgVideo={<img src={SplitObj}/>} meshOrMenu={false} placerText={"Split Object"}/></p>
               <p className="keybind_-">-</p>
-              <p className="keybind_desc">Splits the selected faces in "Edit Mode" into its own unqiue object</p>
+              <p className="keybind_desc">Splits the selected faces in "Edit Mode" into its own unique object</p>
             </div>
           </div>
         </div>

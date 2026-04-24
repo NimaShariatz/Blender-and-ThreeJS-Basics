@@ -709,8 +709,8 @@ function Blender() {
 
         <p>
           It's at this point that I bring up the 'p' word in ThreeJS: performance. Two biggest hits in performance come from lights and shadows. As a result <span className="threejs_material_basic">meshBasic</span> is 
-          the most performant on the basis that it does not make use of either. To be clear, the extent to which it is used is a factor as well. It would be 
-          in our best interest to have whatever we are making be either <span className="threejs_material_basic">meshBasic</span>, or use a material that requires light and have no shadows with limited sources of light. <span className="threejs_material_basic">MeshBasic</span> paired with baking is 
+          the most performant on the basis that it neither needs nor can make use of either. To be clear, the extent to which it is used is a factor as well. It would be 
+          in our best interest to have whatever we are making be either <span className="threejs_material_basic">meshBasic</span>, or use a material that requires light and ignore any shadow usage. <span className="threejs_material_basic">MeshBasic</span> paired with baking is 
           also very performant, but as I said, both difficult and time consuming to create a texture map in Blender for a model.
           The four example sites above are good representations of what we'd want. Remember, Blender and ThreeJS are tools for creativity. Their usage is not in of itself a justifcation 
           for its existence.
