@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react"
 
-import "../tutorial_page.css"
+import "./tutorial_page.css"
 import {CenterOn, zyx_axis, InteractionMode, Day1_001, new_window, Delete, NewObject,
   TransferScale, plane, Day1_002, ScaleAxis, Duplicate, containers, RotateXYZ, SelectAll, Day1_fences, Day1_003,
   GrabAxis, ChangeRenderView, NewLight, NewCamera, RendererMode, Day1_lightAndcamera, Day1_004, trunk, add_trunk, trunks, Day1_005, create_log, cap_fill_mode,
@@ -29,8 +29,8 @@ import {CenterOn, zyx_axis, InteractionMode, Day1_001, new_window, Delete, NewOb
   paper_example,
   plane_example,
   example_snapshot
- } from "../../constants"
-import PopupText from "../../components/popupText/popupText";
+ } from "../constants"
+import PopupText from "../components/popupText/popupText";
 
 
 
@@ -83,7 +83,7 @@ function LazyVideo({ src, ...props }: React.VideoHTMLAttributes<HTMLVideoElement
 
 
 
-function Day1() {
+function Blender() {
   
 
 
@@ -638,7 +638,7 @@ function Day1() {
         
         <p>
           There is however a type of rendering material that does require a light source: <span className="threejs_material_standard">meshStandard</span>. Yes, like in our Blender scene we can add light 
-          sources to our scene. This is how it looks with a white light source (point light).
+          sources to our ThreeJS scene. This is how it looks with a white light source (point light).
         </p>
 
         <div className="media_item_container">
@@ -648,13 +648,14 @@ function Day1() {
           Better, but not good. There is some gradience in our objects thanks to the light source. One thing to note is that even though we added a light source, 
           there are no shadows. Unlike Blender, ThreeJS does not automatically render shadows. Adding shadows in ThreeJS is a separate and manual process. So to 
           summarize: importing a model does not pass on any animation, lighting, or shadows. You can render your object in <span className="threejs_material_basic">meshBasic</span> which does not require any light, or 
-          render it in <span className="threejs_material_standard">meshStandard</span> (or a equivalent material that requires light) which does in order to see it but shadows are a manual process. Overall, as is the quality will 
-          not match what is in Blender because ThreeJS needs to render it in realtime. Recall early on how we changed the <PopupText keybindingText={<span>Rendering Mode</span>} keybindingImgVideo={<img src={RendererMode}/>} meshOrMenu={false} placerText={"rendering mode"}/> to Cycles instead of EEVEE for superior rendering quality in Blender (003)?. EEVEE is in fact closer to 
-          the way ThreeJS does it.
+          render it in <span className="threejs_material_standard">meshStandard</span> (or a equivalent material that requires light) which does in order to see it. But adding shadows shadows is a manual process. Overall, as is the quality will 
+          not match what it is in Blender because ThreeJS needs to render it in realtime. Recall early on how we changed the <PopupText keybindingText={<span>Rendering Mode</span>} keybindingImgVideo={<img src={RendererMode}/>} meshOrMenu={false} placerText={"rendering mode"}/> to Cycles instead of EEVEE for superior rendering quality in Blender (003)?. EEVEE is in fact closer to 
+          the way ThreeJS does it on the basis that it looks worse. But even then, because ThreeJS must render the scene in real-time, I.E in 60FPS (or whatever your moniter refresh rate is). We can't wait a minute just to have a single frame rendered.
         </p>
 
         <p>
-          Here are some sites that use materials which react/require a light source. 
+          Here are some sites that use materials which react/require a light source. They are all low-poly and actually look pretty good despite our 
+          rendering quality limitations.
         </p>
 
 
@@ -709,7 +710,7 @@ function Day1() {
           It's at this point that I bring up the 'p' word in ThreeJS: performance. Two biggest hits in performance come from lights and shadows. As a result <span className="threejs_material_basic">meshBasic</span> is 
           the most performant on the basis that it does not make use of either. To be clear, the extent to which it is used is a factor as well. It would be 
           in our best interest to have whatever we are making be either <span className="threejs_material_basic">meshBasic</span>, or use a material that requires light and have no shadows with limited sources of light. <span className="threejs_material_basic">MeshBasic</span> paired with baking is 
-          also very performant, but as I said, both difficult and time consuming to create a texture map in Blender.
+          also very performant, but as I said, both difficult and time consuming to create a texture map in Blender for a model.
           The four example sites above are good representations of what we'd want. Remember, Blender and ThreeJS are tools for creativity. Their usage is not in of itself a justifcation 
           for its existence.
         </p>
@@ -773,4 +774,4 @@ function Day1() {
 
 }
 
-export default Day1
+export default Blender;

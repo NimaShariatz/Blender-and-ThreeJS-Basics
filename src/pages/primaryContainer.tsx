@@ -5,12 +5,12 @@ import { useState } from "react";
 
 import Navbar from "../components/navbar/navbar";
 import Keybindings from "../components/keybindings/keybindings";
-import Day1 from "./day_1/day1";
+import Blender from "./blender";
 
 
 
 
-function TutorialPage() {
+function PrimaryContainer() {
   
   const [daySelect, setDaySelect] = useState(1);
 
@@ -35,7 +35,7 @@ function TutorialPage() {
 
 
       {daySelect === 1 &&
-        <Day1/>
+        <Blender/>
       }
 
 
@@ -46,4 +46,4 @@ function TutorialPage() {
   )
 }
 
-export default TutorialPage;
+export default PrimaryContainer;

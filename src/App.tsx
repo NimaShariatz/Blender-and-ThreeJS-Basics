@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Routes, Route } from "react-router";
-import TutorialPage from "./pages/tutorial_page";
+import TutorialPage from "./pages/primaryContainer"
 
 function App() {
   useEffect(() => {
