@@ -48,7 +48,10 @@ import fill from './assets/keybinds/Fill.mp4';
 import move from './assets/keybinds/Move.mp4';
 import cut from './assets/keybinds/cutting.mp4';
 import gg from './assets/keybinds/GG.mp4';
+import ins from './assets/keybinds/inset.mp4';
 import extr from './assets/keybinds/extrude.mp4';
+import vertbevelround from './assets/keybinds/vertex_bevel.mp4';
+import edgebevelround from './assets/keybinds/edge_bevel.mp4';
 
 export const Grab = grabVid;
 export const GrabAxis = grabAxisVid;
@@ -67,7 +70,10 @@ export const Fill = fill;
 export const Move = move
 export const Cut = cut;
 export const GG = gg;
+export const Inset = ins;
 export const Extrude = extr;
+export const vert_bevel_round = vertbevelround;
+export const edge_bevel_round = edgebevelround;
 
 // day 1 start and 001
 import newWindowVid from './assets/Days/1/new_window.mp4';

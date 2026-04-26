@@ -1,10 +1,28 @@
 
 import "./keybindings.css"
-import {ApplyMat, Bisect, Join, MaterialWindow, zyx_axis} from "../../constants"
+import {ApplyMat, Bisect, edge_bevel_round, Inset, Join, MaterialWindow, vert_bevel_round, zyx_axis} from "../../constants"
 import PopupText from "../popupText/popupText"
 import { GrabAxis, ScaleAxis, Duplicate, LinkedDuplicate, CenterOn, FocusOn, ChangeRenderView, SelectAll, SelectClicked
   , Delete, InteractionMode, NewObject, TransferScale, RotateXYZ, NewLight, NewCamera, RendererMode, Fill, ResetGeometry, Move, Cut, GG, Extrude, SplitObj
 } from "../../constants"
+
+
+
+{/*
+  Potential new keybinds
+  
+  Ctrl + Shift + B: enables vertex bevel which rounds edges. To increase cuts, use mouse wheel.
+  Ctrl + B: enables edge bevel which rounds corners. To introduce edges, use mouse wheel
+  
+  
+*/}
+
+
+
+
+
+
+
 
 
 function Keybindings() {
@@ -32,6 +50,11 @@ function Keybindings() {
             <p className="keybind_-">-</p>
             <img className="keybind_img" src={zyx_axis}/>
           </div>
+          <div>
+            <p className="keybind">Move World Origin</p>
+            <p className="keybind_-">-</p>
+            <p className="keybind_desc">Shift + RMB or Shift + S</p>
+          </div>
         </div>
 
         <div className="keybindings_section">
@@ -49,6 +72,11 @@ function Keybindings() {
             <p className="keybind">Lasso Select</p>
             <p className="keybind_-">-</p>
             <p className="keybind_desc">Ctrl + RMB</p>
+          </div>
+          <div>
+            <p className="keybind">Select All Connecting</p>
+            <p className="keybind_-">-</p>
+            <p className="keybind_desc">L</p>
           </div>
         </div>
       </div>
@@ -127,6 +155,11 @@ function Keybindings() {
             <p className="keybind_desc">F</p>
           </div>
           <div>
+            <p className="keybind"><PopupText keybindingText={<span>I</span>} keybindingImgVideo={<video src={Inset} loop muted playsInline/>} meshOrMenu={true} placerText={"Inset"}/></p>
+            <p className="keybind_-">-</p>
+            <p className="keybind_desc">I</p>
+          </div>
+          <div>
             <p className="keybind"><PopupText keybindingText={<span>E</span>} keybindingImgVideo={<video src={Extrude} loop muted playsInline/>} meshOrMenu={true} placerText={"Extrude Face"}/></p>
             <p className="keybind_-">-</p>
             <p className="keybind_desc">E</p>
@@ -134,12 +167,22 @@ function Keybindings() {
           <div>
             <p className="keybind"><PopupText keybindingText={<span>Ctrl + R</span>} keybindingImgVideo={<video src={Cut} loop muted playsInline/>} meshOrMenu={true} placerText={"Add Loop Cut"}/></p>
             <p className="keybind_-">-</p>
-            <p className="keybind_desc">Ctrl + R</p>
+            <p className="keybind_desc">Ctrl + R <small>(To increase cuts, use scroll-wheel)</small></p>
           </div>
           <div>
             <p className="keybind"><PopupText keybindingText={<span>G &#215; 2</span>} keybindingImgVideo={<video src={GG} loop muted playsInline/>} meshOrMenu={true} placerText={"Vertex Slider"}/></p>
             <p className="keybind_-">-</p>
             <p className="keybind_desc">G &#215; 2</p>
+          </div>
+          <div>
+            <p className="keybind"><PopupText keybindingText={<span>Ctrl + B</span>} keybindingImgVideo={<video src={edge_bevel_round} loop muted playsInline/>} meshOrMenu={true} placerText={"Bevel Edge"}/></p>
+            <p className="keybind_-">-</p>
+            <p className="keybind_desc">Ctrl + B <small>(To increase cuts, use scroll-wheel)</small></p>
+          </div>
+          <div>
+            <p className="keybind"><PopupText keybindingText={<span>Ctrl + Shift + B</span>} keybindingImgVideo={<video src={vert_bevel_round} loop muted playsInline/>} meshOrMenu={true} placerText={"Bevel Vertex"}/></p>
+            <p className="keybind_-">-</p>
+            <p className="keybind_desc">Ctrl + Shift + B <small>(To increase cuts, use scroll-wheel)</small></p>
           </div>
           <div>
             <p className="keybind"><PopupText keybindingText={<span>M</span>} keybindingImgVideo={<video src={Move} loop muted playsInline/>} meshOrMenu={true} placerText={"Move To Collection"}/></p>

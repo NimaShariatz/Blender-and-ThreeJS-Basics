@@ -127,7 +127,7 @@ function Blender() {
           There's also a set of common actions far more convient by keybind than by menu hopping. <PopupText keybindingText={<span>G with optional (X,Y,Z)<br/><small>("Edit Mode" does not move origin point)</small></span>} keybindingImgVideo={<video src={GrabAxis} loop muted playsInline/>} meshOrMenu={true} placerText={"Grab"}/> for movement 
           and <PopupText keybindingText={<span>S with optional (X,Y,Z)<br/><small>(should be done in "Edit Mode")</small></span>} keybindingImgVideo={<video src={ScaleAxis} loop muted playsInline/>} meshOrMenu={true} placerText={"scale"}/> for sizing, with both 
           being able to be moved/resized by a specific axis. Items can be <PopupText keybindingText={<span>Numpad . (View → Frame Selected)</span>} keybindingImgVideo={<video src={CenterOn} loop muted playsInline/>} meshOrMenu={true} placerText={"centered on"}/> with either the numpad period key, or View → Frame Selected.
-          You can duplicate an existing object, or create a linked duplicate which has any sizing or physical changes applied to all other instances. Do note 
+          You can <PopupText keybindingText={<span>Shift + D<br/><small>("Edit mode" and "Object Mode" copy differently. Difference is noticable in the top right collections section)</small></span>} keybindingImgVideo={<video src={Duplicate} loop muted playsInline/>} meshOrMenu={true} placerText={"duplicate"}/> an existing object, or create a <PopupText keybindingText={<span>Alt + D<br/></span>} keybindingImgVideo={<video src={LinkedDuplicate} loop muted playsInline/>} meshOrMenu={true} placerText={"linked duplicate"}/> which has any sizing or physical changes applied to all other instances. Do note 
           that being in <PopupText keybindingText={<span>Interaction Mode</span>} keybindingImgVideo={<video src={InteractionMode} loop muted playsInline/>} meshOrMenu={false} placerText={`"Edit Mode" or "Object Mode"`}/> can effect your manipulation of all of the above or not have them work at all.
         </p>
 
@@ -316,7 +316,7 @@ function Blender() {
 
         <p>
           But we'll be adding a bit more detail. This requires using new keybinds. An axe head has a curved edge. Unfortunately as is we can't cut make the curve. we 
-          need more vertices. So we introduce <PopupText keybindingText={<span>Ctrl + R</span>} keybindingImgVideo={<video src={Cut} loop muted playsInline/>} meshOrMenu={true} placerText={"loop cuts"}/> in <PopupText keybindingText={<span>Interaction Mode</span>} keybindingImgVideo={<video src={InteractionMode} loop muted playsInline/>} meshOrMenu={false} placerText={`"Edit Mode"`}/> into our 
+          need more vertices. So we introduce <PopupText keybindingText={<span>Ctrl + R <small>(To increase cuts, use scroll-wheel)</small></span>} keybindingImgVideo={<video src={Cut} loop muted playsInline/>} meshOrMenu={true} placerText={"loop cuts"}/> in <PopupText keybindingText={<span>Interaction Mode</span>} keybindingImgVideo={<video src={InteractionMode} loop muted playsInline/>} meshOrMenu={false} placerText={`"Edit Mode"`}/> into our 
           shape which allow us to better curve the 
           axe at its end. Three cuts placed at the center. While still in "Edit Mode" select the vertices at the end and <PopupText keybindingText={<span>G with optional (X,Y,Z)<br/><small>("Edit Mode" does not move origin point)</small></span>} keybindingImgVideo={<video src={GrabAxis} loop muted playsInline/>} meshOrMenu={true} placerText={"move them up"}/>. Then 
           <PopupText keybindingText={<span>S with optional (X,Y,Z)<br/><small>(should be done in "Edit Mode")</small></span>} keybindingImgVideo={<video src={ScaleAxis} loop muted playsInline/>} meshOrMenu={true} placerText={"tighten"}/> the top of the axe.
@@ -327,7 +327,7 @@ function Blender() {
         </div>
 
         <p>
-          Add <PopupText keybindingText={<span>Ctrl + R</span>} keybindingImgVideo={<video src={Cut} loop muted playsInline/>} meshOrMenu={true} placerText={"another loop cut"}/> perpendicularly and now use the <PopupText keybindingText={<span>G &#215; 2</span>} keybindingImgVideo={<video src={GG} loop muted playsInline/>} meshOrMenu={true} placerText={"vertex slider"}/> for a
+          Add <PopupText keybindingText={<span>Ctrl + R <small>(To increase cuts, use scroll-wheel)</small></span>} keybindingImgVideo={<video src={Cut} loop muted playsInline/>} meshOrMenu={true} placerText={"another loop cut"}/> perpendicularly and now use the <PopupText keybindingText={<span>G &#215; 2</span>} keybindingImgVideo={<video src={GG} loop muted playsInline/>} meshOrMenu={true} placerText={"vertex slider"}/> for a
           finer adjustment of points into a sharp edge.
         </p>
 
@@ -339,7 +339,7 @@ function Blender() {
         <p>
           Then comes the handle. We <PopupText keybindingText={<span>New Object</span>} keybindingImgVideo={<img src={NewObject}/>} meshOrMenu={false} placerText={"create a cube"}/> in "Edit Mode" (so the cube and axe head are considered the part of the same object) and place it inside the axe head while in <PopupText keybindingText={<span>Z</span>} keybindingImgVideo={<video src={ChangeRenderView} loop muted playsInline/>} meshOrMenu={true} placerText={`"Wireframe" view.`}/>. We 
           use <PopupText keybindingText={<span>S with optional (X,Y,Z)<br/><small>(should be done in "Edit Mode")</small></span>} keybindingImgVideo={<video src={ScaleAxis} loop muted playsInline/>} meshOrMenu={true} placerText={"scale"}/> to expand it into a handle.
-          We use <PopupText keybindingText={<span>Ctrl + R</span>} keybindingImgVideo={<video src={Cut} loop muted playsInline/>} meshOrMenu={true} placerText={" loop cuts"}/>, use a bit more of scale and grab, and for the first time use <PopupText keybindingText={<span>E</span>} keybindingImgVideo={<video src={Extrude} loop muted playsInline/>} meshOrMenu={true} placerText={"extrusion"}/> in the process.
+          We use <PopupText keybindingText={<span>Ctrl + R <small>(To increase cuts, use scroll-wheel)</small></span>} keybindingImgVideo={<video src={Cut} loop muted playsInline/>} meshOrMenu={true} placerText={" loop cuts"}/>, use a bit more of scale and grab, and for the first time use <PopupText keybindingText={<span>E</span>} keybindingImgVideo={<video src={Extrude} loop muted playsInline/>} meshOrMenu={true} placerText={"extrusion"}/> in the process.
         </p>
 
         <div className="media_item_container">
@@ -685,11 +685,15 @@ function Blender() {
         <ul className="unordered_list">
           <li><a href="https://threejs.org/docs/#MeshBasicMaterial" target="_blank">meshBasic (no light necassary)</a></li>
           <li><a href="https://threejs.org/docs/#MeshStandardMaterial" target="_blank">meshStandard</a></li>
+          <li><a href="https://threejs.org/docs/#MeshPhysicalMaterial" target="_blank">meshPhysical</a></li>
           <li><a href="https://threejs.org/docs/#MeshPhongMaterial" target="_blank">meshPhong</a></li>
           <li><a href="https://threejs.org/docs/#MeshToonMaterial" target="_blank">meshToon</a></li>
           <li><a href="https://threejs.org/docs/#MeshDepthMaterial" target="_blank">meshDepth</a></li>
         </ul>
-
+        <p>
+          Note: recall how in 011 we applied color to the objects. We also tweaked the "Roughness" and "Metallic" values on occasion. While color 
+          always gets passed on(so long as its not procedural or complex), <PopupText keybindingText={<span>Materials Window</span>} keybindingImgVideo={<img src={MaterialWindow}/>} meshOrMenu={false} placerText={`"Roughness" and "Metallic"`}/> values will only get passed on to ThreeJS if meshStandard or meshPhysical is used.
+        </p>
 
 
 
@@ -700,7 +704,8 @@ function Blender() {
             light and shadows without ever having to add any to our scene! We will get the same result as our Blender model because we are effectivily copying it's output into a .png file. However, the process of "baking" is a manual one done in Blender. It is difficult, and 
             very time consuming. In addition, this only works on static objects. It does not allow for any movement from the object itself otherwise it becomes obvious. It is a static snapshot of a Blender scene afterall. It is not rendered in real-time. Though 
             if felt necassary, this option can be further explored. To the right is an example of a texture from a scene similar to ours. If we are "baking" a scene, it would make sense to go for the highest possible 
-            quality in our Blender scene by setting <PopupText keybindingText={<span>Rendering Mode</span>} keybindingImgVideo={<img src={RendererMode}/>} meshOrMenu={false} placerText={"rendering mode"}/> to Cycles.
+            quality in our Blender scene by setting <PopupText keybindingText={<span>Rendering Mode</span>} keybindingImgVideo={<img src={RendererMode}/>} meshOrMenu={false} placerText={"rendering mode"}/> to Cycles. 
+            Overall, it is indeed possible to get the same output as our blender with this trick and with the most performant material.
           </p>
           <img src={example_snapshot}/>
         </div>
@@ -710,7 +715,7 @@ function Blender() {
         <p>
           It's at this point that I bring up the 'p' word in ThreeJS: performance. Two biggest hits in performance come from lights and shadows. As a result <span className="threejs_material_basic">meshBasic</span> is 
           the most performant on the basis that it neither needs nor can make use of either. To be clear, the extent to which it is used is a factor as well. It would be 
-          in our best interest to have whatever we are making be either <span className="threejs_material_basic">meshBasic</span>, or use a material that requires light and ignore any shadow usage. <span className="threejs_material_basic">MeshBasic</span> paired with baking is 
+          in our best interest to have whatever we are making be either <span className="threejs_material_basic">meshBasic</span>, or use a material that requires light but make the choice to not have any shadows. <span className="threejs_material_basic">MeshBasic</span> paired with baking is 
           also very performant, but as I said, both difficult and time consuming to create a texture map in Blender for a model.
           The four example sites above are good representations of what we'd want. Remember, Blender and ThreeJS are tools for creativity. Their usage is not in of itself a justifcation 
           for its existence.
@@ -728,19 +733,11 @@ function Blender() {
         <p>
           By now, you should feel like you have the basics of Blender on hand but don't feel ready. Here are some web tutorials that should cover more 
           bases than I have. They are time consuming, but should no longer pose a challenge. They will touch on many things I already have, and some new tidbits 
-          that I have not. All optional.
+          that I have not.
         </p>
 
-        <div className="media_item_container">
-          <iframe 
-            width="560" 
-            height="315" 
-            src="https://www.youtube.com/embed/K7__BjW4UWE?si=3_NeHKdnRFUkbHBL" 
-            title="YouTube video player" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            allowFullScreen>
-          </iframe>
-        </div>
+
+
         <div className="media_item_container">
           <iframe 
             width="560" 
@@ -755,12 +752,13 @@ function Blender() {
           <iframe 
             width="560" 
             height="315" 
-            src="https://www.youtube.com/embed/fiX0sO2ZYZ0?si=pAd2J3viqhUsBuOH" 
+            src="https://www.youtube.com/embed/K7__BjW4UWE?si=3_NeHKdnRFUkbHBL" 
             title="YouTube video player" 
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
             allowFullScreen>
           </iframe>
         </div>
+
 
         <p>
           Regardless of whether you feel like doing them, by now you have a fair understanding of how blender models are made and the details on making the 
