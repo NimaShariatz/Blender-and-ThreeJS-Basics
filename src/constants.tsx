@@ -15,6 +15,7 @@ import bisect from './assets/keybinds/bisect.mp4';
 import matwin from './assets/keybinds/materials_window.png';
 import applymat from './assets/keybinds/apply_material.png';
 import splitobj from './assets/keybinds/SplitObjects.png'
+import brideobj from './assets/keybinds/bridge.mp4'
 
 
 export const InteractionMode = interactionModeVid;
@@ -29,6 +30,7 @@ export const Bisect = bisect;
 export const MaterialWindow = matwin;
 export const ApplyMat = applymat;
 export const SplitObj = splitobj;
+export const BridgeObj = brideobj
 
 // keybinds
 import grabVid from './assets/keybinds/Grab.mp4';

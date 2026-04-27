@@ -1,6 +1,6 @@
 
 import "./keybindings.css"
-import {ApplyMat, Bisect, edge_bevel_round, Inset, Join, MaterialWindow, vert_bevel_round, zyx_axis} from "../../constants"
+import {ApplyMat, Bisect, BridgeObj, edge_bevel_round, Inset, Join, MaterialWindow, vert_bevel_round, zyx_axis} from "../../constants"
 import PopupText from "../popupText/popupText"
 import { GrabAxis, ScaleAxis, Duplicate, LinkedDuplicate, CenterOn, FocusOn, ChangeRenderView, SelectAll, SelectClicked
   , Delete, InteractionMode, NewObject, TransferScale, RotateXYZ, NewLight, NewCamera, RendererMode, Fill, ResetGeometry, Move, Cut, GG, Extrude, SplitObj
@@ -263,6 +263,11 @@ function Keybindings() {
               <p className="keybind"><PopupText keybindingText={<span>Split Object</span>} keybindingImgVideo={<img src={SplitObj}/>} meshOrMenu={false} placerText={"Split Object"}/></p>
               <p className="keybind_-">-</p>
               <p className="keybind_desc">Splits the selected faces in "Edit Mode" into its own unique object</p>
+            </div>
+            <div>
+              <p className="keybind"><PopupText keybindingText={<span>Bridge Deleted Faces</span>} keybindingImgVideo={<video src={BridgeObj} loop muted playsInline/>} meshOrMenu={false} placerText={"Bridge Deleted Faces"}/></p>
+              <p className="keybind_-">-</p>
+              <p className="keybind_desc">Deletes the selected faces and fills a connection to the other side</p>
             </div>
           </div>
         </div>
