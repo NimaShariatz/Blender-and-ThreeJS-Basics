@@ -51,7 +51,7 @@ function Keybindings() {
             <img className="keybind_img" src={zyx_axis}/>
           </div>
           <div>
-            <p className="keybind">Move World Origin</p>
+            <p className="keybind">Move Cursor(spawn point)</p>
             <p className="keybind_-">-</p>
             <p className="keybind_desc">Shift + RMB or Shift + S</p>
           </div>

@@ -623,7 +623,7 @@ function Blender() {
 
         <div className="content_container_divide">
           <p>
-            1 - <a href="https://www.pola.co.jp/special/o/wecaremore/mothersday/" target="_blank">https://www.pola.co.jp/special/o/wecaremore/mothersday/</a>: This site makes heavy use of ThreeJS for animations, both big and subtle. It likely 
+            1 - <a href="https://www.pola.co.jp/special/o/wecaremore/mothersday/" target="_blank">https://www.pola.co.jp/special/o/wecaremore/mothersday/</a>: This site makes heavy use of ThreeJS for animations for object and camera movement. It likely 
             does use <span className="threejs_material_basic">meshBasic</span> for its material.
           </p>
           <img src={yumi_example}/>
@@ -632,7 +632,7 @@ function Blender() {
         <div className="content_container_divide">
           <p>
             2 - <a href="https://unseen-music.com/yume/" target="_blank">https://unseen-music.com/yume/</a>: this site is rather standard. It does make use of 3D models, but for the most part shown from a 2D perspective. 
-            There is ThreeJS used for animating both objects and the camera itself (its movement).
+            There is ThreeJS used for animating both objects and the camera itself (its movement). It likely does use <span className="threejs_material_basic">meshBasic</span> for its material.
           </p>
           <img src={jap_example}/>
         </div>
@@ -649,9 +649,9 @@ function Blender() {
           Better, but not good. There is some gradience in our objects thanks to the light source. One thing to note is that even though we added a light source, 
           there are no shadows. Unlike Blender, ThreeJS does not automatically render shadows. Adding shadows in ThreeJS is a separate and manual process. So to 
           summarize: importing a model does not pass on any lighting, or shadows. You can render your object in <span className="threejs_material_basic">meshBasic</span> which does not require any light, or 
-          render it in <span className="threejs_material_standard">meshStandard</span> (or a equivalent material that requires light) which does in order to see it. But adding shadows shadows is a manual process. Overall, as is the quality will 
+          render it in <span className="threejs_material_standard">meshStandard</span> (or a equivalent material that requires light) which does in order to see it. But adding shadows is a manual process. Overall, the quality will 
           not match what it is in Blender because ThreeJS needs to render it in realtime. Recall early on how we changed the <PopupText keybindingText={<span>Rendering Mode</span>} keybindingImgVideo={<img src={RendererMode}/>} meshOrMenu={false} placerText={"rendering mode"}/> to Cycles instead of EEVEE for superior rendering quality in Blender (003)?. EEVEE is in fact closer to 
-          the way ThreeJS does it on the basis that it looks worse. But even then, because ThreeJS must render the scene in real-time, I.E in 60FPS (or whatever your moniter refresh rate is). We can't wait a minute just to have a single frame rendered.
+          the way ThreeJS does it on the basis that it looks worse. But even then, because ThreeJS must render the scene in real-time, I.E in 60FPS (or whatever your moniter refresh rate is). We can't wait a minute just to have a single nice looking frame rendered like we do in Blender.
         </p>
 
         <p>
@@ -662,7 +662,7 @@ function Blender() {
 
         <div className="content_container_divide">
           <p>
-            1 - <a href="https://tympanus.net/Tutorials/TheAviator/" target="_blank">https://tympanus.net/Tutorials/TheAviator/</a>: This is a game primarily comprised of cubes. It uses <span className="threejs_material_phong">meshPhong</span> which is similar to <span className="threejs_material_standard">meshStandard</span> except it has more shiny surfaces with specular highlights. 
+            1 - <a href="https://tympanus.net/Tutorials/TheAviator/" target="_blank">https://tympanus.net/Tutorials/TheAviator/</a>: This is a game primarily comprised of basic shapes. It uses <span className="threejs_material_phong">meshPhong</span> which is similar to <span className="threejs_material_standard">meshStandard</span> except it has more shiny surfaces with specular highlights. 
             There is a small amount of ThreeJS shadows shown on the planet.
           </p>
           <img src={plane_example}/>
@@ -671,16 +671,22 @@ function Blender() {
         <div className="content_container_divide">
           <p>
             2 - <a href="https://paperplanes.world/" target="_blank">https://paperplanes.world/</a>: This page effectively has two models. The paper plane and the world. It makes heavy use of model movement and 
-            camera animation. This is using a mesh that makes use of a light source, which could be <span className="threejs_material_basic">meshBasic</span> or <span className="threejs_material_phong">meshPhong</span>. A bit of shadows is used underneath the continents 
+            camera animation. This is using a mesh that makes use of a light source, which could be <span className="threejs_material_standard">meshStandard</span> or <span className="threejs_material_phong">meshPhong</span>. A bit of shadows is used underneath the continents 
             themselves. Note how the background color also gently changes gradience.
           </p>
           <img src={paper_example}/>
         </div>
 
-        
+        <p>
+          Note: recall how in 011 we applied color to the objects. We also tweaked the <PopupText keybindingText={<span>Materials Window</span>} keybindingImgVideo={<img src={MaterialWindow}/>} meshOrMenu={false} placerText={`"Roughness" and "Metallic"`}/> values on occasion. While color 
+          does get passed on(so long as its not procedural or complex), "Roughness" and "Metallic" values will only get passed on to ThreeJS if meshStandard or meshPhysical is used. It's worth 
+          mentioning that you can apply "Metallic" and "Roughness" to a <span className="threejs_material_standard">meshStandard</span> material which overrides any values that come with the Blender model. In fact, mesh materials 
+          have some basic fields which tweak the appearance of the model.
+        </p>
 
         <p>
-          This is some documentation on various ThreeJS materials for comparison, if you are curious.
+          This is some documentation on various ThreeJS materials for comparison, if you are curious. Note how in the example render of each, there are fields 
+          you can tweak.
         </p>
         <ul className="unordered_list">
           <li><a href="https://threejs.org/docs/#MeshBasicMaterial" target="_blank">meshBasic (no light necassary)</a></li>
@@ -690,10 +696,7 @@ function Blender() {
           <li><a href="https://threejs.org/docs/#MeshToonMaterial" target="_blank">meshToon</a></li>
           <li><a href="https://threejs.org/docs/#MeshDepthMaterial" target="_blank">meshDepth</a></li>
         </ul>
-        <p>
-          Note: recall how in 011 we applied color to the objects. We also tweaked the "Roughness" and "Metallic" values on occasion. While color 
-          always gets passed on(so long as its not procedural or complex), <PopupText keybindingText={<span>Materials Window</span>} keybindingImgVideo={<img src={MaterialWindow}/>} meshOrMenu={false} placerText={`"Roughness" and "Metallic"`}/> values will only get passed on to ThreeJS if meshStandard or meshPhysical is used.
-        </p>
+
 
 
 
