@@ -718,8 +718,8 @@ function Blender() {
         <p>
           It's at this point that I bring up the 'p' word in ThreeJS: performance. Two biggest hits in performance come from lights and shadows. As a result <span className="threejs_material_basic">meshBasic</span> is 
           the most performant on the basis that it neither needs nor can make use of either. To be clear, the extent to which it is used is a factor as well. It would be 
-          in our best interest to have whatever we are making be either <span className="threejs_material_basic">meshBasic</span>, or use a material that requires light but make the choice to not have any shadows. <span className="threejs_material_basic">MeshBasic</span> paired with baking is 
-          also very performant, but as I said, both difficult and time consuming to create a texture map in Blender for a model.
+          in our best interest to have whatever we are making be <b>either <span className="threejs_material_basic">meshBasic</span>, or use a material that requires light but make the voluntary choice to not have any shadows</b>. <span className="threejs_material_basic">MeshBasic</span> paired with baking is 
+          also very performant, but as I said, it is both difficult and time consuming to create a texture map in Blender for a model.
           The four example sites above are good representations of what we'd want. Remember, Blender and ThreeJS are tools for creativity. Their usage is not in of itself a justifcation 
           for its existence.
         </p>
@@ -735,7 +735,7 @@ function Blender() {
 
         <p>
           By now, you should feel like you have the basics of Blender on hand but don't feel ready. Here are some web tutorials that should cover more 
-          bases than I have. They are time consuming, but should no longer pose a challenge. They will touch on many things I already have, and some new tidbits 
+          bases than I have. They are very time consuming, but should no longer pose a challenge. The first one is recommended. They will touch on many things I already have, and some new tidbits 
           that I have not.
         </p>
 
@@ -764,7 +764,7 @@ function Blender() {
 
 
         <p>
-          Regardless of whether you feel like doing them, by now you have a fair understanding of how blender models are made and the details on making the 
+          Regardless of whether you did them, by now you have a fair understanding of the basic of how blender models are made and the details on making the 
           transfer to ThreeJS. Cheers.
         </p>
 
