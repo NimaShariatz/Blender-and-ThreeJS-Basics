@@ -79,11 +79,11 @@
   border-radius: 12px;
 }
 
-.threejs_material_basic, .threejs_material_standard, .threejs_material_phong, .threejs_material_toon, .threejs_material_depth{
+.threejs_material_basic, .threejs_material_standard, .threejs_material_phong, .threejs_material_toon, .threejs_material_depth, .threejs_material_phyiscal{
   border-radius: 3px;
   position: relative;
 }
-.threejs_material_basic::before, .threejs_material_standard::before, .threejs_material_phong::before, .threejs_material_toon::before, .threejs_material_depth::before{
+.threejs_material_basic::before, .threejs_material_standard::before, .threejs_material_phong::before, .threejs_material_toon::before, .threejs_material_depth::before, .threejs_material_phyiscal::before{
   content: '';
   position: absolute;
   left: 0;
@@ -105,6 +105,9 @@
 }
 .threejs_material_depth::before{
   background-color: var(--material_depth);
+}
+.threejs_material_phyiscal::before{
+  background-color: var(--material_physical);
 }
 
 .unordered_list{
