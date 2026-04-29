@@ -623,7 +623,7 @@ function Blender() {
 
         <div className="content_container_divide">
           <p>
-            1 - <a href="https://www.pola.co.jp/special/o/wecaremore/mothersday/" target="_blank">https://www.pola.co.jp/special/o/wecaremore/mothersday/</a>: This site makes heavy use of ThreeJS for animations for object and camera movement. It likely 
+            1 - <a href="https://unseen-music.com/yume/" target="_blank">https://unseen-music.com/yume/</a>: This site makes heavy use of ThreeJS for animations for object and camera movement. It likely 
             does use <span className="threejs_material_basic">meshBasic</span> for its material.
           </p>
           <img src={yumi_example}/>
@@ -631,7 +631,7 @@ function Blender() {
 
         <div className="content_container_divide">
           <p>
-            2 - <a href="https://unseen-music.com/yume/" target="_blank">https://unseen-music.com/yume/</a>: this site is rather standard. It does make use of 3D models, but for the most part shown from a 2D perspective. 
+            2 - <a href="https://www.pola.co.jp/special/o/wecaremore/mothersday/" target="_blank">https://www.pola.co.jp/special/o/wecaremore/mothersday/</a>: this site is rather standard. It does make use of 3D models, but for the most part shown from a 2D perspective. 
             There is ThreeJS used for animating both objects and the camera itself (its movement). It likely does use <span className="threejs_material_basic">meshBasic</span> for its material.
           </p>
           <img src={jap_example}/>
