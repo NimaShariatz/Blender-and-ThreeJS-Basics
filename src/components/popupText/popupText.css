@@ -55,13 +55,13 @@
   width: 100%;
   max-height: 600px;
   object-fit: contain;
-  min-width: 330px;
+  min-width: 350px;
 
 }
 .tooltip_text video{
   width: 100%;
   max-height: 600px;
-  min-width: 400px; /*a little bit more width for videos than imgs*/
+  min-width: 460px; /*a little bit more width for videos than imgs*/
 }
 .tooltip_text span small{
   max-width: 130px;
