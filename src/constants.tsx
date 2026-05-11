@@ -211,6 +211,7 @@ export const changing_orient = changingorient;
 
 // day 1 013
 import day1013Blend from './assets/Days/1/Day1_013.blend';
+import draccomp from './assets/Days/1/draco_compression.png'
 import meshbasicrend from './assets/Days/1/meshbbasic_scene.png';
 import meshstandrend from './assets/Days/1/meshstandard_scene.png';
 import yum from './assets/Days/1/yume_example.png';
@@ -220,6 +221,7 @@ import paperex from './assets/Days/1/paper_example.png';
 import examplesnap from './assets/Days/1/example_snapshot.jpg';
 
 export const Day1_013 = day1013Blend;
+export const draco_compression = draccomp;
 export const mesh_basic_model_render = meshbasicrend;
 export const mesh_standard_model_render = meshstandrend;
 export const yumi_example = yum;

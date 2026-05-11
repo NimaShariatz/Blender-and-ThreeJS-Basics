@@ -28,7 +28,8 @@ import {CenterOn, zyx_axis, InteractionMode, Day1_001, new_window, Delete, NewOb
   jap_example,
   paper_example,
   plane_example,
-  example_snapshot
+  example_snapshot,
+  draco_compression
  } from "../constants"
 import PopupText from "../components/popupText/popupText";
 
@@ -600,10 +601,22 @@ function Blender() {
         <h2>013 - ThreeJS Implimentation and Why We Got What We Got</h2>
         <small><a href={Day1_013} download="Day1_013.blend">Blender model complete</a></small>
 
+
+        <div className="content_container_divide">
+        <p>
+          To download your file for ThreeJS, go to File → Export → glTF 2.0 (.glb/.gltf). We do have the option to enable Draco compression (Data → Compression). Given anything we make will 
+          be low-poly, enabling Draco compression makes sense. You will see little to no difference between the normal and compressed model. Compression is worthwhile because 
+          we are rendering this on a webpage, and file size is relevant for loading times. Especially when the difference in quality in our use case non-existant given the inherent simplicity of our model(s). 
+          Draco compression can be done by ThreeJS code as well, but it makes better sense to just do it on Blender download than having to do the setup work for compression by code.
+        </p>
+          <img src={draco_compression}/>
+        </div>
+
         <p>
           The render looks solid on blender. But we are not rendering it on blender, rather it's being done by the browser real-time. The ThreeJS side of things will 
-          be looked into next lesson. But lets skip ahead and see what the render looks like. To download your file for ThreeJS, go to File → Export → glTF 2.0 (.glb/.gltf).
+          be looked into next lesson. But lets skip ahead and see what the render looks like.
         </p>
+
 
         <div className="media_item_container">
           <img src={mesh_basic_model_render}/>
@@ -647,7 +660,7 @@ function Blender() {
         </div>
         <p>
           Better, but not good. There is some gradience in our objects thanks to the light source. One thing to note is that even though we added a light source, 
-          there are no shadows. Unlike Blender, ThreeJS does not automatically render shadows. Adding shadows in ThreeJS is a separate and manual process. So to 
+          there are no shadows. Unlike Blender, ThreeJS does not automatically render shadows. Adding shadows in ThreeJS is a separate and manual process. You can add either static or dynamic shadows. So to 
           summarize: importing a model does not pass on any lighting, or shadows. You can render your object in <span className="threejs_material_basic">meshBasic</span> which does not require any light, or 
           render it in <span className="threejs_material_standard">meshStandard</span> (or a equivalent material that requires light) which does in order to see it. But adding shadows is a manual process. Overall, the quality will 
           not match what it is in Blender because ThreeJS needs to render it in realtime. Recall early on how we changed the <PopupText keybindingText={<span>Rendering Mode</span>} keybindingImgVideo={<img src={RendererMode}/>} meshOrMenu={false} placerText={"rendering mode"}/> to Cycles instead of EEVEE for superior rendering quality in Blender (003)?. EEVEE is in fact closer to 
@@ -716,7 +729,7 @@ function Blender() {
 
 
         <p>
-          It's at this point that I bring up the 'p' word in ThreeJS: performance. Two biggest hits in performance come from lights and shadows. As a result <span className="threejs_material_basic">meshBasic</span> is 
+          It's at this point that I bring up the 'p' word in ThreeJS: performance. Two biggest hits in performance come from lights and shadows(more so dynamic). As a result <span className="threejs_material_basic">meshBasic</span> is 
           the most performant on the basis that it neither needs nor can make use of either. To be clear, the extent to which it is used is a factor as well. It would be 
           in our best interest to have whatever we are making be <b>either <span className="threejs_material_basic">meshBasic</span>, or use a material that requires light but make the voluntary choice to not have any shadows</b>. <span className="threejs_material_basic">MeshBasic</span> paired with baking is 
           also very performant, but as I said, it is both difficult and time consuming to create a texture map in Blender for a model.
