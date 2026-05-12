@@ -637,30 +637,30 @@ function Blender() {
 
         <div className="content_container_divide">
           <p>
-            1 - <a href="https://unseen-music.com/yume/" target="_blank">https://unseen-music.com/yume/</a>: This site makes heavy use of ThreeJS for animations for object and camera movement. It likely 
-            does use <span className="threejs_material_basic">meshBasic</span> for its material.
+            1 - <a href="https://unseen-music.com/yume/" target="_blank">https://unseen-music.com/yume/</a>: This uses ThreeJS for object and camera movement. It 
+            uses <span className="threejs_material_basic">meshBasic</span> for rendering its objects.
           </p>
           <img src={yumi_example}/>
         </div>
 
         <div className="content_container_divide">
           <p>
-            2 - <a href="https://www.pola.co.jp/special/o/wecaremore/mothersday/" target="_blank">https://www.pola.co.jp/special/o/wecaremore/mothersday/</a>: this site is rather standard. It does make use of 3D models, but for the most part shown from a 2D perspective. 
-            There is ThreeJS used for animating both objects and the camera itself (its movement). It likely does use <span className="threejs_material_basic">meshBasic</span> for its material.
+            2 - <a href="https://www.pola.co.jp/special/o/wecaremore/mothersday/" target="_blank">https://www.pola.co.jp/special/o/wecaremore/mothersday/</a>: this site does make use of 3D models, but for the most part shown from a 2D perspective. The giveway is the flowers themselves which are 3D models. 
+            There is ThreeJS used for animating both objects and the camera itself (its movement). It does use <span className="threejs_material_basic">meshBasic</span> for its material.
           </p>
           <img src={jap_example}/>
         </div>
         
         <p>
-          There is however a type of rendering material that does require a light source: <span className="threejs_material_standard">meshStandard</span>. Yes, like in our Blender scene we can add light 
-          sources to our ThreeJS scene. This is how it looks with a white light source (point light).
+          There is however a type of rendering material that does require a light source: <span className="threejs_material_standard">meshStandard</span>. And yes, like in our Blender scene we can add light 
+          sources to our ThreeJS scene. This is how it looks with a simple white light source (point light).
         </p>
 
         <div className="media_item_container">
           <img src={mesh_standard_model_render}/>
         </div>
         <p>
-          Better, but still not as crisp as the Blender render good. There is some gradience in our objects thanks to the light source. One thing to note is that even though we added a light source, 
+          Better, but still not as crisp as the Blender render. There is some gradience in our objects thanks to the light source. One thing to note is that even though we added a light source, 
           there are no shadows. Unlike Blender, ThreeJS does not automatically render shadows. Adding shadows in ThreeJS is a separate and manual process. You can add either static or dynamic shadows. So to 
           summarize: importing a model does not pass on any lighting, or shadows. You can render your object in <span className="threejs_material_basic">meshBasic</span> which does not require any light, or 
           render it in <span className="threejs_material_standard">meshStandard</span> (or a equivalent material that requires light) which does in order to see it. But adding shadows is a manual process. Overall, the quality will 
@@ -694,7 +694,7 @@ function Blender() {
         <p>
           Note: recall how in 011 we applied color to the objects. We also tweaked the <PopupText keybindingText={<span>Materials Window</span>} keybindingImgVideo={<img src={MaterialWindow}/>} meshOrMenu={false} placerText={`"Roughness" and "Metallic"`}/> values on occasion. While color 
           does get passed on(so long as its not procedural or complex), "Roughness" and "Metallic" values will only get passed on to ThreeJS if <span className="threejs_material_standard">meshStandard</span> or <span className="threejs_material_phyiscal">meshPhysical</span> is used. It's worth 
-          mentioning that you can directly apply "Metallic" and "Roughness" to a <span className="threejs_material_standard">meshStandard</span> material (I.E by code in ThreeJS) which overrides any values that come with the Blender model. In fact, mesh materials 
+          mentioning that you can directly apply "Metallic" and "Roughness" to a <span className="threejs_material_standard">meshStandard</span> material by code in ThreeJS which overrides any existing values that come with the Blender model. In fact, mesh materials 
           have some basic fields which tweak the appearance of the model, just like in Blender.
         </p>
 
@@ -748,8 +748,8 @@ function Blender() {
         <h2>014 - Blender Final Notes</h2>
 
         <p>
-          By now, you should feel like you have the basics of Blender on hand but don't feel ready. Here are some web tutorials that should cover more 
-          bases than I have. They are very time consuming, but should no longer pose a challenge. The first one is recommended. They will touch on many things I already have, and some new tidbits 
+          By now, you should feel like you have the basics of Blender on hand but don't feel ready. Here is a web tutorial that should cover more 
+          bases than I have. It is very time consuming, but should no longer pose a challenge. It will touch on many things I already have, and some new tidbits 
           that I have not.
         </p>
 
@@ -765,20 +765,9 @@ function Blender() {
             allowFullScreen>
           </iframe>
         </div>
-        <div className="media_item_container">
-          <iframe 
-            width="560" 
-            height="315" 
-            src="https://www.youtube.com/embed/K7__BjW4UWE?si=3_NeHKdnRFUkbHBL" 
-            title="YouTube video player" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            allowFullScreen>
-          </iframe>
-        </div>
-
 
         <p>
-          Regardless of whether you did them, by now you have a fair understanding of the basic of how blender models are made and the details on making the 
+          Regardless of whether you do it, by now you have a fair understanding of the basic of how blender models are made and the details on making the 
           transfer to ThreeJS. Cheers.
         </p>
 

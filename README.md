@@ -40,3 +40,26 @@ Game Idea:
 
 Idea: make a 3d model of eye and iris ring included. Must be highly reflective. Start screen a view of black part of eye and iris ring but angled. Press start and a camera gets back and sees eye flat. some movement from the iris and black bit. zoom into the black bit. camera shifts to a side view. left should have an ambient light that follows us. represents light coming into eye. as we traverse level, ambient intensity reduces. should make use of glow since the level will be black. background items should glow in linear sequence on infinite. very swanky. likely meshPhong!
 
+
+
+
+
+
+
+
+
+
+
+
+------------------------------------------------------------------------------------------------------
+
+Day 2
+
+- include example threejs with an iframe!
+- talk about the various libraries and their uses
+- then talk about how the example was made. various movements. then the models used
+- then go into the code. start with blender mountain, app, moon, car
+
+
+
+
