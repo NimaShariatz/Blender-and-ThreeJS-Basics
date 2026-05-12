@@ -212,8 +212,8 @@ export const changing_orient = changingorient;
 // day 1 013
 import day1013Blend from './assets/Days/1/Day1_013.blend';
 import draccomp from './assets/Days/1/draco_compression.png'
-import meshbasicrend from './assets/Days/1/meshbbasic_scene.png';
-import meshstandrend from './assets/Days/1/meshstandard_scene.png';
+import meshbasicrend from './assets/Days/1/withFlat_meshbasic_scene.png';
+import meshstandrend from './assets/Days/1/withoutFlat_meshstandard_scene.png';
 import yum from './assets/Days/1/yume_example.png';
 import ja from './assets/Days/1/jap_example.png';
 import planeex from './assets/Days/1/plane_example.png';

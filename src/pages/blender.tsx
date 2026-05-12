@@ -604,10 +604,11 @@ function Blender() {
 
         <div className="content_container_divide">
         <p>
-          To download your file for ThreeJS, go to File → Export → glTF 2.0 (.glb/.gltf). We do have the option to enable Draco compression (Data → Compression). Given anything we make will 
-          be low-poly, enabling Draco compression makes sense. You will see little to no difference between the normal and compressed model. Compression is worthwhile because 
-          we are rendering this on a webpage, and file size is relevant for loading times. Especially when the difference in quality in our use case non-existant given the inherent simplicity of our model(s). 
-          Draco compression can be done by ThreeJS code as well, but it makes better sense to just do it on Blender download than having to do the setup work for compression by code.
+          To download your file for ThreeJS, go to File → Export → glTF 2.0 (.glb/.gltf). We do have the option to enable Draco compression (Data → Compression). Draco compression reduces 
+          the quaity of the object in return for a far smaller file size. This is relevant for us as we are rendering this on a webpage and loading 
+          times are a factor that web developers have to consider. However, because anything we make will be low-poly, in actuality there is no real quality difference 
+          between the Draco compressed version and the original. As a result, Draco compression should be used given there are only benefits for our use-case. It's worth mentioning that 
+          Draco compression can be done by code as well, but it's easier to do it right here on download as doing it by code means extra needless setup work.
         </p>
           <img src={draco_compression}/>
         </div>
@@ -659,7 +660,7 @@ function Blender() {
           <img src={mesh_standard_model_render}/>
         </div>
         <p>
-          Better, but not good. There is some gradience in our objects thanks to the light source. One thing to note is that even though we added a light source, 
+          Better, but still not as crisp as the Blender render good. There is some gradience in our objects thanks to the light source. One thing to note is that even though we added a light source, 
           there are no shadows. Unlike Blender, ThreeJS does not automatically render shadows. Adding shadows in ThreeJS is a separate and manual process. You can add either static or dynamic shadows. So to 
           summarize: importing a model does not pass on any lighting, or shadows. You can render your object in <span className="threejs_material_basic">meshBasic</span> which does not require any light, or 
           render it in <span className="threejs_material_standard">meshStandard</span> (or a equivalent material that requires light) which does in order to see it. But adding shadows is a manual process. Overall, the quality will 
