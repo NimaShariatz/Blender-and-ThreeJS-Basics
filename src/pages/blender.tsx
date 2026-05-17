@@ -100,11 +100,11 @@ function Blender() {
         <small>Blender model basics</small>
         <p>
           The goal is to get a feel for Blender. You won't be an expert but you'll get an idea of what is feasible.
-          The best way to do it is to make a few models yourself. The following are derived from existing tutorials. They serve as documentation for their steps.
+          The best way to do it is to make a few models yourself. In addition, this tutorial will give you some perspective on the 3D plane for ThreeJS work.
         </p>
         <p>
-          Above you will find various keybinds and menu commands. All keybinds can also be selected via a menu or icon somewhere, and a fair amount of menu options
-          have an equivalent keybinding attached to them. I chose which ones are more convient by keybind or by menu select. Though there is a bit of preference in there.
+          Above you will find various keybinds and menu commands. All keybinds can also be selected via a menu alternative, and a fair amount of menu options
+          have an equivalent keybinding attached to them. I chose which ones are more convient by keybind or by menu select based on how common it is used. Though there is a bit of preference in there.
         </p>
 
         <p>
@@ -129,7 +129,7 @@ function Blender() {
           and <PopupText keybindingText={<span>S with optional (X,Y,Z)<br/><small>(should be done in "Edit Mode")</small></span>} keybindingImgVideo={<video src={ScaleAxis} loop muted playsInline/>} meshOrMenu={true} placerText={"scale"}/> for sizing, with both 
           being able to be moved/resized by a specific axis. Items can be <PopupText keybindingText={<span>Numpad . (View → Frame Selected)</span>} keybindingImgVideo={<video src={CenterOn} loop muted playsInline/>} meshOrMenu={true} placerText={"centered on"}/> with either the numpad period key, or View → Frame Selected.
           You can <PopupText keybindingText={<span>Shift + D<br/><small>("Edit mode" and "Object Mode" copy differently. Difference is noticable in the top right collections section)</small></span>} keybindingImgVideo={<video src={Duplicate} loop muted playsInline/>} meshOrMenu={true} placerText={"duplicate"}/> an existing object, or create a <PopupText keybindingText={<span>Alt + D<br/></span>} keybindingImgVideo={<video src={LinkedDuplicate} loop muted playsInline/>} meshOrMenu={true} placerText={"linked duplicate"}/> which has any sizing or physical changes applied to all other instances. Do note 
-          that being in <PopupText keybindingText={<span>Interaction Mode</span>} keybindingImgVideo={<video src={InteractionMode} loop muted playsInline/>} meshOrMenu={false} placerText={`"Edit Mode" or "Object Mode"`}/> can effect your manipulation of all of the above or not have them work at all.
+          that being in <PopupText keybindingText={<span>Interaction Mode</span>} keybindingImgVideo={<video src={InteractionMode} loop muted playsInline/>} meshOrMenu={false} placerText={`"Edit Mode" or "Object Mode"`}/> can have different effects. For example moving an object in "Edit Mode" does not move it's origin point (orange circle). Scaling in "Object Mode" can cause issues with ThreeJS.
         </p>
 
         <p>

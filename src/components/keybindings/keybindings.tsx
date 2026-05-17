@@ -202,9 +202,9 @@ function Keybindings() {
               <p className="keybind_desc">Z or Top-Right Corner Menu Selection</p>
             </div>
             <div>
-              <p className="keybind"><PopupText keybindingText={<span>enable x-ray</span>} keybindingImgVideo={<img src={XRay}/>} meshOrMenu={false} placerText={"X-Ray"}/></p>
+              <p className="keybind"><PopupText keybindingText={<span>Enable X-Ray</span>} keybindingImgVideo={<img src={XRay}/>} meshOrMenu={false} placerText={"X-Ray"}/></p>
               <p className="keybind_-">-</p>
-              <p className="keybind_desc">See through objects. Useful for edge or vertices selection</p>
+              <p className="keybind_desc">Icon on top-right left of render view selection. See through objects. Useful for edge or vertices selection</p>
             </div>
             <div>
               <p className="keybind"><PopupText keybindingText={<span>New Object</span>} keybindingImgVideo={<img src={NewObject}/>} meshOrMenu={false} placerText={"New Object"}/></p>
