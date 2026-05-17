@@ -3,6 +3,7 @@ import zyxAxisImg from './assets/keybinds/xyz_axis.png';
 export const zyx_axis = zyxAxisImg;
 
 // menuSelect
+import xray from './assets/keybinds/x-ray.png';
 import interactionModeVid from './assets/keybinds/InteractionMode.mp4';
 import newObjectImg from './assets/keybinds/NewObject.png';
 import tranfserScaleImg from './assets/keybinds/ResetScale.png';
@@ -17,7 +18,7 @@ import applymat from './assets/keybinds/apply_material.png';
 import splitobj from './assets/keybinds/SplitObjects.png'
 import brideobj from './assets/keybinds/bridge.mp4'
 
-
+export const XRay = xray;
 export const InteractionMode = interactionModeVid;
 export const NewObject = newObjectImg;
 export const TransferScale = tranfserScaleImg;

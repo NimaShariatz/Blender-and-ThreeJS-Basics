@@ -193,7 +193,7 @@ function Blender() {
         <small><a href={Day1_003} download="Day1_003.blend">Starter file: 003</a></small>
         <p>
           The scene as we see it is not what will the final product will look like. For that 
-          we will <PopupText keybindingText={<span>Z</span>} keybindingImgVideo={<video src={ChangeRenderView} loop muted playsInline/>} meshOrMenu={true} placerText={`change to "Rendered"`}/>. But note that our scene is completely dark. This is 
+          we will <PopupText keybindingText={<span>Z or Top-Right Corner Menu Selection</span>} keybindingImgVideo={<video src={ChangeRenderView} loop muted playsInline/>} meshOrMenu={false} placerText={`change to "Rendered"`}/>. But note that our scene is completely dark. This is 
           because we <PopupText keybindingText={<span>New Light Source</span>} keybindingImgVideo={<video src={NewLight} loop muted playsInline/>} meshOrMenu={false} placerText={"need a light source"}/>. Place it wherever 
           adequate. The "Power" variable should be raised to something adequate. A light source does have other variables you can play with.
         </p>
@@ -338,7 +338,7 @@ function Blender() {
 
 
         <p>
-          Then comes the handle. We <PopupText keybindingText={<span>New Object</span>} keybindingImgVideo={<img src={NewObject}/>} meshOrMenu={false} placerText={"create a cube"}/> in "Edit Mode" (so the cube and axe head are considered the part of the same object) and place it inside the axe head while in <PopupText keybindingText={<span>Z</span>} keybindingImgVideo={<video src={ChangeRenderView} loop muted playsInline/>} meshOrMenu={true} placerText={`"Wireframe" view.`}/>. We 
+          Then comes the handle. We <PopupText keybindingText={<span>New Object</span>} keybindingImgVideo={<img src={NewObject}/>} meshOrMenu={false} placerText={"create a cube"}/> in "Edit Mode" (so the cube and axe head are considered the part of the same object) and place it inside the axe head while in <PopupText keybindingText={<span>Z or Top-Right Corner Menu Selection</span>} keybindingImgVideo={<video src={ChangeRenderView} loop muted playsInline/>} meshOrMenu={false} placerText={`"Wireframe" view.`}/>. We 
           use <PopupText keybindingText={<span>S with optional (X,Y,Z)<br/><small>(should be done in "Edit Mode")</small></span>} keybindingImgVideo={<video src={ScaleAxis} loop muted playsInline/>} meshOrMenu={true} placerText={"scale"}/> to expand it into a handle.
           We use <PopupText keybindingText={<span>Ctrl + R <small>(To increase cuts, use scroll-wheel)</small></span>} keybindingImgVideo={<video src={Cut} loop muted playsInline/>} meshOrMenu={true} placerText={" loop cuts"}/>, use a bit more of scale and grab, and for the first time use <PopupText keybindingText={<span>E</span>} keybindingImgVideo={<video src={Extrude} loop muted playsInline/>} meshOrMenu={true} placerText={"extrusion"}/> in the process.
         </p>
@@ -445,7 +445,7 @@ function Blender() {
         <small><a href={Day1_011} download="Day1_011.blend">Starter file: 011</a></small>
         
         <p>
-          This is where we color the scene. We go into <PopupText keybindingText={<span>Z</span>} keybindingImgVideo={<video src={ChangeRenderView} loop muted playsInline/>} meshOrMenu={true} placerText={`"Material Preview"`}/> to see our colors. At the beginning everything will be white.
+          This is where we color the scene. We go into <PopupText keybindingText={<span>Z or Top-Right Corner Menu Selection</span>} keybindingImgVideo={<video src={ChangeRenderView} loop muted playsInline/>} meshOrMenu={false} placerText={`"Material Preview"`}/> to see our colors. At the beginning everything will be white.
           Changing the color of an object isn't quite as simple as selecting a color. This is because we have much more to play with than just 
           color selection. But for our purposes there won't be much exploration.
         </p>

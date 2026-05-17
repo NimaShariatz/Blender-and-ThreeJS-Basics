@@ -1,6 +1,6 @@
 
 import "./keybindings.css"
-import {ApplyMat, Bisect, BridgeObj, edge_bevel_round, Inset, Join, MaterialWindow, vert_bevel_round, zyx_axis} from "../../constants"
+import {ApplyMat, Bisect, BridgeObj, edge_bevel_round, Inset, Join, MaterialWindow, vert_bevel_round, XRay, zyx_axis} from "../../constants"
 import PopupText from "../popupText/popupText"
 import { GrabAxis, ScaleAxis, Duplicate, LinkedDuplicate, CenterOn, FocusOn, ChangeRenderView, SelectAll, SelectClicked
   , Delete, InteractionMode, NewObject, TransferScale, RotateXYZ, NewLight, NewCamera, RendererMode, Fill, ResetGeometry, Move, Cut, GG, Extrude, SplitObj
@@ -84,8 +84,8 @@ function Keybindings() {
 
 
     <div className="content_container">      {/* mesh-related Keybindings */}
-      <h2>Mesh-Related Keybinds</h2>
-      <small>Manipulating our objects</small>
+      <h2>Keyboard Shortcuts</h2>
+      <small>A menu alternative does exists for each</small>
 
       <div className="keybindings_container">
         <div className="keybindings_section">
@@ -126,11 +126,6 @@ function Keybindings() {
             <p className="keybind"><PopupText keybindingText={<span>/</span>} keybindingImgVideo={<video src={FocusOn} loop muted playsInline/>} meshOrMenu={true} placerText={"Focus on"}/></p>
             <p className="keybind_-">-</p>
             <p className="keybind_desc">/</p>
-          </div>
-          <div>
-            <p className="keybind"><PopupText keybindingText={<span>Z</span>} keybindingImgVideo={<video src={ChangeRenderView} loop muted playsInline/>} meshOrMenu={true} placerText={"Change Render View"}/></p>
-            <p className="keybind_-">-</p>
-            <p className="keybind_desc">Z</p>
           </div>
           <div>
             <p className="keybind"><PopupText keybindingText={<span>A</span>} keybindingImgVideo={<video src={SelectAll} loop muted playsInline/>} meshOrMenu={true} placerText={"Select All"}/></p>
@@ -197,10 +192,20 @@ function Keybindings() {
 
 
       <div className="content_container">      {/* menu-related content */}
-        <h2>Menu-Related Selections</h2>
-        <small>Same as mesh-related, just by menu click instead</small>
+        <h2>Menu Shortcuts</h2>
+        <small>Same as keyboard shortcuts, just by menu click instead as these are less common</small>
         <div className="keybindings_container">
           <div className="keybindings_section">
+            <div>
+              <p className="keybind"><PopupText keybindingText={<span>Z or Top-Right Corner Menu Selection</span>} keybindingImgVideo={<video src={ChangeRenderView} loop muted playsInline/>} meshOrMenu={false} placerText={"Change Render View"}/></p>
+              <p className="keybind_-">-</p>
+              <p className="keybind_desc">Z or Top-Right Corner Menu Selection</p>
+            </div>
+            <div>
+              <p className="keybind"><PopupText keybindingText={<span>enable x-ray</span>} keybindingImgVideo={<img src={XRay}/>} meshOrMenu={false} placerText={"X-Ray"}/></p>
+              <p className="keybind_-">-</p>
+              <p className="keybind_desc">See through objects. Useful for edge or vertices selection</p>
+            </div>
             <div>
               <p className="keybind"><PopupText keybindingText={<span>New Object</span>} keybindingImgVideo={<img src={NewObject}/>} meshOrMenu={false} placerText={"New Object"}/></p>
               <p className="keybind_-">-</p>
