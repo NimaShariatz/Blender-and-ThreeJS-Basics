@@ -235,7 +235,7 @@ function Keybindings() {
               <p className="keybind_desc">change interaction mode. Can also be done with "Tab" keybind</p>
             </div>
             <div>
-              <p className="keybind"><PopupText keybindingText={<span>Transfer Scale</span>} keybindingImgVideo={<img src={TransferScale}/>} meshOrMenu={false} placerText={"Transfer Scale"}/></p>
+              <p className="keybind"><PopupText keybindingText={<span>Transfer Changes to "Edit Mode"</span>} keybindingImgVideo={<img src={TransferScale}/>} meshOrMenu={false} placerText={"Transfer Scale"}/></p>
               <p className="keybind_-">-</p>
               <p className="keybind_desc">if you applied <PopupText keybindingText={<span>S with optional (X,Y,Z)<br/><small>(should be done in "Edit Mode")</small></span>} keybindingImgVideo={<video src={ScaleAxis} loop muted playsInline/>} meshOrMenu={true} placerText={"scale"}/> or <PopupText keybindingText={<span>R with optional (X,Y,Z)<br/><small>(should be done in "Edit Mode")</small></span>} keybindingImgVideo={<video src={RotateXYZ} loop muted playsInline/>} meshOrMenu={true} placerText={"rotate"}/> while in "Object Mode", this will transfer it to "Edit Mode". Select your desired object(s) for the fix</p>
             </div>

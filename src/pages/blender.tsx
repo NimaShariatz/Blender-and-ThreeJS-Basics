@@ -129,7 +129,8 @@ function Blender() {
           and <PopupText keybindingText={<span>S with optional (X,Y,Z)<br/><small>(should be done in "Edit Mode")</small></span>} keybindingImgVideo={<video src={ScaleAxis} loop muted playsInline/>} meshOrMenu={true} placerText={"scale"}/> for sizing, with both 
           being able to be moved/resized by a specific axis. Items can be <PopupText keybindingText={<span>Numpad . (View → Frame Selected)</span>} keybindingImgVideo={<video src={CenterOn} loop muted playsInline/>} meshOrMenu={true} placerText={"centered on"}/> with either the numpad period key, or View → Frame Selected.
           You can <PopupText keybindingText={<span>Shift + D<br/><small>("Edit mode" and "Object Mode" copy differently. Difference is noticable in the top right collections section)</small></span>} keybindingImgVideo={<video src={Duplicate} loop muted playsInline/>} meshOrMenu={true} placerText={"duplicate"}/> an existing object, or create a <PopupText keybindingText={<span>Alt + D<br/></span>} keybindingImgVideo={<video src={LinkedDuplicate} loop muted playsInline/>} meshOrMenu={true} placerText={"linked duplicate"}/> which has any sizing or physical changes applied to all other instances. Do note 
-          that being in <PopupText keybindingText={<span>Interaction Mode</span>} keybindingImgVideo={<video src={InteractionMode} loop muted playsInline/>} meshOrMenu={false} placerText={`"Edit Mode" or "Object Mode"`}/> can have different effects. For example moving an object in "Edit Mode" does not move it's origin point (orange circle). Scaling in "Object Mode" can cause issues with ThreeJS, so it should be done in "Edit Mode".
+          that being in <PopupText keybindingText={<span>Interaction Mode</span>} keybindingImgVideo={<video src={InteractionMode} loop muted playsInline/>} meshOrMenu={false} placerText={`"Edit Mode" or "Object Mode"`}/> can have different effects. For example moving an object in "Edit Mode" does not move it's origin point (orange circle). Scaling in "Object Mode" can cause issues with ThreeJS, so it should be done in "Edit Mode". 
+          Creating a new object or duplicate in "Edit Mode" does not create a new object, rather considers it as an extention to the one currenty selected.
         </p>
 
         <p>
@@ -147,7 +148,7 @@ function Blender() {
         <p>
           First we <PopupText keybindingText={<span>X</span>} keybindingImgVideo={<video src={Delete} loop muted playsInline/>} meshOrMenu={true} placerText={"delete"}/> the existing light, camera, cube. 
           Then <PopupText keybindingText={<span>New Object</span>} keybindingImgVideo={<img src={NewObject}/>} meshOrMenu={false} placerText={"add"}/> the floor that the scene has. A plane will do. You can 
-          make it as large as you like. Blender units have no fixed meaning. If you scaled it in "Object Mode", you can fix it by <PopupText keybindingText={<span>Transfer Scale</span>} keybindingImgVideo={<img src={TransferScale}/>} meshOrMenu={false} placerText={`transfering the changes to "Edit Mode"`}/>.
+          make it as large as you like. Blender units have no fixed meaning. If you scaled it in "Object Mode", you can fix it by <PopupText keybindingText={<span>Transfer Changes to "Edit Mode"</span>} keybindingImgVideo={<img src={TransferScale}/>} meshOrMenu={false} placerText={`transfering the changes to "Edit Mode"`}/>.
         </p>
         <div className="media_item_container">
           <img src={plane}/>
@@ -159,24 +160,19 @@ function Blender() {
         <small><a href={Day1_002} download="Day1_002.blend">Starter file: 002</a></small>
         <div className="content_container_divide">
           <p>
-            To make the fences we add a cube and scale it with 
-            use of <PopupText keybindingText={<span>S with optional (X,Y,Z)<br/><small>(should be done in "Edit Mode")</small></span>} keybindingImgVideo={<video src={ScaleAxis} loop muted playsInline/>} meshOrMenu={true} placerText={"X, Y, Z selectors"}/>. We add add multiple 
-            boards <PopupText keybindingText={<span>Shift + D<br/><small>("Edit mode" and "Object Mode" copy differently. Difference is noticable in the top right collections section)</small></span>} keybindingImgVideo={<video src={Duplicate} loop muted playsInline/>} meshOrMenu={true} placerText={"by creating several copies"}/>. These copies are done 
-            while <PopupText keybindingText={<span>Interaction Mode</span>} keybindingImgVideo={<video src={InteractionMode} loop muted playsInline/>} meshOrMenu={false} placerText={`done in "Edit Mode"`}/> so that they are still considered part of the original mesh object. Otherwise duplicating in "Object Mode" defines it 
-            as it's own unique object which we'd prefer to not have in this case (otherwise each plank is its own object which is messy).
+            To make the fences we start by adding a cube and scale it with the 
+            use of <PopupText keybindingText={<span>S with optional (X,Y,Z)<br/><small>(should be done in "Edit Mode")</small></span>} keybindingImgVideo={<video src={ScaleAxis} loop muted playsInline/>} meshOrMenu={true} placerText={"X, Y, Z selectors"}/>.
+            We can then either <PopupText keybindingText={<span>Shift + D<br/><small>("Edit mode" and "Object Mode" copy differently. Difference is noticable in the top right collections section)</small></span>} keybindingImgVideo={<video src={Duplicate} loop muted playsInline/>} meshOrMenu={true} placerText={"duplicate"}/> that first board repeatidly or <PopupText keybindingText={<span>New Object</span>} keybindingImgVideo={<img src={NewObject}/>} meshOrMenu={false} placerText={"add new cubes"}/> all while in <PopupText keybindingText={<span>Interaction Mode</span>} keybindingImgVideo={<video src={InteractionMode} loop muted playsInline/>} meshOrMenu={false} placerText={`"Edit Mode"`}/> so that they are still considered part of the original object. 
+            If you duplicate or create a new object in "Object Mode" you will see 
+            new objects added on the top right scene collection. Make use of <PopupText keybindingText={<span>R with optional (X,Y,Z)<br/><small>(should be done in "Edit Mode")</small></span>} keybindingImgVideo={<video src={RotateXYZ} loop muted playsInline/>} meshOrMenu={true} placerText={"rotate"}/> for board positioning. Like scaling, this should also be done in "Edit Mode". 
+            If you at any point you scale or rotate while not in "Edit Mode", you don't have to re-do it. The changes <PopupText keybindingText={<span>Transfer Changes to "Edit Mode"</span>} keybindingImgVideo={<img src={TransferScale}/>} meshOrMenu={false} placerText={"can be transferred"}/>.
           </p>
           <img src={containers}/>
         </div>
         <p>
-          Note when when we move both of the verticle planks and space them apart, we do so in "Edit Mode". The "Origin Point" of the object does not 
-          move and so remains in between the two stands. This is not a 
-          requirement but would be a good idea to do so. During your 
-          scaling, you may need to <PopupText keybindingText={<span>A</span>} keybindingImgVideo={<video src={SelectAll} loop muted playsInline/>} meshOrMenu={true} placerText={"select all"}/> while in "Edit Mode". We also make use 
-          of <PopupText keybindingText={<span>R with optional (X,Y,Z)<br/><small>(should be done in "Edit Mode")</small></span>} keybindingImgVideo={<video src={RotateXYZ} loop muted playsInline/>} meshOrMenu={true} placerText={"rotate"}/> for the horizontal planks. Once the 
-          first fence is done, 
-          we duplicate the fence in "Object Mode". A 180deg rotation is used for the 
-          other side of the fences, and individual fences for some randomness. Remember if you scale or rotate by accident while in "Object Mode", 
-          there is <PopupText keybindingText={<span>Transfer Scale</span>} keybindingImgVideo={<img src={TransferScale}/>} meshOrMenu={false} placerText={"an easy fix to it"}/>.
+          Finally, once your first fence post is done, <PopupText keybindingText={<span>S with optional (X,Y,Z)<br/><small>(should be done in "Edit Mode")</small></span>} keybindingImgVideo={<video src={ScaleAxis} loop muted playsInline/>} meshOrMenu={true} placerText={"scale"}/> the fence as a whole in "Edit Mode" by selecting all to whatever size you'd like for the scene. Then 
+          <PopupText keybindingText={<span>Shift + D<br/><small>("Edit mode" and "Object Mode" copy differently. Difference is noticable in the top right collections section)</small></span>} keybindingImgVideo={<video src={Duplicate} loop muted playsInline/>} meshOrMenu={true} placerText={"duplicate"}/> the post in <PopupText keybindingText={<span>Interaction Mode</span>} keybindingImgVideo={<video src={InteractionMode} loop muted playsInline/>} meshOrMenu={false} placerText={`"Object Mode"`}/> as we want each to be it's own seperate object. 
+          Make 6 fences in total. Position and rotate as desired.
         </p>
         <div className="media_item_container">
           <LazyVideo src={Day1_fences} loop muted playsInline controls/>
@@ -223,7 +219,7 @@ function Blender() {
             set the number of sides to 10 in the popup menu. <PopupText keybindingText={<span>G with optional (X,Y,Z)<br/><small>("Edit Mode" does not move origin point)</small></span>} keybindingImgVideo={<video src={GrabAxis} loop muted playsInline/>} meshOrMenu={true} placerText={"Move the cylinder to somewhere adequate"}/>. Once 
             in position move the log down in "Edit Mode" and move it back up to it's original position 
             in "Object Mode". Note that now the orange circle is at floor level. So now if we choose to <PopupText keybindingText={<span>S with optional (X,Y,Z)<br/><small>(should be done in "Edit Mode")</small></span>} keybindingImgVideo={<video src={ScaleAxis} loop muted playsInline/>} meshOrMenu={true} placerText={"Scale"}/> it in "Object Mode", the bottom doesn't scale downwards. This is 
-            strictly optional, but convient. Though any scale changes should be <PopupText keybindingText={<span>Transfer Scale</span>} keybindingImgVideo={<img src={TransferScale}/>} meshOrMenu={false} placerText={`transferred to "Edit Mode"`}/> aftewards.
+            strictly optional, but convient. Though any scale changes should be <PopupText keybindingText={<span>Transfer Changes to "Edit Mode"</span>} keybindingImgVideo={<img src={TransferScale}/>} meshOrMenu={false} placerText={`transferred to "Edit Mode"`}/> aftewards.
           </p>
           <img src={trunk}/>
         </div>
@@ -559,7 +555,7 @@ function Blender() {
 
         <p>
           Next <PopupText keybindingText={<span>A</span>} keybindingImgVideo={<video src={SelectAll} loop muted playsInline/>} meshOrMenu={true} placerText={"select all"}/> in <PopupText keybindingText={<span>Interaction Mode</span>} keybindingImgVideo={<video src={InteractionMode} loop muted playsInline/>} meshOrMenu={false} placerText={`"Object Mode"`}/> and 
-          <PopupText keybindingText={<span>Transfer Scale</span>} keybindingImgVideo={<img src={TransferScale}/>} meshOrMenu={false} placerText={"transfer the scale"}/> so every tranform action is now in "Edit Mode". Just to make sure.
+          <PopupText keybindingText={<span>Transfer Changes to "Edit Mode"</span>} keybindingImgVideo={<img src={TransferScale}/>} meshOrMenu={false} placerText={"transfer the scale"}/> so every tranform action is now in "Edit Mode". Just to make sure.
         </p>
 
         <div className="content_container_divide">
