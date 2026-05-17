@@ -16,10 +16,12 @@ import bisect from './assets/keybinds/bisect.mp4';
 import matwin from './assets/keybinds/materials_window.png';
 import applymat from './assets/keybinds/apply_material.png';
 import splitobj from './assets/keybinds/SplitObjects.png'
-import brideobj from './assets/keybinds/bridge.mp4'
+import brideobj from './assets/keybinds/bridge.mp4';
+import movecursor from './assets/keybinds/move3DCursor.png';
 
 export const XRay = xray;
 export const InteractionMode = interactionModeVid;
+export const move3DCursor = movecursor;
 export const NewObject = newObjectImg;
 export const TransferScale = tranfserScaleImg;
 export const NewLight = newLightVid;

@@ -1,6 +1,6 @@
 
 import "./keybindings.css"
-import {ApplyMat, Bisect, BridgeObj, edge_bevel_round, Inset, Join, MaterialWindow, vert_bevel_round, XRay, zyx_axis} from "../../constants"
+import {ApplyMat, Bisect, BridgeObj, edge_bevel_round, Inset, Join, MaterialWindow, move3DCursor, vert_bevel_round, XRay, zyx_axis} from "../../constants"
 import PopupText from "../popupText/popupText"
 import { GrabAxis, ScaleAxis, Duplicate, LinkedDuplicate, CenterOn, FocusOn, ChangeRenderView, SelectAll, SelectClicked
   , Delete, InteractionMode, NewObject, TransferScale, RotateXYZ, NewLight, NewCamera, RendererMode, Fill, ResetGeometry, Move, Cut, GG, Extrude, SplitObj
@@ -205,6 +205,11 @@ function Keybindings() {
               <p className="keybind"><PopupText keybindingText={<span>Enable X-Ray</span>} keybindingImgVideo={<img src={XRay}/>} meshOrMenu={false} placerText={"X-Ray"}/></p>
               <p className="keybind_-">-</p>
               <p className="keybind_desc">Icon on top-right left of render view selection. See through objects. Useful for edge or vertices selection</p>
+            </div>
+            <div>
+              <p className="keybind"><PopupText keybindingText={<span>Move 3D Cursor</span>} keybindingImgVideo={<img src={move3DCursor}/>} meshOrMenu={false} placerText={"Move 3D Cursor"}/></p>
+              <p className="keybind_-">-</p>
+              <p className="keybind_desc">The object spawn point. Shift + RMB or Shift + S</p>
             </div>
             <div>
               <p className="keybind"><PopupText keybindingText={<span>New Object</span>} keybindingImgVideo={<img src={NewObject}/>} meshOrMenu={false} placerText={"New Object"}/></p>
