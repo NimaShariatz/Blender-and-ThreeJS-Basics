@@ -122,7 +122,7 @@ function Blender() {
         <h2>Basic Controls</h2>
         <small>Movement and manipulation</small>
         <p>
-          You will use your middle-mouse-button for much of your movement. Both rotation and zoom. Notably you can use the <PopupText keybindingText={<span>Axis Change-View</span>} keybindingImgVideo={<img src={zyx_axis}/>} meshOrMenu={true} placerText={"axis view-changer"}/> where convient to you.
+          You will use your middle-mouse-button for much of your movement. Both rotation and zoom. Notably you can use the <PopupText keybindingText={<span>Axis Change-View</span>} keybindingImgVideo={<img src={zyx_axis}/>} meshOrMenu={true} placerText={"axis view-changer"}/> where convient to you. <PopupText keybindingText={<span>(hold)Shift + LMB</span>} keybindingImgVideo={<video src={SelectClicked} loop muted playsInline/>} meshOrMenu={true} placerText={"Select multiple"}/> items by shift, and <PopupText keybindingText={<span>A</span>} keybindingImgVideo={<video src={SelectAll} loop muted playsInline/>} meshOrMenu={true} placerText={"Select All"}/> by pressing A.
         </p>
         <p>
           There's also a set of common actions far more convient by keybind than by menu hopping. <PopupText keybindingText={<span>G with optional (X,Y,Z)<br/><small>("Edit Mode" does not move origin point)</small></span>} keybindingImgVideo={<video src={GrabAxis} loop muted playsInline/>} meshOrMenu={true} placerText={"Grab"}/> for movement 
@@ -191,17 +191,17 @@ function Blender() {
           The scene as we see it is not what will the final product will look like. For that 
           we will <PopupText keybindingText={<span>Z or Top-Right Corner Menu Selection</span>} keybindingImgVideo={<video src={ChangeRenderView} loop muted playsInline/>} meshOrMenu={false} placerText={`change to "Rendered"`}/>. But note that our scene is completely dark. This is 
           because we <PopupText keybindingText={<span>New Light Source</span>} keybindingImgVideo={<video src={NewLight} loop muted playsInline/>} meshOrMenu={false} placerText={"need a light source"}/>. Place it wherever 
-          adequate. The "Power" variable should be raised to something adequate. A light source does have other variables you can play with.
+          adequate. The "Power" variable in the object "Data" panel should be raised to something adequate. A light source does have other variables you can play with.
         </p>
         <p>
-          "Renderer mode" gives us a feel of how it'll look, but rendering an instance of the scene is the accurate version. For this we need to <PopupText keybindingText={<span>New Camera</span>} keybindingImgVideo={<video src={NewCamera} loop muted playsInline/>} meshOrMenu={false} placerText={"add a camera"}/> to 
-          the scene. Place it wherever adequate. Notice below your <b>Axis Change-View</b> is a camera icon. You can view through the camera by this button. Below that we can also change our perspective to Orthographic which means objects do not shrink when farther away. RTS games such as AoE, C&C and CoH use this perspective. We also 
+          "Renderer mode" gives us a feel of how it'll look, but rendering a full frame of the scene is the accurate version. For this we need to <PopupText keybindingText={<span>New Camera</span>} keybindingImgVideo={<video src={NewCamera} loop muted playsInline/>} meshOrMenu={false} placerText={"add a camera"}/> to 
+          the scene. Place it wherever adequate. Notice below your <b>Axis Change-View</b> is a camera icon. You can view through the camera by this button. Below that we can also change our perspective to Orthographic which means objects do not shrink when farther away. RTS games such as AoE, C&C and CoH use this perspective. In the "Render" panel we also 
           change the <PopupText keybindingText={<span>Rendering Mode</span>} keybindingImgVideo={<img src={RendererMode}/>} meshOrMenu={false} placerText={"rendering mode"}/> to "Cycles" for better quality 
-          and set Viewport → Max Samples & Render → Max Samples to '128'. Higher quality is unnecassary.
+          and set Viewport → Max Samples & Render → Max Samples to '128' (or a value of your choice. The larger the value, the longer it takes to render a frame). Higher quality is unnecassary for our use-case.
         </p>
         <p>
           Finally, on the top left go select Render → Render Image to see your model properly rendered. How long it takes to complete depends on 
-          the values you put in the "Max Samples", and your personal computer.
+          the values you put in the "Max Samples" fields, and your personal computer.
         </p>
         <div className="media_item_container">
           <LazyVideo src={Day1_lightAndcamera} loop muted playsInline controls/>
@@ -215,11 +215,13 @@ function Blender() {
 
         <div className="content_container_divide">
           <p>
-            Next we add the trunks. Start by <PopupText keybindingText={<span>New Object</span>} keybindingImgVideo={<img src={NewObject}/>} meshOrMenu={false} placerText={"creating one cylinder"}/> and 
-            set the number of sides to 10 in the popup menu. <PopupText keybindingText={<span>G with optional (X,Y,Z)<br/><small>("Edit Mode" does not move origin point)</small></span>} keybindingImgVideo={<video src={GrabAxis} loop muted playsInline/>} meshOrMenu={true} placerText={"Move the cylinder to somewhere adequate"}/>. Once 
-            in position move the log down in "Edit Mode" and move it back up to it's original position 
-            in "Object Mode". Note that now the orange circle is at floor level. So now if we choose to <PopupText keybindingText={<span>S with optional (X,Y,Z)<br/><small>(should be done in "Edit Mode")</small></span>} keybindingImgVideo={<video src={ScaleAxis} loop muted playsInline/>} meshOrMenu={true} placerText={"Scale"}/> it in "Object Mode", the bottom doesn't scale downwards. This is 
-            strictly optional, but convient. Though any scale changes should be <PopupText keybindingText={<span>Transfer Changes to "Edit Mode"</span>} keybindingImgVideo={<img src={TransferScale}/>} meshOrMenu={false} placerText={`transferred to "Edit Mode"`}/> aftewards.
+            Next we add the trunks. Start by <PopupText keybindingText={<span>New Object</span>} keybindingImgVideo={<img src={NewObject}/>} meshOrMenu={false} placerText={"adding one cylinder"}/> and 
+            set the number of sides to 10 in the one-time popup menu on the left corner. Any 
+            changes made to the object will remove the one-time popup menu.
+            <PopupText keybindingText={<span>G with optional (X,Y,Z)<br/><small>("Edit Mode" does not move origin point)</small></span>} keybindingImgVideo={<video src={GrabAxis} loop muted playsInline/>} meshOrMenu={true} placerText={"Place the cylinder somewhere in the scene"}/>. Once 
+            in position move the log up(Z-Axis) in "Edit Mode" and move it back down to it's original position 
+            in "Object Mode". Note that now the orange circle should be at floor level. So now if we choose to <PopupText keybindingText={<span>S with optional (X,Y,Z)<br/><small>(should be done in "Edit Mode")</small></span>} keybindingImgVideo={<video src={ScaleAxis} loop muted playsInline/>} meshOrMenu={true} placerText={"scale"}/> it in "Object Mode", the bottom doesn't scale downwards. This is 
+            strictly optional, but convient. Though remember any scale changes should be <PopupText keybindingText={<span>Transfer Changes to "Edit Mode"</span>} keybindingImgVideo={<img src={TransferScale}/>} meshOrMenu={false} placerText={`transferred to "Edit Mode"`}/> aftewards.
           </p>
           <img src={trunk}/>
         </div>
@@ -228,8 +230,9 @@ function Blender() {
           <LazyVideo src={add_trunk} loop muted playsInline controls/>
         </div>
         <p>
-          We then <PopupText keybindingText={<span>Shift + D<br/><small>("Edit mode" and "Object Mode" copy differently. Difference is noticable in the top right collections section)</small></span>} keybindingImgVideo={<video src={Duplicate} loop muted playsInline/>} meshOrMenu={true} placerText={"duplicate"}/> the object in "Object Mode" (creating unqiue instances, not part of the original cylinder). Add 3 more of them, place them wherever adequate and scale their 
-          height for variety.
+          We then <PopupText keybindingText={<span>Shift + D<br/><small>("Edit mode" and "Object Mode" copy differently. Difference is noticable in the top right collections section)</small></span>} keybindingImgVideo={<video src={Duplicate} loop muted playsInline/>} meshOrMenu={true} placerText={"duplicate"}/> the object in "Object Mode" (creating unqiue instances, not part of the original cylinder). Add 3 more of them, 
+          place them wherever adequate and <PopupText keybindingText={<span>S with optional (X,Y,Z)<br/><small>(should be done in "Edit Mode")</small></span>} keybindingImgVideo={<video src={ScaleAxis} loop muted playsInline/>} meshOrMenu={true} placerText={"scale"}/> their 
+          height for variety. <PopupText keybindingText={<span>Transfer Changes to "Edit Mode"</span>} keybindingImgVideo={<img src={TransferScale}/>} meshOrMenu={false} placerText={`Transfer`}/> the scale values if done in "Object Mode".
         </p>
         <div className="media_item_container">
           <img src={trunks}/>
@@ -244,7 +247,7 @@ function Blender() {
           <p>
             We add a <PopupText keybindingText={<span>New Object</span>} keybindingImgVideo={<img src={NewObject}/>} meshOrMenu={false} placerText={"new cylinder object"}/> with 10 sides, but before making any changes to it, in 
             the popup menu set "Cap Fill Type" which is a unique property
-            that defines the structure of the top and bottom faces to "Triangle Fan". Note: any changes made to the object will remove the ability to make this change.
+            that defines the structure of the top and bottom faces to "Triangle Fan". Any changes made to the object will remove the one-time popup menu.
           </p>
           <img src={cap_fill_mode}/>
         </div>
@@ -259,7 +262,7 @@ function Blender() {
         </div>
 
         <p>
-          <PopupText keybindingText={<span>S with optional (X,Y,Z)<br/><small>(should be done in "Edit Mode")</small></span>} keybindingImgVideo={<video src={ScaleAxis} loop muted playsInline/>} meshOrMenu={true} placerText={"Scale"}/>, <PopupText keybindingText={<span>G with optional (X,Y,Z)<br/><small>("Edit Mode" does not move origin point)</small></span>} keybindingImgVideo={<video src={GrabAxis} loop muted playsInline/>} meshOrMenu={true} placerText={"place"}/> and <PopupText keybindingText={<span>R with optional (X,Y,Z)<br/><small>(should be done in "Edit Mode")</small></span>} keybindingImgVideo={<video src={RotateXYZ} loop muted playsInline/>} meshOrMenu={true} placerText={"Rotate"}/> the 
+          <PopupText keybindingText={<span>S with optional (X,Y,Z)<br/><small>(should be done in "Edit Mode")</small></span>} keybindingImgVideo={<video src={ScaleAxis} loop muted playsInline/>} meshOrMenu={true} placerText={"Scale"}/>, <PopupText keybindingText={<span>G with optional (X,Y,Z)<br/><small>("Edit Mode" does not move origin point)</small></span>} keybindingImgVideo={<video src={GrabAxis} loop muted playsInline/>} meshOrMenu={true} placerText={"place"}/> and <PopupText keybindingText={<span>R with optional (X,Y,Z)<br/><small>(should be done in "Edit Mode")</small></span>} keybindingImgVideo={<video src={RotateXYZ} loop muted playsInline/>} meshOrMenu={true} placerText={"rotate"}/> the 
           log however you see fit. <PopupText keybindingText={<span>Shift + D<br/><small>("Edit mode" and "Object Mode" copy differently. Difference is noticable in the top right collections section)</small></span>} keybindingImgVideo={<video src={Duplicate} loop muted playsInline/>} meshOrMenu={true} placerText={"Duplicate"}/> the log in "Object Mode" and place them wherever adequate
         </p>
         <div className="media_item_container">
@@ -315,8 +318,7 @@ function Blender() {
           But we'll be adding a bit more detail. This requires using new keybinds. An axe head has a curved edge. Unfortunately as is we can't cut make the curve. we 
           need more vertices. So we introduce <PopupText keybindingText={<span>Ctrl + R <small>(To increase cuts, use scroll-wheel)</small></span>} keybindingImgVideo={<video src={Cut} loop muted playsInline/>} meshOrMenu={true} placerText={"loop cuts"}/> in <PopupText keybindingText={<span>Interaction Mode</span>} keybindingImgVideo={<video src={InteractionMode} loop muted playsInline/>} meshOrMenu={false} placerText={`"Edit Mode"`}/> into our 
           shape which allow us to better curve the 
-          axe at its end. Three cuts placed at the center. While still in "Edit Mode" select the vertices at the end and <PopupText keybindingText={<span>G with optional (X,Y,Z)<br/><small>("Edit Mode" does not move origin point)</small></span>} keybindingImgVideo={<video src={GrabAxis} loop muted playsInline/>} meshOrMenu={true} placerText={"move them up"}/>. Then 
-          <PopupText keybindingText={<span>S with optional (X,Y,Z)<br/><small>(should be done in "Edit Mode")</small></span>} keybindingImgVideo={<video src={ScaleAxis} loop muted playsInline/>} meshOrMenu={true} placerText={"tighten"}/> the top of the axe.
+          axe at its end. Three cuts placed at the center. While still in "Edit Mode" select the vertices at the end and <PopupText keybindingText={<span>G with optional (X,Y,Z)<br/><small>("Edit Mode" does not move origin point)</small></span>} keybindingImgVideo={<video src={GrabAxis} loop muted playsInline/>} meshOrMenu={true} placerText={"move them up"}/>. Then <PopupText keybindingText={<span>S with optional (X,Y,Z)<br/><small>(should be done in "Edit Mode")</small></span>} keybindingImgVideo={<video src={ScaleAxis} loop muted playsInline/>} meshOrMenu={true} placerText={"tighten"}/> the top of the axe.
         </p>
         
         <div className="media_item_container">
@@ -324,7 +326,7 @@ function Blender() {
         </div>
 
         <p>
-          Add <PopupText keybindingText={<span>Ctrl + R <small>(To increase cuts, use scroll-wheel)</small></span>} keybindingImgVideo={<video src={Cut} loop muted playsInline/>} meshOrMenu={true} placerText={"another loop cut"}/> perpendicularly and now use the <PopupText keybindingText={<span>G &#215; 2</span>} keybindingImgVideo={<video src={GG} loop muted playsInline/>} meshOrMenu={true} placerText={"vertex slider"}/> for a
+          Add <PopupText keybindingText={<span>Ctrl + R <small>(To increase cuts, use scroll-wheel)</small></span>} keybindingImgVideo={<video src={Cut} loop muted playsInline/>} meshOrMenu={true} placerText={"another loop cut"}/> perpendicularly, select the outer vertices of the axe head, and use the <PopupText keybindingText={<span>G &#215; 2</span>} keybindingImgVideo={<video src={GG} loop muted playsInline/>} meshOrMenu={true} placerText={"vertex slider"}/> for a
           finer adjustment of points into a sharp edge.
         </p>
 
@@ -334,7 +336,7 @@ function Blender() {
 
 
         <p>
-          Then comes the handle. We <PopupText keybindingText={<span>New Object</span>} keybindingImgVideo={<img src={NewObject}/>} meshOrMenu={false} placerText={"create a cube"}/> in "Edit Mode" (so the cube and axe head are considered the part of the same object) and place it inside the axe head while in <PopupText keybindingText={<span>Z or Top-Right Corner Menu Selection</span>} keybindingImgVideo={<video src={ChangeRenderView} loop muted playsInline/>} meshOrMenu={false} placerText={`"Wireframe" view.`}/>. We 
+          Then comes the handle. We <PopupText keybindingText={<span>New Object</span>} keybindingImgVideo={<img src={NewObject}/>} meshOrMenu={false} placerText={"create a cube"}/> in "Edit Mode" (so the cube and axe head are considered the part of the same object) and place it inside the axe head while in <PopupText keybindingText={<span>Z or Top-Right Corner Menu Selection</span>} keybindingImgVideo={<video src={ChangeRenderView} loop muted playsInline/>} meshOrMenu={false} placerText={`"Wireframe" view`}/>. We 
           use <PopupText keybindingText={<span>S with optional (X,Y,Z)<br/><small>(should be done in "Edit Mode")</small></span>} keybindingImgVideo={<video src={ScaleAxis} loop muted playsInline/>} meshOrMenu={true} placerText={"scale"}/> to expand it into a handle.
           We use <PopupText keybindingText={<span>Ctrl + R <small>(To increase cuts, use scroll-wheel)</small></span>} keybindingImgVideo={<video src={Cut} loop muted playsInline/>} meshOrMenu={true} placerText={" loop cuts"}/>, use a bit more of scale and grab, and for the first time use <PopupText keybindingText={<span>E</span>} keybindingImgVideo={<video src={Extrude} loop muted playsInline/>} meshOrMenu={true} placerText={"extrusion"}/> in the process.
         </p>
@@ -345,7 +347,7 @@ function Blender() {
 
         <p>
           Finally, place your axe wherever adequate. Remember to <PopupText keybindingText={<span>Reset Origin Point</span>} keybindingImgVideo={<img src={ResetGeometry}/>} meshOrMenu={false} placerText={"reset the origin to the center"}/> of the object if 
-          you move it in "Edit Mode" and move the axe into it's own <PopupText keybindingText={<span>M</span>} keybindingImgVideo={<video src={Move} loop muted playsInline/>} meshOrMenu={true} placerText={"collection folder"}/>.
+          you move it in "Edit Mode" and move the axe into it's own <PopupText keybindingText={<span>M</span>} keybindingImgVideo={<video src={Move} loop muted playsInline/>} meshOrMenu={true} placerText={"collection folder"}/> called "axe".
         </p>
 
         <div className="media_item_container">
@@ -374,7 +376,7 @@ function Blender() {
         </div>
 
         <p>
-          Next move it <PopupText keybindingText={<span>M</span>} keybindingImgVideo={<video src={Move} loop muted playsInline/>} meshOrMenu={true} placerText={"to its own collection"}/>. We then 
+          Next move it <PopupText keybindingText={<span>M</span>} keybindingImgVideo={<video src={Move} loop muted playsInline/>} meshOrMenu={true} placerText={"to its own collection"}/> called "poles". We then 
           use a <PopupText keybindingText={<span>Alt + D<br/></span>} keybindingImgVideo={<video src={LinkedDuplicate} loop muted playsInline/>} meshOrMenu={true} placerText={"linked duplicate"}/> (not a <PopupText keybindingText={<span>Shift + D<br/><small>("Edit mode" and "Object Mode" copy differently. Difference is noticable in the top right collections section)</small></span>} keybindingImgVideo={<video src={Duplicate} loop muted playsInline/>} meshOrMenu={true} placerText={"duplicate"}/>) to make another one for the other side. Place both items wherever 
           convient.
         </p>
@@ -394,11 +396,12 @@ function Blender() {
         <p>
           We use the <PopupText keybindingText={<span>Bisect</span>} keybindingImgVideo={<video src={Bisect} loop muted playsInline/>} meshOrMenu={false} placerText={"bisect tool"}/> for the rocks, which cuts the object like a knife would. <PopupText keybindingText={<span>New Object</span>} keybindingImgVideo={<img src={NewObject}/>} meshOrMenu={false} placerText={"Add a cube"}/>, then bisect 
           the object. In the bottom left popup menu tick 
-          "Clear Outer" and "Fill". You <PopupText keybindingText={<span>A</span>} keybindingImgVideo={<video src={SelectAll} loop muted playsInline/>} meshOrMenu={true} placerText={"select everything"}/> in "Edit Mode" and slash the cube. Keep selecting all 
+          "Clear Outer" and "Fill". <PopupText keybindingText={<span>A</span>} keybindingImgVideo={<video src={SelectAll} loop muted playsInline/>} meshOrMenu={true} placerText={"Select everything"}/> in "Edit Mode" and slash the cube. Keep selecting all 
           and bisecting repeatidly until satisfied. Place your rock wherever adequate and create a new cube for a new rock. Add as many 
           rocks as you'd like. Feel 
           free to 
-          use <PopupText keybindingText={<span>S with optional (X,Y,Z)<br/><small>(should be done in "Edit Mode")</small></span>} keybindingImgVideo={<video src={ScaleAxis} loop muted playsInline/>} meshOrMenu={true} placerText={"scale"}/>, <PopupText keybindingText={<span>R with optional (X,Y,Z)<br/><small>(should be done in "Edit Mode")</small></span>} keybindingImgVideo={<video src={RotateXYZ} loop muted playsInline/>} meshOrMenu={true} placerText={"rotate"}/>, and <PopupText keybindingText={<span>Shift + D<br/><small>("Edit mode" and "Object Mode" copy differently. Difference is noticable in the top right collections section)</small></span>} keybindingImgVideo={<video src={Duplicate} loop muted playsInline/>} meshOrMenu={true} placerText={"duplicate"}/> as you wish.
+          use <PopupText keybindingText={<span>S with optional (X,Y,Z)<br/><small>(should be done in "Edit Mode")</small></span>} keybindingImgVideo={<video src={ScaleAxis} loop muted playsInline/>} meshOrMenu={true} placerText={"scale"}/>, <PopupText keybindingText={<span>R with optional (X,Y,Z)<br/><small>(should be done in "Edit Mode")</small></span>} keybindingImgVideo={<video src={RotateXYZ} loop muted playsInline/>} meshOrMenu={true} placerText={"rotate"}/>, and <PopupText keybindingText={<span>Shift + D<br/><small>("Edit mode" and "Object Mode" copy differently. Difference is noticable in the top right collections section)</small></span>} keybindingImgVideo={<video src={Duplicate} loop muted playsInline/>} meshOrMenu={true} placerText={"duplicate"}/> as you wish for some variety. 
+           Then place them into <PopupText keybindingText={<span>M</span>} keybindingImgVideo={<video src={Move} loop muted playsInline/>} meshOrMenu={true} placerText={"its own collection"}/> called "rocks".
         </p>
         <div className="media_item_container">
           <LazyVideo src={make_rock} loop muted playsInline controls/>
@@ -425,7 +428,7 @@ function Blender() {
         <p>
           Instead i'll use this opportunity to show you that you can copy and paste (Ctrl + C) objects from one .blend file into another.
           We go to the starter file for 011, select all the items in the portal collection, 
-          and copy the portal in its entirity. Then place it into <PopupText keybindingText={<span>M</span>} keybindingImgVideo={<video src={Move} loop muted playsInline/>} meshOrMenu={true} placerText={"its own collection"}/>. 
+          and copy the portal in its entirity. Then place it into <PopupText keybindingText={<span>M</span>} keybindingImgVideo={<video src={Move} loop muted playsInline/>} meshOrMenu={true} placerText={"its own collection"}/> called "portal". 
         </p>
 
         <div className="media_item_container">
@@ -480,11 +483,10 @@ function Blender() {
 
         <p>
           Note how we have not touched on the poles and axe yet. This is because previously we <PopupText keybindingText={<span>Join Objects</span>} keybindingImgVideo={<video src={Join} loop muted playsInline/>} meshOrMenu={false} placerText={"Joined"}/> them as one object. This is problematic because 
-          we need the pole and axe to be a combinated of various materials. We can solve this in two ways:
-          <br/>
-          1 - apply our material color on a face-by-face basis. We go in "Edit mode", select the relevant faces and apply the material we want to them.
-          <br/>
-          2 - more preferably, <PopupText keybindingText={<span>Split Object</span>} keybindingImgVideo={<img src={SplitObj}/>} meshOrMenu={false} placerText={"seperate"}/> the pole into the segments we want by hand. The opposite of <PopupText keybindingText={<span>Join Objects</span>} keybindingImgVideo={<video src={Join} loop muted playsInline/>} meshOrMenu={false} placerText={"join"}/>.
+          we need the pole and axe to be a combinated of various materials.
+
+
+          We can solve this by <PopupText keybindingText={<span>Split Object</span>} keybindingImgVideo={<img src={SplitObj}/>} meshOrMenu={false} placerText={"separating"}/> the pole into the segments we want by hand. The opposite of <PopupText keybindingText={<span>Join Objects</span>} keybindingImgVideo={<video src={Join} loop muted playsInline/>} meshOrMenu={false} placerText={"join"}/>.
           We <PopupText keybindingText={<span>X</span>} keybindingImgVideo={<video src={Delete} loop muted playsInline/>} meshOrMenu={true} placerText={"delete"}/> one of the poles as if you recall they are <PopupText keybindingText={<span>Alt + D<br/></span>} keybindingImgVideo={<video src={LinkedDuplicate} loop muted playsInline/>} meshOrMenu={true} placerText={"linked duplicates"}/>. This process can accidentally mess with the other pole. Once we are 
           done, we can do a <PopupText keybindingText={<span>Shift + D<br/><small>("Edit mode" and "Object Mode" copy differently. Difference is noticable in the top right collections section)</small></span>} keybindingImgVideo={<video src={Duplicate} loop muted playsInline/>} meshOrMenu={true} placerText={"duplicate"}/> of the pole for the other side. Do the same for the axe.
         </p>
@@ -504,7 +506,7 @@ function Blender() {
         </div>
 
         <p>
-          The final materials to add are the lights. These are also materials but specifically called Emmisive Materials; they emit light.
+          The final materials to add are the objects that emit light. These are also materials but specifically called "Emmisive Materials".
           The process is similar except after pressing "+ new", you set "Surface" to "Emmission" and increase the "Strength" to 40 and choose a warmer color, 
           say orange. Call it "lightEmmisive". Apply it to both lamps. As for the portal, make a new emmisive material, but have the color remain white and a 
           "Strength" of 5. Call it "emmisivePortal".
@@ -555,7 +557,7 @@ function Blender() {
 
         <p>
           Next <PopupText keybindingText={<span>A</span>} keybindingImgVideo={<video src={SelectAll} loop muted playsInline/>} meshOrMenu={true} placerText={"select all"}/> in <PopupText keybindingText={<span>Interaction Mode</span>} keybindingImgVideo={<video src={InteractionMode} loop muted playsInline/>} meshOrMenu={false} placerText={`"Object Mode"`}/> and 
-          <PopupText keybindingText={<span>Transfer Changes to "Edit Mode"</span>} keybindingImgVideo={<img src={TransferScale}/>} meshOrMenu={false} placerText={"transfer the scale"}/> so every tranform action is now in "Edit Mode". Just to make sure.
+          <PopupText keybindingText={<span>Transfer Changes to "Edit Mode"</span>} keybindingImgVideo={<img src={TransferScale}/>} meshOrMenu={false} placerText={"transfer the scale"}/> so every tranform action is now in "Edit Mode". Do the same for rotation. Just to make sure.
         </p>
 
         <div className="content_container_divide">
@@ -579,7 +581,7 @@ function Blender() {
 
         <div className="content_container_divide">
           <p>
-            This is very unlikely to cause any issues with our model as we are using it now, but the solution is very easy. To fix this, <PopupText keybindingText={<span>(hold)Shift + LMB</span>} keybindingImgVideo={<video src={SelectClicked} loop muted playsInline/>} meshOrMenu={true} placerText={"select each of"}/> the faces of red the troubled object, then while in <PopupText keybindingText={<span>Interaction Mode</span>} keybindingImgVideo={<video src={InteractionMode} loop muted playsInline/>} meshOrMenu={false} placerText={`"Edit Mode"`}/> go to Mesh → Normals → Flip. The red highlights should go away.
+            This is very unlikely to cause any issues with our model as we are using it now, but the solution is very easy so lets fix it anyway. <PopupText keybindingText={<span>(hold)Shift + LMB</span>} keybindingImgVideo={<video src={SelectClicked} loop muted playsInline/>} meshOrMenu={true} placerText={"Select each of"}/> the faces of red the troubled object, then while in <PopupText keybindingText={<span>Interaction Mode</span>} keybindingImgVideo={<video src={InteractionMode} loop muted playsInline/>} meshOrMenu={false} placerText={`"Edit Mode"`}/> go to Mesh → Normals → Flip. The red highlights should go away.
             Do this until nothing red is left highlighted and you can untick "Face Orientation".
           </p>
           <img src={changing_orient}/>
