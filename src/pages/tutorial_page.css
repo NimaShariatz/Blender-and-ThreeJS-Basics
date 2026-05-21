@@ -78,6 +78,11 @@
   width: 80%;
   border-radius: 12px;
 }
+.media_item_container iframe{
+  width: 100%;
+  border-radius: 12px;
+  aspect-ratio: 16/10;
+}
 
 .threejs_material_basic, .threejs_material_standard, .threejs_material_phong, .threejs_material_toon, .threejs_material_depth, .threejs_material_phyiscal{
   border-radius: 3px;

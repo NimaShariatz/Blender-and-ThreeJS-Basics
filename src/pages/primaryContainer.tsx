@@ -6,6 +6,7 @@ import { useState } from "react";
 import Navbar from "../components/navbar/navbar";
 import Keybindings from "../components/keybindings/keybindings";
 import Blender from "./blender";
+import ThreeJS from "./threejs";
 
 
 
@@ -28,15 +29,22 @@ function PrimaryContainer() {
 
     <div className="contentSection_container">
 
-      <div className="titleSection_container">
-        <h1>Blender Usage</h1>
-      </div>
-      <Keybindings/>
-
+      {daySelect === 1 &&
+        <Keybindings/>
+      }
 
       {daySelect === 1 &&
         <Blender/>
       }
+
+      {daySelect === 2 &&
+        <ThreeJS/>
+      }
+      
+
+
+
+
 
 
     </div>

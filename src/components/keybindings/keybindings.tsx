@@ -55,6 +55,16 @@ function Keybindings() {
             <p className="keybind_-">-</p>
             <p className="keybind_desc">Shift + RMB or Shift + S</p>
           </div>
+          <div>
+            <p className="keybind">Undo Action</p>
+            <p className="keybind_-">-</p>
+            <p className="keybind_desc">Ctrl + Z</p>
+          </div>
+          <div>
+            <p className="keybind">Redo Action</p>
+            <p className="keybind_-">-</p>
+            <p className="keybind_desc">Ctrl + Shift + Z</p>
+          </div>
         </div>
 
         <div className="keybindings_section">
