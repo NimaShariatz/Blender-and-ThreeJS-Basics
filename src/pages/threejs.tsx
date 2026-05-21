@@ -28,11 +28,16 @@ function ThreeJS(){
 
 
         <p>
-          This scene will be the focus of study.
+          Hence we will focus on learning how this was made: <a target="_blank" href="https://nimashariatz.github.io/threejs_example/">https://nimashariatz.github.io/threejs_example/</a>
         </p>
+        
         <div className="media_item_container">
           <iframe src="https://nimashariatz.github.io/threejs_example/"/>
         </div>
+
+        <p>
+          But first, lets talk about the various library installations and what they do.
+        </p>
 
 
       </div>
