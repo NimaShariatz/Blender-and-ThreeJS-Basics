@@ -239,7 +239,7 @@ function Keybindings() {
             <div>
               <p className="keybind"><PopupText keybindingText={<span>New Camera</span>} keybindingImgVideo={<video src={NewCamera} loop muted playsInline/>} meshOrMenu={false} placerText={"New Camera"}/></p>
               <p className="keybind_-">-</p>
-              <p className="keybind_desc">add a camera to the scene. Then hit "Render" on the top left followed by "Render Image" to render a frame.</p>
+              <p className="keybind_desc">add a camera to the scene. Then hit Render → Render Image to render a frame</p>
             </div>
           </div>
 
@@ -247,7 +247,7 @@ function Keybindings() {
             <div>
               <p className="keybind"><PopupText keybindingText={<span>Interaction Mode</span>} keybindingImgVideo={<video src={InteractionMode} loop muted playsInline/>} meshOrMenu={false} placerText={"Interaction Mode"}/></p>
               <p className="keybind_-">-</p>
-              <p className="keybind_desc">change interaction mode. Can also be done with "Tab" keybind</p>
+              <p className="keybind_desc">change interaction mode. Can also be done with "Tab" key</p>
             </div>
             <div>
               <p className="keybind"><PopupText keybindingText={<span>Transfer Changes to "Edit Mode"</span>} keybindingImgVideo={<img src={TransferScale}/>} meshOrMenu={false} placerText={"Transfer Scale"}/></p>
