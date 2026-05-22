@@ -88,6 +88,11 @@ function Keybindings() {
             <p className="keybind_-">-</p>
             <p className="keybind_desc">L</p>
           </div>
+          <div>
+            <p className="keybind">Search Window Popup</p>
+            <p className="keybind_-">-</p>
+            <p className="keybind_desc">Fn + F3</p>
+          </div>
         </div>
       </div>
     </div>
