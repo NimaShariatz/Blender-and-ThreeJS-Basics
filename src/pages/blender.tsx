@@ -170,8 +170,8 @@ function Blender() {
           <img src={containers}/>
         </div>
         <p>
-          Finally, once your first fence post is done, <PopupText keybindingText={<span>S with optional (X,Y,Z)<br/><small>(should be done in "Edit Mode")</small></span>} keybindingImgVideo={<video src={ScaleAxis} loop muted playsInline/>} meshOrMenu={true} placerText={"scale"}/> the fence as a whole in "Edit Mode" by selecting all to whatever size you'd like for the scene. Then 
-          <PopupText keybindingText={<span>Shift + D<br/><small>("Edit mode" and "Object Mode" copy differently. Difference is noticable in the top right collections section)</small></span>} keybindingImgVideo={<video src={Duplicate} loop muted playsInline/>} meshOrMenu={true} placerText={"duplicate"}/> the post in <PopupText keybindingText={<span>Interaction Mode</span>} keybindingImgVideo={<video src={InteractionMode} loop muted playsInline/>} meshOrMenu={false} placerText={`"Object Mode"`}/> as we want each to be it's own seperate object. 
+          Finally, once your first fence post is done, <PopupText keybindingText={<span>S with optional (X,Y,Z)<br/><small>(should be done in "Edit Mode")</small></span>} keybindingImgVideo={<video src={ScaleAxis} loop muted playsInline/>} meshOrMenu={true} placerText={"scale"}/> the fence as a whole in "Edit Mode" by <PopupText keybindingText={<span>A</span>} keybindingImgVideo={<video src={SelectAll} loop muted playsInline/>} meshOrMenu={true} placerText={"selecting all"}/> to whatever size you'd like for the scene. 
+          Then <PopupText keybindingText={<span>Shift + D<br/><small>("Edit mode" and "Object Mode" copy differently. Difference is noticable in the top right collections section)</small></span>} keybindingImgVideo={<video src={Duplicate} loop muted playsInline/>} meshOrMenu={true} placerText={"duplicate"}/> the post in <PopupText keybindingText={<span>Interaction Mode</span>} keybindingImgVideo={<video src={InteractionMode} loop muted playsInline/>} meshOrMenu={false} placerText={`"Object Mode"`}/> as we want each to be it's own seperate object. 
           Make 6 fences in total. Position and rotate as desired.
         </p>
         <div className="media_item_container">
@@ -217,9 +217,8 @@ function Blender() {
           <p>
             Next we add the trunks. Start by <PopupText keybindingText={<span>New Object</span>} keybindingImgVideo={<img src={NewObject}/>} meshOrMenu={false} placerText={"adding one cylinder"}/> and 
             set the number of sides to 10 in the one-time popup menu on the left corner. Any 
-            changes made to the object will remove the one-time popup menu.
-            <PopupText keybindingText={<span>G with optional (X,Y,Z)<br/><small>("Edit Mode" does not move origin point)</small></span>} keybindingImgVideo={<video src={GrabAxis} loop muted playsInline/>} meshOrMenu={true} placerText={"Place the cylinder somewhere in the scene"}/>. Once 
-            in position move the log up(Z-Axis) in "Edit Mode" and move it back down to it's original position 
+            changes made to the object will remove the one-time popup menu. <PopupText keybindingText={<span>G with optional (X,Y,Z)<br/><small>("Edit Mode" does not move origin point)</small></span>} keybindingImgVideo={<video src={GrabAxis} loop muted playsInline/>} meshOrMenu={true} placerText={"Place the cylinder somewhere in the scene"}/>. Once 
+            in position move the log up (Z-Axis) in "Edit Mode" and move it back down to it's original position 
             in "Object Mode". Note that now the orange circle should be at floor level. So now if we choose to <PopupText keybindingText={<span>S with optional (X,Y,Z)<br/><small>(should be done in "Edit Mode")</small></span>} keybindingImgVideo={<video src={ScaleAxis} loop muted playsInline/>} meshOrMenu={true} placerText={"scale"}/> it in "Object Mode", the bottom doesn't scale downwards. This is 
             strictly optional, but convient. Though remember any scale changes should be <PopupText keybindingText={<span>Transfer Changes to "Edit Mode"</span>} keybindingImgVideo={<img src={TransferScale}/>} meshOrMenu={false} placerText={`transferred to "Edit Mode"`}/> aftewards.
           </p>
@@ -230,7 +229,7 @@ function Blender() {
           <LazyVideo src={add_trunk} loop muted playsInline controls/>
         </div>
         <p>
-          We then <PopupText keybindingText={<span>Shift + D<br/><small>("Edit mode" and "Object Mode" copy differently. Difference is noticable in the top right collections section)</small></span>} keybindingImgVideo={<video src={Duplicate} loop muted playsInline/>} meshOrMenu={true} placerText={"duplicate"}/> the object in "Object Mode" (creating unqiue instances, not part of the original cylinder). Add 3 more of them, 
+          We then <PopupText keybindingText={<span>Shift + D<br/><small>("Edit mode" and "Object Mode" copy differently. Difference is noticable in the top right collections section)</small></span>} keybindingImgVideo={<video src={Duplicate} loop muted playsInline/>} meshOrMenu={true} placerText={"duplicate"}/> the object in "Object Mode" (creating unique instances, not part of the original cylinder). Add 3 more of them, 
           place them wherever adequate and <PopupText keybindingText={<span>S with optional (X,Y,Z)<br/><small>(should be done in "Edit Mode")</small></span>} keybindingImgVideo={<video src={ScaleAxis} loop muted playsInline/>} meshOrMenu={true} placerText={"scale"}/> their 
           height for variety. <PopupText keybindingText={<span>Transfer Changes to "Edit Mode"</span>} keybindingImgVideo={<img src={TransferScale}/>} meshOrMenu={false} placerText={`Transfer`}/> the scale values if done in "Object Mode".
         </p>
@@ -269,7 +268,7 @@ function Blender() {
           <img src={final_logs}/>
         </div>
         <p>
-          If you move an object in "Edit Mode" by accident, the origin point of that object will not folllow. You 
+          If you move an object in "Edit Mode" by accident, the origin point of that object will not follow. You 
           can <PopupText keybindingText={<span>Reset Origin Point</span>} keybindingImgVideo={<img src={ResetGeometry}/>} meshOrMenu={false} placerText={"reset the point"}/> if necassary.
         </p>
       </div>
@@ -307,7 +306,7 @@ function Blender() {
         <div className="content_container_divide">
           <p>
             This is a simple low poly scene. For an axe you can just use two rectangles to represent an axe. One for an axe head and another for the handle. 
-            Start by creating a cube and scaling it which represents the axe head. If you want something simple this is enough.
+            Start by creating a cube and scaling it which represents the axe head.
           </p>
           <img src={axe_head}/>
         </div>
@@ -315,7 +314,7 @@ function Blender() {
 
 
         <p>
-          But we'll be adding a bit more detail. This requires using new keybinds. An axe head has a curved edge. Unfortunately as is we can't cut make the curve. we 
+          Lets add some finer details. This requires using new keybinds. An axe head has a curved edge. Unfortunately as is we can't cut make the curve. we 
           need more vertices. So we introduce <PopupText keybindingText={<span>Ctrl + R <small>(To increase cuts, use scroll-wheel)</small></span>} keybindingImgVideo={<video src={Cut} loop muted playsInline/>} meshOrMenu={true} placerText={"loop cuts"}/> in <PopupText keybindingText={<span>Interaction Mode</span>} keybindingImgVideo={<video src={InteractionMode} loop muted playsInline/>} meshOrMenu={false} placerText={`"Edit Mode"`}/> into our 
           shape which allow us to better curve the 
           axe at its end. Three cuts placed at the center. While still in "Edit Mode" select the vertices at the end and <PopupText keybindingText={<span>G with optional (X,Y,Z)<br/><small>("Edit Mode" does not move origin point)</small></span>} keybindingImgVideo={<video src={GrabAxis} loop muted playsInline/>} meshOrMenu={true} placerText={"move them up"}/>. Then <PopupText keybindingText={<span>S with optional (X,Y,Z)<br/><small>(should be done in "Edit Mode")</small></span>} keybindingImgVideo={<video src={ScaleAxis} loop muted playsInline/>} meshOrMenu={true} placerText={"tighten"}/> the top of the axe.
@@ -326,7 +325,7 @@ function Blender() {
         </div>
 
         <p>
-          Add <PopupText keybindingText={<span>Ctrl + R <small>(To increase cuts, use scroll-wheel)</small></span>} keybindingImgVideo={<video src={Cut} loop muted playsInline/>} meshOrMenu={true} placerText={"another loop cut"}/> perpendicularly, select the outer vertices of the axe head, and use the <PopupText keybindingText={<span>G &#215; 2</span>} keybindingImgVideo={<video src={GG} loop muted playsInline/>} meshOrMenu={true} placerText={"vertex slider"}/> for a
+          We can stop here, but lets add more detail. Add <PopupText keybindingText={<span>Ctrl + R <small>(To increase cuts, use scroll-wheel)</small></span>} keybindingImgVideo={<video src={Cut} loop muted playsInline/>} meshOrMenu={true} placerText={"another loop cut"}/> perpendicularly, select the outer vertices of the axe head, and use the <PopupText keybindingText={<span>G &#215; 2</span>} keybindingImgVideo={<video src={GG} loop muted playsInline/>} meshOrMenu={true} placerText={"vertex slider"}/> for a
           finer adjustment of points into a sharp edge.
         </p>
 
@@ -482,8 +481,8 @@ function Blender() {
         </div>
 
         <p>
-          Note how we have not touched on the poles and axe yet. This is because previously we <PopupText keybindingText={<span>Join Objects</span>} keybindingImgVideo={<video src={Join} loop muted playsInline/>} meshOrMenu={false} placerText={"Joined"}/> them as one object. This is problematic because 
-          we need the pole and axe to be a combinated of various materials.
+          Note how we have not touched on the poles and axe yet. This is because previously we <PopupText keybindingText={<span>Join Objects</span>} keybindingImgVideo={<video src={Join} loop muted playsInline/>} meshOrMenu={false} placerText={"Joined"}/> the pole as one object, and the handle for the axe was added in "Edit Mode" which means the axe head and handle are the same object. This is problematic because 
+          we want to apply different materials to different parts of the object.
 
 
           We can solve this by <PopupText keybindingText={<span>Split Object</span>} keybindingImgVideo={<img src={SplitObj}/>} meshOrMenu={false} placerText={"separating"}/> the pole into the segments we want by hand. The opposite of <PopupText keybindingText={<span>Join Objects</span>} keybindingImgVideo={<video src={Join} loop muted playsInline/>} meshOrMenu={false} placerText={"join"}/>.
@@ -662,7 +661,7 @@ function Blender() {
           there are no shadows. Unlike Blender, ThreeJS does not automatically render shadows. Adding shadows in ThreeJS is a separate and manual process. You can add either static or dynamic shadows. So to 
           summarize: importing a model does not pass on any lighting, or shadows. You can render your object in <span className="threejs_material_basic">meshBasic</span> which does not require any light, or 
           render it in <span className="threejs_material_standard">meshStandard</span> (or a equivalent material that requires light) which does in order to see it. But adding shadows is a manual process. Overall, the quality will 
-          not match what it is in Blender because ThreeJS needs to render it in realtime. Recall early on how we changed the <PopupText keybindingText={<span>Rendering Mode</span>} keybindingImgVideo={<img src={RendererMode}/>} meshOrMenu={false} placerText={"rendering mode"}/> to Cycles instead of EEVEE for superior rendering quality in Blender (003)?. EEVEE is in fact closer to 
+          not match what it is in Blender because ThreeJS needs to render it in realtime. Recall early on how we changed the <PopupText keybindingText={<span>Rendering Mode</span>} keybindingImgVideo={<img src={RendererMode}/>} meshOrMenu={false} placerText={"rendering mode"}/> to Cycles instead of EEVEE for superior rendering quality in Blender (003). EEVEE is in fact closer to 
           the way ThreeJS does it on the basis that it looks worse. But even then, because ThreeJS must render the scene in real-time, I.E in 60FPS (or whatever your moniter refresh rate is). We can't wait a minute just to have a single nice looking frame rendered like we do in Blender.
         </p>
 
