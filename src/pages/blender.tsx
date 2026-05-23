@@ -108,7 +108,7 @@ function Blender() {
         </p>
 
         <p>
-          This is what we'll be making for our blender model.
+          This is what we'll be making for our Blender model.
         </p>
         <div className="media_item_container">
           <img src={complete_render}/>
@@ -481,13 +481,13 @@ function Blender() {
         </div>
 
         <p>
-          Note how we have not touched on the poles and axe yet. This is because previously we <PopupText keybindingText={<span>Join Objects</span>} keybindingImgVideo={<video src={Join} loop muted playsInline/>} meshOrMenu={false} placerText={"Joined"}/> the pole as one object, and the handle for the axe was added in "Edit Mode" which means the axe head and handle are the same object. This is problematic because 
+          Note how we have not touched on the poles and axe yet. This is because previously parts of the pole and the handle for the axe was added in "Edit Mode" which means the axe head and handle are the same object (or you <PopupText keybindingText={<span>Join Objects</span>} keybindingImgVideo={<video src={Join} loop muted playsInline/>} meshOrMenu={false} placerText={"joined"}/> them at some point). This is problematic because 
           we want to apply different materials to different parts of the object.
 
 
           We can solve this by <PopupText keybindingText={<span>Split Object</span>} keybindingImgVideo={<img src={SplitObj}/>} meshOrMenu={false} placerText={"separating"}/> the pole into the segments we want by hand. The opposite of <PopupText keybindingText={<span>Join Objects</span>} keybindingImgVideo={<video src={Join} loop muted playsInline/>} meshOrMenu={false} placerText={"join"}/>.
-          We <PopupText keybindingText={<span>X</span>} keybindingImgVideo={<video src={Delete} loop muted playsInline/>} meshOrMenu={true} placerText={"delete"}/> one of the poles as if you recall they are <PopupText keybindingText={<span>Alt + D<br/></span>} keybindingImgVideo={<video src={LinkedDuplicate} loop muted playsInline/>} meshOrMenu={true} placerText={"linked duplicates"}/>. This process can accidentally mess with the other pole. Once we are 
-          done, we can do a <PopupText keybindingText={<span>Shift + D<br/><small>("Edit mode" and "Object Mode" copy differently. Difference is noticable in the top right collections section)</small></span>} keybindingImgVideo={<video src={Duplicate} loop muted playsInline/>} meshOrMenu={true} placerText={"duplicate"}/> of the pole for the other side. Do the same for the axe.
+          We <PopupText keybindingText={<span>X</span>} keybindingImgVideo={<video src={Delete} loop muted playsInline/>} meshOrMenu={true} placerText={"delete"}/> one of the poles as if you recall they are <PopupText keybindingText={<span>Alt + D<br/></span>} keybindingImgVideo={<video src={LinkedDuplicate} loop muted playsInline/>} meshOrMenu={true} placerText={"linked duplicates"}/>. This process can accidentally mess with the other pole. Once we are done seperating the handle, base, and lamp, 
+          we can do a <PopupText keybindingText={<span>Shift + D<br/><small>("Edit mode" and "Object Mode" copy differently. Difference is noticable in the top right collections section)</small></span>} keybindingImgVideo={<video src={Duplicate} loop muted playsInline/>} meshOrMenu={true} placerText={"duplicate"}/> of the pole for the other side.
         </p>
 
         <div className="media_item_container">
@@ -505,10 +505,10 @@ function Blender() {
         </div>
 
         <p>
-          The final materials to add are the objects that emit light. These are also materials but specifically called "Emmisive Materials".
-          The process is similar except after pressing "+ new", you set "Surface" to "Emmission" and increase the "Strength" to 40 and choose a warmer color, 
-          say orange. Call it "lightEmmisive". Apply it to both lamps. As for the portal, make a new emmisive material, but have the color remain white and a 
-          "Strength" of 5. Call it "emmisivePortal".
+          The final materials to add are the objects that emit light. These are also materials but specifically called "Emisive Materials".
+          The process is similar except after pressing "+ new", you set "Surface" to "Emission" and increase the "Strength" to 40 and choose a warmer color, 
+          say orange. Call it "lightEmisive". Apply it to both lamps. As for the portal, make a new emisive material, but have the color remain white and a 
+          "Strength" of 5. Call it "emisivePortal".
         </p>
 
         <div className="media_item_container">
@@ -518,7 +518,7 @@ function Blender() {
         <p>
           Finally, the point light in our scene can 
           be better. We <PopupText keybindingText={<span>X</span>} keybindingImgVideo={<video src={Delete} loop muted playsInline/>} meshOrMenu={true} placerText={"delete"}/> the point light and <PopupText keybindingText={<span>New Light Source</span>} keybindingImgVideo={<video src={NewLight} loop muted playsInline/>} meshOrMenu={false} placerText={`add an "Area Light"`}/>. <PopupText keybindingText={<span>R with optional (X,Y,Z)<br/><small>(should be done in "Edit Mode")</small></span>} keybindingImgVideo={<video src={RotateXYZ} loop muted playsInline/>} meshOrMenu={true} placerText={"Rotate"}/> and <PopupText keybindingText={<span>G with optional (X,Y,Z)<br/><small>("Edit Mode" does not move origin point)</small></span>} keybindingImgVideo={<video src={GrabAxis} loop muted playsInline/>} meshOrMenu={true} placerText={"move"}/> it in a similar position 
-          to the one here. Use <PopupText keybindingText={<span>S with optional (X,Y,Z)<br/><small>(should be done in "Edit Mode")</small></span>} keybindingImgVideo={<video src={ScaleAxis} loop muted playsInline/>} meshOrMenu={true} placerText={"scale"}/> to make the area light larger. Increase the area light "Strength" to 
+          to the one here. Use <PopupText keybindingText={<span>S with optional (X,Y,Z)<br/><small>(should be done in "Edit Mode")</small></span>} keybindingImgVideo={<video src={ScaleAxis} loop muted playsInline/>} meshOrMenu={true} placerText={"scale"}/> to make the area light larger. Increase the area light "Power" to 
           60 and give it an orange color. To clarify, you can 
           apply your own colors and "Strength" values to your own scene.
         </p>
@@ -545,7 +545,7 @@ function Blender() {
 
         <p>
           There's a few things we can do to help with performance on our ThreeJS render. Remember the final product will be rendered on a web page. Not 
-          on blender. First we can <PopupText keybindingText={<span>X</span>} keybindingImgVideo={<video src={Delete} loop muted playsInline/>} meshOrMenu={true} placerText={"delete"}/> the hidden 
+          on Blender. First we can <PopupText keybindingText={<span>X</span>} keybindingImgVideo={<video src={Delete} loop muted playsInline/>} meshOrMenu={true} placerText={"delete"}/> the hidden 
           faces in <PopupText keybindingText={<span>Interaction Mode</span>} keybindingImgVideo={<video src={InteractionMode} loop muted playsInline/>} meshOrMenu={false} placerText={`"Edit Mode"`}/> that likely will never be seen by the user. In our case that is faces that are facing downwards. 
           We do this process with the bottom of whatever objects we can think of: trunks, logs, rocks, poles(which are already done), and the stone steps.
         </p>
@@ -595,7 +595,7 @@ function Blender() {
 
 
       <div className="content_container">
-        <h2>013 - ThreeJS Implimentation and Why We Got What We Got</h2>
+        <h2>013 - ThreeJS Implementation and Why We Got What We Got</h2>
         <small><a href={Day1_013} download="Day1_013.blend">Blender model complete</a></small>
 
 
@@ -611,7 +611,7 @@ function Blender() {
         </div>
 
         <p>
-          The render looks solid on blender. But we are not rendering it on blender, rather it's being done by the browser real-time. The ThreeJS side of things will 
+          The render looks solid on Blender. But we are not rendering it on Blender, rather it's being done by the browser real-time. The ThreeJS side of things will 
           be looked into next lesson. But lets skip ahead and see what the render looks like.
         </p>
 
@@ -624,8 +624,7 @@ function Blender() {
           So why does it look like a crayon drawing from a 3 year old? When we export a model into ThreeJS lights and their subsequent shadows 
           don't come with us. How can we see the model? This is because in ThreeJS we are rendering the object in <span className="threejs_material_basic">meshBasic</span>. This material 
           does not require light to be shown. It also does not interact with light in any way. Hence we do not have any of the natural gradiences that come 
-          with a scene that has lighting. As such, before you export your scene you should remove 
-          any light sources and the camera. Blender animations do get passed on to ThreeJS, but learning Blender animations is a 
+          with a scene that has lighting. Certain Blender animations do get passed on to ThreeJS, but learning Blender animations is a 
           complicated affair. Here are some ThreeJS sites that make use of <span className="threejs_material_basic">meshBasic</span>.
         </p>
 
@@ -713,13 +712,13 @@ function Blender() {
 
         <div className="content_container_divide">
          <p>
-            There is a trick to make our object look exactly just like our blender. This is called "baking". Effectively, the trick is to make a texture .png of our existing blender model. So copy all of the
-            the colors, shadows, gradients, exactly as it is in blender, place it into a .png file and then apply it to our ThreeJS model which is rendered in <span className="threejs_material_basic">meshBasic</span>. This gives the illusion of 
+            There is a trick to make our object look exactly just like our Blender. This is called "baking". Effectively, the trick is to make a texture .png of our existing Blender model. So copy all of the
+            the colors, shadows, gradients, exactly as it is in Blender, place it into a .png file and then apply it to our ThreeJS model which is rendered in <span className="threejs_material_basic">meshBasic</span>. This gives the illusion of 
             light and shadows without ever having to add any to our scene! We will get the same result as our Blender model because we are effectivily copying it's output into a .png file. However, the process of "baking" is a manual one done in Blender. It is difficult, and 
             very time consuming. In addition, this only works on static objects. It does not allow for any movement from the object itself otherwise it becomes obvious. It is a static snapshot of a Blender scene afterall. It is not rendered in real-time. Though 
             if felt necassary, this option can be further explored. To the right is an example of a texture from a scene similar to ours. If we are "baking" a scene, it would make sense to go for the highest possible 
             quality in our Blender scene by setting <PopupText keybindingText={<span>Rendering Mode</span>} keybindingImgVideo={<img src={RendererMode}/>} meshOrMenu={false} placerText={"rendering mode"}/> to Cycles. 
-            Overall, it is indeed possible to get the same output as our blender with this trick and with the most performant material.
+            Overall, it is indeed possible to get the same output as our Blender with this trick and with the most performant material.
           </p>
           <img src={example_snapshot}/>
         </div>
@@ -762,7 +761,7 @@ function Blender() {
         </div>
 
         <p>
-          Regardless of whether you do it, by now you have a fair understanding of the basic of how blender models are made and the details on making the 
+          Regardless of whether you do it, by now you have a fair understanding of the basic of how Blender models are made and the details on making the 
           transfer to ThreeJS. Cheers.
         </p>
 
