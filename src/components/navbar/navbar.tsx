@@ -19,7 +19,7 @@ function Navbar({daySelect, daySelectFunction}: NavbarProps) {
         Blender Model
       </button>
       <button onClick={ ()=> daySelectFunction(2)} style={{ backgroundColor: (daySelect==2) ? "var(--yellow)" : "transparent", opacity: (daySelect!=2) ? "0.35" : "1" }}>
-        ThreeJS Setup
+        ThreeJS Usage
       </button>
 
 

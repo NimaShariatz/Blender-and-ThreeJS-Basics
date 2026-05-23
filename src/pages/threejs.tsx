@@ -28,7 +28,7 @@ function ThreeJS(){
 
 
         <p>
-          Hence we will focus on learning how this was made: <a target="_blank" href="https://nimashariatz.github.io/threejs_example/">https://nimashariatz.github.io/threejs_example/</a>
+          Hence we will learn how this was made: <a target="_blank" href="https://nimashariatz.github.io/threejs_example/">https://nimashariatz.github.io/threejs_example/</a>
         </p>
         
         <div className="media_item_container">
