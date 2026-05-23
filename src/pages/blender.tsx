@@ -194,7 +194,7 @@ function Blender() {
           adequate. The "Power" variable in the object "Data" panel should be raised to something adequate. A light source does have other variables you can play with.
         </p>
         <p>
-          "Renderer mode" gives us a feel of how it'll look, but rendering a full frame of the scene is the accurate version. For this we need to <PopupText keybindingText={<span>New Camera</span>} keybindingImgVideo={<video src={NewCamera} loop muted playsInline/>} meshOrMenu={false} placerText={"add a camera"}/> to 
+          "Rendered" mode gives us a feel of how it'll look, but rendering a full frame of the scene is the accurate version. For this we need to <PopupText keybindingText={<span>New Camera</span>} keybindingImgVideo={<video src={NewCamera} loop muted playsInline/>} meshOrMenu={false} placerText={"add a camera"}/> to 
           the scene. Place it wherever adequate. Notice below your <b>Axis Change-View</b> is a camera icon. You can view through the camera by this button. Below that we can also change our perspective to Orthographic which means objects do not shrink when farther away. RTS games such as AoE, C&C and CoH use this perspective. In the "Render" panel we also 
           change the <PopupText keybindingText={<span>Rendering Mode</span>} keybindingImgVideo={<img src={RendererMode}/>} meshOrMenu={false} placerText={"rendering mode"}/> to "Cycles" for better quality 
           and set Viewport → Max Samples & Render → Max Samples to '128' (or a value of your choice. The larger the value, the longer it takes to render a frame). Higher quality is unnecassary for our use-case.
