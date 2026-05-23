@@ -690,9 +690,9 @@ function Blender() {
 
         <p>
           Note: recall how in 011 we applied color to the objects. We also tweaked the <PopupText keybindingText={<span>Materials Window</span>} keybindingImgVideo={<img src={MaterialWindow}/>} meshOrMenu={false} placerText={`"Roughness" and "Metallic"`}/> values on occasion. While color 
-          does get passed on(so long as its not procedural or complex), "Roughness" and "Metallic" values will only get passed on to ThreeJS if <span className="threejs_material_standard">meshStandard</span> or <span className="threejs_material_phyiscal">meshPhysical</span> is used. It's worth 
-          mentioning that you can directly apply "Metallic" and "Roughness" to a <span className="threejs_material_standard">meshStandard</span> material by code in ThreeJS which overrides any existing values that come with the Blender model. In fact, mesh materials 
-          have some basic fields which tweak the appearance of the model, just like in Blender.
+          does get passed on (so long as its not procedural or complex), "Roughness" and "Metallic" values will only get passed on to ThreeJS if <span className="threejs_material_standard">meshStandard</span> or <span className="threejs_material_phyiscal">meshPhysical</span> is used. It's worth 
+          mentioning that you can directly apply "Metallic" and "Roughness" to a <span className="threejs_material_standard">meshStandard</span> or <span className="threejs_material_phyiscal">meshPhysical</span> material by code in ThreeJS which overrides any existing values that come with the Blender model. You can also change/apply color to individual 
+          objects by code as well (for any material).
         </p>
 
         <p>
