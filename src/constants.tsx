@@ -232,3 +232,13 @@ export const jap_example = ja;
 export const plane_example = planeex;
 export const paper_example = paperex;
 export const example_snapshot = examplesnap;
+
+
+
+
+// day 2
+import threejssyntax from './assets/Days/2/threejs_syntax.png';
+import fibresyntax from './assets/Days/2/fibre_syntax.png';
+
+export const threejs_syntax = threejssyntax;
+export const fibre_syntax = fibresyntax;

@@ -1,3 +1,4 @@
+import { fibre_syntax, threejs_syntax } from "../constants"
 
 
 
@@ -10,37 +11,115 @@ function ThreeJS(){
     </div>
   
 
+    <div className="content_container">
+      <h2>Goal</h2>
+      <small>ThreeJS in practice</small>
+      <p>
+        The best way to learn ThreeJS is to see it in practice. To that end, the focus will be on:
+      </p>
+
+
+      <ul className="unordered_list">
+        <li><p>Syntax structure</p></li>
+        <li><p>Object rendering</p></li>
+        <li><p>Object animation</p></li>
+        <li><p>Camera animation</p></li>
+        <li><p>Performance considerations and tactics</p></li>
+      </ul>
+
+
+      <p>
+        Hence we will learn how this was made: <a target="_blank" href="https://nimashariatz.github.io/threejs_example/">https://nimashariatz.github.io/threejs_example/</a>
+      </p>
+      
+      <div className="media_item_container">
+        <iframe src="https://nimashariatz.github.io/threejs_example/"/>
+      </div>
+
+      <p>
+        But first, lets talk about the various library installations and what they do.
+      </p>
+
+
+    </div>
+
+
+
+
       <div className="content_container">
-        <h2>Goal</h2>
-        <small>ThreeJS in practice</small>
+        <h2>Libraries</h2>
+        <small>Used in the demo</small>
         <p>
-          The best way to learn ThreeJS is to see it in practice. To that end, the focus will be on:
+          <a target="_blank" href="https://threejs.org/docs/#BoxGeometry">[core] yarn add three@0.169.0</a> - The core JavaScript ThreeJS library. 0.169.0 was installed to avoid a 
+          warning for THREE.Clock being depracted (browser console warning). This warning appears when React Fibre is also installed. This is because the React Fibre 
+          library was not updated to accommodate this depracation by the ThreeJS team.
+          <br/>
+          <br/>
+          <a target="_blank" href="https://github.com/three-types/three-ts-types">[if using TypeScript] yarn add -D @types/three</a> - Optional but highly recommended since you are using TypeScript in your Vite project. TypeScript definitions for Three.js. The "-D" means its a dev dependency.
+          In your case, @types/three just provides TypeScript definitions. It gives you autocomplete, hover documentation, and error checking in VS Code while you write your code. However, the browser doesn't understand TypeScript, so these types are stripped away during the build process and aren't included in the final application bundle that your users download.
+          <br/>
+          <br/>
+          <a target="_blank" href="https://r3f.docs.pmnd.rs/getting-started/introduction">[if using ReactJS] yarn add @react-three/fiber</a> - Optional but highly recommended if you are doing this with ReactJS. 
+          The React library that allows you to use ThreeJS via React Components which cuts down on syntax.
+          <br/>
+          <br/>
+          <a target="_blank" href="https://gsap.com/docs/v3/Eases/">[animation] yarn add gsap</a> - Optional but highly recommended if you intend to animate the camera or 
+          any objects in your scene. For Choreographed sequences, intro camera sweeps, UI-triggered animations. GSAP is not a ThreeJS library, rather a general animation library whose functons happen to work on ThreeJS as well.
+          <br/>
+          <br/>
+          <a target="_blank" href="https://drei.docs.pmnd.rs/getting-started/introduction">[helpers & effects] yarn add @react-three/drei</a> - Optional but highly recommended to make the 
+          development experience easier and potentially use some of the effects. Does need React Fibre. A useful collection of abstractions and helpers for React Three Fiber. Helpers with regards to lights 
+          and some special effects.
+          <br/>
+          <br/>
+          <a target="_blank" href="https://github.com/pmndrs/react-postprocessing">[effects] yarn add @react-three/postprocessing</a> - Optional. Has some special effects. Unlikely to be useful, but hey it exists.
+          see <a target="_blank" href="https://pmndrs.github.io/postprocessing/public/demo/#antialiasing">this demo</a> for examples.
+          <br/>
+          <br/>
+          <a target="_blank" href="https://github.com/utsuboco/r3f-perf">[performance tracking] yarn add r3f-perf</a> - Optional but highly recommended for keeping track 
+          of performance mentrics during the development process. Does require Fibre to function.
         </p>
 
+      </div>
 
-        <ul className="unordered_list">
-          <li><p>Syntax structure</p></li>
-          <li><p>Object rendering</p></li>
-          <li><p>Object animation</p></li>
-          <li><p>Camera animation</p></li>
-          <li><p>Performance considerations and tactics</p></li>
-        </ul>
-
-
+      <div className="content_container">
+        <h2>Libraries - Some Chit-Chat</h2>
+        <small>Usage</small>
         <p>
-          Hence we will learn how this was made: <a target="_blank" href="https://nimashariatz.github.io/threejs_example/">https://nimashariatz.github.io/threejs_example/</a>
+          The core library which needs to be installed is Three. This is technically the only llibrary we need and is a JavaScript library. ThreeJS syntax looks like this.
         </p>
-        
+
         <div className="media_item_container">
-          <iframe src="https://nimashariatz.github.io/threejs_example/"/>
+          <img src={threejs_syntax}/>
         </div>
 
         <p>
-          But first, lets talk about the various library installations and what they do.
+          There is alot of "default" syntax where sometimes order matters and sometimes it does not. Because it is a JavaScript framework, 
+          you can install ThreeJS on many other framework (Django, .NET, Angular, etc...). However since we are using ReactJS, we should install Fibre which heavily 
+          cuts down on syntax by using React components as a medium. React Fibre still requires ThreeJS to function. This is what it looks like.
+        </p>
+
+        <div className="media_item_container">
+          <img src={fibre_syntax}/>
+        </div>
+
+        <p>
+          You can tell without actually understanding the code that the syntax with Fibre is far simpler. The next library worth mentiong is React Perf which 
+          lets us track performance metrics during development. Performance is fundamental to development for ThreeJS so that your application is accessable to all and you can't always tell whether a particular 
+          series of object or effects is causing large performance drops by simply "eyeballing" it. It looks something like this.
         </p>
 
 
+{/*
+        <p>
+          There are a lot more optional libraries that can be installed for different purposes. From Physics to VR control.
+        </p>
+*/}
+
+
+
       </div>
+      
 
   </>
   )
