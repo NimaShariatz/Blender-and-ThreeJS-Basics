@@ -239,6 +239,9 @@ export const example_snapshot = examplesnap;
 // day 2
 import threejssyntax from './assets/Days/2/threejs_syntax.png';
 import fibresyntax from './assets/Days/2/fibre_syntax.png';
+import react3f from './assets/Days/2/r3f.png';
+
 
 export const threejs_syntax = threejssyntax;
 export const fibre_syntax = fibresyntax;
+export const r3f = react3f;

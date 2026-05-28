@@ -1,4 +1,4 @@
-import { fibre_syntax, threejs_syntax } from "../constants"
+import { fibre_syntax, r3f, threejs_syntax } from "../constants"
 
 
 
@@ -86,7 +86,7 @@ function ThreeJS(){
         <h2>Libraries - Some Chit-Chat</h2>
         <small>Usage</small>
         <p>
-          The core library which needs to be installed is Three. This is technically the only llibrary we need and is a JavaScript library. ThreeJS syntax looks like this.
+          The core library which needs to be installed is Three. This is technically the only library we need and is a JavaScript library. ThreeJS syntax looks like this.
         </p>
 
         <div className="media_item_container">
@@ -96,7 +96,7 @@ function ThreeJS(){
         <p>
           There is alot of "default" syntax where sometimes order matters and sometimes it does not. Because it is a JavaScript framework, 
           you can install ThreeJS on many other framework (Django, .NET, Angular, etc...). However since we are using ReactJS, we should install Fibre which heavily 
-          cuts down on syntax by using React components as a medium. React Fibre still requires ThreeJS to function. This is what it looks like.
+          cuts down on syntax by using React components as a medium. React Fibre still requires Three to function. This is what it looks like.
         </p>
 
         <div className="media_item_container">
@@ -108,6 +108,33 @@ function ThreeJS(){
           lets us track performance metrics during development. Performance is fundamental to development for ThreeJS so that your application is accessable to all and you can't always tell whether a particular 
           series of object or effects is causing large performance drops by simply "eyeballing" it. It looks something like this.
         </p>
+
+
+        <div className="media_item_container">
+          <img src={r3f}/>
+        </div>
+
+        <p>
+          Various metrics are provided to give an idea of the performance impact your scene or a particular action is having. Generally have the CPUms less than 4 ms
+          and the GPUms less than 5ms. Greater values are acceptable but also more dangerous in terms of accessability. The numbers you get for CPUms and GPUms is 
+          specific the performance of to your device, so keep in mind devices with lower specs than yours. In addition, mobile devices will always have worse performance. 
+          Because it takes greater computational power to render 3D objects than 2D markup, you'll see greater battery drain and the fan on laptops kick in as well. So 
+          Keep your performance in mind throughout the process. You will also notice a "Triangles" section. In reality, all objects are made of triangles. This 
+          displays the amount being rendered.
+        </p>
+
+        <p>
+          Next is GSAP. GSAP is not a ThreeJS library, but a general animation whose functions also work in the 3D environment. The syntax looks like this.
+        </p>
+
+
+
+
+
+
+
+
+
 
 
 {/*
