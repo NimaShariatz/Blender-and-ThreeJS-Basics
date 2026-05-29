@@ -1,4 +1,4 @@
-import { fibre_syntax, r3f, threejs_syntax } from "../constants"
+import { fibre_syntax, gsap, r3f, threejs_syntax } from "../constants"
 
 
 
@@ -127,24 +127,46 @@ function ThreeJS(){
           Next is GSAP. GSAP is not a ThreeJS library, but a general animation whose functions also work in the 3D environment. The syntax looks like this.
         </p>
 
+        <div className="media_item_container">
+          <img src={gsap}/>
+        </div>
 
-
-
-
-
-
-
-
-
-
-{/*
         <p>
-          There are a lot more optional libraries that can be installed for different purposes. From Physics to VR control.
+          The logic is simple. You can change the color, position or size of an object. Add a duration or delay. Place it in an "if" statement if you wish. 
+          And finally add a ease of your choice from . That's it.
         </p>
-*/}
+
+        <p>
+          Next is Drei which has various helpers and functions to use. Using Drei you can import <a target="_blank" href="https://sbcode.net/react-three-fiber/orbit-controls/">{`<OrbitControls/>`}</a>, <a target="_blank" href="https://drei.docs.pmnd.rs/misc/html">{`<Html/>`}</a>, <a target="_blank" href="https://drei.docs.pmnd.rs/abstractions/trail">{`<Trail/>`}</a>, and more. 
+          It also has <a target="_blank" href="https://drei.docs.pmnd.rs/gizmos/helper-use-helper">helpers</a> for light positioning. Overall, Drei is recommended.
+        </p>
+
+        <p>
+          Finally I'll briefly mention the post-processing library which applies <a target="_blank" href="https://pmndrs.github.io/postprocessing/public/demo/#bloom">visual effects</a> to everything. I used it in the code  
+          example, but generally it won't be useful to you given it's niche nature, and for the igem wiki we should be conservative with performance.
+        </p>
+
+        <p>
+          There are a lot more optional libraries that can be installed for different purposes. From Physics to VR control. It's up to you on what you want to use. 
+          Just note that heavy libraries like postprocessing does have negative performance consequences. And how you use it 
+          will also effect the depth of that performance hit.
+        </p>
+      </div>
 
 
 
+
+
+      <div className="content_container">
+        <h2>ThreeJS Syntax (Fibre)</h2>
+        <small>Fibre usage</small>
+
+        <p>
+          Firstly you have been used to the x and y planes being horizontal and the z plane being vertical. In ThreeJS this is not the case as the x and z planes are horizontal and the y plane 
+          is vertical.
+        </p>
+
+      
       </div>
       
 
