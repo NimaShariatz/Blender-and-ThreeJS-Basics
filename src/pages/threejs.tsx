@@ -1,5 +1,7 @@
+import { OrbitControls, Text } from "@react-three/drei"
 import { fibre_syntax, gsap, r3f, threejs_syntax } from "../constants"
 
+import { Canvas } from '@react-three/fiber'
 
 
 
@@ -162,13 +164,30 @@ function ThreeJS(){
         <small>Fibre usage</small>
 
         <p>
-          Firstly you have been used to the x and y planes being horizontal and the z plane being vertical. In ThreeJS this is not the case as the x and z planes are horizontal and the y plane 
+          Firstly for Blender you have been used to the x and y planes being horizontal and the z plane being vertical. In ThreeJS this is not the case as the x and z planes are horizontal and the y plane 
           is vertical.
         </p>
 
-        <div>
-          
+        <div className="threejs_container_div">
+          <div>
+            <Canvas> {/* default camera: camera={{ position: [0, 0, 5], fov: 75, near: 0.1, far: 1000 }} */}
+              <OrbitControls/> {/* Drei */}
+              <color args={ [ '#F6F6F6' ] } attach="background" />
+            
+              <axesHelper args={[4]} />
+              
+              <Text position={[2, 0, 0]} color="red" fontSize={1}>X</Text>{/* Drei */}
+              <Text position={[0, 2, 0]} color="green" fontSize={1}>Y</Text>{/* Drei */}
+              <Text position={[0, 0, 2]} color="blue" fontSize={1}>Z</Text>{/* Drei */}
+
+            </Canvas>
+          </div>
         </div>
+
+        <p>
+          The parent container for ThreeJS is a <span className="component_syntax">{"<Canvas/>"}</span> tag. All ThreeJS content goes inside it. This image
+          is the code from the above example.
+        </p>
 
       
       </div>

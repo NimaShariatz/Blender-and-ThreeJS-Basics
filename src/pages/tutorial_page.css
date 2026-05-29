@@ -128,8 +128,16 @@
   padding-block: 25px;
   display: flex;
   justify-content: center;
+  height: 500px;
+}
+.threejs_container_div div{
+  width: 80%;
+  border-radius: 10px;
 }
 
+.component_syntax{
+  color: var(--code_green_color);
+}
 
 
 

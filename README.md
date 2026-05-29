@@ -4,7 +4,7 @@ yarn add gh-pages
 
 then added `"homepage":"https://nimashariatz.github.io/Blender-and-ThreeJS-Basics/",` to package.json
 as well as 
-    "predeploy": "npm run build",
+    "predeploy": "yarn run build", <--------------- I AM USING YARN! SWITCH TO "npm" if desired
     "deploy": "gh-pages -d dist"
 
 Then changes vite.config to be this(note: may notice this is different from henning. Henning uses react-router-dom which uses
@@ -51,15 +51,53 @@ Idea: make a 3d model of eye and iris ring included. Must be highly reflective. 
 
 
 
-------------------------------------------------------------------------------------------------------
 
-Day 2
+Yes, having multiple <Canvas> tags will significantly hurt performance.
 
-- include example threejs with an iframe!
-- talk about the various libraries and their uses
-- then talk about how the example was made. various movements. then the models used
-- then go into the code. start with blender mountain, app, moon, car
+Here is why:
+
+WebGL Contexts: Each <Canvas> component creates its own separate WebGL rendering context. WebGL contexts are heavy and use a considerable amount of memory and GPU resources.
+
+Browser Limits: Browsers have a hard limit on how many active WebGL contexts can exist on a single page at the same time (often around 8 to 16). If you exceed this limit, older contexts will forcefully drop, causing those canvases to go blank.
+
+Multiple Render Loops: Each <Canvas> runs its own internal requestAnimationFrame loop, competing for CPU time.
+
+The Solution:
+If you need to display multiple 3D scenes on the same scrollable page (like in a tutorial or product showcase), you should use the <View> component from @react-three/drei.
+
+<View> allows you to render multiple different 3D scenes using only one single underlying <Canvas> and one WebGL context, making it extremely performant.
+
+Here is a basic example of how it works:
 
 
 
+
+
+
+import { Canvas } from '@react-three/fiber'
+import { View } from '@react-three/drei'
+
+function App() {
+  return (
+    <main>
+      {/* These act as HTML placeholders for your 3D scenes */}
+      <div className="view-container-1">
+        <View>
+          <mesh><boxGeometry /></mesh>
+        </View>
+      </div>
+
+      <div className="view-container-2">
+        <View>
+          <mesh><sphereGeometry /></mesh>
+        </View>
+      </div>
+
+      {/* A single Canvas rendered absolutely over the page handles all Views */}
+      <Canvas eventSource={document.getElementById('root')} className="fixed-canvas">
+        <View.Port />
+      </Canvas>
+    </main>
+  )
+}
 
