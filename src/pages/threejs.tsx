@@ -172,7 +172,6 @@ function ThreeJS(){
           <div>
             <Canvas> {/* default camera: camera={{ position: [0, 0, 5], fov: 75, near: 0.1, far: 1000 }} */}
               <OrbitControls/> {/* Drei */}
-              <color args={ [ '#F6F6F6' ] } attach="background" />
             
               <axesHelper args={[4]} />
               
