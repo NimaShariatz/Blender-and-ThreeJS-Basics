@@ -1,5 +1,5 @@
 import { OrbitControls, Text } from "@react-three/drei"
-import { fibre_syntax, gsap, r3f, threejs_syntax } from "../constants"
+import { canvas_example, fibre_syntax, gsap, r3f, threejs_syntax } from "../constants"
 
 import { Canvas } from '@react-three/fiber'
 
@@ -170,7 +170,7 @@ function ThreeJS(){
 
         <div className="threejs_container_div">
           <div>
-            <Canvas> {/* default camera: camera={{ position: [0, 0, 5], fov: 75, near: 0.1, far: 1000 }} */}
+            <Canvas camera={{ position: [0, 0, 5], fov: 75, near: 0.1, far: 10 }} >
               <OrbitControls/> {/* Drei */}
             
               <axesHelper args={[4]} />
@@ -188,6 +188,9 @@ function ThreeJS(){
           is the code from the above example.
         </p>
 
+        <div className="media_item_container">
+          <img src={canvas_example}/>
+        </div>
       
       </div>
       
