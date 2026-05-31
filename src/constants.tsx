@@ -246,7 +246,8 @@ import meshBasicflat from './assets/Days/2/withFlat_meshbasic_scene.png';
 import meshBasicWithoutflat from './assets/Days/2/withoutFlat_meshbasic.png';
 import meshStandardflat from './assets/Days/2/withFlat_meshstandard_scene.png';
 import meshStandardWithoutflat from './assets/Days/2/withoutFlat_meshstandard_scene.png';
-
+import objectEx from './assets/Days/2/object_example.png'
+import lightEx from './assets/Days/2/light_syntax.png'
 
 
 
@@ -259,3 +260,5 @@ export const meshBasic_flat = meshBasicflat;
 export const meshBasic_withoutFlat = meshBasicWithoutflat;
 export const meshStandard_flat = meshStandardflat;
 export const meshStandard_withoutFlat = meshStandardWithoutflat
+export const object_example = objectEx;
+export const light_example = lightEx

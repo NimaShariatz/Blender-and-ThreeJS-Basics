@@ -1,5 +1,5 @@
 import { OrbitControls, Text } from "@react-three/drei"
-import { canvas_example, fibre_syntax, gsap, meshBasic_flat, meshBasic_withoutFlat, meshStandard_flat, meshStandard_withoutFlat, r3f, threejs_syntax } from "../constants"
+import { canvas_example, fibre_syntax, gsap, light_example, meshBasic_flat, meshBasic_withoutFlat, meshStandard_flat, meshStandard_withoutFlat, object_example, r3f, threejs_syntax } from "../constants"
 
 import { Canvas } from '@react-three/fiber'
 
@@ -172,7 +172,6 @@ function ThreeJS(){
           <div>
             <Canvas camera={{ position: [0, 0, 5], fov: 75, near: 0.1, far: 10 }} >
               <OrbitControls/> {/* Drei */}
-              <color args={ [ 'transparent' ] } attach="background" /> {/* default is transparent anyways */}
             
               <axesHelper args={[4]} />
               
@@ -253,13 +252,12 @@ function ThreeJS(){
         </div>
 
         <div className="media_item_container">
-          <img src={canvas_example}/>
+          <img src={object_example}/>
         </div>
 
         <p>
           Inside a <span className="component_syntax">{"<mesh/>"}</span> tag we declare the type of object and its relevant parameters, as well as 
-          what material it is comprised of. In this case it's a cube with input provided for width, height and depth. It is rendered in 
-          <span className="threejs_material_basic">meshBasic</span> with a hex of #7bc1ed.
+          what material it is comprised of. In this case it's a cube with input provided for width, height and depth. It is rendered in <span className="threejs_material_basic">meshBasic</span> with a hex of #7bc1ed.
         </p>
 
       </div>
@@ -273,8 +271,8 @@ function ThreeJS(){
         <small>Fibre usage</small>
 
         <p>
-
-
+          ThreeJS has several types of light you can create. The example below is using a <a target="_blank" href="https://threejs.org/docs/#PointLight">point light</a> with an assigned intensity and color to illuminate a 
+          cube rendred in <span className="threejs_material_toon">meshToon</span>. Below is the code used for the demonstration.
         </p>
 
         <div className="threejs_container_div">
@@ -287,11 +285,18 @@ function ThreeJS(){
                 <boxGeometry args={[2,2,2]}/>
                 <meshToonMaterial color={"#7bc1ed"} />
               </mesh>
+
             </Canvas>
           </div>
         </div>
 
+        <div className="media_item_container">
+          <img src={light_example}/>
+        </div>
+
       </div>
+
+      {/* primitive, group, useFrame and GSAP, performance */}
       
 
   </>
