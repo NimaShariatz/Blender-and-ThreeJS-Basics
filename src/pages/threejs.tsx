@@ -1,5 +1,5 @@
 import { OrbitControls, Text } from "@react-three/drei"
-import { canvas_example, fibre_syntax, gsap, r3f, threejs_syntax } from "../constants"
+import { canvas_example, fibre_syntax, gsap, meshBasic_flat, meshBasic_withoutFlat, meshStandard_flat, meshStandard_withoutFlat, r3f, threejs_syntax } from "../constants"
 
 import { Canvas } from '@react-three/fiber'
 
@@ -160,7 +160,7 @@ function ThreeJS(){
 
 
       <div className="content_container">
-        <h2>ThreeJS Syntax (Fibre)</h2>
+        <h2><span className="component_syntax">{"<Canvas/>"}</span> - ThreeJS Fibre Syntax</h2>
         <small>Fibre usage</small>
 
         <p>
@@ -190,6 +190,37 @@ function ThreeJS(){
 
         <div className="media_item_container">
           <img src={canvas_example}/>
+        </div>
+
+        <p>
+          The Canvas tag can take several variables as input. First, the camera values which define the starting position, rotation, field of view (shoud be between 35° and 75°), and the near and far values 
+          which define at what distances objects should be rendered and unrendered (pick your own). Not rendering objects past a certain distance does 
+          save on performance. Objects that are not seen through the camera are also not rendered until they come into view so to further save performance. This is a 
+          default behaviour.
+          <br/>
+          <br/>
+          You can also define whether your camera is "orthoraphic", so objects that are farther away are not smaller. This is the 
+          perspective used on top-down RTS games. Finally, we can apply the "flat" variable which changes color application in scenes.
+          This makes <span className="threejs_material_basic">meshBasic</span> and <span className="threejs_material_toon">meshToon</span> objects "pop" more in color, but also makes the color of 
+          other materials like <span className="threejs_material_standard">meshStandard</span> more flat.
+        </p>
+
+        <p>
+          <b><span className="threejs_material_basic">meshBasic</span> with and without flat:</b>
+        </p>
+
+        <div className="media_item_container_splitImgs">
+          <img src={meshBasic_flat}/>
+          <img src={meshBasic_withoutFlat}/>
+        </div>
+
+        <p>
+          <b><span className="threejs_material_standard">meshStandard</span> with and without flat:</b>
+        </p>
+
+        <div className="media_item_container_splitImgs">
+          <img src={meshStandard_flat}/>
+          <img src={meshStandard_withoutFlat}/>
         </div>
       
       </div>

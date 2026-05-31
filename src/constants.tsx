@@ -242,6 +242,12 @@ import fibresyntax from './assets/Days/2/fibre_syntax.png';
 import react3f from './assets/Days/2/r3f.png';
 import gsp from './assets/Days/2/gsap.png';
 import canvasEx from './assets/Days/2/canvas_example.png';
+import meshBasicflat from './assets/Days/2/withFlat_meshbasic_scene.png';
+import meshBasicWithoutflat from './assets/Days/2/withoutFlat_meshbasic.png';
+import meshStandardflat from './assets/Days/2/withFlat_meshstandard_scene.png';
+import meshStandardWithoutflat from './assets/Days/2/withoutFlat_meshstandard_scene.png';
+
+
 
 
 export const threejs_syntax = threejssyntax;
@@ -249,3 +255,7 @@ export const fibre_syntax = fibresyntax;
 export const r3f = react3f;
 export const gsap = gsp;
 export const canvas_example = canvasEx;
+export const meshBasic_flat = meshBasicflat;
+export const meshBasic_withoutFlat = meshBasicWithoutflat;
+export const meshStandard_flat = meshStandardflat;
+export const meshStandard_withoutFlat = meshStandardWithoutflat

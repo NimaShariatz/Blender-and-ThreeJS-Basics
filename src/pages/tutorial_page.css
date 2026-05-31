@@ -69,7 +69,7 @@
   object-fit:contain;
 }
 
-.media_item_container{
+.media_item_container, .media_item_container_splitImgs{
   padding-block: 25px;
   display: flex;
   justify-content: center;
@@ -84,6 +84,23 @@
   aspect-ratio: 16/9;
   border: none;
 }
+
+.media_item_container_splitImgs{
+  gap: 20px;
+}
+
+.media_item_container_splitImgs img{
+  width: 50%;
+  border-radius: 12px;
+}
+
+
+
+
+
+
+
+
 
 .threejs_material_basic, .threejs_material_standard, .threejs_material_phong, .threejs_material_toon, .threejs_material_depth, .threejs_material_phyiscal{
   border-radius: 3px;
@@ -167,6 +184,12 @@
     width: 85%;
   }
   .content_container_divide p{
+    width: 100%;
+  }
+  .media_item_container_splitImgs{
+    flex-direction: column;
+  }
+  .media_item_container_splitImgs img{
     width: 100%;
   }
 }
