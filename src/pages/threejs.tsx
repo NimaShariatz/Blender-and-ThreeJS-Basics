@@ -172,6 +172,7 @@ function ThreeJS(){
           <div>
             <Canvas camera={{ position: [0, 0, 5], fov: 75, near: 0.1, far: 10 }} >
               <OrbitControls/> {/* Drei */}
+              <color args={ [ 'transparent' ] } attach="background" /> {/* default is transparent anyways */}
             
               <axesHelper args={[4]} />
               
@@ -223,6 +224,63 @@ function ThreeJS(){
           <img src={meshStandard_withoutFlat}/>
         </div>
       
+      </div>
+
+
+
+      <div className="content_container">
+        <h2><span className="component_syntax">{"<mesh/>"}</span> - ThreeJS Fibre Syntax</h2>
+        <small>Fibre usage</small>
+
+        <p>
+          In ThreeJS you can create basic shapes. <a target="_blank" href="https://threejs.org/docs/#BoxGeometry">Cubes</a>, <a target="_blank" href="https://threejs.org/docs/#PlaneGeometry">planes</a>, <a target="_blank" href="https://threejs.org/docs/#TorusKnotGeometry">torus knots</a>, and so much more. 
+          Each object has variables specific to it such as size, segments, etc... When an object is created, its material can also  
+          be defined. 
+        </p>
+
+        <div className="threejs_container_div">
+          <div>
+            <Canvas camera={{ position: [0, 0, 5], fov: 75, near: 0.1, far: 10 }} >
+              <OrbitControls/> {/* Drei */}
+            
+              <mesh>
+                <boxGeometry args={[2,2,2]}/>
+                <meshBasicMaterial color={"#7bc1ed"} />
+              </mesh>
+            </Canvas>
+          </div>
+        </div>
+
+      </div>
+
+
+
+
+
+      <div className="content_container">
+        <h2><span className="component_syntax">{"Lighting"}</span> - ThreeJS Fibre Syntax</h2>
+        <small>Fibre usage</small>
+
+        <p>
+          In ThreeJS you can create basic shapes. <a target="_blank" href="https://threejs.org/docs/#BoxGeometry">Cubes</a>, <a target="_blank" href="https://threejs.org/docs/#PlaneGeometry">planes</a>, <a target="_blank" href="https://threejs.org/docs/#TorusKnotGeometry">torus knots</a>, and so much more. 
+          Each object has variables specific to it such as size, segments, etc... When an object is created, its material can also  
+          be defined. 
+        </p>
+
+        <div className="threejs_container_div">
+          <div>
+            <Canvas camera={{ position: [0, 0, 5], fov: 75, near: 0.1, far: 10 }} >
+              <OrbitControls/> {/* Drei */}
+              <pointLight position={[0, 2, 0]} color={"#fff"} intensity={5}/>
+            
+              <mesh>
+                <boxGeometry args={[2,2,2]}/>
+                <meshToonMaterial color={"#7bc1ed"} />
+              </mesh>
+            </Canvas>
+          </div>
+        </div>
+
       </div>
       
 
