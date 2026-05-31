@@ -7,7 +7,7 @@ export default defineConfig(({ command }) => ({
 
   // Tell Vite to treat these file types as static assets.
   //we have to put this in since we moved con
-  assetsInclude: ['**/*.mkv', '**/*.blend'],
+  assetsInclude: ['**/*.mkv', '**/*.blend', '**/*.glb'],
 
   // Use the repo name for GitHub Pages build, but use '/' for local development
   base: command === 'build' ? '/Blender-and-ThreeJS-Basics/' : '/',

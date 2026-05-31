@@ -1,11 +1,17 @@
-import { OrbitControls, Text } from "@react-three/drei"
-import { canvas_example, fibre_syntax, gsap, light_example, meshBasic_flat, meshBasic_withoutFlat, meshStandard_flat, meshStandard_withoutFlat, object_example, r3f, threejs_syntax } from "../constants"
+import { OrbitControls, Text, useGLTF } from "@react-three/drei"
+import { canvas_example, fibre_syntax, gsap, light_example, meshBasic_flat, meshBasic_withoutFlat, meshStandard_flat, meshStandard_withoutFlat, object_example, primitive_example, primitive_model, r3f, threejs_syntax } from "../constants"
 
 import { Canvas } from '@react-three/fiber'
 
 
 
 function ThreeJS(){
+  
+  const city_model = useGLTF(primitive_model)
+
+
+
+
   return(
   <>
     <div className="titleSection_container">
@@ -296,7 +302,52 @@ function ThreeJS(){
 
       </div>
 
-      {/* primitive, group, useFrame and GSAP, performance */}
+      
+      <div className="content_container">
+        <h2><span className="component_syntax">{"<primitive/>"}</span> - ThreeJS Fibre Syntax</h2>
+        <small>Fibre usage</small>
+
+        <p>
+          A <span className="component_syntax">{"<primitive/>"}</span> is what is used for rendering .glb files. In a <span className="component_syntax">{"<primitive/>"}</span> we 
+          attack the model, define the scale (a multiplier), and position. The default material is <span className="threejs_material_standard">meshStandard</span>. If we want 
+          to change the material to anything else, it is done by TypeScript logic (to be seen later). You can also set the 
+          background color of the <span className="component_syntax">{"<Canvas/>"}</span> with <span className="component_syntax">{"<color/>"}</span>. Otherwise 
+          the default is transparent (as evident in previous examples).
+        </p>
+
+        <div className="threejs_container_div">
+          <div>
+            <Canvas camera={{ position: [0, 0, 5], fov: 75, near: 0.1, far: 50 }} >
+              <OrbitControls/> {/* Drei */}
+              <pointLight position={[0, 4, 0]} color={"#fff"} intensity={50}/>
+            
+              <color args={ [ '#1E88E5' ] } attach="background" /> {/* sets background color */}
+
+              <primitive
+                object={city_model.scene}
+                scale={0.6}
+                position={[0, 0, 0]}
+              />
+
+            </Canvas>
+          </div>
+        </div>
+
+
+        <div className="media_item_container">
+          <img src={primitive_example}/>
+        </div>
+
+        <p>
+          Sidenote: You can use scale for setting the size of <span className="component_syntax">{"<mesh/>"}</span> objects as well, 
+          but it's considered best practice to use args for setting the size of a <span className="component_syntax">{"<mesh/>"}</span> and reserve scale for size changes made by animation.
+        </p>
+      
+      </div>
+
+
+      
+      {/* group, useFrame and GSAP, performance */}
       
 
   </>
