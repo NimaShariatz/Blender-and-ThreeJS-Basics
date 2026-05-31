@@ -235,7 +235,7 @@ function ThreeJS(){
         <p>
           In ThreeJS you can create basic shapes. <a target="_blank" href="https://threejs.org/docs/#BoxGeometry">Cubes</a>, <a target="_blank" href="https://threejs.org/docs/#PlaneGeometry">planes</a>, <a target="_blank" href="https://threejs.org/docs/#TorusKnotGeometry">torus knots</a>, and so much more. 
           Each object has variables specific to it such as size, segments, etc... When an object is created, its material can also  
-          be defined. 
+          be defined. Below is an example and the code used to make it.
         </p>
 
         <div className="threejs_container_div">
@@ -247,9 +247,20 @@ function ThreeJS(){
                 <boxGeometry args={[2,2,2]}/>
                 <meshBasicMaterial color={"#7bc1ed"} />
               </mesh>
+
             </Canvas>
           </div>
         </div>
+
+        <div className="media_item_container">
+          <img src={canvas_example}/>
+        </div>
+
+        <p>
+          Inside a <span className="component_syntax">{"<mesh/>"}</span> tag we declare the type of object and its relevant parameters, as well as 
+          what material it is comprised of. In this case it's a cube with input provided for width, height and depth. It is rendered in 
+          <span className="threejs_material_basic">meshBasic</span> with a hex of #7bc1ed.
+        </p>
 
       </div>
 
@@ -258,13 +269,12 @@ function ThreeJS(){
 
 
       <div className="content_container">
-        <h2><span className="component_syntax">{"Lighting"}</span> - ThreeJS Fibre Syntax</h2>
+        <h2>Lighting - ThreeJS Fibre Syntax</h2>
         <small>Fibre usage</small>
 
         <p>
-          In ThreeJS you can create basic shapes. <a target="_blank" href="https://threejs.org/docs/#BoxGeometry">Cubes</a>, <a target="_blank" href="https://threejs.org/docs/#PlaneGeometry">planes</a>, <a target="_blank" href="https://threejs.org/docs/#TorusKnotGeometry">torus knots</a>, and so much more. 
-          Each object has variables specific to it such as size, segments, etc... When an object is created, its material can also  
-          be defined. 
+
+
         </p>
 
         <div className="threejs_container_div">
