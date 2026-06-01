@@ -1,7 +1,41 @@
 import { OrbitControls, Text, useGLTF } from "@react-three/drei"
-import { canvas_example, fibre_syntax, gsap, light_example, meshBasic_flat, meshBasic_withoutFlat, meshStandard_flat, meshStandard_withoutFlat, object_example, primitive_example, primitive_model, r3f, threejs_syntax } from "../constants"
+import { canvas_example, conditionalRender_example, fibre_syntax, group_example, gsap, gsap_example, light_example, meshBasic_flat, meshBasic_withoutFlat, meshStandard_flat, meshStandard_withoutFlat, object_example, primitive_example, primitive_model, r3f, threejs_syntax, useframe_1, useframe_2 } from "../constants"
 
-import { Canvas } from '@react-three/fiber'
+import { Canvas, useFrame } from '@react-three/fiber'
+import {useRef}  from "react";
+import * as THREE from 'three'
+
+
+
+
+
+function RotatingCity({ model }: { model: THREE.Object3D }) {
+  const primitive_group = useRef<THREE.Group>(null);
+  
+  useFrame((_state, delta) => {
+    if(primitive_group.current){
+      primitive_group.current.rotation.y += delta * 0.2
+    }
+  });
+
+  return (
+
+    <group ref={primitive_group} position={[0, 0, 0]}>
+      <primitive
+        object={model}
+        scale={0.6}
+      />
+    </group>
+
+  );
+}
+
+
+
+
+
+
+
 
 
 
@@ -10,7 +44,7 @@ function ThreeJS(){
   const city_model = useGLTF(primitive_model)
 
 
-
+  
 
   return(
   <>
@@ -191,7 +225,8 @@ function ThreeJS(){
 
         <p>
           The parent container for ThreeJS is a <span className="component_syntax">{"<Canvas/>"}</span> tag. All ThreeJS content goes inside it. This image
-          is the code from the above example.
+          is the code from the above example. Note the use of <span className="component_syntax">{"<OrbitContros/>"}</span> from Drei which allows 
+          us to rotate the object. The way this works is that the camera can be moved and will always look at position (0, 0, 0) which is where our object happens to be.
         </p>
 
         <div className="media_item_container">
@@ -346,8 +381,153 @@ function ThreeJS(){
       </div>
 
 
+      <div className="content_container">
+        <h2><span className="component_syntax">{"<group/>"}</span> - ThreeJS Fibre Syntax</h2>
+        <small>Fibre usage</small>
+
+        <p>
+          <span className="component_syntax">{"<group/>"}</span> exists as an organizational tool. within the <span className="component_syntax">{"<group/>"}</span> tags you can 
+          place <span className="component_syntax">{"<mesh/>"}</span> objects, lights, and <span className="component_syntax">{"<primitive/>"}</span> objects. You can then move all of the objects together
+          by changing the position of the <span className="component_syntax">{"<group/>"}</span> itself.
+        </p>
+
+
+        <div className="threejs_container_div">
+          <div>
+            <Canvas camera={{ position: [0, 0, 4], fov: 75, near: 0.1, far: 50 }} >
+              <color args={ [ '#1E88E5' ] } attach="background" />
+
+              <group position={[0, -0.2, 0]}> {/* a container which holds all the stuff below */}
+                <pointLight position={[0, 4, 0]} color={"#fff"} intensity={50}/>
+              
+
+                <mesh position={[1, 1, 0]}>
+                  <boxGeometry args={[1, 1, 1]}/>
+                  <meshToonMaterial color={"#7bed9f"} />
+                </mesh>
+
+                <mesh position={[0, -1, 0]}>
+                  <boxGeometry args={[1, 1, 1]}/>
+                  <meshToonMaterial color={"#7bc1ed"} />
+                </mesh>
+
+                <mesh position={[-1, 1, 0]}>
+                  <boxGeometry args={[1, 1, 1]}/>
+                  <meshToonMaterial color={"#ed907b"} />
+                </mesh>
+              </group>
+
+            </Canvas>
+          </div>
+        </div>
+
+
+        <div className="media_item_container">
+          <img src={group_example}/>
+        </div>
+
+        <p>
+          Overall, containers are a tool of convenience.
+        </p>
+
+
+
+      </div>
+
+
+
+
+
       
-      {/* group, useFrame and GSAP, performance */}
+      <div className="content_container">
+        <h2>UseFrame() and GSAP - ThreeJS Fibre Syntax</h2>
+        <small>Fibre usage</small>
+        <p>
+        UseFrame() is a function from fibre which fires on every frame render. So if your computer is rendering the scene in 60fps, then it is firing 60 times a second. Or less 
+        if your device is struggling and getting lower fps. UseFrame() is useful for moving or rotating objects constantly. You can move <span className="component_syntax">{"<mesh/>"}</span>, 
+        <span className="component_syntax">{"<primitive/>"}</span>, lights, or a <span className="component_syntax">{"<group/>"}</span> itself. 
+        </p>
+
+
+        <div className="threejs_container_div">
+          <div>
+            <Canvas camera={{ position: [0, 0, 5], fov: 75, near: 0.1, far: 50 }} >
+              <OrbitControls/> {/* Drei */}
+              <pointLight position={[0, 4, 0]} color={"#fff"} intensity={50}/>
+            
+              <color args={ [ '#1E88E5' ] } attach="background" /> {/* sets background color */}
+
+              <RotatingCity model={city_model.scene} /> {/* RotatingCity() */}
+
+            </Canvas>
+          </div>
+        </div>
+
+        <div className="media_item_container_splitImgs">
+          <img src={useframe_2}/>
+          <img src={useframe_1}/>
+        </div>
+
+        <p>
+          Unlike useFrame(), GSAP is triggered on command. GSAP performs a similar function to useFrame(), but allows you to include an ease transition from <a target="_blank" href="https://gsap.com/docs/v3/Eases/">GSAP's selection</a>. The 
+          syntax is very simple and works on both tranditional markup and ThreeJS objects. You can animate any object (camera included) and parameter: position, rotation, color, scale, etc... The following is 
+          a snippet that shows the structure. The "OnComplete()" is optional.
+        </p>
+
+        <div className="media_item_container">
+          <img src={gsap_example}/>
+        </div>
+
+        <p>
+          Use useFrame() for: physics engines, continuous environmental effects (e.g., spinning a planet infinitely), or having an object instantly follow the mouse cursor dynamically.
+          <br/>
+          <br/>
+          Use GSAP for: choreographed sequences, intro camera sweeps, UI-triggered animations, and scrollytelling.
+
+        </p>
+
+      </div>
+
+
+
+      <div className="content_container">
+        <h2>ThreeJS Performance</h2>
+        <small>Things to keep in mind</small>
+
+        <p>
+          What material you choose to render your objects and how many objects you have can hit performance. Light sources also hurt performance, hence 
+          why <span className="threejs_material_basic">meshBasic</span> is the best in terms of performance. However, there are some common practices you should be aware of.
+          <br/>
+          <br/>
+          <b>1 - Do not destroy light sources</b> 
+          <br/>
+          Removing or unmounting a light source forces a recompile of a whole scene. This 
+          is an expensive operation on the CPU and results in a noticeable stutter or frame drop (a "hiccup" or freeze). 
+          If you want to make a light source go away, set the intensity to 0 or visible to false. This still saves on performance 
+          as it no longer contributes to the lighting caculations, thereby saving CPU performance.
+          <br/>
+          <br/>
+          <b>2 - Be careful with conditional rendering</b>
+          <br/>
+          Conditional rendering is when a component or markup is rendered when a condition is true.
+          <br/>
+          <br/>
+        </p>
+
+        <div className="media_item_container">
+          <img src={conditionalRender_example}/>
+        </div>
+
+        <p>
+          Conditionally rendering your content does save on both performance and RAM/VRAM
+        </p>
+
+      </div>
+
+
+
+      
+      {/* performance */}
       
 
   </>

@@ -246,10 +246,15 @@ import meshBasicflat from './assets/Days/2/withFlat_meshbasic_scene.png';
 import meshBasicWithoutflat from './assets/Days/2/withoutFlat_meshbasic.png';
 import meshStandardflat from './assets/Days/2/withFlat_meshstandard_scene.png';
 import meshStandardWithoutflat from './assets/Days/2/withoutFlat_meshstandard_scene.png';
-import objectEx from './assets/Days/2/object_example.png'
-import lightEx from './assets/Days/2/light_syntax.png'
-import primmodel from './assets/Days/2/Rio_de_Janeiro.glb'
-import primEx from './assets/Days/2/primitive_syntax.png'
+import objectEx from './assets/Days/2/object_example.png';
+import lightEx from './assets/Days/2/light_syntax.png';
+import primmodel from './assets/Days/2/Rio_de_Janeiro.glb';
+import primEx from './assets/Days/2/primitive_syntax.png';
+import groupEx from './assets/Days/2/group_example.png';
+import useframe1 from './assets/Days/2/useframe_1.png';
+import useframe2 from './assets/Days/2/useframe_2.png';
+import gsapEx from './assets/Days/2/gsap_syntax.png';
+import conditionalrend from './assets/Days/2/conditionalRend_example.png';
 
 export const threejs_syntax = threejssyntax;
 export const fibre_syntax = fibresyntax;
@@ -264,3 +269,8 @@ export const object_example = objectEx;
 export const light_example = lightEx;
 export const primitive_model = primmodel;
 export const primitive_example = primEx;
+export const group_example = groupEx;
+export const useframe_1 = useframe1;
+export const useframe_2 = useframe2;
+export const gsap_example = gsapEx;
+export const conditionalRender_example = conditionalrend;
