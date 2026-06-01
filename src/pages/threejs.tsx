@@ -495,16 +495,17 @@ function ThreeJS(){
         <small>Things to keep in mind</small>
 
         <p>
-          What material you choose to render your objects and how many objects you have can hit performance. Light sources also hurt performance, hence 
+          What material you choose to render your objects and how many objects you have can hit performance. Light sources (and any shadows if you choose to include them) also hurt performance, hence 
           why <span className="threejs_material_basic">meshBasic</span> is the best in terms of performance. However, there are some common practices you should be aware of.
           <br/>
           <br/>
-          <b>1 - Do not destroy light sources</b> 
+          <b>1 - Do not recklessly destroy light sources and objects</b> 
           <br/>
-          Removing or unmounting a light source forces a recompile of a whole scene. This 
-          is an expensive operation on the CPU and results in a noticeable stutter or frame drop (a "hiccup" or freeze). 
-          If you want to make a light source go away, set the intensity to 0 or visible to false. This still saves on performance 
-          as it no longer contributes to the lighting caculations, thereby saving CPU performance.
+          Destroying or adding existing objects and light sources frees up RAM/VRAM and performance. But it also forces a recompile of a whole scene. This 
+          is an expensive operation on the CPU and results in a noticeable stutter or frame drop (a "hiccup" or freeze). If you want to make a light source go away, set the intensity to 0 or visible to false. This still saves on performance 
+          as it no longer contributes to the lighting caculations, thereby saving CPU performance, just not VRAM/RAM. As for objects like <span className="component_syntax">{"<mesh/>"}</span> and 
+          <span className="component_syntax">{"<primitive/>"}</span>, setting the visible prop to false will also save on performance, just not VRAM/RAM. It is worth mentioning 
+          we are working with small low-poly models so whatever RAM/VRAM that is being taken up is not large.
           <br/>
           <br/>
           <b>2 - Be careful with conditional rendering</b>
@@ -519,7 +520,25 @@ function ThreeJS(){
         </div>
 
         <p>
-          Conditionally rendering your content does save on both performance and RAM/VRAM
+          Conditionally rendering your content does save on both performance and RAM/VRAM. Even if we do not see the objects being conditionally rendered, removing 
+          them saves resources by not running the TypeScript logic related to the scene such as the useFrame()'s and not having the objects take up RAM/VRAM storage. 
+          This is unlike setting the visible prop to false or setting the light source intensity to 0 which just saves performance by not rendering it. 
+          <br/>
+          <br/>
+          However, by using conditional rendering we are destroying lights and objects. This will cause a noticeable stutter or frame drop (a "hiccup" or freeze). 
+          So conditional rendering should be used carfully, where it is pertinent.
+          <br/>
+          <br/>
+          <b>Summary</b>
+          <br/>
+          <ul className="unordered_list">
+            <li><p>Objects not seen by the camera are not rendered, thereby saving FPS</p></li>
+            <li><p>Destroying or suddenly adding lights and objects is expensive on the CPU and causes major sudden FPS drops</p></li>
+            <li><p>{"visible={0}"}<sub>(objects and lights)</sub> - saves FPS - no lag on change</p></li>
+            <li><p>{"Intensity={0}"}<sub>(light sources only)</sub> - saves FPS - no lag on change</p></li>
+            <li><p>Conditional Rendering - saves FPS, any useFrame()'s removed, and saves RAM/VRAM - can cause a stutter as models, light sources are destroyed and added</p></li>
+          </ul>
+
         </p>
 
       </div>
@@ -527,7 +546,6 @@ function ThreeJS(){
 
 
       
-      {/* performance */}
       
 
   </>
