@@ -1,5 +1,5 @@
 import { OrbitControls, Text, useGLTF } from "@react-three/drei"
-import { canvas_example, conditionalRender_example, fibre_syntax, group_example, gsap, gsap_example, light_example, meshBasic_flat, meshBasic_withoutFlat, meshStandard_flat, meshStandard_withoutFlat, object_example, primitive_example, primitive_model, r3f, threejs_syntax, useframe_1, useframe_2 } from "../constants"
+import { canvas_example, conditionalRender_example, example_filestructure, fibre_syntax, group_example, gsap, gsap_example, light_example, meshBasic_flat, meshBasic_withoutFlat, meshStandard_flat, meshStandard_withoutFlat, object_example, primitive_example, primitive_model, r3f, threejs_syntax, useframe_1, useframe_2 } from "../constants"
 
 import { Canvas, useFrame } from '@react-three/fiber'
 import {useRef}  from "react";
@@ -312,7 +312,7 @@ function ThreeJS(){
         <small>Fibre usage</small>
 
         <p>
-          ThreeJS has several types of light you can create. The example below is using a <a target="_blank" href="https://threejs.org/docs/#PointLight">point light</a> with an assigned intensity and color to illuminate a 
+          ThreeJS has several types of light you can create. The example below is using a <a target="_blank" href="https://threejs.org/docs/#PointLight">point light</a> with an assigned "intensity" and "color" to illuminate a 
           cube rendred in <span className="threejs_material_toon">meshToon</span>. Below is the code used for the demonstration.
         </p>
 
@@ -502,9 +502,9 @@ function ThreeJS(){
           <b>1 - Do not recklessly destroy light sources and objects</b> 
           <br/>
           Destroying or adding existing objects and light sources frees up RAM/VRAM and performance. But it also forces a recompile of a whole scene. This 
-          is an expensive operation on the CPU and results in a noticeable stutter or frame drop (a "hiccup" or freeze). If you want to make a light source go away, set the intensity to 0 or visible to false. This still saves on performance 
+          is an expensive operation on the CPU and results in a noticeable stutter or frame drop (a "hiccup" or freeze). If you want to make a light source go away, set the "intensity" to 0 or "visible" to false. This still saves on performance 
           as it no longer contributes to the lighting caculations, thereby saving CPU performance, just not VRAM/RAM. As for objects like <span className="component_syntax">{"<mesh/>"}</span> and 
-          <span className="component_syntax">{"<primitive/>"}</span>, setting the visible prop to false will also save on performance, just not VRAM/RAM. It is worth mentioning 
+          <span className="component_syntax">{"<primitive/>"}</span>, setting the "visible" prop to false will also save on performance, just not VRAM/RAM. It is worth mentioning 
           we are working with small low-poly models so whatever RAM/VRAM that is being taken up is not large.
           <br/>
           <br/>
@@ -522,7 +522,7 @@ function ThreeJS(){
         <p>
           Conditionally rendering your content does save on both performance and RAM/VRAM. Even if we do not see the objects being conditionally rendered, removing 
           them saves resources by not running the TypeScript logic related to the scene such as the useFrame()'s and not having the objects take up RAM/VRAM storage. 
-          This is unlike setting the visible prop to false or setting the light source intensity to 0 which just saves performance by not rendering it. 
+          This is unlike setting the "visible" prop to false or setting the light source "intensity" to 0 which just saves performance by not rendering it. 
           <br/>
           <br/>
           However, by using conditional rendering we are destroying lights and objects. This will cause a noticeable stutter or frame drop (a "hiccup" or freeze). 
@@ -538,14 +538,39 @@ function ThreeJS(){
             <li><p>{"Intensity={0}"}<sub>(light sources only)</sub> - saves FPS - no lag on change</p></li>
             <li><p>Conditional Rendering - saves FPS, any useFrame()'s removed, and saves RAM/VRAM - can cause a stutter as models, light sources are destroyed and added</p></li>
           </ul>
-
         </p>
 
       </div>
 
+      <div className="content_container">
+        <h2> File Structure - ThreeJS Example</h2>
+        <small>The general layout</small>
+
+        <p>
+          To run the example locally, do "git clone https://github.com/NimaShariatz/threejs_example.git" followed by "cd threejs_example" then "yarn install" and "yarn run dev".
+        </p>
+
+       <div className="content_container_divide">
+          <p>
+            To the right is the file structure of the project. Scenes were split up to better organize the code, and to make use of conditional rendering. useFrame() is used for 
+            moonScene.tsx, starStreak.tsx, and carScene.tsx. GSAP is used in nearly all files for camera animation, color animation, and scale. 
+          </p>
+          <img src={example_filestructure} />
+        </div>
+
+      </div>
 
 
+      <div className="content_container">
+        <h2> App.tsx - ThreeJS Example</h2>
+        <small>The parent</small>
+
+        <p>
+          App.tsx has a hook called 
+        </p>
       
+      
+      </div>
       
 
   </>

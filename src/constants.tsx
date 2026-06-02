@@ -255,6 +255,7 @@ import useframe1 from './assets/Days/2/useframe_1.png';
 import useframe2 from './assets/Days/2/useframe_2.png';
 import gsapEx from './assets/Days/2/gsap_syntax.png';
 import conditionalrend from './assets/Days/2/conditionalRend_example.png';
+import example_filestruct from './assets/Days/2/example_filestruct.png'
 
 export const threejs_syntax = threejssyntax;
 export const fibre_syntax = fibresyntax;
@@ -274,3 +275,4 @@ export const useframe_1 = useframe1;
 export const useframe_2 = useframe2;
 export const gsap_example = gsapEx;
 export const conditionalRender_example = conditionalrend;
+export const example_filestructure = example_filestruct;
