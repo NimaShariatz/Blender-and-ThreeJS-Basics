@@ -255,7 +255,11 @@ import useframe1 from './assets/Days/2/useframe_1.png';
 import useframe2 from './assets/Days/2/useframe_2.png';
 import gsapEx from './assets/Days/2/gsap_syntax.png';
 import conditionalrend from './assets/Days/2/conditionalRend_example.png';
-import example_filestruct from './assets/Days/2/example_filestruct.png'
+import example_filestruct from './assets/Days/2/example_filestruct.png';
+import code_statetrack from './assets/Days/2/code_stateTracker.png';
+import code_conditionalR from './assets/Days/2/code_conditionalRend.png';
+import code_mount1 from './assets/Days/2/code_mountainsReturn.png';
+import code_moon1 from './assets/Days/2/code_moonReturn.png';
 
 export const threejs_syntax = threejssyntax;
 export const fibre_syntax = fibresyntax;
@@ -276,3 +280,7 @@ export const useframe_2 = useframe2;
 export const gsap_example = gsapEx;
 export const conditionalRender_example = conditionalrend;
 export const example_filestructure = example_filestruct;
+export const code_stateTracker = code_statetrack;
+export const code_conditionalRender = code_conditionalR;
+export const code_mountReturn = code_mount1;
+export const code_moonReturn = code_moon1;
