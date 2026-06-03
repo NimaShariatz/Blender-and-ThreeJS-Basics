@@ -635,9 +635,69 @@ function ThreeJS(){
 
     <div className="content_container">
       <h2> carScene.tsx - ThreeJS Example</h2>
-      <small>More of the same</small>
+      <small><span className="component_syntax">{"<OrbitControls/>"}</span>, lights, and more of the same</small>
+      <p>
+        carScene.tsx has two .glb models being rendered in their default <span className="threejs_material_standard">meshStandard</span> material. Structurally carScene is the same as the other components, a useEffect() with a series of 'if' statements that trigger GSAP animations.
+        The differences being <span className="component_syntax">{"<OrbitControls/>"}</span> from Drei which focuses the camera to the position (0, 0, 0) and allows the user 
+        to rotate and zoom the camera by mouse. It's worth mentioning it forces the camera to look this position, not any particular object. Our objects are placed 
+        at a location of (0, 0, 0) which is where mountains used to be but is no longer rendered thanks to componentization in app.tsx. 
+        <br/>
+        <br/>
+        The starting opacity effect comes from a 'for' statement that triggers a GSAP opacity effect to each object in "./carscene_Dracco.glb". A useFrame() is used 
+        to make the <span className="component_syntax">{"<primitive/>"}</span> rotate infinitely. 
+      </p>
+
+
+
+      <div className="content_container_divide">
+        <p>
+          This is the first first instance of lights being used. You several different types to choose from. Each needs a position, intensity and color. Some have more props. 
+          Just like objects, you can animate their values with GSAP. Notably useHelper() from Drei was used to give an outline for <span className="component_syntax">{"<pointLight/>"}</span> and 
+          <span className="component_syntax">{"<spotLight/>"}</span>
+        </p>
+
+        <img src={code_moonReturn} />
+      </div>
+
+
+      <div className="content_container_divide">
+        <p>
+          Next are the <span className="component_syntax">{"<torusKnotGeometry/>"}</span> ThreeJS <span className="component_syntax">{"<mesh/>"}</span> objects which are being rendered in a 'for' statement from a list.
+          The takeaways from this is that you can render objects through a list, and you can turn on the wireframe for an object as well. There is little 
+          practical use for this, rather it can be used stylistically. The knots are rotating thanks to the useFrame() rotating the <span className="component_syntax">{"<group/>"}</span> 
+          that they are in. They also float up and down thanks to <span className="component_syntax">{"<Float/>"}</span> which comes from Drei.
+          <br/>
+          <br/>
+          The <span className="component_syntax">{"<mesh/>"}</span> spheres are also being rendered in a 'for' statement from a list. The only unique aspect with them is that they are <span className="threejs_material_toon">meshToon</span>.
+        </p>
+
+        <img src={code_moonReturn} />
+      </div>
+
+      <p>
+        A <span className="component_syntax">{"<mesh/>"}</span> cube is rendered in <span className="threejs_material_toon">meshToon</span> as well. What makes it unique is that it has a pointerEvent() attached to it. if 
+        you click on it, it randomly changes color. The takeway is that you can attach various pointer events to 3D objects and trigger effects.
+        <br/>
+        <br/>
+        Finally, note the use of the "visible" prop which can be used on any object or light source. In this case it was used to hide or reveal various 
+        objects, and the <span className="component_syntax">{"<spotLight/>"}</span>. Using "visible" does save performance on the basis that the object 
+        is not being rendered. Though behind the scenes the useFrame() in carScene.tsx is still firing and RAM/VRAM is still being taken up (unlike conditional rendering).
+      </p>
 
     </div>
+
+
+    <div className="content_container">
+      <h2>What Was Not Seen</h2>
+      <small>Shadows and Fragments</small>
+      <p>
+        By now you have a fair feeling on how ThreeJS with Fibre works and how helpful GSAP and Drei are. Postprocessing was included in moonScene.tsx just to show that many other libraries exist. 
+        We looked at rendeing <span className="component_syntax">{"<mesh/>"}</span> objects, <span className="component_syntax">{"<primitive/>"}</span> objects that render our blender models, useFrame() and GSAP 
+        for animation, performance considerations
+      </p>
+
+    </div>
+
 
   </>
   )
