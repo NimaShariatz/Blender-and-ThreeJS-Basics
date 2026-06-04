@@ -1,5 +1,5 @@
 import { OrbitControls, Text, useGLTF } from "@react-three/drei"
-import { canvas_example, code_conditionalRender, code_moonReturn, code_mountReturn, code_stateTracker, conditionalRender_example, example_filestructure, fibre_syntax, group_example, gsap, gsap_example, light_example, meshBasic_flat, meshBasic_withoutFlat, meshStandard_flat, meshStandard_withoutFlat, object_example, primitive_example, primitive_model, r3f, threejs_syntax, useframe_1, useframe_2 } from "../constants"
+import { canvas_example, code_carKnots, code_carLights, code_conditionalRender, code_moonReturn, code_mountReturn, code_stateTracker, conditionalRender_example, example_filestructure, fibre_syntax, glsl_example, group_example, gsap, gsap_example, light_example, meshBasic_flat, meshBasic_withoutFlat, meshStandard_flat, meshStandard_withoutFlat, object_example, primitive_example, primitive_model, r3f, threejs_syntax, useframe_1, useframe_2 } from "../constants"
 
 import { Canvas, useFrame } from '@react-three/fiber'
 import {useRef}  from "react";
@@ -656,7 +656,7 @@ function ThreeJS(){
           <span className="component_syntax">{"<spotLight/>"}</span>
         </p>
 
-        <img src={code_moonReturn} />
+        <img src={code_carLights} />
       </div>
 
 
@@ -671,7 +671,7 @@ function ThreeJS(){
           The <span className="component_syntax">{"<mesh/>"}</span> spheres are also being rendered in a 'for' statement from a list. The only unique aspect with them is that they are <span className="threejs_material_toon">meshToon</span>.
         </p>
 
-        <img src={code_moonReturn} />
+        <img src={code_carKnots} />
       </div>
 
       <p>
@@ -727,7 +727,7 @@ function ThreeJS(){
 
 
       <div className="media_item_container">
-        <img src={light_example}/>
+        <img src={glsl_example}/>
       </div>
 
       <p>

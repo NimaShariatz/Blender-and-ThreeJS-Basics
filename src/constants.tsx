@@ -260,6 +260,9 @@ import code_statetrack from './assets/Days/2/code_stateTracker.png';
 import code_conditionalR from './assets/Days/2/code_conditionalRend.png';
 import code_mount1 from './assets/Days/2/code_mountainsReturn.png';
 import code_moon1 from './assets/Days/2/code_moonReturn.png';
+import code_carL from './assets/Days/2/code_carLights.png';
+import code_carK from './assets/Days/2/code_carKnots.png';
+import glsl from './assets/Days/2/glsl_example.png';
 
 export const threejs_syntax = threejssyntax;
 export const fibre_syntax = fibresyntax;
@@ -284,3 +287,6 @@ export const code_stateTracker = code_statetrack;
 export const code_conditionalRender = code_conditionalR;
 export const code_mountReturn = code_mount1;
 export const code_moonReturn = code_moon1;
+export const code_carLights = code_carL;
+export const code_carKnots = code_carK;
+export const glsl_example = glsl;
