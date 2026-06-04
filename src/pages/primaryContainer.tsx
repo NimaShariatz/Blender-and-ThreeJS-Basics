@@ -13,7 +13,7 @@ import ThreeJS from "./threejs";
 
 function PrimaryContainer() {
   
-  const [daySelect, setDaySelect] = useState(2);
+  const [daySelect, setDaySelect] = useState(1);
 
 
   const changeDay = (input: number) => {

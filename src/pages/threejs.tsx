@@ -689,11 +689,53 @@ function ThreeJS(){
 
     <div className="content_container">
       <h2>What Was Not Seen</h2>
-      <small>Shadows and Fragments</small>
+      <small>Shadows and Shaders</small>
       <p>
         By now you have a fair feeling on how ThreeJS with Fibre works and how helpful GSAP and Drei are. Postprocessing was included in moonScene.tsx just to show that many other libraries exist. 
-        We looked at rendeing <span className="component_syntax">{"<mesh/>"}</span> objects, <span className="component_syntax">{"<primitive/>"}</span> objects that render our blender models, useFrame() and GSAP 
-        for animation, performance considerations
+        We looked:
+      </p>
+
+      <ul className="unordered_list">
+        <li>Rendering <span className="component_syntax">{"<mesh/>"}</span> and <span className="component_syntax">{"<primitive/>"}</span> objects</li>
+        <li>Creating lights</li>
+        <li>useFrame() and GSAP for animation of objects, lights, and camera</li>
+        <li>Performance considerations: rendering conditionally, material and light destruction, unseen objects not being rendered </li>
+      </ul>
+
+      <p>
+        It's safe to say you are not comfortable with them as this is not a code-along tutorial. However, you can agree that thanks to Fibre, GSAP, and Drei, it's now 
+        a question of time than feasibility. It's worth mentioning that chatbots are very helpful for development because the syntax is now so simple. Don't be afraid to use them as now 
+        you can understand their output and the context.
+        <br/>
+        <br/>
+        We did not touch on everything. There are two ThreeJS topics you have yet to see an example of.
+        <br/>
+        <br/>
+        <b>1 - Shadows</b>
+        <br/>
+          You did not see any implimentation of shadows in carScene.tsx. Just like lights, shadows are another source of performance degradation. They are 
+          also not a requirement to making a good scene. We have a sound reason to skip them.
+        <br/>
+        <br/>
+        <b>2 - Shaders</b>
+        <br/>
+        
+        A cup of coffee is hot. How do you show it's hot? Condensation rising is the solution. So how do you make that coffee smoke effect? How do you create pulse wave? How 
+        do you create a raging sea or fireworks? A shader is a main component of WebGL (what ThreeJS is an abstraction of). A shader is a program written in GLSL that is sent to the GPU. They are used to position each vertex of a geometry and to colorize each visible pixel of that geometry. 
+        This is very handy but the issue is that the code is very low-level. It looks like this.
+      </p>
+
+
+      <div className="media_item_container">
+        <img src={light_example}/>
+      </div>
+
+      <p>
+        It's not easy to learn as you are writing code that directly speaks to the GPU. For our use-case of ThreeJS, it's not feasible. Though it is very performant.
+        <br/>
+        <br/>
+        By now you have a reasonable grasp of the 3D world for web development. Next is the hardest part: what can I make with it?
+
       </p>
 
     </div>
