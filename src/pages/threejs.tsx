@@ -601,7 +601,7 @@ function ThreeJS(){
 
       <p>
         The star of the show here is the 'for' statements that assign colors and GSAP that turns it into an animated transition. It's also by a 'for' statement that you can assign 
-        other values like opacity, or whatever else relevant to that particular material (e.g, <span className="threejs_material_standard">meshStandard</span> has metallic and reflectivity as well).
+        other values like opacity, or whatever else relevant to that particular material (e.g, <span className="threejs_material_standard">meshStandard</span> has metallic and roughness as well).
       </p>
   
     </div>

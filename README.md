@@ -18,6 +18,8 @@ export default defineConfig(({ command }) => ({
   }
 }))
 
+Then added "<BrowserRouter basename={import.meta.env.BASE_URL}>" to main.tsx
+
 then did yarn run deploy
 
 Note: moved constants within src/ folder and had to re-do constants so that the assets would show on gh-pages version.
@@ -27,32 +29,9 @@ Could have just moved assets to public folder if need be, like Henning currently
 ------------------------------------------------------------------------------------------------------
 
 
-For home page idea: have a character. a girl named suzie. *waves at the viewer*. She went to the doctor and had trouble x,y,z.
-maybe a doctor scene?
-then comes our solution to the problem
-then suzie happy. seeing the outdoors? hiking?
-
-idea is that we have a story, a character reflective of why our project exists.
 
 
-------------------------------------------------------------------------------------------------------
-Game Idea:
-
-Idea: make a 3d model of eye and iris ring included. Must be highly reflective. Start screen a view of black part of eye and iris ring but angled. Press start and a camera gets back and sees eye flat. some movement from the iris and black bit. zoom into the black bit. camera shifts to a side view. left should have an ambient light that follows us. represents light coming into eye. as we traverse level, ambient intensity reduces. should make use of glow since the level will be black. background items should glow in linear sequence on infinite. very swanky. likely meshPhong!
-
-
-
-
-
-
-
-
-
-
-
-
-
-Yes, having multiple <Canvas> tags will significantly hurt performance.
+Yhaving multiple <Canvas> tags will significantly hurt performance.
 
 Here is why:
 
