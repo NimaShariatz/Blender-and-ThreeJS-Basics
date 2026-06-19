@@ -213,9 +213,9 @@ function ThreeJS(){
       </div>
 
       <p>
-        The parent container for ThreeJS is a <span className="component_syntax">{"<Canvas/>"}</span> tag. All ThreeJS content goes inside it. This image
-        is the code from the above example. Note the use of <span className="component_syntax">{"<OrbitContros/>"}</span> from Drei which allows 
-        us to rotate the object. The way this works is that the camera can be moved and will always look at position (0, 0, 0) which is where our object happens to be.
+        The parent container for ThreeJS is a <span className="component_syntax">{"<Canvas/>"}</span> tag. All ThreeJS content goes inside it. The image
+        below is the code from the above example. Note the use of <span className="component_syntax">{"<OrbitContros/>"}</span> from Drei which allows 
+        us to rotate the camera. The way this works is that the camera can be moved by the user and will always look at position (0, 0, 0) which is where our object happens to be.
       </p>
 
       <div className="media_item_container">
@@ -525,7 +525,7 @@ function ThreeJS(){
       <ul className="unordered_list">
         <li><p>Objects not seen by the camera are not rendered, thereby saving FPS</p></li>
         <li><p>Destroying or suddenly adding lights and objects is expensive on the CPU and causes major sudden FPS drops</p></li>
-        <li><p>{"visible={0}"}<sub>(objects and lights)</sub> - saves FPS - no lag on change</p></li>
+        <li><p>{"visible={false}"}<sub>(objects and lights)</sub> - saves FPS - no lag on change</p></li>
         <li><p>{"Intensity={0}"}<sub>(light sources only)</sub> - saves FPS - no lag on change</p></li>
         <li><p>Conditional Rendering - saves FPS, any useFrame()'s removed, and saves RAM/VRAM - can cause a stutter as models, light sources are destroyed and added</p></li>
       </ul>
@@ -653,7 +653,7 @@ function ThreeJS(){
 
       <div className="content_container_divide">
         <p>
-          This is the first first instance of lights being used. You several different types to choose from. Each needs a position, intensity and color. Some have more props. 
+          This is the first instance of lights being used. You several different types to choose from. Each needs a position, intensity and color. Some have more props. 
           Just like objects, you can animate their values with GSAP. Notably useHelper() from Drei was used to give an outline for <span className="component_syntax">{"<pointLight/>"}</span> and 
           <span className="component_syntax">{"<spotLight/>"}</span>
         </p>
