@@ -1,5 +1,5 @@
 import { OrbitControls, Text, useGLTF } from "@react-three/drei"
-import { canvas_example, code_carKnots, code_carLights, code_conditionalRender, code_moonReturn, code_mountReturn, code_stateTracker, conditionalRender_example, example_filestructure, fibre_syntax, glsl_example, group_example, gsap, gsap_example, light_example, meshBasic_flat, meshBasic_withoutFlat, meshStandard_flat, meshStandard_withoutFlat, object_example, primitive_example, primitive_model, r3f, threejs_syntax, useframe_1, useframe_2 } from "../constants"
+import { canvas_example, code_carKnots, code_carLights, code_conditionalRender, code_moonReturn, code_mountReturn, code_stateTracker, conditionalRender_example, example_filestructure, fibre_syntax, glsl_example, group_example, gsap, gsap_example, light_example, meshBasic_flat, meshBasic_withoutFlat, meshStandard_flat, meshStandard_withoutFlat, object_example, primitive_example, primitive_model, primitive_model2, r3f, threejs_syntax, useframe_1, useframe_2 } from "../constants"
 
 import { Canvas, useFrame } from '@react-three/fiber'
 import {useRef}  from "react";
@@ -33,6 +33,7 @@ function RotatingCity({ model }: { model: THREE.Object3D }) {
 function ThreeJS(){
   
   const city_model = useGLTF(primitive_model)
+  const city_model2 = useGLTF(primitive_model2)
 
   return(
   <>
@@ -163,7 +164,7 @@ function ThreeJS(){
 
       <p>
         The logic is simple. You can change the color, position or size of an object. Add a duration or delay. Place it in an "if" statement if you wish. 
-        And finally add a ease of your choice from . That's it.
+        And finally add a ease of your choice from <a target="_blank" href="https://gsap.com/docs/v3/Eases/">GSAP's selection</a>.
       </p>
 
       <p>
@@ -230,7 +231,7 @@ function ThreeJS(){
         <br/>
         You can also define whether your camera is "orthoraphic", so objects that are farther away are not smaller. This is the 
         perspective used on top-down RTS games. Finally, we can apply the "flat" variable which changes color application in scenes.
-        This makes <span className="threejs_material_basic">meshBasic</span> and <span className="threejs_material_toon">meshToon</span> objects "pop" more in color, but also makes the color of 
+        This makes <span className="threejs_material_basic">meshBasic</span> objects "pop" more in color, but also makes the colors of 
         other materials like <span className="threejs_material_standard">meshStandard</span> more flat.
       </p>
 
@@ -445,7 +446,7 @@ function ThreeJS(){
           
             <color args={ [ '#1E88E5' ] } attach="background" /> {/* sets background color */}
 
-            <RotatingCity model={city_model.scene} /> {/* RotatingCity() */}
+            <RotatingCity model={city_model2.scene} /> {/* RotatingCity() */}
 
           </Canvas>
         </div>
@@ -519,14 +520,15 @@ function ThreeJS(){
         <br/>
         <b>Summary</b>
         <br/>
-        <ul className="unordered_list">
-          <li><p>Objects not seen by the camera are not rendered, thereby saving FPS</p></li>
-          <li><p>Destroying or suddenly adding lights and objects is expensive on the CPU and causes major sudden FPS drops</p></li>
-          <li><p>{"visible={0}"}<sub>(objects and lights)</sub> - saves FPS - no lag on change</p></li>
-          <li><p>{"Intensity={0}"}<sub>(light sources only)</sub> - saves FPS - no lag on change</p></li>
-          <li><p>Conditional Rendering - saves FPS, any useFrame()'s removed, and saves RAM/VRAM - can cause a stutter as models, light sources are destroyed and added</p></li>
-        </ul>
       </p>
+
+      <ul className="unordered_list">
+        <li><p>Objects not seen by the camera are not rendered, thereby saving FPS</p></li>
+        <li><p>Destroying or suddenly adding lights and objects is expensive on the CPU and causes major sudden FPS drops</p></li>
+        <li><p>{"visible={0}"}<sub>(objects and lights)</sub> - saves FPS - no lag on change</p></li>
+        <li><p>{"Intensity={0}"}<sub>(light sources only)</sub> - saves FPS - no lag on change</p></li>
+        <li><p>Conditional Rendering - saves FPS, any useFrame()'s removed, and saves RAM/VRAM - can cause a stutter as models, light sources are destroyed and added</p></li>
+      </ul>
 
     </div>
 
