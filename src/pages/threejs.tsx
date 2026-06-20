@@ -736,7 +736,13 @@ function ThreeJS(){
         It's not easy to learn as you are writing code that directly speaks to the GPU. For our use-case of ThreeJS, it's not feasible. Though it is very performant.
         <br/>
         <br/>
-        By now you have a reasonable grasp of the 3D world for web development. Next is the hardest part: what can I make with it?
+        By now you have a reasonable grasp of the 3D world for web development. Next is the hardest part: what can I make with it? As a 
+        final source of example code, this is my personal profile page and its repo. It uses everything mentioned in this tutorial except for condtional rendering as there 
+        was no use-case for it.
+        <br/>
+        Live instance: <a target="_blank" href="https://nimashariatz.github.io/portfolio-page/">https://nimashariatz.github.io/portfolio-page/</a>
+        <br/>
+        Repo: <a target="_blank" href="https://github.com/NimaShariatz/portfolio-page">https://github.com/NimaShariatz/portfolio-page</a> 
 
       </p>
 
