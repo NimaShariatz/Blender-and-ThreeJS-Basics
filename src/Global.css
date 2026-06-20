@@ -64,6 +64,9 @@ small{
 a{
   color: var(--blue_1);
 }
+a:active{
+  color: var(--white);
+}
 
 
 
