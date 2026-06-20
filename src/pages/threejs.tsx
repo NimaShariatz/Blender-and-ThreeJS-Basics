@@ -468,7 +468,7 @@ function ThreeJS(){
       </div>
 
       <p>
-        Use useFrame() for: physics engines, continuous environmental effects (e.g., spinning a planet infinitely), or having an object instantly follow the mouse cursor dynamically.
+        Use useFrame() for: continuous environmental effects (e.g., spinning a planet infinitely), or having an object instantly follow the mouse cursor dynamically.
         <br/>
         <br/>
         Use GSAP for: choreographed sequences, intro camera sweeps, UI-triggered animations, and scrollytelling.
