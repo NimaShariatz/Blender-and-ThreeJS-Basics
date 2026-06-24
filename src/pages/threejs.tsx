@@ -6,7 +6,7 @@ import {useRef}  from "react";
 import * as THREE from 'three'
 
 
-function RotatingCity({ model }: { model: THREE.Object3D }) {
+function RotatingCity({ model }: { model: THREE.Object3D }) {// just to make input object rotate using useFrame()
   const primitive_group = useRef<THREE.Group>(null);
   
   useFrame((_state, delta) => {
@@ -16,14 +16,12 @@ function RotatingCity({ model }: { model: THREE.Object3D }) {
   });
 
   return (
-
     <group ref={primitive_group} position={[0, 0, 0]}>
       <primitive
         object={model}
         scale={0.6}
       />
     </group>
-
   );
 }
 
