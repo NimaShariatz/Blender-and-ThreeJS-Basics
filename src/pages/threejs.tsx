@@ -1,7 +1,8 @@
 import { OrbitControls, Text, useGLTF } from "@react-three/drei"
-import { canvas_example, code_carKnots, code_carLights, code_conditionalRender, code_moonReturn, code_mountReturn, code_stateTracker, conditionalRender_example, example_filestructure, fibre_syntax, glsl_example, group_example, gsap, gsap_example, light_example, meshBasic_flat, meshBasic_withoutFlat, meshStandard_flat, meshStandard_withoutFlat, object_example, primitive_example, primitive_model, r3f, threejs_syntax, useframe_1, useframe_2 } from "../constants"
+import { canvas_example, code_carKnots, code_carLights, code_conditionalRender, code_moonReturn, code_mountReturn, code_stateTracker, conditionalRender_example, example_filestructure, fibre_syntax, glsl_example, group_example, gsap, gsap_example, light_example, meshBasic_flat, meshBasic_withoutFlat, meshStandard_flat, meshStandard_withoutFlat, object_example, primitive_example, primitive_model, second_primitive_model, r3f, threejs_syntax, useframe_1, useframe_2 } from "../constants"
 
 import { Canvas } from '@react-three/fiber'
+
 
 
 
@@ -12,6 +13,7 @@ import { Canvas } from '@react-three/fiber'
 function ThreeJS(){
   
   const city_model = useGLTF(primitive_model)
+  const second_city_model = useGLTF(second_primitive_model)
 
   return(
   <>
@@ -416,6 +418,25 @@ function ThreeJS(){
       </p>
 
 
+      <div className="threejs_container_div">
+        <div>
+          <Canvas camera={{ position: [0, 0, 5], fov: 75, near: 0.1, far: 50 }} >
+            <OrbitControls/> {/* Drei */}
+            <pointLight position={[0, 4, 0]} color={"#fff"} intensity={50}/>
+          
+            <color args={ [ '#1E88E5' ] } attach="background" /> {/* sets background color */}
+
+
+            <primitive
+              object={second_city_model.scene}
+              scale={0.8}
+              position={[0, 0, 0]}
+            />
+
+
+          </Canvas>
+        </div>
+      </div>
 
       <div className="media_item_container_splitImgs">
         <img src={useframe_2}/>
