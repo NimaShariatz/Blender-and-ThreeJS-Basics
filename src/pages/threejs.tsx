@@ -339,7 +339,7 @@ function ThreeJS(){
 
       <div className="threejs_container_div">
         <div>
-          <Canvas camera={{ position: [0, 0, 5], fov: 75, near: 0.1, far: 50 }} >
+          <Canvas camera={{ position: [0, 0, 5], fov: 75, near: 0.1, far: 500 }} >
             <OrbitControls/> {/* Drei */}
             <pointLight position={[0, 4, 0]} color={"#fff"} intensity={50}/>
           
@@ -350,6 +350,17 @@ function ThreeJS(){
               scale={0.6}
               position={[0, 0, 0]}
             />
+
+            <mesh position={[3, 0, 0]}>
+              <boxGeometry args={[2,2,2]}/>
+              <meshToonMaterial color={"#edb87b"} />
+            </mesh>
+
+
+            <mesh>
+              <boxGeometry args={[2,2,2]}/>
+              <meshToonMaterial color={"#edb87b"} />
+            </mesh>
 
           </Canvas>
         </div>
