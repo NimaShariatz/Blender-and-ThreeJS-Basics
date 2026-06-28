@@ -249,7 +249,7 @@ import meshStandardWithoutflat from './assets/Days/2/withoutFlat_meshstandard_sc
 import objectEx from './assets/Days/2/object_example.png';
 import lightEx from './assets/Days/2/light_syntax.png';
 import primmodel from './assets/Days/2/Rio_de_Janeiro.glb';
-import primmodel2 from './assets/Days/2/Rio_de_Janeiro2.glb'
+import primmodel2 from './assets/Days/2/Rio_de_JaneiroModel2.glb'
 import primEx from './assets/Days/2/primitive_syntax.png';
 import groupEx from './assets/Days/2/group_example.png';
 import useframe1 from './assets/Days/2/useframe_1.png';

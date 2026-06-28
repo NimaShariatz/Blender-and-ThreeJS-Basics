@@ -115,7 +115,8 @@ function ThreeJS(){
       <h2>Libraries - Some Chit-Chat</h2>
       <small>Usage</small>
       <p>
-        The core library which needs to be installed is Three. This is technically the only library we need and is a JavaScript library. ThreeJS syntax looks like this.
+        The core library which needs to be installed is Three. This is technically the only library we need and is a JavaScript library. Because it is a JavaScript framework, 
+        you can install ThreeJS on many other framework (Django, .NET, Angular, etc...). ThreeJS syntax looks like this.
       </p>
 
       <div className="media_item_container">
@@ -123,9 +124,8 @@ function ThreeJS(){
       </div>
 
       <p>
-        There is alot of "default" syntax where sometimes order matters and sometimes it does not. Because it is a JavaScript framework, 
-        you can install ThreeJS on many other framework (Django, .NET, Angular, etc...). However since we are using ReactJS, we should install Fibre which heavily 
-        cuts down on syntax by using React components as a medium. React Fibre still requires Three to function. This is what it looks like.
+        There is alot of "default" syntax where sometimes order matters and sometimes it does not. Fortunately since we are using ReactJS, we should install Fibre which heavily 
+        cuts down on syntax by using React components as a medium. React Fibre still requires the Three library to function. This is what it looks like.
       </p>
 
       <div className="media_item_container">
@@ -339,7 +339,7 @@ function ThreeJS(){
 
       <div className="threejs_container_div">
         <div>
-          <Canvas camera={{ position: [0, 0, 5], fov: 75, near: 0.1, far: 500 }} >
+          <Canvas camera={{ position: [0, 0, 5], fov: 75, near: 0.1, far: 50 }} >
             <OrbitControls/> {/* Drei */}
             <pointLight position={[0, 4, 0]} color={"#fff"} intensity={50}/>
           
@@ -350,17 +350,6 @@ function ThreeJS(){
               scale={0.6}
               position={[0, 0, 0]}
             />
-
-            <mesh position={[3, 0, 0]}>
-              <boxGeometry args={[2,2,2]}/>
-              <meshToonMaterial color={"#edb87b"} />
-            </mesh>
-
-
-            <mesh>
-              <boxGeometry args={[2,2,2]}/>
-              <meshToonMaterial color={"#edb87b"} />
-            </mesh>
 
           </Canvas>
         </div>
