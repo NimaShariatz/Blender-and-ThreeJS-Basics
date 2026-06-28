@@ -343,11 +343,11 @@ function ThreeJS(){
             <OrbitControls/> {/* Drei */}
             <pointLight position={[0, 4, 0]} color={"#fff"} intensity={50}/>
           
-            <color args={ [ '#1E88E5' ] } attach="background" /> {/* sets background color */}
+            <color args={ [ '#000000' ] } attach="background" /> {/* sets background color */}
 
             <primitive
               object={city_model.scene}
-              scale={0.6}
+              scale={0.8}
               position={[0, 0, 0]}
             />
 
