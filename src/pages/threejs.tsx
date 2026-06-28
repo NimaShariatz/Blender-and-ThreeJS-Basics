@@ -3,7 +3,7 @@ import { canvas_example, code_carKnots, code_carLights, code_conditionalRender, 
 
 import { Canvas } from '@react-three/fiber'
 
-
+import RotatingCity from "../components/threejs/rotatingCity"
 
 
 
@@ -325,7 +325,7 @@ function ThreeJS(){
             <OrbitControls/> {/* Drei */}
             <pointLight position={[0, 4, 0]} color={"#fff"} intensity={50}/>
           
-            <color args={ [ '#000000' ] } attach="background" /> {/* sets background color */}
+            <color args={ [ '#1E88E5' ] } attach="background" /> {/* sets background color */}
 
             <primitive
               object={city_model.scene}
@@ -426,13 +426,7 @@ function ThreeJS(){
           
             <color args={ [ '#1E88E5' ] } attach="background" /> {/* sets background color */}
 
-
-            <primitive
-              object={second_city_model.scene}
-              scale={0.8}
-              position={[0, 0, 0]}
-            />
-
+            <RotatingCity model={second_city_model.scene} /> {/* RotatingCity() */}
 
           </Canvas>
         </div>
