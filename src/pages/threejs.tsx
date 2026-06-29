@@ -2,8 +2,8 @@ import { OrbitControls, Text, useGLTF } from "@react-three/drei"
 import { canvas_example, code_carKnots, code_carLights, code_conditionalRender, code_moonReturn, code_mountReturn, code_stateTracker, conditionalRender_example, example_filestructure, fibre_syntax, glsl_example, group_example, gsap, gsap_example, light_example, meshBasic_flat, meshBasic_withoutFlat, meshStandard_flat, meshStandard_withoutFlat, object_example, primitive_example, primitive_model, second_primitive_model, r3f, threejs_syntax, useframe_1, useframe_2 } from "../constants"
 
 import { Canvas } from '@react-three/fiber'
+import RotatingSandwich from "../components/threejs/rotatingSandwich"
 
-import RotatingCity from "../components/threejs/rotatingCity"
 
 
 
@@ -422,11 +422,9 @@ function ThreeJS(){
         <div>
           <Canvas camera={{ position: [0, 0, 5], fov: 75, near: 0.1, far: 50 }} >
             <OrbitControls/> {/* Drei */}
-
             <ambientLight intensity={3} color={"#fff"}/>
           
-            <RotatingCity model={second_city_model.scene} /> {/* RotatingCity() */}
-
+            <RotatingSandwich model={second_city_model.scene} /> {/* RotatingCity() */}
           </Canvas>
         </div>
       </div>

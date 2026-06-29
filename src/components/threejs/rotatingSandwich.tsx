@@ -3,9 +3,7 @@ import * as THREE from 'three'
 import {useFrame} from '@react-three/fiber'
 
 
-
-
-function RotatingCity({ model }: { model: THREE.Object3D }) {// input object rotates using useFrame()
+function RotatingSandwich({ model }: { model: THREE.Object3D }) {// input object rotates using useFrame()
   //const primitive_group = useRef<THREE.Group>(null); //useRef for a <group/> if you are curious.
 
   const primitive = useRef<THREE.Object3D>(null);
@@ -27,4 +25,4 @@ function RotatingCity({ model }: { model: THREE.Object3D }) {// input object rot
   
 }
 
-export default RotatingCity
+export default RotatingSandwich
