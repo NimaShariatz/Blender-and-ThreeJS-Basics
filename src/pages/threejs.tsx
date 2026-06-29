@@ -422,10 +422,9 @@ function ThreeJS(){
         <div>
           <Canvas camera={{ position: [0, 0, 5], fov: 75, near: 0.1, far: 50 }} >
             <OrbitControls/> {/* Drei */}
-            <pointLight position={[0, 4, 0]} color={"#fff"} intensity={50}/>
-          
-            <color args={ [ '#1E88E5' ] } attach="background" /> {/* sets background color */}
 
+            <ambientLight intensity={3} color={"#fff"}/>
+          
             <RotatingCity model={second_city_model.scene} /> {/* RotatingCity() */}
 
           </Canvas>

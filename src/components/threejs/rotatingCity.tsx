@@ -12,14 +12,16 @@ function RotatingCity({ model }: { model: THREE.Object3D }) {// input object rot
   
   useFrame((_state, delta) => {
     if(primitive.current){
-      primitive.current.rotation.y += delta * 0.2
+      primitive.current.rotation.y += delta * 0.5
     }
   });
 
   return (
     <primitive
       object={model}
-      scale={0.6}
+      ref={primitive}
+      scale={8}
+      position={[0, 0.2, 0]}
     />
   );
   
