@@ -13,7 +13,7 @@ import RotatingSandwich from "../components/threejs/rotatingSandwich"
 function ThreeJS(){
   
   const city_model = useGLTF(primitive_model)
-  const second_city_model = useGLTF(second_primitive_model)
+  const sandwich_model = useGLTF(second_primitive_model)
 
   return(
   <>
@@ -424,7 +424,7 @@ function ThreeJS(){
             <OrbitControls/> {/* Drei */}
             <ambientLight intensity={3} color={"#fff"}/>
           
-            <RotatingSandwich model={second_city_model.scene} /> {/* RotatingCity() */}
+            <RotatingSandwich model={sandwich_model.scene} /> {/* RotatingCity() */}
           </Canvas>
         </div>
       </div>
