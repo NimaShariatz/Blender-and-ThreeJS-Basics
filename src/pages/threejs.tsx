@@ -413,7 +413,7 @@ function ThreeJS(){
       <small>Fibre usage</small>
       <p>
       UseFrame() is a function from fibre which fires on every frame render. So if your computer is rendering the scene in 60fps, then it is firing 60 times a second. Or less 
-      if your device is struggling and getting lower fps. UseFrame() is useful for moving or rotating objects constantly. You can move <span className="component_syntax">{"<mesh/>"}</span>, 
+      if your device is struggling and getting lower fps. Regardless of the fps, note the use of "delta". This allows the rotation to be constant no matter the fps. UseFrame() is useful for moving or rotating objects constantly. You can move <span className="component_syntax">{"<mesh/>"}</span>, 
       <span className="component_syntax">{"<primitive/>"}</span>, lights, or a <span className="component_syntax">{"<group/>"}</span> itself. 
       </p>
 
