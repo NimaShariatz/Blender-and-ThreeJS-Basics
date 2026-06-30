@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Routes, Route } from "react-router";
 import TutorialPage from "./pages/primaryContainer"
+import HelixOne from "./pages/helixOne";
 
 function App() {
   useEffect(() => {
@@ -13,6 +14,7 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<TutorialPage />} />
+          <Route path="/HelixOne" element={<HelixOne/>}/>
         </Routes>
       </main>
     </>
