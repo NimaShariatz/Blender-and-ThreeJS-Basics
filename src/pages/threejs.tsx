@@ -467,7 +467,7 @@ function ThreeJS(){
       <p>
         <Link to="/Helix" target="_blank">This is an animated helix created with ThreeJS</Link>. It does not use any Blender models, rather <span className="component_syntax">{"<mesh/>"}</span> cylinders from ThreeJS. 70 cylinders 
         were created through a 'for' statement each with it's own position, rotation angle, and color.
-        UseFrame is used for the animation of the helix, as well as GSAP for the animation of the camera. <a href="/Helix" target="_blank">Check out the code</a> to get a feel for the logic.
+        UseFrame is used for the animation of the helix, as well as GSAP for the animation of the camera. <a href="https://github.com/NimaShariatz/Blender-and-ThreeJS-Basics/blob/main/src/pages/helix.tsx" target="_blank">Check out the code</a> to get a feel for the logic.
       </p>
 
      </div>
