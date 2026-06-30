@@ -1,6 +1,6 @@
 import { OrbitControls, Text, useGLTF } from "@react-three/drei"
-import { canvas_example, code_carKnots, code_carLights, code_conditionalRender, code_moonReturn, code_mountReturn, code_stateTracker, conditionalRender_example, example_filestructure, fibre_syntax, glsl_example, group_example, gsap, gsap_example, light_example, meshBasic_flat, meshBasic_withoutFlat, meshStandard_flat, meshStandard_withoutFlat, object_example, primitive_example, primitive_model, second_primitive_model, r3f, threejs_syntax, useframe_1, useframe_2 } from "../constants"
-
+import { canvas_example, code_carKnots, code_carLights, code_conditionalRender, code_moonReturn, code_mountReturn, code_stateTracker, conditionalRender_example, example_filestructure, fibre_syntax, glsl_example, group_example, gsap, gsap_example, light_example, meshBasic_flat, meshBasic_withoutFlat, meshStandard_flat, meshStandard_withoutFlat, object_example, primitive_example, primitive_model, second_primitive_model, r3f, threejs_syntax, useframe_1, useframe_2, helix_example } from "../constants"
+import { Link } from "react-router"
 import { Canvas } from '@react-three/fiber'
 import RotatingSandwich from "../components/threejs/rotatingSandwich"
 
@@ -453,6 +453,25 @@ function ThreeJS(){
       </p>
 
     </div>
+
+
+
+    <div className="content_container">
+      <h2>Helix Example</h2>
+      <small>A demonstration</small>
+
+      <div className="media_item_container">
+        <img src={helix_example}/>
+      </div>
+      
+      <p>
+        <Link to="/Helix" target="_blank">This is an animated helix created with ThreeJS</Link>. It does not use any Blender models, rather <span className="component_syntax">{"<mesh/>"}</span> cylinders from ThreeJS. 70 cylinders 
+        were created through a 'for' statement each with it's own position, rotation angle, and color.
+        UseFrame is used for the animation of the helix, as well as GSAP for the animation of the camera. <a href="/Helix" target="_blank">Check out the code</a> to get a feel for the logic.
+      </p>
+
+     </div>
+
 
 
 

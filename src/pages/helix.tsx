@@ -1,11 +1,12 @@
-import "./helixOne.css"
-import { useRef } from "react"
+import "./helix.css"
+import { useRef, useEffect } from "react"
+import gsap from 'gsap'
 import * as THREE from 'three'
-import { Canvas, useFrame } from '@react-three/fiber'
+import { Canvas, useThree, useFrame } from '@react-three/fiber'
 import { useHelper } from "@react-three/drei"
 
 
-const DEG_STEP = 5
+const DEG_STEP = 5 //makes life easier
 
 const rodList = [
   // Segment 1: #5500BB (deep purple) → #E02870 (hot pink)
@@ -89,15 +90,10 @@ const rodList = [
 
 
 
-
-
-
-
-
-function HelixOne() {
+function Helix() {
   return (
     <div className="helix_div">
-      <Canvas camera={{ position: [0, 0, 5], fov: 50, near: 0.1, far: 10 }}>
+      <Canvas camera={{ position: [-0.3, 0, 3], rotation: [0, 0, THREE.MathUtils.degToRad(45)], fov: 50, near: 0.1, far: 10 }}>
         <Scene />
       </Canvas>
     </div>
@@ -108,15 +104,37 @@ function HelixOne() {
 function Scene() {
   const pointLightHelper = useRef<THREE.PointLight>(null!);
   useHelper(pointLightHelper, THREE.PointLightHelper, 0.2, 'teal');
+  
 
   const rodGroup = useRef<THREE.Group>(null);
+
+  const {camera} = useThree()
+
+    useEffect(() => {
+      gsap.to(camera.position, {
+        x:-0.3,
+        y:0,
+        z:6,
+        duration: 5,
+        delay: 1,
+        ease: "power1.inOut",
+      })
+
+      gsap.to(camera.rotation, {
+        x:0,
+        y:0,
+        z:0,
+        duration: 3,
+        delay: 1,
+        ease: "power1.inOut",
+      })
+    },[camera.position, camera.rotation])//useEffect - fires on startup
 
    useFrame((_state, delta) => {
     if(rodGroup.current){
       rodGroup.current.rotation.x += delta * 0.3
     }
-
-   })
+   })//useFrame
 
   return (
     <>
@@ -126,7 +144,7 @@ function Scene() {
       <ambientLight intensity={2} color={"#fff"}/>
       <pointLight ref={pointLightHelper} color={"#ffffff"} intensity={5} position={[-2, 0, 5]}/>
 
-      <group ref={rodGroup} position={[-0.4,0,-2]}>
+      <group ref={rodGroup} position={[0, 0, 0]}>
         {rodList.map((rod) => (
           <mesh key={rod.id} rotation={rod.rotation as [number, number, number]} position={rod.position as [number, number, number]}>
             <cylinderGeometry args={rod.arg_values as [number, number, number]}/>
@@ -141,4 +159,4 @@ function Scene() {
 
 
 
-export default HelixOne
+export default Helix

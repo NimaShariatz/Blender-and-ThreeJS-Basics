@@ -255,6 +255,7 @@ import groupEx from './assets/Days/2/group_example.png';
 import useframe1 from './assets/Days/2/useframe_1.png';
 import useframe2 from './assets/Days/2/useframe_2.png';
 import gsapEx from './assets/Days/2/gsap_syntax.png';
+import helixEx from './assets/Days/2/helix.png'
 import conditionalrend from './assets/Days/2/conditionalRend_example.png';
 import example_filestruct from './assets/Days/2/example_filestruct.png';
 import code_statetrack from './assets/Days/2/code_stateTracker.png';
@@ -283,6 +284,7 @@ export const group_example = groupEx;
 export const useframe_1 = useframe1;
 export const useframe_2 = useframe2;
 export const gsap_example = gsapEx;
+export const helix_example = helixEx;
 export const conditionalRender_example = conditionalrend;
 export const example_filestructure = example_filestruct;
 export const code_stateTracker = code_statetrack;
